@@ -263,7 +263,7 @@ export default function Home() {
 
     document.addEventListener('mousemove', handleButtonMouseMove)
 
-    // Scroll-based video and project effects
+    // Responsive project interaction effects
     const briefedVideo = document.querySelector('video[alt*="Briefed"]')
     const rgVideo = document.querySelector('video[alt*="RG Law Firm"]')
     const edecorationVideo = document.querySelector('video[alt*="Edecoration"]')
@@ -288,8 +288,44 @@ export default function Home() {
       { row: designerRow, video: designerVideo }
     ]
     
-    // Function to check if project center aligns with viewport center
+    // Detect if device is mobile or desktop
+    const isMobile = () => {
+      return window.innerWidth <= 768 || 
+             /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+             (navigator.maxTouchPoints && navigator.maxTouchPoints > 2)
+    }
+    
+    // Function to activate project (used by both mobile scroll and desktop hover)
+    const activateProject = (row, video) => {
+      if (!row) return
+      
+      // Add scroll-active class for styling
+      row.classList.add('scroll-active')
+      
+      // Play video if it exists
+      if (video) {
+        video.play().catch(e => console.log('Video play failed:', e))
+      }
+    }
+    
+    // Function to deactivate project
+    const deactivateProject = (row, video) => {
+      if (!row) return
+      
+      // Remove scroll-active class
+      row.classList.remove('scroll-active')
+      
+      // Pause and reset video if it exists
+      if (video) {
+        video.pause()
+        video.currentTime = 0
+      }
+    }
+    
+    // Mobile: Scroll-based activation
     const checkProjectAlignment = () => {
+      if (!isMobile()) return // Only run on mobile
+      
       const viewportCenter = window.innerHeight / 2
       
       projectData.forEach(({ row, video }) => {
@@ -302,27 +338,33 @@ export default function Home() {
         const isAligned = Math.abs(projectCenter - viewportCenter) < 100
         
         if (isAligned) {
-          // Add scroll-active class for styling
-          row.classList.add('scroll-active')
-          
-          // Play video if it exists
-          if (video) {
-            video.play().catch(e => console.log('Video play failed:', e))
-          }
+          activateProject(row, video)
         } else {
-          // Remove scroll-active class
-          row.classList.remove('scroll-active')
-          
-          // Pause and reset video if it exists
-          if (video) {
-            video.pause()
-            video.currentTime = 0
-          }
+          deactivateProject(row, video)
         }
       })
     }
     
-    // Throttled scroll handler for performance
+    // Desktop: Mouse hover activation
+    const setupDesktopHover = () => {
+      if (isMobile()) return // Only run on desktop
+      
+      projectData.forEach(({ row, video }) => {
+        if (!row) return
+        
+        // Mouse enter - activate project
+        row.addEventListener('mouseenter', () => {
+          activateProject(row, video)
+        })
+        
+        // Mouse leave - deactivate project
+        row.addEventListener('mouseleave', () => {
+          deactivateProject(row, video)
+        })
+      })
+    }
+    
+    // Throttled scroll handler for mobile performance
     let scrollTimeout
     const handleProjectScroll = () => {
       if (scrollTimeout) {
@@ -331,11 +373,36 @@ export default function Home() {
       scrollTimeout = setTimeout(checkProjectAlignment, 10)
     }
     
-    // Initial check
-    checkProjectAlignment()
+    // Initialize based on device type
+    if (isMobile()) {
+      // Mobile: scroll-based interaction
+      checkProjectAlignment() // Initial check
+      window.addEventListener('scroll', handleProjectScroll)
+      console.log('Mobile mode: Scroll-based project interaction enabled')
+    } else {
+      // Desktop: hover-based interaction
+      setupDesktopHover()
+      console.log('Desktop mode: Hover-based project interaction enabled')
+    }
     
-    // Listen for scroll events
-    window.addEventListener('scroll', handleProjectScroll)
+    // Handle window resize to switch between modes
+    let currentMode = isMobile() ? 'mobile' : 'desktop'
+    let resizeTimeout
+    const handleResize = () => {
+      if (resizeTimeout) {
+        clearTimeout(resizeTimeout)
+      }
+      resizeTimeout = setTimeout(() => {
+        const newMode = isMobile() ? 'mobile' : 'desktop'
+        if (newMode !== currentMode) {
+          currentMode = newMode
+          // Reload page to properly reinitialize
+          location.reload()
+        }
+      }, 250)
+    }
+    
+    window.addEventListener('resize', handleResize)
 
     // SVG Divider scroll effect
     let lastScrollY = window.scrollY

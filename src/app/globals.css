@@ -369,6 +369,39 @@ nav a {
   opacity: 1;
 }
 
+/* Desktop hover effects */
+@media (min-width: 769px) {
+  .project-row {
+    transition: all 0.3s ease;
+  }
+  
+  .project-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 255, 0.15);
+  }
+  
+  .project-row:hover .project-columns {
+    transform: translateX(5px);
+  }
+  
+  .project-row:hover .project-column.arrow svg {
+    transform: translateX(8px);
+  }
+  
+  /* Enhanced hover state that mimics scroll-active */
+  .project-row:hover:not(.scroll-active) {
+    background: linear-gradient(90deg, rgba(0, 0, 255, 0.05) 50%, rgba(0, 0, 255, 0.05) 50%);
+    background-position: 0% 0;
+  }
+}
+
+/* Mobile scroll-based effects - keep existing */
+@media (max-width: 768px) {
+  .project-row {
+    cursor: default; /* Remove cursor pointer on mobile */
+  }
+}
+
 /* Responsive Design for Projects Section */
 @media (max-width: 1200px) {
   .projects-header h2 {
@@ -2797,6 +2830,10 @@ a[href="#"][data-service="contact"],
   color: white;
   border: none;
   cursor: pointer;
+
+
+}
+
   letter-spacing: 1px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -2805,7 +2842,8 @@ a[href="#"][data-service="contact"],
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.3), inset 0 0 40px rgba(255, 0, 0, 0), var(--glow-offset-x, 0px) var(--glow-offset-y, 0px) 30px rgba(255, 165, 0, 0);
   overflow: hidden;
   transition: color 1.2s ease, background 1.2s ease, transform 1.2s ease;
-  text-decoration: none !important;
+  text-decoration: none !importa
+  ;
 }
 
 .cta-button::before {
