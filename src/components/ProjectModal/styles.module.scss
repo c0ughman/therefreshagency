@@ -1,0 +1,213 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modalContent {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 90vh;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.closeButton {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  z-index: 10;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.modalBody {
+  height: 100%;
+  padding: 80px 60px 40px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 40px;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+  color: white;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    opacity: 0.9;
+  }
+
+  .extendedDescription {
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.7;
+  }
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+
+  .image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover svg {
+    transform: translateX(5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modalContent {
+    height: 95vh;
+    border-radius: 20px;
+  }
+
+  .modalBody {
+    padding: 60px 30px 30px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    p {
+      font-size: 1rem;
+    }
+
+    .extendedDescription {
+      font-size: 0.9rem;
+    }
+  }
+
+  .closeButton {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .modalOverlay {
+    padding: 10px;
+  }
+
+  .modalBody {
+    padding: 50px 20px 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    p {
+      font-size: 0.9rem;
+    }
+
+    .extendedDescription {
+      font-size: 0.8rem;
+    }
+  }
+}

@@ -1,0 +1,396 @@
+/* Contact Page Specific Styles */
+
+
+/* Call-to-Action Section */
+.contactCtaSection {
+  background: #0000ff;
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactCtaContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.contactCtaTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  font-family: 'Inter', sans-serif;
+}
+
+.contactCtaSubtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.contactCtaButton {
+  background: white;
+  color: #0000ff;
+  border: none;
+  padding: 18px 36px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contactCtaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Comparison Section */
+.contactComparisonSection {
+  background: white;
+  padding: 100px 0;
+  position: relative;
+}
+
+.contactComparisonContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.contactComparisonTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  margin-bottom: 60px;
+  font-family: 'Inter', sans-serif;
+}
+
+.contactComparisonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contactComparisonColumn {
+  position: relative;
+}
+
+.contactComparisonColumn h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  font-family: 'Inter', sans-serif;
+}
+
+.contactComparisonColumn.left h3 {
+  color: #ff4444;
+}
+
+.contactComparisonColumn.right h3 {
+  color: #0000ff;
+}
+
+.contactComparisonItem {
+  padding: 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contactComparisonItem:last-child {
+  border-bottom: none;
+}
+
+.contactComparisonIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contactComparisonIcon.left {
+  color: #ff4444;
+}
+
+.contactComparisonIcon.right {
+  color: #0000ff;
+}
+
+.contactComparisonText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Timeline Section */
+.contactTimelineSection {
+  background: white;
+  padding: 100px 0;
+  position: relative;
+}
+
+.contactTimelineContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.contactTimelineTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  margin-bottom: 60px;
+  font-family: 'Inter', sans-serif;
+}
+
+.contactTimelineWrapper {
+  position: relative;
+  padding: 40px 0;
+}
+
+.contactTimelineLine {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0000ff, rgba(0, 0, 255, 0.3));
+}
+
+.contactTimelineItems {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.contactTimelineItem {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.contactTimelineItem:nth-child(odd) {
+  flex-direction: row;
+}
+
+.contactTimelineItem:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.contactTimelineContent {
+  flex: 1;
+  max-width: 45%;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  position: relative;
+}
+
+.contactTimelineItem:nth-child(odd) .contactTimelineContent {
+  margin-right: 60px;
+}
+
+.contactTimelineItem:nth-child(even) .contactTimelineContent {
+  margin-left: 60px;
+}
+
+.contactTimelineNumber {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: #0000ff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  z-index: 2;
+}
+
+.contactTimelineStep {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 12px;
+  font-family: 'Inter', sans-serif;
+}
+
+.contactTimelineDescription {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Footer CTA Section */
+.contactFooterCta {
+  background: #0000ff;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactFooterCta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.contactFooterCtaContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.contactFooterCtaTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  font-family: 'Inter', sans-serif;
+}
+
+.contactFooterCtaSubtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.contactFooterCtaButtons {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contactFooterCtaButton {
+  padding: 18px 36px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid white;
+}
+
+.contactFooterCtaButton.primary {
+  background: white;
+  color: #0000ff;
+}
+
+.contactFooterCtaButton.secondary {
+  background: transparent;
+  color: white;
+}
+
+.contactFooterCtaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contactFooterCtaButton.secondary:hover {
+  background: white;
+  color: #0000ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactCtaTitle {
+    font-size: 2.5rem;
+  }
+  
+  .contactComparisonGrid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .contactTimelineItem {
+    flex-direction: column !important;
+  }
+  
+  .contactTimelineContent {
+    max-width: 100%;
+    margin: 0 !important;
+  }
+  
+  .contactTimelineNumber {
+    position: static;
+    transform: none;
+    margin: 20px auto;
+  }
+  
+  .contactTimelineLine {
+    display: none;
+  }
+  
+  .contactFooterCtaTitle {
+    font-size: 2.5rem;
+  }
+  
+  .contactFooterCtaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contactFooterCtaButton {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactCtaContainer,
+  .contactComparisonContainer,
+  .contactTimelineContainer,
+  .contactFooterCtaContainer {
+    padding: 0 20px;
+  }
+  
+  .contactCtaTitle,
+  .contactFooterCtaTitle {
+    font-size: 2rem;
+  }
+  
+  .contactComparisonTitle,
+  .contactTimelineTitle {
+    font-size: 2rem;
+  }
+}

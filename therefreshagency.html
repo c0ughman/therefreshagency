@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Refresh Agency</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Georgia&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Arial Black';
+      src: local('Arial Black');
+      font-weight: 900;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0000ff;
+      color: white;
+      overflow-x: hidden;
+    }
+
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      font-family: 'Georgia', serif;
+      font-size: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 40px;
+      font-weight: normal;
+    }
+
+    /* Sticky header styles */
+    .sticky-header {
+      position: fixed;
+      top: 10px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      font-family: 'Georgia', serif;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      margin: 0 100px;
+      width: calc(100% - 200px);
+      box-sizing: border-box;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .sticky-header.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .sticky-header .logo {
+      font-weight: bold;
+    }
+
+    .sticky-wheel {
+      width: 43px;
+      height: 43px;
+      object-fit: contain;
+      transition: transform 0.1s ease-out;
+    }
+
+    .sticky-header nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 40px;
+      font-weight: normal;
+    }
+
+    /* Reviews Section Styles */
+    .reviews-section {
+      background: white;
+      padding: 120px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reviews-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .reviews-header h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .reviews-header p {
+      font-size: 20px;
+      color: #666;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+    }
+
+    .review-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 24px;
+      position: relative;
+      overflow: visible;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .review-card:hover {
+      transform: translateY(-4px);
+      background: #fafafa;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .review-card::before {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: -40px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(255, 0, 0, 0.6) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(30px);
+      z-index: -1;
+    }
+
+    .review-card::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(255, 255, 0, 0.6) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(30px);
+      z-index: -1;
+    }
+
+    .stars {
+      color: #FFD700;
+      font-size: 18px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .review-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 25px;
+      font-weight: 400;
+    }
+
+    .reviewer {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .reviewer strong {
+      color: #000;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .reviewer span {
+      color: #666;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .reviews-section {
+        padding: 80px 30px;
+      }
+      
+      .reviews-header h2 {
+        font-size: 36px;
+      }
+      
+      .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .review-card {
+        padding: 30px 25px;
+      }
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px 100px;
+      position: relative;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .main .title-image {
+      width: 600px;
+      max-width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .subsection {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 5px;
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .main p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.7;
+      flex: 1;
+      text-align: left;
+    }
+
+    .star {
+      width: 80px;
+      height: 80px;
+      transition: transform 0.1s ease-out;
+      z-index: 2;
+    }
+
+    .star img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .button {
+      margin-top: 15px;
+      display: inline-block;
+      padding: 16px 42px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 32px;
+      font-size: 18px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 1px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 2;
+      position: relative;
+      align-self: flex-start;
+      margin-left: calc((100% - 600px) / 2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Value Proposition Columns */
+    .value-props {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 60px;
+      position: relative;
+      z-index: 1000;
+      margin-top: -40px;
+    }
+
+    .value-column {
+      flex: 1;
+      margin: 0 20px;
+      text-align: center;
+      padding: 40px 30px;
+      border-radius: 24px;
+    }
+
+    .value-column:first-child {
+      margin-left: 0;
+    }
+
+    .value-column:last-child {
+      margin-right: 0;
+    }
+
+    .value-column h3 {
+      font-family: 'Georgia', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 16px;
+      margin-top: 0;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .value-column p {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #666;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    #ocean-canvas {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      transform: translateY(-100px);
+    }
+
+    .what-we-do {
+      position: relative;
+      height: auto;
+      overflow: hidden;
+    }
+
+    .what-we-do-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 0;
+    }
+
+    .what-we-do-content {
+      position: relative;
+      z-index: 2;
+      padding: 10px 10px;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: minmax(300px, auto);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.column {
+  background: rgba(200, 200, 200, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: black;
+  transition: transform 0.3s ease;
+}
+
+.column:hover {
+  transform: translateY(-4px);
+}
+
+.column h3 {
+  font-family: 'Merriweather', serif;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.column p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Large text card */
+.card-large-text {
+  grid-column: span 2;
+}
+
+/* Image card */
+.card-image {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+  overflow: hidden;
+  height: 400px;
+  position: relative;
+}
+
+.card-image .overlay-text {
+  backdrop-filter: blur(8px);
+  color: black;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Video card */
+.card-video {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.card-video video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.card-video .overlay-text {
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+  color: black;
+  padding: 20px;
+  width: 100%;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="blue-cursor" id="blue-cursor"></div>
+
+  <header>
+    <div class="logo">The Refresh Agency.</div>
+    <nav>
+      <a href="#">Portfolio</a>
+      <a href="#">Mission</a>
+      <a href="#">Products</a>
+      <a href="#">Access</a>
+    </nav>
+  </header>
+
+  <!-- Sticky header that appears on scroll -->
+  <header class="sticky-header" id="sticky-header">
+    <div class="logo">
+      <img src="wheel.png" alt="The Refresh Agency" class="sticky-wheel">
+    </div>
+    <nav>
+      <a href="#">Portfolio</a>
+      <a href="#">Mission</a>
+      <a href="#">Products</a>
+      <a href="#">Access</a>
+    </nav>
+  </header>
+
+  <div class="main">
+    <img src="title.png" alt="Title Graphic" class="title-image" />
+    <div class="subsection">
+      <p>We redesign websites in minutes,<br />refresh the internet with us.</p>
+      <div class="star">
+        <img src="wheel.png" alt="Decorative Star Shape" id="wheel">
+      </div>
+    </div>
+    <button class="button">Show me</button>
+  </div>
+
+  <!-- Value Proposition Columns -->
+  <div class="value-props">
+    <div class="value-column">
+      <h3>Lightning Fast</h3>
+      <p>Get a completely redesigned website in under 10 minutes. No waiting, no delays, just instant transformation.</p>
+    </div>
+    <div class="value-column">
+      <h3>AI-Powered</h3>
+      <p>Our advanced algorithms analyze your brand and create designs that convert visitors into customers.</p>
+    </div>
+    <div class="value-column">
+      <h3>Results Driven</h3>
+      <p>Every design is optimized for performance, user experience, and conversion rates that actually matter.</p>
+    </div>
+  </div>
+
+  <!-- Reviews Section -->
+  <section class="reviews-section">
+    <div class="reviews-container">
+      <div class="reviews-header">
+        <h2>What our clients say</h2>
+        <p>Real results from real businesses</p>
+      </div>
+      
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-content">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"The Refresh Agency transformed our outdated site into a modern lead-generating machine. Our conversion rate increased by 300% in just 3 months!"</p>
+            <div class="reviewer">
+              <strong>Sarah Chen</strong>
+              <span>CEO, TechFlow Solutions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-content">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Incredible attention to detail and strategic thinking. They didn't just build a website - they built a digital experience that our customers love."</p>
+            <div class="reviewer">
+              <strong>Marcus Rodriguez</strong>
+              <span>Founder, GrowthLab</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-content">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Fast, professional, and results-driven. The Refresh Agency delivered exactly what we needed to compete in the digital space."</p>
+            <div class="reviewer">
+              <strong>Emma Thompson</strong>
+              <span>Marketing Director, InnovateCo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <canvas id="ocean-canvas"></canvas>
+
+  <div class="what-we-do">
+    <div class="what-we-do-bg"></div>
+    <div class="what-we-do-content">
+<!-- Add this right before the closing </body> tag in your existing page -->
+
+<style>
+  /* === Refresh Agency – Complex Grid Styles === */
+  .complex-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 5px;
+  }
+
+  .complex-left {
+    width: 700px;
+    height: 700px;
+    background-color: #F9F9F9;
+    border-radius: 60px;
+    border:7px solid white;
+    box-sizing: border-box;
+
+  }
+
+  .complex-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .complex-top-right {
+    width: 437.5px;
+    height: 437.5px;
+    background-color: #F9F9F9;
+    border-radius: 40px;
+    border:7px solid white;
+    box-sizing: border-box;
+
+  }
+
+  .complex-bottom-right {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .complex-square-8 {
+    width: 273px;
+    height: 273px;
+    background-color: #F9F9F9;
+    border-radius: 25px;
+    border:7px solid white;
+    box-sizing: border-box;
+
+  }
+
+
+  .complex-square-5 {
+    width: 170px;
+    height: 170px;
+    background-color: #F9F9F9;
+    border-radius: 28px;
+    border:7px solid white;
+    box-sizing: border-box;
+  }
+
+  .complex-above-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .complex-square-3 {
+    width: 170px;
+    height: 106px;
+    background-color: #F9F9F9;
+    border-radius: 24px;
+    border:7px solid white;
+    box-sizing: border-box;
+
+  }
+
+      .complex-container{
+      /* put the 700 × 700 block on the **right** */
+      display:flex;
+      flex-direction:row-reverse;     /* ⬅️ new */
+      align-items:flex-start;
+      justify-content:center;
+      padding:20px 5px;
+    }
+
+    .complex-right{
+      /* make the former “top” stack become the **bottom** */
+      display:flex;
+      flex-direction:column-reverse;  /* ⬅️ changed */
+      align-items:flex-start;         /* keep items flush to the left edge */
+    }
+
+    .complex-bottom-right{
+      /* this row is now at the top of the column,
+         so pin its children to the top instead of the bottom */
+      display:flex;
+      flex-direction:row;             /* unchanged (keeps 273 px square on the new top-right) */
+      align-items:flex-start;         /* ⬅️ changed */
+    }
+
+    .complex-left-of-8{
+      /* flip the little column (170 px + 170 × 106) so the
+         170 × 170 square sits **above** its rectangle counterpart */
+      display:flex;
+      flex-direction:column-reverse;  /* ⬅️ new */
+    }
+
+    .complex-bottom-right{
+      display:flex;          /* already present, but harmless if repeated */
+      flex-direction:row-reverse;   /* ⬅️ NEW (or change from row → row-reverse) */
+      align-items:flex-start;       /* keep them pinned to the top edge */
+    }
+</style>
+
+<div class="complex-container">
+  <div class="complex-left"></div>
+  <div class="complex-right">
+    <div class="complex-top-right"></div>
+    <div class="complex-bottom-right">
+      <div class="complex-left-of-8">
+        <div class="complex-above-5">
+          <div class="complex-square-3"></div>
+        </div>
+        <div class="complex-square-5"></div>
+      </div>
+      <div class="complex-square-8"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+    </div>
+  </div>
+
+  <script>
+    // Hero wheel rotation
+    const wheel = document.getElementById('wheel');
+    let lastY = 0;
+    let velocity = 0;
+    let rotation = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      const deltaY = e.clientY - lastY;
+      velocity += deltaY * 0.05;
+      lastY = e.clientY;
+    });
+
+    function animateWheel() {
+      rotation += velocity;
+      velocity *= 0.9;
+      wheel.style.transform = `rotate(${rotation}deg)`;
+      requestAnimationFrame(animateWheel);
+    }
+
+    animateWheel();
+
+    // Ocean wave canvas
+    const canvas = document.getElementById('ocean-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    let waveOffset = 0;
+    let mouseForce = 0;
+    let smoothedForce = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      const force = Math.abs(e.movementX) + Math.abs(e.movementY);
+      mouseForce = Math.min(100, force);
+    });
+
+    function drawOcean() {
+      ctx.clearRect(0, 0, width, height);
+      waveOffset += 0.03 + (smoothedForce / 500);
+      smoothedForce += (mouseForce - smoothedForce) * 0.05;
+
+      ctx.beginPath();
+      ctx.moveTo(0, height);
+      for (let x = 0; x <= width; x++) {
+        let y = height * 0.65 + Math.sin((x + waveOffset * 100) * 0.008) * (20 + smoothedForce * 1.8) +
+                Math.sin((x + waveOffset * 150) * 0.012) * (10 + smoothedForce * 0.6);
+        ctx.lineTo(x, y);
+      }
+      ctx.lineTo(width, height);
+      ctx.closePath();
+      ctx.fillStyle = 'white';
+      ctx.fill();
+
+      mouseForce *= 0.9;
+      requestAnimationFrame(drawOcean);
+    }
+
+    drawOcean();
+
+    // Blue cursor movement
+    const blueCursor = document.getElementById('blue-cursor');
+    document.addEventListener('mousemove', (e) => {
+      blueCursor.style.left = `${e.clientX}px`;
+      blueCursor.style.top = `${e.clientY}px`;
+    });
+
+    // Sticky header scroll control
+    const stickyHeader = document.getElementById('sticky-header');
+    const scrollThreshold = window.innerHeight * 0.1; // 10% of viewport height
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > scrollThreshold) {
+        stickyHeader.classList.add('visible');
+      } else {
+        stickyHeader.classList.remove('visible');
+      }
+    });
+
+    // Sticky wheel rotation
+    const stickyWheel = document.querySelector('.sticky-wheel');
+    let stickyWheelLastY = 0;
+    let stickyWheelVelocity = 0;
+    let stickyWheelRotation = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      const deltaY = e.clientY - stickyWheelLastY;
+      stickyWheelVelocity += deltaY * 0.05;
+      stickyWheelLastY = e.clientY;
+    });
+
+    function animateStickyWheel() {
+      stickyWheelRotation += stickyWheelVelocity;
+      stickyWheelVelocity *= 0.9;
+      if (stickyWheel) {
+        stickyWheel.style.transform = `rotate(${stickyWheelRotation}deg)`;
+      }
+      requestAnimationFrame(animateStickyWheel);
+    }
+
+    animateStickyWheel();
+  </script>
+
+
+
+</body>
+</html>
+

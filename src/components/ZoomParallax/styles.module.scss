@@ -1,0 +1,535 @@
+.container{
+    height: 300vh;
+    position: relative;
+    .sticky{
+        position: sticky;
+        overflow: hidden;
+        top: 0;
+        height: 100vh;
+
+        .el{
+            width: 100%;
+            height: 100%;
+            top: 0;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+                .reviewContainer{
+                position: relative;
+                min-width: 12vw;
+                min-height: 12vh;
+                width: max-content;
+                height: max-content;
+                max-width: 77px;
+                max-height: 30vh;
+                background: white;
+                border-radius: 24px;
+                padding: 15px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                overflow: visible;
+                
+                // Mobile optimizations
+                @media (max-width: 768px) {
+                    min-width: 20vw;
+                    min-height: 8vh;
+                    max-width: 77px;
+                    max-height: 20vh;
+                    border-radius: 16px;
+                    padding: 8px;
+                    transform: scale(0.9);
+                }
+                
+                
+                .reviewContent{
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    min-width: 0; // Allows content to shrink
+                    
+                    &.text-only {
+                        width: 100%;
+                        height: 100%;
+                        flex: none;
+                    }
+                }
+                
+                .reviewImage {
+                    border-radius: 12px;
+                    overflow: hidden;
+                    
+                    @media (max-width: 768px) {
+                        border-radius: 8px;
+                    }
+                    
+                    &.landscape {
+                        width: 100%;
+                        height: 70px;
+                        flex-shrink: 0;
+                        
+                        @media (max-width: 768px) {
+                            height: 40px;
+                        }
+                        
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                            border-radius: 12px;
+                            
+                            @media (max-width: 768px) {
+                                border-radius: 8px;
+                            }
+                        }
+                    }
+                    
+                    &.portrait {
+                        width: 70px;
+                        height: 100%;
+                        flex-shrink: 0;
+                        
+                        @media (max-width: 768px) {
+                            width: 40px;
+                        }
+                        
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                            border-radius: 12px;
+                            
+                            @media (max-width: 768px) {
+                                border-radius: 8px;
+                            }
+                        }
+                        
+                        &.multiple-images {
+                            width: 210px; // 70px * 3 images
+                            display: flex;
+                            gap: 5px;
+                            
+                            @media (max-width: 768px) {
+                                width: 120px; // 40px * 3 images
+                                gap: 3px;
+                            }
+                            
+                            img {
+                                width: 65px; // Slightly smaller to accommodate gap
+                                height: 100%;
+                                object-fit: contain;
+                                border-radius: 8px;
+                                
+                                @media (max-width: 768px) {
+                                    width: 37px;
+                                    border-radius: 6px;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .stars {
+                    color: #FFD700;
+                    font-size: 10px;
+                    margin-bottom: 6px;
+                    letter-spacing: 1px;
+                    
+                    @media (max-width: 768px) {
+                        font-size: 7px;
+                        margin-bottom: 3px;
+                        letter-spacing: 0.5px;
+                    }
+                }
+                
+                .reviewText {
+                    font-size: 11px;
+                    line-height: 1.2;
+                    color: #333;
+                    margin-bottom: 8px;
+                    font-weight: 400;
+                    flex: 1;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                    
+                    @media (max-width: 768px) {
+                        font-size: 8px;
+                        line-height: 1.1;
+                        margin-bottom: 4px;
+                    }
+                }
+                
+                .reviewer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1px;
+                    
+                    strong {
+                        color:black;
+                        font-size: 11px;
+                        font-weight: 400;
+                        
+                        @media (max-width: 768px) {
+                            font-size: 7px;
+                        }
+                    }
+                    
+                    span {
+                        color: #777;
+                        font-size: 10px;
+                        font-weight: 400;
+                        
+                        @media (max-width: 768px) {
+                            font-size: 6px;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(2){
+                .reviewContainer{
+                    top: -27vh;
+                    left: 10vw;
+                    min-width: 20vw;
+                    min-height: 18vh;
+                    padding: 0; // Remove padding
+                    flex-direction: column;
+                    
+                    @media (max-width: 768px) {
+                        top: -20vh;
+                        left: 15vw;
+                        min-width: 35vw;
+                        min-height: 12vh;
+                        max-width: 200px;
+                    }
+                    
+                    .reviewImage {
+                        &.landscape {
+                            width: 100%;
+                            margin-top: 5px;
+                            border: white solid 7px;
+                            box-sizing: border-box;
+                            height: 70px; // Take up eighth of the card height
+                            
+                            @media (max-width: 768px) {
+                                height: 40px;
+                                border: white solid 4px;
+                                margin-top: 3px;
+                            }
+
+                            
+                            img {
+                                object-fit: cover; // Fill container completely, crop if necessary
+                                object-position: center; // Show top half of image
+                            }
+                        }
+                        
+                        &.portrait {
+                            width: 80px;
+                            height: 100%;
+                            
+                            @media (max-width: 768px) {
+                                width: 45px;
+                            }
+                        }
+                    }
+                    
+                    .reviewContent {
+                        flex: 1;
+                        padding: 18px 18px 0 18px; // Add padding only to content
+                        margin-bottom: 0; // Remove margin
+                        
+                        @media (max-width: 768px) {
+                            padding: 10px 10px 0 10px;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(3){
+                .reviewContainer{
+                    top: -17vh;
+                    left: -24vw;
+                    min-width: 16vw;
+                    min-height: 22vh;
+                    padding: 18px;
+                    flex-direction: column;
+                    
+                    @media (max-width: 768px) {
+                        top: -12vh;
+                        left: -30vw;
+                        min-width: 30vw;
+                        min-height: 15vh;
+                        max-width: 200px;
+                        padding: 10px;
+                    }
+                    
+                    .reviewImage {
+                        &.landscape {
+                            width: 100%;
+                            height: 80px;
+                            
+                            @media (max-width: 768px) {
+                                height: 45px;
+                            }
+                        }
+                        
+                        &.portrait {
+                            width: 80px;
+                            height: 100%;
+                            
+                            @media (max-width: 768px) {
+                                width: 45px;
+                            }
+                        }
+                    }
+                    
+                    .reviewContent {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        margin-top: 10px;
+                        min-width: 0;
+                        
+                        @media (max-width: 768px) {
+                            margin-top: 6px;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(4){
+                .reviewContainer{
+                    left: 28vw;
+                    min-width: 22vw; // Increased to accommodate 3 images
+                    min-height: 20vh; // Increased height for vertical layout
+                    max-width: 200px; // Fixed pixel max-width
+                    padding: 18px;
+                    flex-direction: column; // Back to column: text on top, images below
+                    transform-origin: left center; // Make it expand more to the right
+                    
+                    @media (max-width: 768px) {
+                        left: 30vw;
+                        min-width: 35vw;
+                        min-height: 14vh;
+                        max-width: 200px;
+                        padding: 10px;
+                        transform-origin: left center;
+                    }
+                    
+                    .reviewImage {
+                        &.landscape {
+                            width: 100%;
+                            height: 80px;
+                            
+                            @media (max-width: 768px) {
+                                height: 45px;
+                            }
+                        }
+                        
+                        &.portrait {
+                            width: 100%; // Full width for horizontal arrangement
+                            height: 60px; // Fixed height for bottom images
+                            
+                            @media (max-width: 768px) {
+                                height: 35px;
+                            }
+                            
+                            &.multiple-images {
+                                width: 100%;
+                                height: 60px;
+                                display: flex;
+                                gap: 8px;
+                                justify-content: center; // Center the images
+                                
+                                @media (max-width: 768px) {
+                                    height: 35px;
+                                    gap: 4px;
+                                }
+                                
+                                img {
+                                    width: 60px; // Equal width for all three images
+                                    height: 60px;
+                                    object-fit: contain;
+                                    border-radius: 8px;
+                                    
+                                    @media (max-width: 768px) {
+                                        width: 35px;
+                                        height: 35px;
+                                        border-radius: 6px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    .reviewContent {
+                        flex: 1;
+                        margin-bottom: 15px; // Margin bottom for spacing above images
+                        
+                        @media (max-width: 768px) {
+                            margin-bottom: 8px;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(5){
+                .reviewContainer{
+                    top: 32vh;
+                    left: 10vw;
+                    min-width: 14vw;
+                    min-height: 14vh;
+                    padding: 18px;
+                    flex-direction: row;
+                    
+                    @media (max-width: 768px) {
+                        top: 28vh;
+                        left: 15vw;
+                        min-width: 28vw;
+                        min-height: 10vh;
+                        max-width: 200px;
+                        padding: 10px;
+                    }
+                    
+                    .reviewImage {
+                        &.landscape {
+                            width: 100%;
+                            height: 70px;
+                            
+                            @media (max-width: 768px) {
+                                height: 40px;
+                            }
+                        }
+                        
+                        &.portrait {
+                            width: 70px;
+                            height: 100%;
+                            
+                            @media (max-width: 768px) {
+                                width: 40px;
+                            }
+                        }
+                    }
+                    
+                    .reviewContent {
+                        flex: 1;
+                        margin-left: 10px;
+                        
+                        @media (max-width: 768px) {
+                            margin-left: 6px;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(6){
+                .reviewContainer{
+                    top: 32vh;
+                    left: -22vw;
+                    min-width: 18vw;
+                    min-height: 18vh;
+                    padding: 0; // Remove padding
+                    flex-direction: column;
+                    
+                    @media (max-width: 768px) {
+                        top: 28vh;
+                        left: -30vw;
+                        min-width: 35vw;
+                        min-height: 12vh;
+                        max-width: 200px;
+                    }
+                    
+                    .reviewImage {
+                        &.landscape {
+                            margin-top: 5px;
+                            border: white solid 7px;
+                            box-sizing: border-box;
+                            width: 100%;
+                            box-sizing: border-box;
+                            height: 70px; // Take up eighth of the card height
+                            
+                            @media (max-width: 768px) {
+                                height: 40px;
+                                border: white solid 4px;
+                                margin-top: 3px;
+                            }
+                            
+                            img {
+                                object-fit: cover; // Fill container completely, crop if necessary
+                                object-position: center; // Show top half of image
+                            }
+                        }
+                        
+                        &.portrait {
+                            width: 80px;
+                            height: 100%;
+                            
+                            @media (max-width: 768px) {
+                                width: 45px;
+                            }
+                        }
+                    }
+                    
+                    .reviewContent {
+                        flex: 1;
+                        padding: 18px 18px 0 18px; // Add padding only to content
+                        margin-bottom: 0; // Remove margin
+                        
+                        @media (max-width: 768px) {
+                            padding: 10px 10px 0 10px;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(7){
+                .reviewContainer{
+                    top: 27vh;
+                    left: 30vw;
+                    min-width: 12vw;
+                    min-height: 12vh;
+                    padding: 15px;
+                    flex-direction: row;
+                    
+                    @media (max-width: 768px) {
+                        top: 23vh;
+                        left: 25vw;
+                        min-width: 25vw;
+                        min-height: 8vh;
+                        max-width: 200px;
+                        padding: 8px;
+                    }
+                    
+                    .reviewImage {
+                        &.landscape {
+                            width: 100%;
+                            height: 70px;
+                            
+                            @media (max-width: 768px) {
+                                height: 40px;
+                            }
+                        }
+                        
+                        &.portrait {
+                            width: 70px;
+                            height: 100%;
+                            
+                            @media (max-width: 768px) {
+                                width: 40px;
+                            }
+                        }
+                    }
+                    
+                    .reviewContent {
+                        flex: 1;
+                        margin-left: 10px;
+                        
+                        @media (max-width: 768px) {
+                            margin-left: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
