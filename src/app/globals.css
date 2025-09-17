@@ -369,36 +369,39 @@ nav a {
   opacity: 1;
 }
 
-/* Desktop hover effects */
+/* Desktop hover effects - same styling as scroll-active but triggered by hover */
 @media (min-width: 769px) {
-  .project-row {
-    transition: all 0.3s ease;
-  }
-  
-  .project-row:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 255, 0.15);
-  }
-  
-  .project-row:hover .project-columns {
-    transform: translateX(5px);
-  }
-  
-  .project-row:hover .project-column.arrow svg {
-    transform: translateX(8px);
-  }
-  
-  /* Enhanced hover state that mimics scroll-active */
-  .project-row:hover:not(.scroll-active) {
-    background: linear-gradient(90deg, rgba(0, 0, 255, 0.05) 50%, rgba(0, 0, 255, 0.05) 50%);
+  .project-row.hover-active {
+    background: linear-gradient(90deg, transparent 0%, #0000ff 50%, transparent 100%);
+    background-size: 200% 100%;
     background-position: 0% 0;
+    animation: blueWave 0.6s ease forwards;
   }
-}
 
-/* Mobile scroll-based effects - keep existing */
-@media (max-width: 768px) {
-  .project-row {
-    cursor: default; /* Remove cursor pointer on mobile */
+  .project-row.hover-active .project-column.client-type span,
+  .project-row.hover-active .project-column.service span {
+    color: white;
+  }
+
+  .project-row.hover-active .project-column.project-name h2 {
+    color: white;
+  }
+
+  .project-row.hover-active .project-column.project-description p {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .project-row.hover-active .project-column.project-description p strong {
+    color: white;
+  }
+
+  .project-row.hover-active .project-column.arrow svg path {
+    stroke: white;
+  }
+
+  .project-row.hover-active .matrix {
+    opacity: 1;
   }
 }
 

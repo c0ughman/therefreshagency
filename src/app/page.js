@@ -263,7 +263,7 @@ export default function Home() {
 
     document.addEventListener('mousemove', handleButtonMouseMove)
 
-    // Responsive project interaction effects
+    // Scroll-based video and project effects
     const briefedVideo = document.querySelector('video[alt*="Briefed"]')
     const rgVideo = document.querySelector('video[alt*="RG Law Firm"]')
     const edecorationVideo = document.querySelector('video[alt*="Edecoration"]')
@@ -288,121 +288,84 @@ export default function Home() {
       { row: designerRow, video: designerVideo }
     ]
     
-    // Detect if device is mobile or desktop
-    const isMobile = () => {
-      return window.innerWidth <= 768 || 
-             /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-             (navigator.maxTouchPoints && navigator.maxTouchPoints > 2)
-    }
+    // Check if device is mobile/tablet
+    const isMobile = window.innerWidth <= 768
     
-    // Function to activate project (used by both mobile scroll and desktop hover)
-    const activateProject = (row, video) => {
-      if (!row) return
-      
-      // Add scroll-active class for styling
-      row.classList.add('scroll-active')
-      
-      // Play video if it exists
-      if (video) {
-        video.play().catch(e => console.log('Video play failed:', e))
+    if (isMobile) {
+      // Mobile: Keep scroll-based behavior
+      // Function to check if project center aligns with viewport center
+      const checkProjectAlignment = () => {
+        const viewportCenter = window.innerHeight / 2
+        
+        projectData.forEach(({ row, video }) => {
+          if (!row) return
+          
+          const rect = row.getBoundingClientRect()
+          const projectCenter = rect.top + (rect.height / 2)
+          
+          // Check if project center is close to viewport center (within 100px tolerance)
+          const isAligned = Math.abs(projectCenter - viewportCenter) < 100
+          
+          if (isAligned) {
+            // Add scroll-active class for styling
+            row.classList.add('scroll-active')
+            
+            // Play video if it exists
+            if (video) {
+              video.play().catch(e => console.log('Video play failed:', e))
+            }
+          } else {
+            // Remove scroll-active class
+            row.classList.remove('scroll-active')
+            
+            // Pause and reset video if it exists
+            if (video) {
+              video.pause()
+              video.currentTime = 0
+            }
+          }
+        })
       }
-    }
-    
-    // Function to deactivate project
-    const deactivateProject = (row, video) => {
-      if (!row) return
       
-      // Remove scroll-active class
-      row.classList.remove('scroll-active')
-      
-      // Pause and reset video if it exists
-      if (video) {
-        video.pause()
-        video.currentTime = 0
-      }
-    }
-    
-    // Mobile: Scroll-based activation
-    const checkProjectAlignment = () => {
-      if (!isMobile()) return // Only run on mobile
-      
-      const viewportCenter = window.innerHeight / 2
-      
-      projectData.forEach(({ row, video }) => {
-        if (!row) return
-        
-        const rect = row.getBoundingClientRect()
-        const projectCenter = rect.top + (rect.height / 2)
-        
-        // Check if project center is close to viewport center (within 100px tolerance)
-        const isAligned = Math.abs(projectCenter - viewportCenter) < 100
-        
-        if (isAligned) {
-          activateProject(row, video)
-        } else {
-          deactivateProject(row, video)
+      // Throttled scroll handler for performance
+      let scrollTimeout
+      const handleProjectScroll = () => {
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout)
         }
-      })
-    }
-    
-    // Desktop: Mouse hover activation
-    const setupDesktopHover = () => {
-      if (isMobile()) return // Only run on desktop
-      
-      projectData.forEach(({ row, video }) => {
-        if (!row) return
-        
-        // Mouse enter - activate project
-        row.addEventListener('mouseenter', () => {
-          activateProject(row, video)
-        })
-        
-        // Mouse leave - deactivate project
-        row.addEventListener('mouseleave', () => {
-          deactivateProject(row, video)
-        })
-      })
-    }
-    
-    // Throttled scroll handler for mobile performance
-    let scrollTimeout
-    const handleProjectScroll = () => {
-      if (scrollTimeout) {
-        clearTimeout(scrollTimeout)
+        scrollTimeout = setTimeout(checkProjectAlignment, 10)
       }
-      scrollTimeout = setTimeout(checkProjectAlignment, 10)
-    }
-    
-    // Initialize based on device type
-    if (isMobile()) {
-      // Mobile: scroll-based interaction
-      checkProjectAlignment() // Initial check
+      
+      // Initial check
+      checkProjectAlignment()
+      
+      // Listen for scroll events
       window.addEventListener('scroll', handleProjectScroll)
-      console.log('Mobile mode: Scroll-based project interaction enabled')
+      
     } else {
-      // Desktop: hover-based interaction
-      setupDesktopHover()
-      console.log('Desktop mode: Hover-based project interaction enabled')
+      // Desktop: Use hover-based behavior
+      projectData.forEach(({ row, video }) => {
+        if (!row || !video) return
+        
+        // Add hover event listeners to the project row
+        row.addEventListener('mouseenter', () => {
+          // Add hover-active class for styling (blue background)
+          row.classList.add('hover-active')
+          
+          // Play video
+          video.play().catch(e => console.log('Video play failed:', e))
+        })
+        
+        row.addEventListener('mouseleave', () => {
+          // Remove hover-active class
+          row.classList.remove('hover-active')
+          
+          // Pause and reset video
+          video.pause()
+          video.currentTime = 0
+        })
+      })
     }
-    
-    // Handle window resize to switch between modes
-    let currentMode = isMobile() ? 'mobile' : 'desktop'
-    let resizeTimeout
-    const handleResize = () => {
-      if (resizeTimeout) {
-        clearTimeout(resizeTimeout)
-      }
-      resizeTimeout = setTimeout(() => {
-        const newMode = isMobile() ? 'mobile' : 'desktop'
-        if (newMode !== currentMode) {
-          currentMode = newMode
-          // Reload page to properly reinitialize
-          location.reload()
-        }
-      }, 250)
-    }
-    
-    window.addEventListener('resize', handleResize)
 
     // SVG Divider scroll effect
     let lastScrollY = window.scrollY
