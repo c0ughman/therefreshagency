@@ -288,84 +288,128 @@ export default function Home() {
       { row: designerRow, video: designerVideo }
     ]
     
-    // Check if device is mobile/tablet
-    const isMobile = window.innerWidth <= 768
-    
-    if (isMobile) {
-      // Mobile: Keep scroll-based behavior
-      // Function to check if project center aligns with viewport center
-      const checkProjectAlignment = () => {
-        const viewportCenter = window.innerHeight / 2
-        
-        projectData.forEach(({ row, video }) => {
-          if (!row) return
-          
-          const rect = row.getBoundingClientRect()
-          const projectCenter = rect.top + (rect.height / 2)
-          
-          // Check if project center is close to viewport center (within 100px tolerance)
-          const isAligned = Math.abs(projectCenter - viewportCenter) < 100
-          
-          if (isAligned) {
-            // Add scroll-active class for styling
-            row.classList.add('scroll-active')
-            
-            // Play video if it exists
-            if (video) {
-              video.play().catch(e => console.log('Video play failed:', e))
-            }
-          } else {
-            // Remove scroll-active class
-            row.classList.remove('scroll-active')
-            
-            // Pause and reset video if it exists
-            if (video) {
-              video.pause()
-              video.currentTime = 0
-            }
-          }
-        })
+    // Detect if device is mobile/touch
+    const isMobile = () => {
+      return window.innerWidth <= 1024 || 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    }
+
+    // Function to activate project (play video and add active class)
+    const activateProject = (row, video) => {
+      if (!row) return
+      
+      // Add scroll-active class for styling
+      row.classList.add('scroll-active')
+      
+      // Play video if it exists
+      if (video) {
+        video.play().catch(e => console.log('Video play failed:', e))
       }
+    }
+
+    // Function to deactivate project (pause video and remove active class)
+    const deactivateProject = (row, video) => {
+      if (!row) return
       
-      // Throttled scroll handler for performance
-      let scrollTimeout
-      const handleProjectScroll = () => {
-        if (scrollTimeout) {
-          clearTimeout(scrollTimeout)
-        }
-        scrollTimeout = setTimeout(checkProjectAlignment, 10)
+      // Remove scroll-active class
+      row.classList.remove('scroll-active')
+      
+      // Pause and reset video if it exists
+      if (video) {
+        video.pause()
+        video.currentTime = 0
       }
+    }
+
+    // Function to check if project center aligns with viewport center (mobile only)
+    const checkProjectAlignment = () => {
+      if (!isMobile()) return // Skip on desktop
       
-      // Initial check
-      checkProjectAlignment()
+      const viewportCenter = window.innerHeight / 2
       
-      // Listen for scroll events
-      window.addEventListener('scroll', handleProjectScroll)
-      
-    } else {
-      // Desktop: Use hover-based behavior
       projectData.forEach(({ row, video }) => {
-        if (!row || !video) return
+        if (!row) return
         
-        // Add hover event listeners to the project row
-        row.addEventListener('mouseenter', () => {
-          // Add hover-active class for styling (blue background)
-          row.classList.add('hover-active')
-          
-          // Play video
-          video.play().catch(e => console.log('Video play failed:', e))
-        })
+        const rect = row.getBoundingClientRect()
+        const projectCenter = rect.top + (rect.height / 2)
         
-        row.addEventListener('mouseleave', () => {
-          // Remove hover-active class
-          row.classList.remove('hover-active')
-          
-          // Pause and reset video
-          video.pause()
-          video.currentTime = 0
-        })
+        // Check if project center is close to viewport center (within 100px tolerance)
+        const isAligned = Math.abs(projectCenter - viewportCenter) < 100
+        
+        if (isAligned) {
+          activateProject(row, video)
+        } else {
+          deactivateProject(row, video)
+        }
       })
     }
+
+    // Desktop hover handlers
+    const setupDesktopHover = () => {
+      if (isMobile()) return // Skip on mobile
+      
+      projectData.forEach(({ row, video }) => {
+        if (!row) return
+        
+        // Mouse enter handler
+        const handleMouseEnter = () => {
+          activateProject(row, video)
+        }
+        
+        // Mouse leave handler
+        const handleMouseLeave = () => {
+          deactivateProject(row, video)
+        }
+        
+        // Add event listeners
+        row.addEventListener('mouseenter', handleMouseEnter)
+        row.addEventListener('mouseleave', handleMouseLeave)
+        
+        // Store handlers for cleanup
+        row._hoverHandlers = { handleMouseEnter, handleMouseLeave }
+      })
+    }
+
+    // Throttled scroll handler for performance (mobile only)
+    let scrollTimeout
+    const handleProjectScroll = () => {
+      if (!isMobile()) return // Skip on desktop
+      
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout)
+      }
+      scrollTimeout = setTimeout(checkProjectAlignment, 10)
+    }
+    
+    // Handle window resize to switch between desktop and mobile behavior
+    const handleResize = () => {
+      // Clean up existing hover handlers
+      projectData.forEach(({ row }) => {
+        if (row && row._hoverHandlers) {
+          row.removeEventListener('mouseenter', row._hoverHandlers.handleMouseEnter)
+          row.removeEventListener('mouseleave', row._hoverHandlers.handleMouseLeave)
+          delete row._hoverHandlers
+        }
+      })
+      
+      // Reset all projects
+      projectData.forEach(({ row, video }) => {
+        deactivateProject(row, video)
+      })
+      
+      // Setup appropriate behavior
+      if (isMobile()) {
+        checkProjectAlignment() // Initial check for mobile
+      } else {
+        setupDesktopHover() // Setup hover for desktop
+      }
+    }
+    
+    // Initial setup
+    handleResize()
+    
+    // Listen for scroll events (mobile) and resize events
+    window.addEventListener('scroll', handleProjectScroll)
+    window.addEventListener('resize', handleResize)
 
     // SVG Divider scroll effect
     let lastScrollY = window.scrollY
