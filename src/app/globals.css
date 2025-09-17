@@ -281,17 +281,11 @@ nav a {
 
 /* Portrait mode for Designer Knit and Huella Real projects */
 .project-column.project-name img[alt*="Designer Knit"],
-.project-column.project-name video[alt*="Designer Knit"] {
+.project-column.project-name img[alt*="Huella Real"],
+.project-column.project-name video[alt*="Designer Knit"],
+.project-column.project-name video[alt*="Huella Real"] {
   width: 120px;
   height: 195px;
-  object-fit: cover;
-}
-
-/* Huella Real - proper 9:16 aspect ratio (540x960) */
-.project-column.project-name img[alt*="Huella Real"],
-.project-column.project-name video[alt*="Huella Real"] {
-  width: 108px;
-  height: 192px;
   object-fit: cover;
 }
 
@@ -402,19 +396,13 @@ nav a {
     object-fit: cover;
   }
   
-  /* Portrait mode for Designer Knit projects - tablet */
+  /* Portrait mode for Designer Knit and Huella Real projects - tablet */
   .project-column.project-name img[alt*="Designer Knit"],
-  .project-column.project-name video[alt*="Designer Knit"] {
+  .project-column.project-name img[alt*="Huella Real"],
+  .project-column.project-name video[alt*="Designer Knit"],
+  .project-column.project-name video[alt*="Huella Real"] {
     width: 95px;
     height: 155px;
-    object-fit: cover;
-  }
-  
-  /* Huella Real - proper 9:16 aspect ratio - tablet */
-  .project-column.project-name img[alt*="Huella Real"],
-  .project-column.project-name video[alt*="Huella Real"] {
-    width: 86px;
-    height: 153px;
     object-fit: cover;
   }
 }
@@ -505,18 +493,12 @@ nav a {
     border-radius: 12px;
   }
   
-  /* Portrait mode for Designer Knit projects - mobile (doubled) */
+  /* Portrait mode for Designer Knit and Huella Real projects - mobile (doubled) */
   .project-column.project-name img[alt*="Designer Knit"],
-  .project-column.project-name video[alt*="Designer Knit"] {
-    width: 170px;
-    height: 290px;
-    object-fit: cover;
-  }
-  
-  /* Huella Real - proper 9:16 aspect ratio - mobile */
   .project-column.project-name img[alt*="Huella Real"],
+  .project-column.project-name video[alt*="Designer Knit"],
   .project-column.project-name video[alt*="Huella Real"] {
-    width: 163px;
+    width: 170px;
     height: 290px;
     object-fit: cover;
   }
@@ -580,16 +562,10 @@ nav a {
   
   /* Portrait mode for very small screens */
   .project-column.project-name img[alt*="Designer Knit"],
-  .project-column.project-name video[alt*="Designer Knit"] {
-    width: 149px;
-    height: 254px;
-    max-width: calc(100vw - 30px);
-  }
-  
-  /* Huella Real - proper 9:16 aspect ratio - extra small mobile */
   .project-column.project-name img[alt*="Huella Real"],
+  .project-column.project-name video[alt*="Designer Knit"],
   .project-column.project-name video[alt*="Huella Real"] {
-    width: 143px;
+    width: 149px;
     height: 254px;
     max-width: calc(100vw - 30px);
   }
