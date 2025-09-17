@@ -89,6 +89,11 @@ coverage/
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-# Large image files (if needed in future)
+# Large media files (videos over 25MB)
+# Note: MP4 files have been compressed and are now allowed
+# *.mp4
+# public/*.mp4
+
+# Large image files
 *.mov
 *.avi
