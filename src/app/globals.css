@@ -100,13 +100,11 @@ body {
   }
   
   /* Exception for ZoomParallax component - allow proper scaling */
-  .zoom-parallax-wrapper,
-  .zoom-parallax-wrapper * {
+  .zoom-parallax-wrapper {
     max-width: none !important;
     overflow-x: visible !important;
   }
   
-  /* Ensure ZoomParallax container can handle viewport units properly */
   .zoom-parallax-wrapper .container,
   .zoom-parallax-wrapper .sticky,
   .zoom-parallax-wrapper .el {
@@ -114,17 +112,24 @@ body {
     overflow-x: visible !important;
   }
   
-  /* Specific fixes for review cards to prevent width issues */
+  /* Fix review cards width - allow proper sizing based on component styles */
   .zoom-parallax-wrapper .reviewContainer {
     max-width: none !important;
-    overflow-x: visible !important;
+    min-width: 12vw !important;
     width: max-content !important;
+    overflow-x: visible !important;
   }
   
   /* Allow proper scaling for review images */
   .zoom-parallax-wrapper .reviewImage {
     max-width: none !important;
     overflow-x: visible !important;
+  }
+  
+  /* Specific mobile overrides for review cards */
+  .zoom-parallax-wrapper .reviewContainer {
+    min-width: 20vw !important;
+    max-width: 77px !important;
   }
 }
 
