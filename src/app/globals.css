@@ -17,122 +17,6 @@ body {
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Comprehensive mobile horizontal scroll prevention */
-html {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-body {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-/* Prevent horizontal scrolling on all elements */
-* {
-  max-width: 100vw;
-  box-sizing: border-box;
-}
-
-/* Mobile-specific horizontal scroll lock */
-@media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
-    width: 100vw !important;
-  }
-  
-  /* Prevent any element from causing horizontal scroll */
-  * {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-  
-  /* Fix elements that use 100vw */
-  .mobile-menu-portal {
-    width: 100vw !important;
-    max-width: 100vw !important;
-  }
-  
-  .mission-graphic {
-    width: 100vw !important;
-    max-width: 100vw !important;
-  }
-  
-  /* Disable transforms that could cause horizontal overflow */
-  .project-column.arrow:hover svg,
-  .project-row.scroll-active .project-columns,
-  .interested-link:hover,
-  .interested-link:hover svg {
-    transform: none !important;
-  }
-  
-  /* Additional mobile fixes for horizontal scroll */
-  .sticky-header {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-  
-  .projects-container,
-  .projects-header,
-  .project-row,
-  .project-columns {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-  
-  .value-props,
-  .value-props-container,
-  .value-columns {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-  
-  .mission-section,
-  .mission-container {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-  
-  .footer {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-  
-  /* Exception for ZoomParallax component - allow proper scaling */
-  .zoom-parallax-wrapper {
-    max-width: none !important;
-    overflow-x: visible !important;
-  }
-  
-  .zoom-parallax-wrapper .container,
-  .zoom-parallax-wrapper .sticky,
-  .zoom-parallax-wrapper .el {
-    max-width: none !important;
-    overflow-x: visible !important;
-  }
-  
-  /* Fix review cards width - allow proper sizing based on component styles */
-  .zoom-parallax-wrapper .reviewContainer {
-    max-width: none !important;
-    min-width: 12vw !important;
-    width: max-content !important;
-    overflow-x: visible !important;
-  }
-  
-  /* Allow proper scaling for review images */
-  .zoom-parallax-wrapper .reviewImage {
-    max-width: none !important;
-    overflow-x: visible !important;
-  }
-  
-  /* Specific mobile overrides for review cards */
-  .zoom-parallax-wrapper .reviewContainer {
-    min-width: 20vw !important;
-    max-width: 77px !important;
-  }
-}
-
 /* Mobile Menu Global Styles */
 body.mobile-menu-open {
   overflow: hidden;
@@ -1674,9 +1558,15 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   bottom: 0;
 }
 
-/* Ensure page content is visible during animation - handled above */
+/* Ensure page content is visible during animation */
+body {
+  overflow-x: hidden;
+}
 
-/* Additional overflow prevention - handled above */
+/* Additional overflow prevention */
+* {
+  box-sizing: border-box;
+}
 
 /* Prevent any element from exceeding viewport width */
 .what-we-do,
