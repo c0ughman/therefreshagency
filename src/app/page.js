@@ -715,48 +715,39 @@ export default function Home() {
     const ctx = canvas.getContext('2d')
     let width, height
     let animationId
-    let isMobile = window.innerWidth <= 768
+    
+    // Mobile detection
+    const isMobile = window.innerWidth <= 768
     let animationCompleted = false
-    let finalPosition = null
+    let finalCanvasPosition = null
 
     function updateCanvasPosition() {
-      const buttonRect = button.getBoundingClientRect()
-      const buttonBottom = buttonRect.bottom
-      const desiredOffset = -window.innerHeight + buttonBottom + 270
-      
-      // On mobile, only update position during initial animation
-      // After animation completes, lock the position
-      if (isMobile && animationCompleted && finalPosition !== null) {
-        canvas.style.transform = `translateY(${finalPosition}px)`
+      // On mobile, only update position once after animation completes
+      if (isMobile && animationCompleted) {
         return
       }
       
+      const buttonRect = button.getBoundingClientRect()
+      const buttonBottom = buttonRect.bottom
+      const desiredOffset = -window.innerHeight + buttonBottom + 270
       canvas.style.transform = `translateY(${desiredOffset}px)`
       
-      // Store the final position for mobile after animation completes
-      // Add 50px offset to move canvas higher on mobile
-      if (isMobile && !animationCompleted) {
-        finalPosition = desiredOffset + 50
+      // Store final position for mobile after animation
+      if (isMobile && animationCompleted) {
+        finalCanvasPosition = desiredOffset
       }
     }
 
     function resizeCanvas() {
       width = canvas.width = window.innerWidth
       height = canvas.height = window.innerHeight
-      const wasMobile = isMobile
-      isMobile = window.innerWidth <= 768
       
-      // Reset animation state on resize to mobile
-      if (isMobile) {
-        animationCompleted = false
-        finalPosition = null
-        canvas.classList.remove('mobile-locked')
-      } else if (wasMobile && !isMobile) {
-        // Switching from mobile to desktop - remove mobile-locked class
-        canvas.classList.remove('mobile-locked')
+      // On mobile, maintain the final position after animation
+      if (isMobile && animationCompleted && finalCanvasPosition !== null) {
+        canvas.style.transform = `translateY(${finalCanvasPosition}px)`
+      } else {
+        updateCanvasPosition() // Update position on resize
       }
-      
-      updateCanvasPosition() // Update position on resize
     }
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
@@ -795,11 +786,16 @@ export default function Home() {
         const easeProgress = 1 - Math.pow(1 - progress, 3)
         currentWaveY = height * 0.2 + (targetWaveY - height * 0.2) * easeProgress
         
-        // Mark animation as completed on mobile when progress reaches 1
-        if (isMobile && progress >= 1 && !animationCompleted) {
+        // Mark animation as completed and set final position on mobile
+        if (progress >= 1 && !animationCompleted) {
           animationCompleted = true
-          // Add CSS class to disable transitions
-          canvas.classList.add('mobile-locked')
+          if (isMobile) {
+            // Set the final canvas position based on button location
+            const buttonRect = button.getBoundingClientRect()
+            const buttonBottom = buttonRect.bottom
+            finalCanvasPosition = -window.innerHeight + buttonBottom + 270
+            canvas.style.transform = `translateY(${finalCanvasPosition}px)`
+          }
         }
       }
 
@@ -824,21 +820,11 @@ export default function Home() {
       animationId = requestAnimationFrame(drawOcean)
     }
 
-    // Add scroll listener for canvas position updates (desktop only)
-    const handleCanvasScroll = () => {
-      // Only update position on desktop or mobile before animation completes
-      if (!isMobile || !animationCompleted) {
-        updateCanvasPosition()
-      }
-    }
-    
     document.addEventListener('mousemove', handleCanvasMouseMove)
-    window.addEventListener('scroll', handleCanvasScroll)
     drawOcean()
 
     return () => {
       document.removeEventListener('mousemove', handleCanvasMouseMove)
-      window.removeEventListener('scroll', handleCanvasScroll)
       window.removeEventListener('resize', resizeCanvas)
       if (animationId) {
         cancelAnimationFrame(animationId)
@@ -1016,8 +1002,7 @@ export default function Home() {
       <section className="pain-point-section">
         <div className="pain-point-container">
           <WordAnimation className="pain-point-text">
-          A well designed landing page can 4X your online sales and profit. We build them for you. Then show you exactly how to use them. 
-          How's that for ROI?
+          Quit wasting time on janky site builders. Quit running improvised Google ads. Let us handle the whole internet side of your business, from website to sale.
           </WordAnimation>
         </div>
       </section>
@@ -1179,7 +1164,8 @@ Limited to 3 clients per month for exceptional results.
       <section className="pain-point-section">
         <div className="pain-point-container">
           <WordAnimation className="pain-point-text">
-          Quit wasting time on janky site builders. Quit running useless Google ads. Let us handle the whole internet side of your business, from website to sale.
+          A well designed landing page can 4X your online sales and profit. We build them for you. Then show you exactly how to use them. 
+          How's that for ROI?
           </WordAnimation>
         </div>
       </section>
