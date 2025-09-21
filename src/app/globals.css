@@ -1387,8 +1387,6 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   position: relative;
   z-index: 1000;
   overflow: visible;
-  width: 100%;
-  height: auto;
 }
 
 .value-props-header {
@@ -1486,8 +1484,6 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   position: relative;
   z-index: 10;
   overflow: visible;
-  width: 100%;
-  height: auto;
 }
 
 
@@ -1496,12 +1492,8 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   padding: 40px 30px;
   border-radius: 24px;
   position: relative;
-  overflow: visible;
   transition: all 0.3s ease;
   z-index: 999999;
-  width: 100%;
-  height: auto;
-  min-height: auto;
 }
 
 .value-column h3,
@@ -1570,18 +1562,13 @@ body {
 
 /* Prevent any element from exceeding viewport width */
 .what-we-do,
+.value-props,
 .reviews-section,
 .projects-section,
 .mission-section,
 .footer {
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-.value-props {
-  max-width: 100vw;
-  overflow-x: visible;
-  overflow-y: visible;
 }
 
 .main, .value-props, .reviews-section, .zoom-parallax-wrapper, 
@@ -1610,6 +1597,36 @@ body {
 
 .value-props-grid.text-fade-in {
   transform: translateY(0);
+}
+
+/* Desktop overflow settings - allow value columns to overflow */
+@media (min-width: 769px) {
+  .value-props {
+    overflow: visible;
+  }
+  
+  .value-props-grid {
+    overflow: visible;
+  }
+  
+  .value-column {
+    overflow: visible;
+  }
+}
+
+/* Mobile overflow constraints - keep value columns contained */
+@media (max-width: 768px) {
+  .value-props {
+    overflow: hidden;
+  }
+  
+  .value-props-grid {
+    overflow: hidden;
+  }
+  
+  .value-column {
+    overflow: hidden;
+  }
 }
 
 /* Scroll Animation Effects */
