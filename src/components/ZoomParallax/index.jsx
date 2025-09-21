@@ -10,11 +10,11 @@ export default function Index() {
         offset: ['start start', 'end end']
     })
 
-    const scale4 = useTransform(scrollYProgress, [0, 0.6], [1.3, 2.2]);
-    const scale5 = useTransform(scrollYProgress, [0, 0.6], [1, 1.9]);
-    const scale6 = useTransform(scrollYProgress, [0, 0.6], [1, 2.8]);
-    const scale8 = useTransform(scrollYProgress, [0, 0.6], [1, 2.6]);
-    const scale9 = useTransform(scrollYProgress, [0, 0.6], [1, 3]);
+    const scale4 = useTransform(scrollYProgress, [0, 0.4], [1.17, 2.2]);
+    const scale5 = useTransform(scrollYProgress, [0, 0.4], [0.9, 1.9]);
+    const scale6 = useTransform(scrollYProgress, [0, 0.4], [0.9, 3.4]);
+    const scale8 = useTransform(scrollYProgress, [0, 0.4], [0.9, 2.6]);
+    const scale9 = useTransform(scrollYProgress, [0, 0.4], [0.9, 3]);
 
     const reviews = [
         {

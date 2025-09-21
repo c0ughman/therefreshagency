@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from 'react'
 import ZoomParallax from '../components/ZoomParallax/index'
 import WordAnimation from '../components/WordAnimation/index'
+import WordByWordAnimation from '../components/WordByWordAnimation/index'
 import TiltEffect from '../components/TiltEffect/index'
+import HamburgerMenu from '../components/HamburgerMenu/index'
 import Lenis from 'lenis'
 
 export default function Home() {
@@ -802,13 +804,14 @@ export default function Home() {
 
       <header>
         <div className="logo">The Refresh Agency.</div>
-        <nav>
+        <nav className="desktop-nav">
           <a href="#projects">Portfolio</a>
           <a href="#reviews">Reviews</a>
           <a href="#bento">Products</a>
           <a href="#mission">Mission</a>
           <a href="/contact">Talk to Us</a>
         </nav>
+        <HamburgerMenu className="mobile-nav hero" />
       </header>
 
       {/* Sticky header that appears on scroll */}
@@ -816,18 +819,21 @@ export default function Home() {
         <div className="logo">
           <img src="/wheel.png" alt="The Refresh Agency" className="sticky-wheel" ref={stickyWheelRef} />
         </div>
-        <nav>
+        <nav className="desktop-nav">
           <a href="#projects">Portfolio</a>
           <a href="#reviews">Reviews</a>
           <a href="#bento">Products</a>
           <a href="#mission">Mission</a>
           <a href="/contact">Talk to Us</a>
         </nav>
+        <HamburgerMenu className="mobile-nav" />
       </header>
 
       <div className="main">
         <div className="hero-container">
-          <h1 className="title-header">Beyond Websites,<br />Refreshing Experiences<br />That Convert</h1>
+          <WordByWordAnimation className="title-header">
+            Beyond Websites, Refreshing Experiences That Convert
+          </WordByWordAnimation>
           <div className="hero-content">
             <div className="hero-left">
               <p>Elevate your brand with a captivating website and then build a customer-generating machine behind it. All while relying on us for the heavy lifting.</p>
@@ -993,9 +999,8 @@ export default function Home() {
                 </div>
               </div>
               <a href="#" className="interested-link">
-                Interested
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
               <div className="wave-elements">
@@ -1016,9 +1021,8 @@ export default function Home() {
                   </div>
                 </div>
                 <a href="#" className="interested-link">
-                  Interested
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </a>
                 <div className="wave-elements">
@@ -1075,9 +1079,8 @@ export default function Home() {
                     </div>
                   </div>
                   <a href="#" className="interested-link">
-                    Interested
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </a>
                 </TiltEffect>

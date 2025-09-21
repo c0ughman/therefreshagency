@@ -20,9 +20,8 @@
                 min-width: 12vw;
                 min-height: 12vh;
                 width: max-content;
-                height: max-content;
+                height: auto;
                 max-width: 77px;
-                max-height: 30vh;
                 background: white;
                 border-radius: 24px;
                 padding: 15px;
@@ -38,19 +37,19 @@
                     min-width: 20vw;
                     min-height: 8vh;
                     max-width: 77px;
-                    max-height: 20vh;
                     border-radius: 16px;
                     padding: 8px;
-                    transform: scale(0.9);
+                    transform: scale(0.8);
                 }
                 
                 
                 .reviewContent{
-                    flex: 1;
+                    flex: none;
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;
+                    justify-content: flex-start;
                     min-width: 0; // Allows content to shrink
+                    overflow: visible;
                     
                     &.text-only {
                         width: 100%;
@@ -140,7 +139,7 @@
                     letter-spacing: 1px;
                     
                     @media (max-width: 768px) {
-                        font-size: 7px;
+                        font-size: 6px;
                         margin-bottom: 3px;
                         letter-spacing: 0.5px;
                     }
@@ -152,12 +151,14 @@
                     color: #333;
                     margin-bottom: 8px;
                     font-weight: 400;
-                    flex: 1;
+                    flex: none;
                     word-wrap: break-word;
                     overflow-wrap: break-word;
+                    overflow: visible;
+                    white-space: normal;
                     
                     @media (max-width: 768px) {
-                        font-size: 8px;
+                        font-size: 7px;
                         line-height: 1.1;
                         margin-bottom: 4px;
                     }
@@ -174,7 +175,7 @@
                         font-weight: 400;
                         
                         @media (max-width: 768px) {
-                            font-size: 7px;
+                            font-size: 6px;
                         }
                     }
                     
@@ -184,8 +185,18 @@
                         font-weight: 400;
                         
                         @media (max-width: 768px) {
-                            font-size: 6px;
+                            font-size: 5px;
                         }
+                    }
+                }
+            }
+            &:nth-of-type(1){
+                .reviewContainer{
+                    @media (max-width: 768px) {
+                        transform: scale(1.04); // 30% bigger than 0.8 (0.8 * 1.3 = 1.04)
+                        min-width: 26vw; // 30% bigger than 20vw
+                        min-height: 10.4vh; // 30% bigger than 8vh
+                        max-width: 100px; // 30% bigger than 77px
                     }
                 }
             }
@@ -193,14 +204,15 @@
                 .reviewContainer{
                     top: -27vh;
                     left: 10vw;
+                    transform: translateY(-50px);
                     min-width: 20vw;
                     min-height: 18vh;
                     padding: 0; // Remove padding
                     flex-direction: column;
                     
                     @media (max-width: 768px) {
-                        top: -20vh;
-                        left: 15vw;
+                        top: -15vh;
+                        left: 20vw;
                         min-width: 35vw;
                         min-height: 12vh;
                         max-width: 200px;
@@ -258,8 +270,8 @@
                     flex-direction: column;
                     
                     @media (max-width: 768px) {
-                        top: -12vh;
-                        left: -30vw;
+                        top: -8vh;
+                        left: -35vw;
                         min-width: 30vw;
                         min-height: 15vh;
                         max-width: 200px;
@@ -311,7 +323,8 @@
                     transform-origin: left center; // Make it expand more to the right
                     
                     @media (max-width: 768px) {
-                        left: 30vw;
+                        top: -5vh;
+                        left: 35vw;
                         min-width: 35vw;
                         min-height: 14vh;
                         max-width: 200px;
@@ -385,8 +398,8 @@
                     flex-direction: row;
                     
                     @media (max-width: 768px) {
-                        top: 28vh;
-                        left: 15vw;
+                        top: 20vh;
+                        left: 20vw;
                         min-width: 28vw;
                         min-height: 10vh;
                         max-width: 200px;
@@ -433,8 +446,8 @@
                     flex-direction: column;
                     
                     @media (max-width: 768px) {
-                        top: 28vh;
-                        left: -30vw;
+                        top: 20vh;
+                        left: -35vw;
                         min-width: 35vw;
                         min-height: 12vh;
                         max-width: 200px;
@@ -486,15 +499,15 @@
                 .reviewContainer{
                     top: 27vh;
                     left: 30vw;
-                    min-width: 12vw;
+                    min-width: 15.6vw;
                     min-height: 12vh;
                     padding: 15px;
                     flex-direction: row;
                     
                     @media (max-width: 768px) {
-                        top: 23vh;
-                        left: 25vw;
-                        min-width: 25vw;
+                        top: 15vh;
+                        left: 30vw;
+                        min-width: 32.5vw;
                         min-height: 8vh;
                         max-width: 200px;
                         padding: 8px;

@@ -1,0 +1,48 @@
+.titleHeader {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  color: white;
+  text-align: left;
+  margin: 0 auto 40px auto;
+  position: relative;
+  z-index: 2;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  display: block;
+}
+
+.word {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.word.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .titleHeader {
+    font-size: 48px;
+    margin-bottom: 30px;
+    max-width: calc(100% - 100px);
+    display: block; /* Override flex for mobile */
+  }
+  
+  .line {
+    display: inline; /* Make lines inline on mobile */
+  }
+  
+  .line:not(:last-child)::after {
+    content: ' '; /* Add space between lines on mobile */
+  }
+}
