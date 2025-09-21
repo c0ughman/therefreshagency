@@ -715,17 +715,47 @@ export default function Home() {
     const ctx = canvas.getContext('2d')
     let width, height
     let animationId
+    let isMobile = window.innerWidth <= 768
+    let animationCompleted = false
+    let finalPosition = null
 
     function updateCanvasPosition() {
       const buttonRect = button.getBoundingClientRect()
       const buttonBottom = buttonRect.bottom
       const desiredOffset = -window.innerHeight + buttonBottom + 270
+      
+      // On mobile, only update position during initial animation
+      // After animation completes, lock the position
+      if (isMobile && animationCompleted && finalPosition !== null) {
+        canvas.style.transform = `translateY(${finalPosition}px)`
+        return
+      }
+      
       canvas.style.transform = `translateY(${desiredOffset}px)`
+      
+      // Store the final position for mobile after animation completes
+      // Add 50px offset to move canvas higher on mobile
+      if (isMobile && !animationCompleted) {
+        finalPosition = desiredOffset + 50
+      }
     }
 
     function resizeCanvas() {
       width = canvas.width = window.innerWidth
       height = canvas.height = window.innerHeight
+      const wasMobile = isMobile
+      isMobile = window.innerWidth <= 768
+      
+      // Reset animation state on resize to mobile
+      if (isMobile) {
+        animationCompleted = false
+        finalPosition = null
+        canvas.classList.remove('mobile-locked')
+      } else if (wasMobile && !isMobile) {
+        // Switching from mobile to desktop - remove mobile-locked class
+        canvas.classList.remove('mobile-locked')
+      }
+      
       updateCanvasPosition() // Update position on resize
     }
     resizeCanvas()
@@ -764,6 +794,13 @@ export default function Home() {
         // Smooth easing function
         const easeProgress = 1 - Math.pow(1 - progress, 3)
         currentWaveY = height * 0.2 + (targetWaveY - height * 0.2) * easeProgress
+        
+        // Mark animation as completed on mobile when progress reaches 1
+        if (isMobile && progress >= 1 && !animationCompleted) {
+          animationCompleted = true
+          // Add CSS class to disable transitions
+          canvas.classList.add('mobile-locked')
+        }
       }
 
       // Draw the wave shape
@@ -787,11 +824,21 @@ export default function Home() {
       animationId = requestAnimationFrame(drawOcean)
     }
 
+    // Add scroll listener for canvas position updates (desktop only)
+    const handleCanvasScroll = () => {
+      // Only update position on desktop or mobile before animation completes
+      if (!isMobile || !animationCompleted) {
+        updateCanvasPosition()
+      }
+    }
+    
     document.addEventListener('mousemove', handleCanvasMouseMove)
+    window.addEventListener('scroll', handleCanvasScroll)
     drawOcean()
 
     return () => {
       document.removeEventListener('mousemove', handleCanvasMouseMove)
+      window.removeEventListener('scroll', handleCanvasScroll)
       window.removeEventListener('resize', resizeCanvas)
       if (animationId) {
         cancelAnimationFrame(animationId)

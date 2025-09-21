@@ -1534,6 +1534,11 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   transition: transform 0.3s ease-out;
 }
 
+/* Disable transition when animation is locked on mobile */
+#ocean-canvas.mobile-locked {
+  transition: none;
+}
+
 /* Page Load Animation Styles */
 .ocean-canvas {
   position: fixed;
