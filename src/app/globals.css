@@ -17,6 +17,89 @@ body {
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Comprehensive mobile horizontal scroll prevention */
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Prevent horizontal scrolling on all elements */
+* {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Mobile-specific horizontal scroll lock */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
+  }
+  
+  /* Prevent any element from causing horizontal scroll */
+  * {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Fix elements that use 100vw */
+  .mobile-menu-portal {
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  
+  .mission-graphic {
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  
+  /* Disable transforms that could cause horizontal overflow */
+  .project-column.arrow:hover svg,
+  .project-row.scroll-active .project-columns,
+  .interested-link:hover,
+  .interested-link:hover svg {
+    transform: none !important;
+  }
+  
+  /* Additional mobile fixes for horizontal scroll */
+  .sticky-header {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  
+  .projects-container,
+  .projects-header,
+  .project-row,
+  .project-columns {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  
+  .value-props,
+  .value-props-container,
+  .value-columns {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  
+  .mission-section,
+  .mission-container {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  
+  .footer {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+}
+
 /* Mobile Menu Global Styles */
 body.mobile-menu-open {
   overflow: hidden;
@@ -1558,15 +1641,9 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   bottom: 0;
 }
 
-/* Ensure page content is visible during animation */
-body {
-  overflow-x: hidden;
-}
+/* Ensure page content is visible during animation - handled above */
 
-/* Additional overflow prevention */
-* {
-  box-sizing: border-box;
-}
+/* Additional overflow prevention - handled above */
 
 /* Prevent any element from exceeding viewport width */
 .what-we-do,
