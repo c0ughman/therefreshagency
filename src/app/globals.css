@@ -4286,3 +4286,46 @@ a[href="#"][data-service="contact"],
     font-size: 0.85rem;
   }
 }
+
+/* Language Switcher Styles */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.lang-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.lang-link:hover {
+  background-color: #f0f0f0;
+}
+
+.lang-link.active {
+  background-color: #0000ff;
+  color: white;
+}
+
+.lang-separator {
+  color: #ccc;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    margin-left: 10px;
+  }
+  
+  .lang-link {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+}
