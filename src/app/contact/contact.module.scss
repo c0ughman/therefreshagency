@@ -1,5 +1,176 @@
 /* Contact Page Specific Styles */
 
+/* Combined Numbers & Reviews Section */
+.contact-combined-section {
+  background: white;
+  padding: 100px 0;
+  position: relative;
+}
+
+.combined-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.combined-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  line-height: 1.2;
+  font-family: 'Inter', sans-serif;
+}
+
+.combined-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.combined-number {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.combined-number:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.combined-number-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0000ff;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.combined-number-label {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.combined-description {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  text-align: left;
+}
+
+.combined-description p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.combined-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.combined-benefits li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.combined-benefits li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #0000ff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.combined-reviews {
+  margin-top: 80px;
+}
+
+.combined-reviews-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 50px;
+  font-family: 'Inter', sans-serif;
+}
+
+.combined-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.combined-testimonial-item {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: left;
+}
+
+.combined-testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.combined-testimonial-stars {
+  font-size: 1.2rem;
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
+.combined-testimonial-text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.combined-testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.combined-testimonial-author strong {
+  font-size: 1rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.combined-testimonial-author span {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 400;
+}
+
 
 /* Call-to-Action Section */
 .contactCtaSection {
@@ -333,6 +504,28 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .combined-title {
+    font-size: 2.5rem;
+  }
+  
+  .combined-numbers {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .combined-benefits {
+    grid-template-columns: 1fr;
+  }
+  
+  .combined-testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .combined-reviews-title {
+    font-size: 2rem;
+  }
+  
   .contactCtaTitle {
     font-size: 2.5rem;
   }
@@ -377,6 +570,26 @@
 }
 
 @media (max-width: 480px) {
+  .combined-container {
+    padding: 0 20px;
+  }
+  
+  .combined-title {
+    font-size: 2rem;
+  }
+  
+  .combined-reviews-title {
+    font-size: 1.8rem;
+  }
+  
+  .combined-number-value {
+    font-size: 1.5rem;
+  }
+  
+  .combined-description p {
+    font-size: 1.1rem;
+  }
+  
   .contactCtaContainer,
   .contactComparisonContainer,
   .contactTimelineContainer,

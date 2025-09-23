@@ -930,7 +930,7 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   right: -60px;
   width: 180px;
   height: 180px;
-  background: radial-gradient(circle, rgba(255, 255, 0, 0.4) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.4) 0%, transparent 60%);
   border-radius: 50%;
   pointer-events: none;
   filter: blur(40px);
@@ -940,7 +940,6 @@ body.mobile-menu-open .sticky-header .mobile-nav {
 .stars {
   color: #FFD700;
   font-size: 18px;
-  margin-bottom: 20px;
   letter-spacing: 2px;
 }
 
@@ -1073,35 +1072,35 @@ body.mobile-menu-open .sticky-header .mobile-nav {
     bottom: 0;
     background: 
       /* Stronger gradients at the tippy top */
-      radial-gradient(circle 135px at 50% 2%, rgba(255, 255, 0, 0.45) 0%, transparent 60%),
+      radial-gradient(circle 135px at 50% 2%, rgba(255, 200, 0, 0.45) 0%, transparent 60%),
       radial-gradient(circle 135px at 30% 3%, rgba(255, 0, 0, 0.4) 0%, transparent 60%),
-      radial-gradient(circle 135px at 70% 4%, rgba(255, 255, 0, 0.4) 0%, transparent 60%),
+      radial-gradient(circle 135px at 70% 4%, rgba(255, 200, 0, 0.4) 0%, transparent 60%),
       radial-gradient(circle 135px at 10% 6%, rgba(255, 0, 0, 0.35) 0%, transparent 60%),
-      radial-gradient(circle 135px at 90% 5%, rgba(255, 255, 0, 0.35) 0%, transparent 60%),
+      radial-gradient(circle 135px at 90% 5%, rgba(255, 200, 0, 0.35) 0%, transparent 60%),
       
       /* Yellow gradient at top of "Forget the Technical Stuff" div */
-      radial-gradient(circle 135px at 20% 8%, rgba(255, 255, 0, 0.35) 0%, transparent 60%),
+      radial-gradient(circle 135px at 20% 8%, rgba(255, 200, 0, 0.35) 0%, transparent 60%),
       
       /* Additional gradients on top of first column */
       radial-gradient(circle 135px at 25% 12%, rgba(255, 0, 0, 0.25) 0%, transparent 60%),
-      radial-gradient(circle 135px at 15% 18%, rgba(255, 255, 0, 0.25) 0%, transparent 60%),
+      radial-gradient(circle 135px at 15% 18%, rgba(255, 200, 0, 0.25) 0%, transparent 60%),
       radial-gradient(circle 135px at 35% 15%, rgba(255, 0, 0, 0.3) 0%, transparent 60%),
       
       /* Center gradients (softer) */
-      radial-gradient(circle 135px at 45% 25%, rgba(255, 255, 0, 0.2) 0%, transparent 60%),
+      radial-gradient(circle 135px at 45% 25%, rgba(255, 200, 0, 0.2) 0%, transparent 60%),
       radial-gradient(circle 135px at 55% 35%, rgba(255, 0, 0, 0.2) 0%, transparent 60%),
-      radial-gradient(circle 135px at 50% 45%, rgba(255, 255, 0, 0.15) 0%, transparent 60%),
+      radial-gradient(circle 135px at 50% 45%, rgba(255, 200, 0, 0.15) 0%, transparent 60%),
       
       /* Gradients under third column (less harsh) */
       radial-gradient(circle 135px at 75% 20%, rgba(255, 0, 0, 0.3) 0%, transparent 60%),
-      radial-gradient(circle 135px at 85% 30%, rgba(255, 255, 0, 0.25) 0%, transparent 60%),
+      radial-gradient(circle 135px at 85% 30%, rgba(255, 200, 0, 0.25) 0%, transparent 60%),
       radial-gradient(circle 135px at 70% 40%, rgba(255, 0, 0, 0.25) 0%, transparent 60%),
       
       /* Additional scattered gradients for depth (softer) */
-      radial-gradient(circle 135px at 10% 60%, rgba(255, 255, 0, 0.25) 0%, transparent 60%),
+      radial-gradient(circle 135px at 10% 60%, rgba(255, 200, 0, 0.25) 0%, transparent 60%),
       radial-gradient(circle 135px at 30% 65%, rgba(255, 0, 0, 0.25) 0%, transparent 60%),
       radial-gradient(circle 135px at 70% 65%, rgba(255, 0, 0, 0.25) 0%, transparent 60%),
-      radial-gradient(circle 135px at 90% 60%, rgba(255, 255, 0, 0.25) 0%, transparent 60%),
+      radial-gradient(circle 135px at 90% 60%, rgba(255, 200, 0, 0.25) 0%, transparent 60%),
       
       /* Bottom layer gradients (softer) */
       radial-gradient(circle 135px at 20% 85%, rgba(255, 0, 0, 0.3) 0%, transparent 60%),
@@ -1330,7 +1329,7 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   position: absolute;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(255, 255, 0, 0.4) 0%, rgba(255, 165, 0, 0.3) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.4) 0%, rgba(255, 165, 0, 0.3) 50%, transparent 70%);
   border-radius: 50%;
   opacity: 0;
   left: var(--gradient-x, 50%);
@@ -1441,7 +1440,7 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   right: -90px;
   width: 270px;
   height: 270px;
-  background: radial-gradient(circle, rgba(255, 255, 0, 0.4) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.4) 0%, transparent 60%);
 }
 
 .value-gradient-3 {
@@ -1457,7 +1456,7 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   right: calc(33.333% - 90px);
   width: 270px;
   height: 270px;
-  background: radial-gradient(circle, rgba(255, 255, 0, 0.6) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.6) 0%, transparent 60%);
 }
 
 .value-gradient-5 {
@@ -1473,7 +1472,7 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   right: calc(66.666% - 90px);
   width: 270px;
   height: 270px;
-  background: radial-gradient(circle, rgba(255, 255, 0, 0.6) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.6) 0%, transparent 60%);
 }
 
 /* Content layer */
@@ -2254,7 +2253,7 @@ body {
   position: absolute;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(255, 255, 0, 0.4) 0%, rgba(255, 165, 0, 0.3) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.4) 0%, rgba(255, 165, 0, 0.3) 50%, transparent 70%);
   border-radius: 50%;
   opacity: 0;
   left: var(--gradient-x, 50%);
@@ -2957,7 +2956,7 @@ a[href="#"][data-service="contact"],
   position: absolute;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(255, 255, 0, 0.4) 0%, rgba(255, 165, 0, 0.3) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.4) 0%, rgba(255, 165, 0, 0.3) 50%, transparent 70%);
   border-radius: 50%;
   opacity: 0;
   left: var(--gradient-x, 50%);
@@ -3326,7 +3325,7 @@ a[href="#"][data-service="contact"],
   position: absolute;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(255, 255, 0, 0.4) 0%, rgba(255, 165, 0, 0.3) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.4) 0%, rgba(255, 165, 0, 0.3) 50%, transparent 70%);
   border-radius: 50%;
   opacity: 0;
   left: var(--gradient-x, 50%);
@@ -3651,7 +3650,7 @@ a[href="#"][data-service="contact"],
   position: absolute;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(255, 255, 0, 0.4) 0%, rgba(255, 165, 0, 0.3) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.4) 0%, rgba(255, 165, 0, 0.3) 50%, transparent 70%);
   border-radius: 50%;
   opacity: 0;
   left: var(--gradient-x, 50%);
@@ -3686,6 +3685,7 @@ a[href="#"][data-service="contact"],
   color: white;
   position: relative;
   overflow-x: hidden;
+  overflow-y: visible;
 }
 
 .contact-header {
@@ -3725,28 +3725,43 @@ a[href="#"][data-service="contact"],
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 40px 20px 20px;
+  padding: 20px 10px 30px;
   text-align: center;
-  height: 500px;
-  gap: 12px;
+  min-height: 500px;
+  gap: 10px;
   max-width: 780px;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
 .stars-pill {
   background: rgba(255, 255, 255, 0.15);
-  border-radius: 50px;
-  padding: 4px 17px;
+  border-radius: 30px;
+  padding: 4px 8px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
 }
 
 .stars {
   color: #FFD700;
-  font-size: 10px;
-  letter-spacing: 2px;
+  font-size: 12px;
+  display: flex;
+  vertical-align: baseline;
+}
+
+.stars-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 11px;
+  font-weight: 500;
+  display: flex;
+  align-items: baseline;
+  vertical-align: baseline;
 }
 
 .contact-title {
@@ -3779,17 +3794,17 @@ a[href="#"][data-service="contact"],
 
 .contact-button {
   display: inline-block;
-  padding: 16px 42px;
+  padding: 12px 32px;
   background: rgba(255, 255, 255, 0.15);
-  border-radius: 32px;
-  font-size: 18px;
+  border-radius: 28px;
+  font-size: 16px;
   color: white;
   border: none;
   cursor: pointer;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), inset 0 0 40px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), inset 0 0 40px rgba(255, 165, 0, 0.6), 0 0 30px rgba(255, 200, 0, 0.4);
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
@@ -3803,7 +3818,7 @@ a[href="#"][data-service="contact"],
   left: -50%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.8), rgba(255, 50, 50, 1), rgba(255, 0, 0, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 120, 0, 0.3), rgba(255, 140, 0, 0.4), rgba(255, 160, 0, 0.5), rgba(255, 180, 0, 0.6), rgba(255, 200, 0, 0.7), rgba(255, 220, 0, 0.75), rgba(255, 200, 0, 0.8), rgba(255, 200, 0, 0.8), rgba(255, 160, 0, 0.85), rgba(255, 120, 0, 0.9), rgba(255, 80, 0, 0.95), rgba(255, 40, 0, 1), rgba(255, 0, 0, 0.95), rgba(255, 20, 20, 1), rgba(255, 40, 40, 1), rgba(255, 60, 60, 1), rgba(255, 40, 40, 1), rgba(255, 20, 20, 1), rgba(255, 0, 0, 0.9), rgba(255, 40, 0, 0.8), rgba(255, 80, 0, 0.7), rgba(255, 120, 0, 0.6), rgba(255, 160, 0, 0.5), rgba(255, 180, 0, 0.4), rgba(255, 200, 0, 0.3), transparent);
   border-radius: 32px;
   opacity: 0.9;
   animation: gradientCycle 3s ease-in-out infinite;
@@ -3811,50 +3826,43 @@ a[href="#"][data-service="contact"],
 }
 
 
-.contact-button:hover {
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 0 40px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 0.9);
-  transform: translateY(-2px);
-}
-
-.contact-button:hover::before {
-  opacity: 1;
-}
 
 
-.value-pills {
+
+/* Contact Pills */
+.contact-pills {
   display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 15px;
-  max-width: 500px;
+  gap: 12px;
+  margin-top: 5px;
 }
 
-.value-pill {
+.contact-pill {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 50px;
-  padding: 7px 14px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 0.9rem;
+  font-weight: 500;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 
-.value-pill:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-.value-pill span {
-  font-size: 12px;
-  font-weight: 500;
-  color: white;
-  letter-spacing: 0.5px;
+@media (max-width: 768px) {
+  .contact-pills {
+    gap: 8px;
+    margin-top: 5px;
+  }
+  
+  .contact-pill {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
 }
 
 .waves-divider {
-  position: absolute;
+  position: relative;
   width: 110vw;
   height: 130px;
   overflow: hidden;
@@ -3863,8 +3871,9 @@ a[href="#"][data-service="contact"],
   padding: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 99999;
+  z-index: 10;
   margin-left: calc(-50vw + 50%);
+  margin-top: -30px;
 }
 
 .waves-divider img {
@@ -3872,6 +3881,13 @@ a[href="#"][data-service="contact"],
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Desktop-specific adjustments */
+@media (min-width: 769px) {
+  .waves-divider {
+    margin-top: -70px; /* -30px base + -40px additional = -70px total */
+  }
 }
 
 /* Testimonials Section */
@@ -4009,10 +4025,11 @@ a[href="#"][data-service="contact"],
   }
   
   .contact-main {
-    padding: 60px 20px 40px;
-    gap: 18px;
+    padding: 20px 10px 30px;
+    gap: 10px;
     max-width: 100%;
-    padding-top: 60px;
+    padding-top: 0px;
+    min-height: 400px;
   }
   
   .contact-title {
@@ -4024,19 +4041,6 @@ a[href="#"][data-service="contact"],
     max-width: 100%;
   }
   
-  .value-pills {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    max-width: 100%;
-  }
-  
-  .value-pill {
-    width: 100%;
-    max-width: 200px;
-    text-align: center;
-    padding: 8px 16px;
-  }
   
   .contact-testimonials {
     padding: 80px 30px;

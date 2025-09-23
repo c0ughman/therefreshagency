@@ -1,5 +1,517 @@
 /* Contact Page Additional Sections */
 
+/* Auto-rotating Image Slideshow */
+.imageSlideshow {
+  background: white;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Desktop-specific adjustments */
+@media (min-width: 769px) {
+  .imageSlideshow {
+    padding: -10px 0; /* 30px base - 40px additional = -10px total */
+  }
+}
+
+.slideshowContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.slideshowRow {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  animation: slideLeft 60s linear infinite;
+  width: 200%; /* Double width to accommodate duplicated content */
+}
+
+.slideshowRow:nth-child(2) {
+  animation: slideRight 60s linear infinite;
+  animation-delay: -30s;
+}
+
+.slideshowImage {
+  flex-shrink: 0;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+
+.slideshowImage img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.portraitImage {
+  background: #f8f9fa;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Pause animation on hover */
+
+/* Combined Numbers & Reviews Section */
+.contactCombinedSection {
+  background: white;
+  padding: 30px 0 100px 0;
+  position: relative;
+}
+
+.combinedContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.combinedTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 90px;
+  line-height: 1.2;
+  font-family: 'Inter', sans-serif;
+}
+
+.combinedNumbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 50px 0 110px 0;
+  position: relative;
+  overflow: visible;
+}
+
+/* Gradient elements behind cards */
+.combinedNumbersGradient1 {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.6) 0%, rgba(255, 0, 0, 0.375) 20%, rgba(255, 0, 0, 0.225) 40%, rgba(255, 0, 0, 0.075) 70%, transparent 90%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.combinedNumbersGradient2 {
+  position: absolute;
+  bottom: -40px;
+  left: 10px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.6) 0%, rgba(255, 200, 0, 0.375) 20%, rgba(255, 200, 0, 0.225) 40%, rgba(255, 200, 0, 0.075) 70%, transparent 90%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.combinedNumbersGradient3 {
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 90px);
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.6) 0%, rgba(255, 0, 0, 0.375) 20%, rgba(255, 0, 0, 0.225) 40%, rgba(255, 0, 0, 0.075) 70%, transparent 90%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.combinedNumbersGradient4 {
+  position: absolute;
+  bottom: -40px;
+  left: calc(50% - 90px);
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.6) 0%, rgba(255, 200, 0, 0.375) 20%, rgba(255, 200, 0, 0.225) 40%, rgba(255, 200, 0, 0.075) 70%, transparent 90%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.combinedNumbersGradient5 {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.6) 0%, rgba(255, 0, 0, 0.375) 20%, rgba(255, 0, 0, 0.225) 40%, rgba(255, 0, 0, 0.075) 70%, transparent 90%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.combinedNumbersGradient6 {
+  position: absolute;
+  bottom: -40px;
+  right: 10px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.6) 0%, rgba(255, 200, 0, 0.375) 20%, rgba(255, 200, 0, 0.225) 40%, rgba(255, 200, 0, 0.075) 70%, transparent 90%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.combinedNumber {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+
+.combinedNumberValue {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.combinedNumberLabel {
+  font-size: 0.9rem;
+  color: #000;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.combinedDescription {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  text-align: left;
+}
+
+.combinedDescription p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.combinedBenefits {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.combinedBenefits li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.combinedBenefits li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #0000ff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.combinedReviews {
+  margin-top: 80px;
+}
+
+.combinedReviewsTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 50px;
+  font-family: 'Inter', sans-serif;
+}
+
+.combinedTestimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.combinedTestimonialItem {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: left;
+}
+
+
+.combinedTestimonialStars {
+  font-size: 1.2rem;
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
+.combinedTestimonialText {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.combinedTestimonialAuthor {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.combinedTestimonialAuthor strong {
+  font-size: 1rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.combinedTestimonialAuthor span {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Combined Numbers & Reviews Section */
+.contact-combined-section {
+  background: white;
+  padding: 100px 0;
+  position: relative;
+}
+
+.combined-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.combined-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  line-height: 1.2;
+  font-family: 'Inter', sans-serif;
+}
+
+.combined-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.combined-number {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.combined-number:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.combined-number-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0000ff;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.combined-number-label {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.combined-description {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  text-align: left;
+}
+
+.combined-description p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.combined-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.combined-benefits li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.combined-benefits li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #0000ff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.combined-reviews {
+  margin-top: 80px;
+}
+
+.combined-reviews-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 50px;
+  font-family: 'Inter', sans-serif;
+}
+
+.combined-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.combined-testimonial-item {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: left;
+}
+
+.combined-testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.combined-testimonial-stars {
+  font-size: 1.2rem;
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
+.combined-testimonial-text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.combined-testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.combined-testimonial-author strong {
+  font-size: 1rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.combined-testimonial-author span {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 400;
+}
+
+/* CTA Curved SVGs */
+.ctaTopCurve {
+  width: 100%;
+  height: 60px;
+  background: white;
+  position: relative;
+}
+
+.ctaTopCurve svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ctaBottomCurve {
+  width: 100%;
+  height: 60px;
+  background: #0000ff;
+  position: relative;
+}
+
+.ctaBottomCurve svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 /* Call-to-Action Section */
 .contactCtaSection {
   background: #0000ff;
@@ -29,120 +541,15 @@
 .contactCtaSubtitle {
   font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
 }
 
-.contactCtaBenefits {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.contactCtaBenefits li {
-  position: relative;
-  padding-left: 0;
-  margin-left: 100px;
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  color: white;
-  line-height: 1.5;
-  font-weight: 500;
-}
 
-.contactCtaBenefits li::before {
-  content: '•';
-  position: absolute;
-  left: -20px;
-  color: #ffd700;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.contactCtaUrgency {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 25px 30px;
-  border-radius: 16px;
-  margin-bottom: 35px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.contactCtaUrgency::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-  animation: urgencyGlow 3s ease-in-out infinite;
-}
-
-@keyframes urgencyGlow {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-.contactCtaUrgencyText {
-  font-size: 1.1rem;
-  color: white;
-  margin: 0;
-  text-align: center;
-  line-height: 1.5;
-  position: relative;
-  z-index: 1;
-}
-
-.contactCtaUrgencyText strong {
-  color: #ffd700;
-  font-weight: 700;
-}
-
-.contactCtaGuarantee {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
-  padding: 15px 25px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contactCtaGuaranteeIcon {
-  color: #4ade80;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.contactCtaGuaranteeText {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
-}
 
 @keyframes gradientCycle {
   0% {
@@ -165,7 +572,7 @@
   letter-spacing: 1px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), inset 0 0 40px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), inset 0 0 40px rgba(255, 165, 0, 0.6), 0 0 30px rgba(255, 200, 0, 0.4);
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
@@ -179,7 +586,7 @@
   left: -50%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.8), rgba(255, 50, 50, 1), rgba(255, 0, 0, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 120, 0, 0.3), rgba(255, 140, 0, 0.4), rgba(255, 160, 0, 0.5), rgba(255, 180, 0, 0.6), rgba(255, 200, 0, 0.7), rgba(255, 220, 0, 0.75), rgba(255, 200, 0, 0.8), rgba(255, 200, 0, 0.8), rgba(255, 160, 0, 0.85), rgba(255, 120, 0, 0.9), rgba(255, 80, 0, 0.95), rgba(255, 40, 0, 1), rgba(255, 0, 0, 0.95), rgba(255, 20, 20, 1), rgba(255, 40, 40, 1), rgba(255, 60, 60, 1), rgba(255, 40, 40, 1), rgba(255, 20, 20, 1), rgba(255, 0, 0, 0.9), rgba(255, 40, 0, 0.8), rgba(255, 80, 0, 0.7), rgba(255, 120, 0, 0.6), rgba(255, 160, 0, 0.5), rgba(255, 180, 0, 0.4), rgba(255, 200, 0, 0.3), transparent);
   border-radius: 32px;
   opacity: 0.9;
   animation: gradientCycle 3s ease-in-out infinite;
@@ -187,19 +594,30 @@
 }
 
 
-.contactCtaButton:hover {
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 0 40px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 0.9);
-  transform: translateY(-2px);
-}
-
-.contactCtaButton:hover::before {
-  opacity: 1;
-}
 
 
 .contactCtaButton:active {
   transform: translateY(0);
+}
+
+/* Trust Pills under CTA Button */
+.contactCtaPills {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.contactCtaPill {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
 /* Subtle CTA Links */
@@ -226,10 +644,6 @@
   position: relative;
 }
 
-.subtleCtaAnchor:hover {
-  color: #000080;
-  text-decoration: underline;
-}
 
 .subtleCtaAnchor::after {
   content: '';
@@ -242,9 +656,6 @@
   transition: width 0.3s ease;
 }
 
-.subtleCtaAnchor:hover::after {
-  width: 100%;
-}
 
 /* Urgency Section */
 .contactUrgency {
@@ -286,67 +697,45 @@
   position: relative;
   padding: 20px;
   overflow: visible;
-
-  /* Left column gradients */
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: -120px;
-    left: -120px;
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(255, 0, 0, 0.2) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    filter: blur(50px);
-    z-index: 1;
-  }
-
-  /* Center column gradients */
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -120px;
-    right: -120px;
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(255, 255, 0, 0.2) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    filter: blur(50px);
-    z-index: 1;
-  }
-}
-
-/* Additional gradients */
-.urgencyStats {
-  &::before {
-    box-shadow: 
-      350px -50px 300px rgba(255, 0, 0, 0.1),
-      -350px -50px 300px rgba(255, 255, 0, 0.1);
-  }
-  
-  &::after {
-    box-shadow: 
-      -350px -50px 300px rgba(255, 0, 0, 0.1),
-      350px -50px 300px rgba(255, 255, 0, 0.1);
-  }
 }
 
 .urgencyStat {
   text-align: center;
   padding: 30px 20px;
-  background: #f8f9fa;
+  background: white;
   border-radius: 16px;
   transition: all 0.3s ease;
   position: relative;
   z-index: 2;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.3) 0%, transparent 60%);
+    border-radius: 50%;
+    filter: blur(20px);
+    z-index: -1;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 200, 0, 0.3) 0%, transparent 60%);
+    border-radius: 50%;
+    filter: blur(20px);
+    z-index: -1;
+  }
 }
 
-.urgencyStat:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
 
 .urgencyStatNumber {
   display: block;
@@ -360,7 +749,7 @@
 
 .urgencyStatLabel {
   font-size: 1rem;
-  color: #666;
+  color: #000;
   line-height: 1.4;
   position: relative;
   z-index: 1;
@@ -369,177 +758,313 @@
 /* Comparison Section */
 .contactComparisonSection {
   background: white;
-  padding: 50px 0;
+  padding: 40px 0;
   position: relative;
+  overflow: visible;
 }
 
 .contactComparisonContainer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Gradient elements behind comparison table - sides and corners only */
+.contactComparisonGradient1 {
+  position: absolute;
+  top: 20px;
+  left: -30px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.32) 0%, rgba(255, 0, 0, 0.2) 25%, rgba(255, 0, 0, 0.12) 50%, rgba(255, 0, 0, 0.04) 75%, transparent 90%);
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.contactComparisonGradient2 {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.4) 0%, rgba(255, 200, 0, 0.24) 30%, rgba(255, 200, 0, 0.12) 60%, rgba(255, 200, 0, 0.04) 80%, transparent 95%);
+  border-radius: 50%;
+  filter: blur(45px);
+  z-index: 0;
+}
+
+.contactComparisonGradient5 {
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  width: 190px;
+  height: 190px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.28) 0%, rgba(255, 0, 0, 0.176) 30%, rgba(255, 0, 0, 0.096) 55%, rgba(255, 0, 0, 0.032) 80%, transparent 95%);
+  border-radius: 50%;
+  filter: blur(65px);
+  z-index: 0;
+}
+
+.contactComparisonGradient6 {
+  position: absolute;
+  bottom: 20px;
+  right: 35px;
+  width: 170px;
+  height: 170px;
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.36) 0%, rgba(255, 200, 0, 0.224) 25%, rgba(255, 200, 0, 0.12) 50%, rgba(255, 200, 0, 0.048) 75%, transparent 90%);
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 0;
+}
+
+/* Additional gradients on top for overlapping effects - corners only */
+.contactComparisonGradient7 {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.32) 0%, rgba(255, 200, 0, 0.2) 25%, rgba(255, 200, 0, 0.12) 50%, rgba(255, 200, 0, 0.04) 75%, transparent 90%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.contactComparisonGradient8 {
+  position: absolute;
+  top: -30px;
+  right: 10px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.24) 0%, rgba(255, 0, 0, 0.16) 20%, rgba(255, 0, 0, 0.08) 45%, rgba(255, 0, 0, 0.024) 70%, transparent 90%);
+  border-radius: 50%;
+  filter: blur(55px);
+  z-index: 0;
 }
 
 .contactComparisonTitle {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #000;
+  color: #1d1d1f;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   font-family: 'Inter', sans-serif;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  position: relative;
+  z-index: 1;
 }
 
-.contactComparisonGrid {
+/* Table Structure */
+.contactComparisonTable {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.contactComparisonTableHeader {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.contactComparisonColumn {
+.contactComparisonTableHeaderCell:first-child {
+  background: #f5f5f7;
+}
+
+.contactComparisonTableHeaderCell {
+  padding: 20px 32px;
+  text-align: center;
   position: relative;
 }
 
-.contactComparisonColumn h3 {
-  font-size: 1.5rem;
+.contactComparisonTableHeaderCell:first-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.contactComparisonTableHeaderCell h3 {
+  font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 30px;
+  margin: 0;
   font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+  line-height: 1.2;
 }
 
-.contactComparisonColumn.left h3 {
-  color: #ff4444;
+.contactComparisonTableRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+  position: relative;
 }
 
-.contactComparisonColumn.right h3 {
-  color: #0000ff;
+.contactComparisonTableRow:last-child {
+  border-bottom: none;
+}
+
+.contactComparisonTableCell {
+  padding: 16px 32px;
+  position: relative;
+}
+
+.contactComparisonTableCell:first-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.contactComparisonTableCell.left {
+  background: #f5f5f7;
+}
+
+.contactComparisonTableCell.right {
+  background: white;
 }
 
 .contactComparisonItem {
-  padding: 20px 0;
-  border-bottom: 1px solid #f0f0f0;
   display: flex;
   align-items: flex-start;
   gap: 16px;
 }
 
-.contactComparisonItem:last-child {
-  border-bottom: none;
-}
-
 .contactComparisonIcon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .contactComparisonIcon.left {
-  color: #ff4444;
+  color: #e74c3c;
+  background: white;
+  border: 1px solid rgba(231, 76, 60, 0.2);
 }
 
 .contactComparisonIcon.right {
   color: #0000ff;
+  background: white;
+  border: 1px solid rgba(0, 0, 255, 0.2);
 }
 
 .contactComparisonText {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #424245;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  flex: 1;
 }
 
-/* Timeline Section */
-.contactTimelineSection {
-  background: white;
-  padding: 50px 0;
+/* How It Works Section */
+.contactHowItWorksSection {
+  background: #f5f5f5;
+  padding: 40px 0;
   position: relative;
 }
 
-.contactTimelineContainer {
-  max-width: 1200px;
+.contactHowItWorksContainer {
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 40px;
+  text-align: center;
 }
 
-.contactTimelineTitle {
+.contactHowItWorksTitle {
   font-size: 2.5rem;
   font-weight: 700;
   color: #000;
-  text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 24px;
   font-family: 'Inter', sans-serif;
+  line-height: 1.2;
 }
 
-.contactTimelineWrapper {
-  position: relative;
-  padding: 40px 0;
-}
-
-.contactTimelineLine {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  height: 2px;
-  background: linear-gradient(to right, #0000ff, rgba(0, 0, 255, 0.3));
-  z-index: 1;
-}
-
-.contactTimelineItems {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.contactTimelineItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  flex: 1;
-  max-width: 200px;
-}
-
-.contactTimelineNumber {
-  width: 50px;
-  height: 50px;
-  background: #0000ff;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
+.contactHowItWorksSubtitle {
   font-size: 1.2rem;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 3;
-}
-
-.contactTimelineContent {
-  text-align: center;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 12px;
-  position: relative;
-}
-
-.contactTimelineStep {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 8px;
-  font-family: 'Inter', sans-serif;
-}
-
-.contactTimelineDescription {
-  font-size: 0.9rem;
   color: #666;
-  line-height: 1.5;
+  margin-bottom: 50px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.contactHowItWorksSteps {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.contactHowItWorksStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 0px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+
+.contactHowItWorksNumber {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0000ff;
+  flex-shrink: 0;
+  width: 32px;
+  text-align: center;
+}
+
+.contactHowItWorksText {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.contactHowItWorksText strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.contactHowItWorksCta {
+  text-align: center;
+}
+
+.contactHowItWorksLink {
+  color: #0000ff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+
+.contactHowItWorksLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: #0000ff;
+  transition: width 0.3s ease;
+}
+
 
 /* Footer CTA Section */
 .contactFooterCta {
@@ -576,6 +1101,7 @@
   flex-direction: column;
   align-items: flex-start;
   flex-shrink: 0;
+  order: 1; /* Show brand section first on desktop */
 }
 
 .contactFooterCtaLogo {
@@ -619,6 +1145,7 @@
 .contactFooterCtaMain {
   flex: 1;
   text-align: left;
+  order: 2; /* Show main content second on desktop */
 }
 
 .contactFooterCtaTitle {
@@ -656,10 +1183,13 @@
 }
 
 .contactFooterCtaPills {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-bottom: 40px;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 400px;
+  margin-left: auto;
 }
 
 .contactFooterCtaPill {
@@ -679,11 +1209,19 @@
   letter-spacing: 0.5px;
 }
 
+.contactFooterCtaPillFullWidth {
+  grid-column: 2;
+  text-align: right;
+  justify-self: end;
+  width: fit-content;
+}
+
 .contactFooterCtaButtons {
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
   margin-bottom: 30px;
+  justify-content: flex-end;
 }
 
 .contactFooterCtaButton {
@@ -698,7 +1236,7 @@
   letter-spacing: 1px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), inset 0 0 40px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), inset 0 0 40px rgba(255, 165, 0, 0.6), 0 0 30px rgba(255, 200, 0, 0.4);
   overflow: hidden;
   transition: all 0.3s ease;
   position: relative;
@@ -712,7 +1250,7 @@
   left: -50%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.8), rgba(255, 50, 50, 1), rgba(255, 0, 0, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 120, 0, 0.3), rgba(255, 140, 0, 0.4), rgba(255, 160, 0, 0.5), rgba(255, 180, 0, 0.6), rgba(255, 200, 0, 0.7), rgba(255, 220, 0, 0.75), rgba(255, 200, 0, 0.8), rgba(255, 200, 0, 0.8), rgba(255, 160, 0, 0.85), rgba(255, 120, 0, 0.9), rgba(255, 80, 0, 0.95), rgba(255, 40, 0, 1), rgba(255, 0, 0, 0.95), rgba(255, 20, 20, 1), rgba(255, 40, 40, 1), rgba(255, 60, 60, 1), rgba(255, 40, 40, 1), rgba(255, 20, 20, 1), rgba(255, 0, 0, 0.9), rgba(255, 40, 0, 0.8), rgba(255, 80, 0, 0.7), rgba(255, 120, 0, 0.6), rgba(255, 160, 0, 0.5), rgba(255, 180, 0, 0.4), rgba(255, 200, 0, 0.3), transparent);
   border-radius: 32px;
   opacity: 0.9;
   animation: gradientCycle 3s ease-in-out infinite;
@@ -720,15 +1258,6 @@
 }
 
 
-.contactFooterCtaButton:hover {
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 0 40px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 0.9);
-  transform: translateY(-2px);
-}
-
-.contactFooterCtaButton:hover::before {
-  opacity: 1;
-}
 
 
 .contactFooterCtaButton:active {
@@ -742,9 +1271,175 @@
   font-weight: 500;
 }
 
+/* Funnel Pricing Section */
+.contactFooterCtaFunnel {
+  background: transparent;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 30px 0;
+  backdrop-filter: blur(10px);
+}
+
+.contactFooterCtaFunnelTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.contactFooterCtaFunnelServices {
+  margin-bottom: 30px;
+}
+
+.contactFooterCtaFunnelService {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px 0;
+}
+
+.contactFooterCtaFunnelServiceContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.contactFooterCtaFunnelServiceTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.contactFooterCtaFunnelServiceDescription {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.contactFooterCtaFunnelServicePrice {
+  font-size: 1.87rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  min-width: 80px;
+  text-align: right;
+}
+
+.contactFooterCtaFunnelServicePrice::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.8);
+  transform: rotate(-15deg);
+  transform-origin: center;
+}
+
+.contactFooterCtaFunnelTotal {
+  background: linear-gradient(135deg, #0000ff 0%, #4d4dff 100%);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.contactFooterCtaFunnelTotalRow,
+.contactFooterCtaFunnelDiscountRow,
+.contactFooterCtaFunnelSavingsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactFooterCtaFunnelSavingsRow {
+  margin-bottom: 0;
+  justify-content: flex-end;
+}
+
+.contactFooterCtaFunnelTotalLabel,
+.contactFooterCtaFunnelDiscountLabel,
+.contactFooterCtaFunnelSavingsLabel {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+}
+
+.contactFooterCtaFunnelTotalPrice {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+}
+
+.contactFooterCtaFunnelTotalPrice::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  transform: rotate(-15deg);
+  transform-origin: center;
+}
+
+.contactFooterCtaFunnelDiscountPrice {
+  font-size: 6rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.contactFooterCtaFunnelBasePriceNote {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contactFooterCtaFunnelBasePriceText {
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+}
+
+.contactFooterCtaFunnelSavingsPrice {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contactFooterCtaFunnelCopy {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 25px 0;
+  text-align: right;
+  max-width: 500px;
+  margin-left: auto;
+}
+
+.contactFooterCtaFunnelCopy strong {
+  color: white;
+  font-weight: 700;
+}
+
+.contactFooterCtaFunnelCopy em {
+  color: #ffd700;
+  font-style: italic;
+  font-weight: 600;
+}
+
 .contactFooterCtaCopyright {
   width: 100%;
-  margin-top: 80px;
+  margin-top: 20px;
   padding: 30px 40px 20px 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
@@ -764,28 +1459,232 @@
 }
 
 
+/* Mobile Alternating Comparison List */
+.contactComparisonMobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .contactComparisonTable {
+    display: none;
+  }
+  
+  .contactComparisonMobile {
+    display: block;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+  }
+  
+  .contactComparisonMobileItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+    background: white;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .contactComparisonMobileItem:nth-child(even) {
+    background: #f8f8f8;
+    
+    .contactComparisonText {
+      color: #666;
+    }
+  }
+  
+  .contactComparisonMobileItem .contactComparisonIcon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .contactComparisonMobileItem .contactComparisonIcon.left {
+    color: #666;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .contactComparisonMobileItem .contactComparisonIcon.right {
+    color: #0000ff;
+    background: white;
+    border: 1px solid rgba(0, 0, 255, 0.2);
+  }
+  
+  .contactComparisonMobileItem .contactComparisonText {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .contactCtaPills {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .contactCtaPill {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+.combinedTestimonialImage {
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+}
+
+.combinedTestimonialText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+  font-style: normal;
+  
+  strong {
+    font-weight: 700;
+    color: #000;
+  }
+}
+
+.designerknitItem .combinedTestimonialImage img {
+  height: 250px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.briefedItem .combinedTestimonialImage {
+  display: flex;
+  gap: 8px;
+  box-shadow: none; /* Remove container shadow */
+  
+  img {
+    flex: 1;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add individual shadow to each image */
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+  .slideshowContainer {
+    padding: 0 20px;
+  }
+  
+  .slideshowImage {
+    width: 250px;
+    height: 160px;
+  }
+  
+  .slideshowRow {
+    gap: 20px;
+  }
+  
+  .combinedTitle {
+    font-size: 2.5rem;
+  }
+  
+  .combinedNumbers {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .combinedBenefits {
+    grid-template-columns: 1fr;
+  }
+  
+  .combinedTestimonialsGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .combinedReviewsTitle {
+    font-size: 2rem;
+  }
+  
   .contactCtaTitle {
     font-size: 2.5rem;
   }
   
-  .contactComparisonGrid {
-    grid-template-columns: 1fr;
-    gap: 60px;
+  .contactComparisonContainer {
+    padding: 0 30px;
   }
   
-  .contactTimelineItems {
-    flex-direction: column;
-    gap: 40px;
+  .contactComparisonTitle {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
   }
   
-  .contactTimelineLine {
-    display: none;
+  .contactComparisonTableHeaderCell {
+    padding: 16px 24px;
   }
   
-  .contactTimelineItem {
-    max-width: 100%;
+  .contactComparisonTableHeaderCell h3 {
+    font-size: 1.1rem;
+  }
+  
+  .contactComparisonTableCell {
+    padding: 12px 24px;
+  }
+  
+  
+  .contactHowItWorksContainer {
+    padding: 0 20px;
+  }
+  
+  .contactHowItWorksTitle {
+    font-size: 2rem;
+  }
+  
+  .contactHowItWorksSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .contactHowItWorksStep {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .contactHowItWorksNumber {
+    font-size: 1.3rem;
+    width: 28px;
+  }
+  
+  .contactHowItWorksText {
+    font-size: 0.95rem;
   }
   
   .contactFooterCtaContent {
@@ -796,10 +1695,17 @@
   
   .contactFooterCtaBrand {
     align-items: center;
+    order: 2; /* Show brand section after main content on mobile */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .contactFooterCtaMain {
     text-align: center;
+    order: 1; /* Show main content first on mobile */
   }
   
   .contactFooterCtaTitle {
@@ -821,9 +1727,38 @@
 }
 
 @media (max-width: 480px) {
+  .slideshowImage {
+    width: 200px;
+    height: 130px;
+  }
+  
+  .slideshowRow {
+    gap: 15px;
+  }
+  
+  .combinedContainer {
+    padding: 0 20px;
+  }
+  
+  .combinedTitle {
+    font-size: 2rem;
+  }
+  
+  .combinedReviewsTitle {
+    font-size: 1.8rem;
+  }
+  
+  .combinedNumberValue {
+    font-size: 1.5rem;
+  }
+  
+  .combinedDescription p {
+    font-size: 1.1rem;
+  }
+  
   .contactCtaContainer,
   .contactComparisonContainer,
-  .contactTimelineContainer,
+  .contactHowItWorksContainer,
   .contactFooterCtaContent {
     padding: 0 20px;
   }
@@ -833,13 +1768,66 @@
     font-size: 2rem;
   }
   
+  .contactComparisonContainer {
+    padding: 0 20px;
+  }
+  
   .contactComparisonTitle,
-  .contactTimelineTitle {
-    font-size: 2rem;
+  .contactHowItWorksTitle {
+    font-size: 1.5rem;
+  }
+  
+  .contactHowItWorksSubtitle {
+    font-size: 1rem;
+  }
+  
+  .contactHowItWorksStep {
+    padding: 14px;
+    gap: 10px;
+  }
+  
+  .contactHowItWorksNumber {
+    font-size: 1.2rem;
+    width: 24px;
+  }
+  
+  .contactHowItWorksText {
+    font-size: 0.9rem;
+  }
+  
+  .contactComparisonTableHeaderCell {
+    padding: 12px 16px;
+  }
+  
+  .contactComparisonTableHeaderCell h3 {
+    font-size: 1rem;
+  }
+  
+  .contactComparisonTableCell {
+    padding: 10px 16px;
+  }
+  
+  .contactComparisonItem {
+    gap: 12px;
+  }
+  
+  .contactComparisonIcon {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+  
+  .contactComparisonText {
+    font-size: 0.85rem;
   }
   
   .contactFooterCtaBrand h3 {
     font-size: 24px;
+    text-align: center;
+  }
+  
+  .contactFooterCtaBrandText {
+    text-align: center;
   }
   
   .contactFooterCtaLogo {
@@ -848,11 +1836,111 @@
   }
   
   .contactFooterCtaPills {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 100%;
+    margin-left: 0;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .contactFooterCtaPillFullWidth {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+  
+  .contactFooterCtaPill:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
   }
   
   .contactFooterCtaPill {
     width: fit-content;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    text-align: center;
+    justify-self: center;
+  }
+  
+  /* Mobile Funnel Styles */
+  .contactFooterCtaFunnel {
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .contactFooterCtaFunnelTitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .contactFooterCtaFunnelService {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 0;
+  }
+  
+  .contactFooterCtaFunnelServiceContent {
+    margin-right: 0;
+    margin-bottom: 0;
+    flex: 1;
+  }
+  
+  .contactFooterCtaFunnelServiceTitle {
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+  
+  .contactFooterCtaFunnelServiceDescription {
+    font-size: 0.85rem;
+  }
+  
+  .contactFooterCtaFunnelServicePrice {
+    font-size: 1.6rem;
+    text-align: right;
+    min-width: auto;
+    flex-shrink: 0;
+  }
+  
+  .contactFooterCtaFunnelTotal {
+    padding: 20px;
+  }
+  
+  .contactFooterCtaFunnelTotalRow,
+  .contactFooterCtaFunnelDiscountRow {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .contactFooterCtaFunnelSavingsRow {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    margin-bottom: 12px;
+  }
+  
+  .contactFooterCtaFunnelTotalPrice,
+  .contactFooterCtaFunnelDiscountPrice,
+  .contactFooterCtaFunnelSavingsPrice {
+    font-size: 1.1rem;
+  }
+  
+  .contactFooterCtaFunnelDiscountPrice {
+    font-size: 4.2rem;
+  }
+  
+  .contactFooterCtaFunnelSavingsPrice {
+    font-size: 0.67rem;
+    padding: 3px 8px;
+  }
+  
+  .contactFooterCtaFunnelCopy {
+    font-size: 0.9rem;
+    margin: 20px 0;
+    text-align: right;
+    max-width: 100%;
   }
 }
