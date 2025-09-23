@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import ZoomParallax from '../components/ZoomParallax/index'
-import WordAnimation from '../components/WordAnimation/index'
-import WordByWordAnimation from '../components/WordByWordAnimation/index'
-import TiltEffect from '../components/TiltEffect/index'
+import ZoomParallax from '../../components/ZoomParallax/index'
+import WordAnimation from '../../components/WordAnimation/index'
+import WordByWordAnimation from '../../components/WordByWordAnimation/index'
+import TiltEffect from '../../components/TiltEffect/index'
 import LanguageSwitcher from '../../components/LanguageSwitcher/index'
 import Lenis from 'lenis'
 
