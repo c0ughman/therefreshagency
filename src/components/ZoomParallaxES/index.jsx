@@ -1,4 +1,4 @@
-import styles from './styles.module.scss';
+import styles from '../ZoomParallax/styles.module.scss';
 import { useScroll, useTransform, motion} from 'framer-motion';
 import { useRef } from 'react';
 
@@ -18,7 +18,7 @@ export default function Index() {
 
     const reviews = [
         {
-            text: "Our conversion rate skyrocketed to 20% in just days. Combined with the dozens of new leads every week, this has become an <strong>important pillar of our business</strong>.",
+            text: "Nuestra tasa de conversión se disparó al 20% en cuestión de días. Eso combinado con las decenas de nuevos leads cada semana se ha convertido en un <strong>pilar importante de nuestro negocio</strong>.",
             author: "Edecoration",
             position: "Google Ads",
             scale: scale4,
@@ -26,7 +26,7 @@ export default function Index() {
             orientation: "landscape-bottom"
         },
         {
-            text: "The website is an <strong>elegant, media-packed, beautiful</strong> piece of design. Like a digital showroom that goes beyond anything else in the market. Great job... Keep it up!",
+            text: "El sitio web tiene un diseño <strong>elegante, llamativo y lleno de fotos y videos</strong>. Como un showroom digital que va más allá de cualquier otra cosa en el mercado. Gran trabajo... ¡Sigan así!",
             author: "Edecoration",
             position: "Website",
             scale: scale5,
@@ -34,7 +34,7 @@ export default function Index() {
             orientation: "landscape-bottom"
         },
         {
-            text: "The Refresh Agency has created a <strong>dramatic increase in SEO presence</strong> for the law firm from basically zero to a multitude of clicks and impressions every week. The website was built with SEO in mind from the beginning. And it shows.",
+            text: "The Refresh Agency ha creado un <strong>aumento pronunciado en la presencia SEO</strong> del bufete de abogados desde básicamente cero hasta una multitud de clics e impresiones cada semana. El sitio web fue construido con SEO en mente desde el principio. Y se nota.",
             author: "RG Business & Property Law Firm",
             position: "SEO",
             scale: scale6,
@@ -42,7 +42,7 @@ export default function Index() {
             orientation: "landscape"
         },
         {
-            text: "The Refresh Agency really helped us create a unique brand identity and apply it seamlessly to our <strong>website and product</strong>. The result is a beautiful, well-thought-out interface for our future customers to enjoy.",
+            text: "The Refresh Agency realmente nos ayudó a crear una identidad de marca única y aplicarla perfectamente a nuestro <strong>sitio web y producto</strong>. El resultado es una interfaz hermosa y bien pensada para que nuestros futuros clientes disfruten.",
             author: "Briefed",
             position: "Website and product",
             scale: scale6,
@@ -54,7 +54,7 @@ export default function Index() {
             orientation: "portrait"
         },
         {
-            text: "Without us having to micromanage everything, the agency <strong>works independently</strong>, bringing real results to our business and building amazing things really fast. A true strategic partner.",
+            text: "Sin que tengamos que microgestionar todo, la agencia <strong>trabaja de forma independiente</strong>, trayendo resultados reales a nuestro negocio y construyendo cosas increíbles muy rápido. Un verdadero socio estratégico.",
             author: "RG Business & Property Law Firm",
             position: "Website + Marketing",
             scale: scale5,
@@ -62,7 +62,7 @@ export default function Index() {
             orientation: "text-only"
         },
         {
-            text: "Working with The Refresh Agency is a <strong>true collaborative process</strong>. Exploring the visual language of our product and how it materializes in every aspect of the user interface has been an extraordinary experience.",
+            text: "Trabajar con The Refresh Agency es un <strong>verdadero proceso de colaboración</strong>. Explorar el lenguaje visual de nuestro producto y la forma en que se materializa en cada aspecto de la interfaz de usuario ha sido una experiencia extraordinaria.",
             author: "Gather",
             position: "UI/UX",
             scale: scale8,
@@ -70,7 +70,7 @@ export default function Index() {
             orientation: "landscape-bottom"
         },
         {
-            text: "The e-commerce store design that The Refresh Agency created for us is <strong>different from anything we've ever seen in the market</strong>. It's beautiful, striking, and undeniably attractive.",
+            text: "El diseño de la tienda e-commerce que The Refresh Agency creó para nosotros es <strong>diferente a cualquier cosa que hayamos visto en el mercado</strong>. Es hermoso, llamativo e innegablemente atractivo.",
             author: "DesignerKnit",
             position: "Ecommerce Design",
             scale: scale9,

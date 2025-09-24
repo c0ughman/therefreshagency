@@ -12,7 +12,7 @@ export default function Contact() {
     if (wheel) {
       const animateWheel = () => {
         const currentRotation = parseFloat(wheel.style.transform.replace(/[^\d.]/g, '')) || 0
-        wheel.style.transform = `rotate(${currentRotation + 1}deg)`
+        wheel.style.transform = `rotate(${currentRotation + 0.5}deg)`
         requestAnimationFrame(animateWheel)
       }
       animateWheel()
@@ -88,9 +88,9 @@ export default function Contact() {
 
         {/* Pills under button */}
         <div className="contact-pills">
-          <div className="contact-pill">Apoyo</div>
           <div className="contact-pill">Diseño Único</div>
           <div className="contact-pill">4x Más Clientes</div>
+          <div className="contact-pill">Apoyo</div>
         </div>
       </main>
 
@@ -102,135 +102,131 @@ export default function Contact() {
       {/* Auto-rotating Image Slideshow */}
       <section className={styles.imageSlideshow}>
         <div className={styles.slideshowContainer}>
-          {/* Row 1: Scrambled screenshots with infinite scroll */}
+          {/* Row 1: All new screenshots with infinite scroll */}
           <div className={styles.slideshowRow}>
-            {/* First set of images */}
+            {/* Briefed Project Screenshots */}
+            {/* Scrambled images for visual variety */}
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_00percent.jpg" alt="Gather Project - Start" />
+              <img src="/video-screenshots/briefed/briefed_00percent.jpg" alt="Briefed Project - Start" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_00percent.jpg" alt="Huella Real - Start" className={styles.portraitImage} />
+              <img src="/video-screenshots/designer-knit/designer-knit_1.png" alt="Designer Knit Screenshot 1" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_50percent.jpg" alt="E-Decoration Project - Mid" />
+              <img src="/video-screenshots/edecoration/edecoration_2.png" alt="Edecoration Screenshot 2" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_10percent.jpg" alt="RG Law Firm - Early" />
+              <img src="/video-screenshots/briefed/briefed_3.png" alt="Briefed Project Screenshot 3" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_80percent.jpg" alt="Briefed Project - Late" />
+              <img src="/video-screenshots/gather/gather_1.png" alt="Gather Screenshot 1" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_10percent.jpg" alt="Designer Knit - Early" className={styles.portraitImage} />
+              <img src="/video-screenshots/designer-knit/designer-knit_2.png" alt="Designer Knit Screenshot 2" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_80percent.jpg" alt="Gather Project - Late" />
+              <img src="/video-screenshots/edecoration/edecoration_1.png" alt="Edecoration Screenshot 1" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_00percent.jpg" alt="E-Decoration Project - Start" />
+              <img src="/video-screenshots/huella-real/huella-real_1.png" alt="Huella Real Screenshot 1" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_80percent.jpg" alt="RG Law Firm - Late" />
+              <img src="/video-screenshots/briefed/briefed_1.png" alt="Briefed Project Screenshot 1" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_10percent.jpg" alt="Briefed Project - Early" />
-            </div>
-            {/* Duplicated set for seamless loop */}
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_00percent.jpg" alt="Gather Project - Start" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.png" alt="RG Law Firm Screenshot 1" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_00percent.jpg" alt="Huella Real - Start" className={styles.portraitImage} />
+              <img src="/video-screenshots/edecoration/edecoration_3.png" alt="Edecoration Screenshot 3" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_50percent.jpg" alt="E-Decoration Project - Mid" />
+              <img src="/video-screenshots/designer-knit/designer-knit_3.png" alt="Designer Knit Screenshot 3" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_10percent.jpg" alt="RG Law Firm - Early" />
+              <img src="/video-screenshots/briefed/briefed_2.png" alt="Briefed Project Screenshot 2" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_80percent.jpg" alt="Briefed Project - Late" />
+              <img src="/video-screenshots/gather/gather_2.png" alt="Gather Screenshot 2" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_10percent.jpg" alt="Designer Knit - Early" className={styles.portraitImage} />
+              <img src="/video-screenshots/briefed/briefed_4.png" alt="Briefed Project Screenshot 4" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_80percent.jpg" alt="Gather Project - Late" />
+              <img src="/video-screenshots/edecoration/edecoration_4.png" alt="Edecoration Screenshot 4" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_00percent.jpg" alt="E-Decoration Project - Start" />
+              <img src="/video-screenshots/huella-real/huella-real_2.png" alt="Huella Real Screenshot 2" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_80percent.jpg" alt="RG Law Firm - Late" />
+              <img src="/video-screenshots/briefed/briefed_5.png" alt="Briefed Project Screenshot 5" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_10percent.jpg" alt="Briefed Project - Early" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.png" alt="RG Law Firm Screenshot 2" />
+            </div>
+            <div className={styles.slideshowImage}>
+              <img src="/video-screenshots/gather/gather_3.png" alt="Gather Screenshot 3" />
             </div>
           </div>
           
-          {/* Row 2: Scrambled screenshots with infinite scroll */}
+          {/* Row 2: Remaining screenshots with infinite scroll */}
           <div className={styles.slideshowRow}>
-            {/* First set of images */}
+            {/* Scrambled images for visual variety - Row 2 */}
+            <div className={styles.slideshowImage}>
+              <img src="/video-screenshots/gather/gather_00percent.jpg" alt="Gather Project - Start" />
+            </div>
+            <div className={styles.slideshowImage}>
+              <img src="/video-screenshots/edecoration/edecoration_5.png" alt="Edecoration Screenshot 5" />
+            </div>
             <div className={styles.slideshowImage}>
               <img src="/video-screenshots/huella-real/huella-real_10percent.jpg" alt="Huella Real - Early" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_10percent.jpg" alt="E-Decoration Project - Early" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.jpg" alt="RG Law Firm - Start" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_50percent.jpg" alt="Briefed Project - Mid" />
+              <img src="/video-screenshots/gather/gather_4.png" alt="Gather Screenshot 4" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_80percent.jpg" alt="Designer Knit - Late" className={styles.portraitImage} />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_50percent.jpg" alt="Gather Project - Mid" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_50percent.jpg" alt="RG Law Firm - Mid" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_80percent.jpg" alt="E-Decoration Project - Late" />
+              <img src="/video-screenshots/edecoration/edecoration_6.png" alt="Edecoration Screenshot 6" />
             </div>
             <div className={styles.slideshowImage}>
               <img src="/video-screenshots/huella-real/huella-real_80percent.jpg" alt="Huella Real - Late" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_00percent.jpg" alt="Briefed Project - Start" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.png" alt="RG Law Firm Screenshot 3" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.jpg" alt="RG Law Firm - Start" />
-            </div>
-            {/* Duplicated set for seamless loop */}
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_10percent.jpg" alt="Huella Real - Early" className={styles.portraitImage} />
+              <img src="/video-screenshots/edecoration/edecoration_4.png" alt="Edecoration Screenshot 4" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_10percent.jpg" alt="E-Decoration Project - Early" />
+              <img src="/video-screenshots/gather/gather_1.png" alt="Gather Screenshot 1" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_50percent.jpg" alt="Briefed Project - Mid" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.png" alt="RG Law Firm Screenshot 1" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_80percent.jpg" alt="Designer Knit - Late" className={styles.portraitImage} />
+              <img src="/video-screenshots/huella-real/huella-real_1.png" alt="Huella Real Screenshot 1" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_50percent.jpg" alt="Gather Project - Mid" />
+              <img src="/video-screenshots/gather/gather_2.png" alt="Gather Screenshot 2" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_50percent.jpg" alt="RG Law Firm - Mid" />
+              <img src="/video-screenshots/edecoration/edecoration_5.png" alt="Edecoration Screenshot 5" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_80percent.jpg" alt="E-Decoration Project - Late" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.png" alt="RG Law Firm Screenshot 2" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_80percent.jpg" alt="Huella Real - Late" className={styles.portraitImage} />
+              <img src="/video-screenshots/huella-real/huella-real_2.png" alt="Huella Real Screenshot 2" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_00percent.jpg" alt="Briefed Project - Start" />
+              <img src="/video-screenshots/gather/gather_3.png" alt="Gather Screenshot 3" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.jpg" alt="RG Law Firm - Start" />
+              <img src="/video-screenshots/edecoration/edecoration_6.png" alt="Edecoration Screenshot 6" />
+            </div>
+            <div className={styles.slideshowImage}>
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.png" alt="RG Law Firm Screenshot 3" />
             </div>
           </div>
         </div>
@@ -254,11 +250,11 @@ export default function Contact() {
             
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>$3,000+</span>
-              <span className={styles.combinedNumberLabel}>dinero extra generado por uno de nuestros clientes en el primer mes</span>
+              <span className={styles.combinedNumberLabel}>dinero extra, generado por uno de nuestros clientes en el primer mes</span>
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>4x</span>
-              <span className={styles.combinedNumberLabel}>multiplica tus ventas y ganancias con nuestros servicios sin trabajo adicional</span>
+              <span className={styles.combinedNumberLabel}>multiplica tus ventas y ganancias con nuestros servicios, sin trabajo adicional</span>
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>22.8%</span>
@@ -279,7 +275,7 @@ export default function Contact() {
               <div className={styles.combinedTestimonialItem}>
                 <div className={styles.combinedTestimonialStars}>★★★★★</div>
                 <p className={styles.combinedTestimonialText}>
-                  "The website is an <strong>elegant, media-packed, beautiful</strong> piece of design. Like a digital showroom that goes beyond anything else in the market. Great job... Keep it up!"
+                  "El sitio web tiene un diseño <strong>elegante, llamativo y lleno de fotos y videos</strong>. Como un showroom digital que va más allá de cualquier otra cosa en el mercado. Gran trabajo... ¡Sigan así!"
                 </p>
                 <div className={styles.combinedTestimonialAuthor}>
                   <strong>Edecoration</strong>
@@ -293,7 +289,7 @@ export default function Contact() {
               <div className={`${styles.combinedTestimonialItem} ${styles.designerknitItem}`}>
                 <div className={styles.combinedTestimonialStars}>★★★★★</div>
                 <p className={styles.combinedTestimonialText}>
-                  "The e-commerce store design that the refresh agency built out for us is <strong>different from anything we've ever seen in the market</strong>. It's beautiful, striking, and undeniably attractive."
+                  "El diseño de la tienda e-commerce que The Refresh Agency creó para nosotros es <strong>diferente a cualquier cosa que hayamos visto en el mercado</strong>. Es hermoso, llamativo e innegablemente atractivo."
                 </p>
                 <div className={styles.combinedTestimonialAuthor}>
                   <strong>DesignerKnit</strong>
@@ -307,7 +303,7 @@ export default function Contact() {
               <div className={styles.combinedTestimonialItem}>
                 <div className={styles.combinedTestimonialStars}>★★★★★</div>
                 <p className={styles.combinedTestimonialText}>
-                  "Without us having to micromanage everything, the research agency <strong>works independently</strong>, bringing real results to our business and building out amazing things really fast. A real strategic partner."
+                  "Sin que tengamos que microgestionar todo, la agencia <strong>trabaja de forma independiente</strong>, trayendo resultados reales a nuestro negocio y construyendo cosas increíbles muy rápido. Un verdadero socio estratégico."
                 </p>
                 <div className={styles.combinedTestimonialAuthor}>
                   <strong>RG Business & Property Law Firm</strong>
@@ -321,7 +317,7 @@ export default function Contact() {
               <div className={`${styles.combinedTestimonialItem} ${styles.briefedItem}`}>
                 <div className={styles.combinedTestimonialStars}>★★★★★</div>
                 <p className={styles.combinedTestimonialText}>
-                  "The Refresh Agency really helped us in coming up with a unique brand identity and applying it seamlessly to our <strong>website and product</strong>. The result is a beautiful, well-thought-out interface for our future customers to enjoy."
+                  "The Refresh Agency realmente nos ayudó a crear una identidad de marca única y aplicarla perfectamente a nuestro <strong>sitio web y producto</strong>. El resultado es una interfaz hermosa y bien pensada para nuestros futuros clientes."
                 </p>
                 <div className={styles.combinedTestimonialAuthor}>
                   <strong>Briefed</strong>
@@ -714,9 +710,9 @@ export default function Contact() {
       {/* How It Works Section */}
       <section className={styles.contactHowItWorksSection}>
         <div className={styles.contactHowItWorksContainer}>
-          <h2 className={styles.contactHowItWorksTitle}>Oferta:<br />Sólo Para los Próximos<br />Tres Clientes</h2>
+          <h2 className={styles.contactHowItWorksTitle}>Oferta:<br />Sólo Para los Próximos<br /><span className={styles.blueUnderline}>Tres Clientes</span></h2>
           <p className={styles.contactHowItWorksSubtitle}>
-            Nuestro paquete base de servicios profesionales por <u>menos de la mitad del precio normal.</u><br />Mientras otros ocultan sus costos, nosotros mostramos exactamente que ofrecemos y cuánto te costaría. <br /><strong>Esta oportunidad no volverá a repetirse.</strong>
+            Nuestro paquete base de diseño web por <u>menos de la mitad del precio normal.</u><br />Mientras otros ocultan sus costos, nosotros mostramos exactamente que ofrecemos y cuánto te costaría. <br /><strong>Esta oportunidad no volverá a repetirse.</strong>
           </p>
           
           {/* Funnel Pricing Section */}
@@ -784,7 +780,7 @@ export default function Contact() {
             
             <div className={styles.contactFooterCtaFunnelBasePriceNote}>
               <span className={styles.contactFooterCtaFunnelBasePriceText}>
-                Este es el precio base. Para proyectos que incluyan más ecommerce, blog completo, traduccion, más páginas funnel, etc. <a href="#" style={{textDecoration: 'underline', fontWeight: 'bold', fontStyle: 'normal', color: 'black'}}>Contáctanos para una cotización personalizada.</a>
+                Este es el precio base. Para proyectos que incluyan ecommerce, blog completo, traduccion, páginas funnel extra, etc. <a href="#" style={{textDecoration: 'underline', fontWeight: 'bold', fontStyle: 'normal', color: 'black'}}>Contáctanos para una cotización personalizada.</a>
               </span>
             </div>
           </div>
@@ -808,6 +804,11 @@ export default function Contact() {
           
           {/* Main CTA Content */}
           <div className={styles.contactFooterCtaMain}>
+            {/* Stars pill over title */}
+            <div className="stars-pill" style={{maxWidth: '280px', margin: '30px auto 5px auto'}}>
+              <span className="stars">★★★★★</span>
+              <span className="stars-text">Creamos resultados concretos.</span>
+            </div>
             <h2 className={styles.contactFooterCtaTitle}>¿Listo Para un Cambio Refrescante?</h2>
             <p className={styles.contactFooterCtaSubtitle}>
             Un <strong><u>sitio web personalizado</u></strong> que también funciona como <strong><u>máquina de generar ventas</u></strong>. ¿Qué estás esperando? Trae un cambio refrescante a tu marca y multiplica sus posibilidades. Déjalo en nuestras manos.

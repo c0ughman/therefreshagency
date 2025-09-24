@@ -12,7 +12,7 @@ export default function Contact() {
     if (wheel) {
       const animateWheel = () => {
         const currentRotation = parseFloat(wheel.style.transform.replace(/[^\d.]/g, '')) || 0
-        wheel.style.transform = `rotate(${currentRotation + 1}deg)`
+        wheel.style.transform = `rotate(${currentRotation + 0.5}deg)`
         requestAnimationFrame(animateWheel)
       }
       animateWheel()
@@ -83,14 +83,14 @@ export default function Contact() {
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
           </svg>
-          Talk to Us on WhatsApp
+          Let's Talk on WhatsApp
         </button>
 
         {/* Pills under button */}
         <div className="contact-pills">
-          <div className="contact-pill">Support</div>
           <div className="contact-pill">Unique Design</div>
           <div className="contact-pill">4x More Clients</div>
+          <div className="contact-pill">Support</div>
         </div>
       </main>
 
@@ -102,135 +102,131 @@ export default function Contact() {
       {/* Auto-rotating Image Slideshow */}
       <section className={styles.imageSlideshow}>
         <div className={styles.slideshowContainer}>
-          {/* Row 1: Scrambled screenshots with infinite scroll */}
+          {/* Row 1: All new screenshots with infinite scroll */}
           <div className={styles.slideshowRow}>
-            {/* First set of images */}
+            {/* Briefed Project Screenshots */}
+            {/* Scrambled images for visual variety */}
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_00percent.jpg" alt="Gather Project - Start" />
+              <img src="/video-screenshots/briefed/briefed_00percent.jpg" alt="Briefed Project - Start" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_00percent.jpg" alt="Huella Real - Start" className={styles.portraitImage} />
+              <img src="/video-screenshots/designer-knit/designer-knit_1.png" alt="Designer Knit Screenshot 1" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_50percent.jpg" alt="E-Decoration Project - Mid" />
+              <img src="/video-screenshots/edecoration/edecoration_2.png" alt="Edecoration Screenshot 2" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_10percent.jpg" alt="RG Law Firm - Early" />
+              <img src="/video-screenshots/briefed/briefed_3.png" alt="Briefed Project Screenshot 3" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_80percent.jpg" alt="Briefed Project - Late" />
+              <img src="/video-screenshots/gather/gather_1.png" alt="Gather Screenshot 1" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_10percent.jpg" alt="Designer Knit - Early" className={styles.portraitImage} />
+              <img src="/video-screenshots/designer-knit/designer-knit_2.png" alt="Designer Knit Screenshot 2" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_80percent.jpg" alt="Gather Project - Late" />
+              <img src="/video-screenshots/edecoration/edecoration_1.png" alt="Edecoration Screenshot 1" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_00percent.jpg" alt="E-Decoration Project - Start" />
+              <img src="/video-screenshots/huella-real/huella-real_1.png" alt="Huella Real Screenshot 1" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_80percent.jpg" alt="RG Law Firm - Late" />
+              <img src="/video-screenshots/briefed/briefed_1.png" alt="Briefed Project Screenshot 1" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_10percent.jpg" alt="Briefed Project - Early" />
-            </div>
-            {/* Duplicated set for seamless loop */}
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_00percent.jpg" alt="Gather Project - Start" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.png" alt="RG Law Firm Screenshot 1" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_00percent.jpg" alt="Huella Real - Start" className={styles.portraitImage} />
+              <img src="/video-screenshots/edecoration/edecoration_3.png" alt="Edecoration Screenshot 3" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_50percent.jpg" alt="E-Decoration Project - Mid" />
+              <img src="/video-screenshots/designer-knit/designer-knit_3.png" alt="Designer Knit Screenshot 3" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_10percent.jpg" alt="RG Law Firm - Early" />
+              <img src="/video-screenshots/briefed/briefed_2.png" alt="Briefed Project Screenshot 2" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_80percent.jpg" alt="Briefed Project - Late" />
+              <img src="/video-screenshots/gather/gather_2.png" alt="Gather Screenshot 2" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_10percent.jpg" alt="Designer Knit - Early" className={styles.portraitImage} />
+              <img src="/video-screenshots/briefed/briefed_4.png" alt="Briefed Project Screenshot 4" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_80percent.jpg" alt="Gather Project - Late" />
+              <img src="/video-screenshots/edecoration/edecoration_4.png" alt="Edecoration Screenshot 4" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_00percent.jpg" alt="E-Decoration Project - Start" />
+              <img src="/video-screenshots/huella-real/huella-real_2.png" alt="Huella Real Screenshot 2" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_80percent.jpg" alt="RG Law Firm - Late" />
+              <img src="/video-screenshots/briefed/briefed_5.png" alt="Briefed Project Screenshot 5" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_10percent.jpg" alt="Briefed Project - Early" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.png" alt="RG Law Firm Screenshot 2" />
+            </div>
+            <div className={styles.slideshowImage}>
+              <img src="/video-screenshots/gather/gather_3.png" alt="Gather Screenshot 3" />
             </div>
           </div>
           
-          {/* Row 2: Scrambled screenshots with infinite scroll */}
+          {/* Row 2: Remaining screenshots with infinite scroll */}
           <div className={styles.slideshowRow}>
-            {/* First set of images */}
+            {/* Scrambled images for visual variety - Row 2 */}
+            <div className={styles.slideshowImage}>
+              <img src="/video-screenshots/gather/gather_00percent.jpg" alt="Gather Project - Start" />
+            </div>
+            <div className={styles.slideshowImage}>
+              <img src="/video-screenshots/edecoration/edecoration_5.png" alt="Edecoration Screenshot 5" />
+            </div>
             <div className={styles.slideshowImage}>
               <img src="/video-screenshots/huella-real/huella-real_10percent.jpg" alt="Huella Real - Early" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_10percent.jpg" alt="E-Decoration Project - Early" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.jpg" alt="RG Law Firm - Start" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_50percent.jpg" alt="Briefed Project - Mid" />
+              <img src="/video-screenshots/gather/gather_4.png" alt="Gather Screenshot 4" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_80percent.jpg" alt="Designer Knit - Late" className={styles.portraitImage} />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_50percent.jpg" alt="Gather Project - Mid" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_50percent.jpg" alt="RG Law Firm - Mid" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_80percent.jpg" alt="E-Decoration Project - Late" />
+              <img src="/video-screenshots/edecoration/edecoration_6.png" alt="Edecoration Screenshot 6" />
             </div>
             <div className={styles.slideshowImage}>
               <img src="/video-screenshots/huella-real/huella-real_80percent.jpg" alt="Huella Real - Late" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_00percent.jpg" alt="Briefed Project - Start" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.png" alt="RG Law Firm Screenshot 3" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.jpg" alt="RG Law Firm - Start" />
-            </div>
-            {/* Duplicated set for seamless loop */}
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_10percent.jpg" alt="Huella Real - Early" className={styles.portraitImage} />
+              <img src="/video-screenshots/edecoration/edecoration_4.png" alt="Edecoration Screenshot 4" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_10percent.jpg" alt="E-Decoration Project - Early" />
+              <img src="/video-screenshots/gather/gather_1.png" alt="Gather Screenshot 1" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_50percent.jpg" alt="Briefed Project - Mid" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.png" alt="RG Law Firm Screenshot 1" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_80percent.jpg" alt="Designer Knit - Late" className={styles.portraitImage} />
+              <img src="/video-screenshots/huella-real/huella-real_1.png" alt="Huella Real Screenshot 1" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_50percent.jpg" alt="Gather Project - Mid" />
+              <img src="/video-screenshots/gather/gather_2.png" alt="Gather Screenshot 2" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_50percent.jpg" alt="RG Law Firm - Mid" />
+              <img src="/video-screenshots/edecoration/edecoration_5.png" alt="Edecoration Screenshot 5" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_80percent.jpg" alt="E-Decoration Project - Late" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.png" alt="RG Law Firm Screenshot 2" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_80percent.jpg" alt="Huella Real - Late" className={styles.portraitImage} />
+              <img src="/video-screenshots/huella-real/huella-real_2.png" alt="Huella Real Screenshot 2" className={styles.portraitImage} />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_00percent.jpg" alt="Briefed Project - Start" />
+              <img src="/video-screenshots/gather/gather_3.png" alt="Gather Screenshot 3" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.jpg" alt="RG Law Firm - Start" />
+              <img src="/video-screenshots/edecoration/edecoration_6.png" alt="Edecoration Screenshot 6" />
+            </div>
+            <div className={styles.slideshowImage}>
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.png" alt="RG Law Firm Screenshot 3" />
             </div>
           </div>
         </div>
@@ -254,11 +250,11 @@ export default function Contact() {
             
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>$3,000+</span>
-              <span className={styles.combinedNumberLabel}>extra money generated by one of our clients in the first month</span>
+              <span className={styles.combinedNumberLabel}>extra profit generated by one of our clients in the first month</span>
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>4x</span>
-              <span className={styles.combinedNumberLabel}>multiply your sales and profits with our services without additional work</span>
+              <span className={styles.combinedNumberLabel}>multiply your sales and profits without additional work</span>
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>22.8%</span>
@@ -269,7 +265,7 @@ export default function Contact() {
           {/* Block of text */}
           <div className={styles.combinedDescription}>
             <p>
-              After working with us, you'll receive an <u><strong>award-worthy design website</strong></u>, strategic marketing consultation and funnel pages to multiply your sales potential. We handle the entire process so you don't have to worry about anything.
+              After working with us, you'll receive an <u><strong>award-worthy website design</strong></u>, strategic marketing consultation and funnel pages to multiply your sales potential. We handle the entire process so you don't have to worry about anything.
             </p>
           </div>
 
@@ -341,8 +337,8 @@ export default function Contact() {
             <li>Award-worthy design website</li>
             <li>Funnel pages to multiply your sales</li>
             <li>Strategic marketing consultation included</li>
-            <li>Mobile-responsive optimized version</li>
-            <li>Basic SEO and performance optimization</li>
+            <li>Mobile optimized, fully responsive</li>
+            <li>Performance optimization and Basic SEO</li>
             <li>Direct technical support and maintenance</li>
           </ul>
         </div>
@@ -367,14 +363,14 @@ export default function Contact() {
 
           <h2 className={styles.contactCtaTitle} style={{marginTop: '0px'}}>Don't Wait Any Longer,<br />Consultation and Quote<br />Today</h2>
           <p className={styles.contactCtaSubtitle}>
-          We only work with <strong><u>three spots per month</u></strong> to ensure the best attention and quality of results, don't miss your place. 
+          We only work with <strong><u>three spots per month</u></strong> to ensure the best attention and quality of results, don't miss your chance. 
           </p>
 
           <button className="contact-button">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
             </svg>
-            Talk to Us on WhatsApp
+            Let's Talk on WhatsApp
           </button>
           
           {/* Trust Pills */}
@@ -404,13 +400,13 @@ export default function Contact() {
           <div className={styles.contactComparisonGradient7}></div>
           <div className={styles.contactComparisonGradient8}></div>
           
-          <h2 className={styles.contactComparisonTitle}>Nuestra Diferencia</h2>
+          <h2 className={styles.contactComparisonTitle}>Our Difference</h2>
           
           {/* Desktop Table View */}
           <div className={styles.contactComparisonTable}>
             <div className={styles.contactComparisonTableHeader}>
               <div className={styles.contactComparisonTableHeaderCell}>
-                <h3>Otras Agencias</h3>
+                <h3>Other Agencies</h3>
               </div>
               <div className={styles.contactComparisonTableHeaderCell}>
                 <h3>The Refresh Agency</h3>
@@ -426,7 +422,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Cobran $5,000+ por servicios sencillos con costos escondidos.</span>
+                  <span className={styles.contactComparisonText}>Charge $5,000+ for simple services with hidden costs.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -436,7 +432,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Precios <strong>justos y transparentes</strong>, sin sorpresas ocultas.</span>
+                  <span className={styles.contactComparisonText}><strong>Fair and transparent</strong> prices, with no hidden surprises.</span>
                 </div>
               </div>
             </div>
@@ -450,7 +446,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Entregan leads basura y resultados que no sirven.</span>
+                  <span className={styles.contactComparisonText}>Deliver junk leads and useless results.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -460,7 +456,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Estrategias que generan <strong>clientes reales</strong> y <strong>resultados medibles</strong>.</span>
+                  <span className={styles.contactComparisonText}>Strategies that generate <strong>real clients</strong> and <strong>measurable results</strong>.</span>
                 </div>
               </div>
             </div>
@@ -474,7 +470,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Diseños genéricos basados en plantillas sin personalidad.</span>
+                  <span className={styles.contactComparisonText}>Generic designs based on templates without personality.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -484,7 +480,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Diseños <strong>únicos</strong> que reflejan la <strong>esencia de tu marca</strong>.</span>
+                  <span className={styles.contactComparisonText}><strong>Unique</strong> designs that reflect the <strong>essence of your brand</strong>.</span>
                 </div>
               </div>
             </div>
@@ -498,7 +494,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Abandonan proyectos sin aviso y desaparecen tras la entrega.</span>
+                  <span className={styles.contactComparisonText}>Abandon projects without notice and disappear after delivery.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -508,7 +504,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Acompañamos tu proyecto <strong>de principio a fin</strong>, <strong>sin abandonos</strong>.</span>
+                  <span className={styles.contactComparisonText}>We accompany your project <strong>from start to finish</strong>, <strong>no abandonment</strong>.</span>
                 </div>
               </div>
             </div>
@@ -522,7 +518,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Comunicación lenta, confusa y poco profesional.</span>
+                  <span className={styles.contactComparisonText}>Slow, confusing and unprofessional communication.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -532,7 +528,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Comunicación <strong>cercana, rápida</strong> y <strong>clara</strong> en todo momento.</span>
+                  <span className={styles.contactComparisonText}><strong>Close, fast</strong> and <strong>clear</strong> communication at all times.</span>
                 </div>
               </div>
             </div>
@@ -546,7 +542,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Retrasos constantes y deshonestidad con los plazos.</span>
+                  <span className={styles.contactComparisonText}>Constant delays and dishonesty with deadlines.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -556,7 +552,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Cumplimos plazos con <strong>procesos claros</strong> y <strong>responsables</strong>.</span>
+                  <span className={styles.contactComparisonText}>We meet deadlines with <strong>clear</strong> and <strong>responsible</strong> processes.</span>
                 </div>
               </div>
             </div>
@@ -570,7 +566,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Usan tecnología anticuada que desperdicia tiempo y dinero.</span>
+                  <span className={styles.contactComparisonText}>They use outdated technology that wastes time and money.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -580,7 +576,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Tecnología <strong>moderna y eficiente</strong> que <strong>potencia tu negocio</strong>.</span>
+                  <span className={styles.contactComparisonText}><strong>Modern and efficient</strong> technology that <strong>empowers your business</strong>.</span>
                 </div>
               </div>
             </div>
@@ -594,7 +590,7 @@ export default function Contact() {
                   <polyline points="20,6 9,17 4,12"></polyline>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Precios <strong>justos y transparentes</strong>, sin sorpresas ocultas.</span>
+              <span className={styles.contactComparisonText}><strong>Fair and transparent</strong> prices, with no hidden surprises.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
@@ -603,7 +599,7 @@ export default function Contact() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Cobran $5,000+ por servicios sencillos con costos escondidos.</span>
+              <span className={styles.contactComparisonText}>Charge $5,000+ for simple services with hidden costs.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
@@ -611,7 +607,7 @@ export default function Contact() {
                   <polyline points="20,6 9,17 4,12"></polyline>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Estrategias que generan <strong>clientes reales</strong> y <strong>resultados medibles</strong>.</span>
+              <span className={styles.contactComparisonText}>Strategies that generate <strong>real clients</strong> and <strong>measurable results</strong>.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
@@ -620,7 +616,7 @@ export default function Contact() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Entregan leads basura y resultados que no sirven.</span>
+              <span className={styles.contactComparisonText}>Deliver junk leads and useless results.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
@@ -628,7 +624,7 @@ export default function Contact() {
                   <polyline points="20,6 9,17 4,12"></polyline>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Diseños <strong>únicos</strong> que reflejan la <strong>esencia de tu marca</strong>.</span>
+              <span className={styles.contactComparisonText}><strong>Unique</strong> designs that reflect the <strong>essence of your brand</strong>.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
@@ -637,7 +633,7 @@ export default function Contact() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Diseños genéricos basados en plantillas sin personalidad.</span>
+              <span className={styles.contactComparisonText}>Generic designs based on templates without personality.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
@@ -645,7 +641,7 @@ export default function Contact() {
                   <polyline points="20,6 9,17 4,12"></polyline>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Acompañamos tu proyecto <strong>de principio a fin</strong>, <strong>sin abandonos</strong>.</span>
+              <span className={styles.contactComparisonText}>We accompany your project <strong>from start to finish</strong>, <strong>no abandonment</strong>.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
@@ -654,7 +650,7 @@ export default function Contact() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Abandonan proyectos sin aviso y desaparecen tras la entrega.</span>
+              <span className={styles.contactComparisonText}>Abandon projects without notice and disappear after delivery.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
@@ -662,7 +658,7 @@ export default function Contact() {
                   <polyline points="20,6 9,17 4,12"></polyline>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Comunicación <strong>cercana, rápida</strong> y <strong>clara</strong> en todo momento.</span>
+              <span className={styles.contactComparisonText}><strong>Close, fast</strong> and <strong>clear</strong> communication at all times.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
@@ -671,7 +667,7 @@ export default function Contact() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Comunicación lenta, confusa y poco profesional.</span>
+              <span className={styles.contactComparisonText}>Slow, confusing and unprofessional communication.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
@@ -679,7 +675,7 @@ export default function Contact() {
                   <polyline points="20,6 9,17 4,12"></polyline>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Cumplimos plazos con <strong>procesos claros</strong> y <strong>responsables</strong>.</span>
+              <span className={styles.contactComparisonText}>We meet deadlines with <strong>clear</strong> and <strong>responsible</strong> processes.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
@@ -688,7 +684,7 @@ export default function Contact() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Retrasos constantes y deshonestidad con los plazos.</span>
+              <span className={styles.contactComparisonText}>Constant delays and dishonesty with deadlines.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
@@ -696,7 +692,7 @@ export default function Contact() {
                   <polyline points="20,6 9,17 4,12"></polyline>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Tecnología <strong>moderna y eficiente</strong> que <strong>potencia tu negocio</strong>.</span>
+              <span className={styles.contactComparisonText}><strong>Modern and efficient</strong> technology that <strong>powers your business</strong>.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
@@ -705,7 +701,7 @@ export default function Contact() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Usan tecnología anticuada que desperdicia tiempo y dinero.</span>
+              <span className={styles.contactComparisonText}>They use outdated technology that wastes time and money.</span>
             </div>
           </div>
         </div>
@@ -714,55 +710,55 @@ export default function Contact() {
       {/* How It Works Section */}
       <section className={styles.contactHowItWorksSection}>
         <div className={styles.contactHowItWorksContainer}>
-          <h2 className={styles.contactHowItWorksTitle}>Oferta:<br />Sólo Para los Próximos<br />Tres Clientes</h2>
+          <h2 className={styles.contactHowItWorksTitle}>Offer:<br />Only For The Next<br /><span className={styles.blueUnderline}>Three Clients</span></h2>
           <p className={styles.contactHowItWorksSubtitle}>
-            Nuestro paquete base de servicios profesionales por <u>menos de la mitad del precio normal.</u><br />Mientras otros ocultan sus costos, nosotros mostramos exactamente que ofrecemos y cuánto te costaría. <br /><strong>Esta oportunidad no volverá a repetirse.</strong>
+            Our base package for website design <u>less than half the normal price.</u><br />While others hide their costs, we show exactly what we offer and how much it would cost you. <br /><strong>This opportunity will not be repeated.</strong>
           </p>
           
           {/* Funnel Pricing Section */}
           <div className={styles.contactFooterCtaFunnel}>
-            <div className={styles.contactFooterCtaFunnelTitle}>Lo que incluye tu paquete:</div>
+            <div className={styles.contactFooterCtaFunnelTitle}>What your package includes:</div>
             
             <div className={styles.contactFooterCtaFunnelServices}>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Sitio Web 100% Personalizado</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Único, creativo y adaptado para móvil (hasta de 5 páginas incluídas)</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>100% Custom Website</span>
+                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Unique, creative and mobile responsive (up to 5 pages included)</span>
                 </div>
                 <span className={styles.contactFooterCtaFunnelServicePrice}>$700</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Página Funnel para Ventas</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Optimizada para multiplicar tus ventas, desde ads o otros canales.</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Sales Funnel Page</span>
+                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Optimized to multiply your sales, from ads or other channels.</span>
                 </div>
                 <span className={styles.contactFooterCtaFunnelServicePrice}>$300</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}>SEO Básico, Rendimiento y Velocidad</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Optimizamos tu sitio para que sea rápido y fácil de encontrar en Google.</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Performance, Speed and Basic SEO</span>
+                  <span className={styles.contactFooterCtaFunnelServiceDescription}>We optimize your site to be fast and easy to find on Google.</span>
                 </div>
                 <span className={styles.contactFooterCtaFunnelServicePrice}>$150</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Gestión de Hosting y Dominio</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Gestion completa de hosting, dominio y todo el proceso técnico inicial.</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Hosting and Domain Management</span>
+                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Complete hosting, domain and all the technical stuff handled.</span>
                 </div>
                 <span className={styles.contactFooterCtaFunnelServicePrice}>$150</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Consultoría Estratégica en Marketing</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Una sesión personalizada para ayudar a tu negocio y situacion específica.</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Strategic Marketing Consulting</span>
+                  <span className={styles.contactFooterCtaFunnelServiceDescription}>A personalized session to help your business grow, tailored to your specific situation.</span>
                 </div>
                 <span className={styles.contactFooterCtaFunnelServicePrice}>$120</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}>15 Artículos de Blogs Detallados</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>15 artículos ultra específicos para marketing de contenido y SEO.</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>15 Detailed Blog Articles</span>
+                  <span className={styles.contactFooterCtaFunnelServiceDescription}>15 ultra specific articles for content marketing and SEO.</span>
                 </div>
                 <span className={styles.contactFooterCtaFunnelServicePrice}>$300</span>
               </div>
@@ -770,21 +766,21 @@ export default function Contact() {
             
             <div className={styles.contactFooterCtaFunnelTotal}>
               <div className={styles.contactFooterCtaFunnelTotalRow}>
-                <span className={styles.contactFooterCtaFunnelTotalLabel}>Valor total:</span>
+                <span className={styles.contactFooterCtaFunnelTotalLabel}>Total value:</span>
                 <span className={styles.contactFooterCtaFunnelTotalPrice}>$1,720</span>
               </div>
               <div className={styles.contactFooterCtaFunnelDiscountRow}>
-                <span className={styles.contactFooterCtaFunnelDiscountLabel}>Tu precio especial:</span>
+                <span className={styles.contactFooterCtaFunnelDiscountLabel}>Your special price:</span>
                 <span className={styles.contactFooterCtaFunnelDiscountPrice}>$850</span>
               </div>
               <div className={styles.contactFooterCtaFunnelSavingsRow}>
-                <span className={styles.contactFooterCtaFunnelSavingsPrice}>más del 50% de descuento</span>
+                <span className={styles.contactFooterCtaFunnelSavingsPrice}>more than 50% discount</span>
               </div>
             </div>
             
             <div className={styles.contactFooterCtaFunnelBasePriceNote}>
               <span className={styles.contactFooterCtaFunnelBasePriceText}>
-                Este es el precio base. Para proyectos que incluyan más ecommerce, blog completo, traduccion, más páginas funnel, etc. <a href="#" style={{textDecoration: 'underline', fontWeight: 'bold', fontStyle: 'normal', color: 'black'}}>Contáctanos para una cotización personalizada.</a>
+                This is the base price. For projects that include ecommerce, complete blog, translation, extra funnel pages, etc. <a href="#" style={{textDecoration: 'underline', fontWeight: 'bold', fontStyle: 'normal', color: 'black'}}>Contact us for a personalized quote.</a>
               </span>
             </div>
           </div>
@@ -808,9 +804,14 @@ export default function Contact() {
           
           {/* Main CTA Content */}
           <div className={styles.contactFooterCtaMain}>
-            <h2 className={styles.contactFooterCtaTitle}>¿Listo Para un Cambio Refrescante?</h2>
+            {/* Stars pill over title */}
+            <div className="stars-pill" style={{maxWidth: '280px', margin: '30px auto 5px auto'}}>
+              <span className="stars">★★★★★</span>
+              <span className="stars-text">We create concrete results.</span>
+            </div>
+            <h2 className={styles.contactFooterCtaTitle}>Ready For a Refreshing Change?</h2>
             <p className={styles.contactFooterCtaSubtitle}>
-            Un <strong><u>sitio web personalizado</u></strong> que también funciona como <strong><u>máquina de generar ventas</u></strong>. ¿Qué estás esperando? Trae un cambio refrescante a tu marca y multiplica sus posibilidades. Déjalo en nuestras manos.
+            A <strong><u>custom website</u></strong> that also works as a <strong><u>sales generating machine</u></strong>. What are you waiting for? Bring a refreshing change to your brand and multiply its possibilities. Leave it in our hands.
             </p>
             
             <div className={styles.contactFooterCtaButtons}>
@@ -818,15 +819,15 @@ export default function Contact() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
                 </svg>
-                Talk to Us on WhatsApp
+                Let's Talk on WhatsApp
               </button>
             </div>
             
             {/* Trust Pills */}
             <div className={styles.contactFooterCtaPills}>
-              <div className={styles.contactFooterCtaPill}>✓ Cupos limitados</div>
-              <div className={styles.contactFooterCtaPill}>✓ Sin compromiso</div>
-              <div className={styles.contactFooterCtaPill}>✓ Consulta gratuita</div>
+              <div className={styles.contactFooterCtaPill}>✓ Limited spots</div>
+              <div className={styles.contactFooterCtaPill}>✓ No commitment</div>
+              <div className={styles.contactFooterCtaPill}>✓ Free consultation</div>
             </div>
           </div>
         </div>
@@ -842,3 +843,4 @@ export default function Contact() {
     </div>
   )
 }
+

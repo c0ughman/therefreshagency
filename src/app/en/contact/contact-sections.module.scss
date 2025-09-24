@@ -36,6 +36,7 @@
 .slideshowImage {
   flex-shrink: 0;
   height: 200px;
+  width: auto;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
@@ -992,6 +993,13 @@
   line-height: 1.2;
 }
 
+.blueUnderline {
+  text-decoration: underline !important;
+  text-decoration-color: #ff0000 !important;
+  text-decoration-thickness: 5px !important;
+  text-underline-offset: 7px;
+}
+
 .contactHowItWorksSubtitle {
   font-size: 1.2rem;
   color: #666;
@@ -1152,6 +1160,7 @@
   font-size: 3.5rem;
   font-weight: 700;
   color: white;
+  margin-top: 15px;
   margin-bottom: 24px;
   line-height: 1.1;
   font-family: 'Inter', sans-serif;
@@ -1605,12 +1614,33 @@
   }
   
   .slideshowImage {
-    width: 250px;
+    width: auto;
     height: 160px;
+  }
+  
+  .slideshowImage img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .portraitImage {
+    background: #f8f9fa;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
   }
   
   .slideshowRow {
     gap: 20px;
+    animation: slideLeft 15s linear infinite;
+  }
+  
+  .slideshowRow:nth-child(2) {
+    animation: slideRight 15s linear infinite;
+    animation-delay: -7.5s;
   }
   
   .combinedTitle {
@@ -1728,12 +1758,33 @@
 
 @media (max-width: 480px) {
   .slideshowImage {
-    width: 200px;
+    width: auto;
     height: 130px;
+  }
+  
+  .slideshowImage img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .portraitImage {
+    background: #f8f9fa;
+    padding: 8px;
+    box-sizing: border-box;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
   }
   
   .slideshowRow {
     gap: 15px;
+    animation: slideLeft 12.5s linear infinite;
+  }
+  
+  .slideshowRow:nth-child(2) {
+    animation: slideRight 12.5s linear infinite;
+    animation-delay: -6.25s;
   }
   
   .combinedContainer {

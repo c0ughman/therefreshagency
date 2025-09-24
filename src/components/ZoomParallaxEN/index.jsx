@@ -1,4 +1,4 @@
-import styles from './styles.module.scss';
+import styles from '../ZoomParallax/styles.module.scss';
 import { useScroll, useTransform, motion} from 'framer-motion';
 import { useRef } from 'react';
 

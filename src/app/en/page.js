@@ -1,12 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import ZoomParallax from '../../components/ZoomParallax/index'
+import ZoomParallax from '../../components/ZoomParallaxEN/index'
 import WordAnimation from '../../components/WordAnimation/index'
 import WordByWordAnimation from '../../components/WordByWordAnimation/index'
 import TiltEffect from '../../components/TiltEffect/index'
 import HamburgerMenu from '../../components/HamburgerMenu/index'
-import LanguageSwitcher from '../../components/LanguageSwitcher/index'
 import Lenis from 'lenis'
 
 export default function Home() {
@@ -30,13 +29,13 @@ export default function Home() {
       setShowChatbotPopup(true)
     }, 4000)
 
-    // Lenis smooth scrolling with enhanced configuration
+    // Lenis smooth scrolling with standard configuration
     window.lenis = new Lenis({
-      duration: 2.4,  // Longer duration for extra smooth scrolling
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+      duration: 1.2,  // Standard duration for normal scrolling
+      easing: (t) => 1 - Math.pow(1 - t, 3), // Standard easing function
       orientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.7, // Reduced multiplier for smoother wheel scrolling
+      wheelMultiplier: 1.0, // Standard multiplier for normal wheel scrolling
       smooth: true,
     })
    
@@ -56,8 +55,8 @@ export default function Home() {
         if (targetElement) {
           window.lenis.scrollTo(targetElement, {
             offset: -100, // Offset to account for header height
-            duration: 3,  // Even slower for navigation clicks
-            easing: (t) => 1 - Math.pow(1 - t, 5) // Smooth easing for nav
+            duration: 1.5,  // Standard duration for navigation clicks
+            easing: (t) => 1 - Math.pow(1 - t, 3) // Standard easing for nav
           }).then(() => {
             // Handle service highlights
             if (serviceType) {
@@ -843,10 +842,9 @@ export default function Home() {
           <a href="#reviews">Reviews</a>
           <a href="#bento">Products</a>
           <a href="#mission">Mission</a>
-          <a href="/en/contact">Talk to Us</a>
+          <a href="/en/contact">Let's Talk</a>
         </nav>
-        <LanguageSwitcher />
-        <HamburgerMenu className="mobile-nav hero" />
+        <HamburgerMenu className="mobile-nav hero" contactLink="/en/contact" />
       </header>
 
       {/* Sticky header that appears on scroll */}
@@ -859,10 +857,9 @@ export default function Home() {
           <a href="#reviews">Reviews</a>
           <a href="#bento">Products</a>
           <a href="#mission">Mission</a>
-          <a href="/en/contact">Talk to Us</a>
+          <a href="/en/contact">Let's Talk</a>
         </nav>
-        <LanguageSwitcher />
-        <HamburgerMenu className="mobile-nav" />
+        <HamburgerMenu className="mobile-nav" contactLink="/en/contact" />
       </header>
 
       <div className="main">
@@ -873,7 +870,7 @@ export default function Home() {
           <div className="hero-content">
             <div className="hero-left">
               <p>Elevate your brand with a captivating website and then build a customer-generating machine behind it. All while relying on us for the heavy lifting.</p>
-              <a href="/en/contact" ref={buttonRef} className="button">Talk to Us</a>
+              <a href="/en/contact" ref={buttonRef} className="button">Let's Talk</a>
             </div>
             <div className="hero-right">
               <div className="star">
@@ -1033,7 +1030,7 @@ export default function Home() {
                   <span>Award-Worthy Design</span>
                 </div>
               </div>
-              <a href="#" className="interested-link">
+              <a href="/en/contact" className="interested-link">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -1055,7 +1052,7 @@ export default function Home() {
                     <span>Search Engine Rankings</span>
                   </div>
                 </div>
-                <a href="#" className="interested-link">
+                <a href="/en/contact" className="interested-link">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -1070,7 +1067,7 @@ export default function Home() {
                 <div className="complex-left-of-8">
                   <div className="complex-above-5">
                     <TiltEffect intensity={30} perspective={800} className="complex-square-3">
-                      <a href="/contact" className="button">Talk to Us</a>
+                      <a href="/en/contact" className="button">Let's Talk</a>
                     </TiltEffect>
                   </div>
                   <TiltEffect intensity={30} perspective={900} className="complex-square-5">
@@ -1113,7 +1110,7 @@ export default function Home() {
                       <span>Market Ready</span>
                     </div>
                   </div>
-                  <a href="#" className="interested-link">
+                  <a href="/en/contact" className="interested-link">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
@@ -1150,7 +1147,7 @@ export default function Home() {
 Limited to 3 clients per month for exceptional results.
 </p>
           <div className="cta-button-wrapper">
-            <a href="/contact" className="cta-button">Talk to Us</a>
+            <a href="/en/contact" className="cta-button">Let's Talk</a>
           </div>
         </div>
       </section>
@@ -1206,9 +1203,11 @@ Limited to 3 clients per month for exceptional results.
                 <p><strong>How We Helped:</strong><br />We built out their whole front-end and brand identity, worked on a <u>beautiful central dashboard</u> which is the cornerstone of their product.</p>
               </div>
               <div className="project-column arrow">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <a href="https://trybriefed.com" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -1241,9 +1240,11 @@ Limited to 3 clients per month for exceptional results.
                 <p><strong>How We Helped:</strong><br />Built out a multi-language SEO centric website to <u>rank page #1 within weeks</u> on some local and international queries.</p>
               </div>
               <div className="project-column arrow">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <a href="https://rglawfirmpa.com" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -1276,9 +1277,11 @@ Limited to 3 clients per month for exceptional results.
                 <p><strong>How We Helped:</strong><br />Built a <u>digital showroom</u> showcasing many of their top projects, most important clients, and various products. Elegance and prestige.</p>
               </div>
               <div className="project-column arrow">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <a href="https://edecorationsa.com" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -1311,9 +1314,11 @@ Limited to 3 clients per month for exceptional results.
                 <p><strong>How We Helped:</strong><br />On the journey of developing a design language for this groundbreaking AI multi-agent platform. <u>We are cooking up something truly special.</u> </p>
               </div>
               <div className="project-column arrow">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <a href="https://wegather.pro" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -1466,7 +1471,7 @@ Limited to 3 clients per month for exceptional results.
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#bento">Products</a></li>
                 <li><a href="#mission">Mission</a></li>
-                <li><a href="/contact">Talk to Us</a></li>
+                <li><a href="/en/contact">Let's Talk</a></li>
               </ul>
             </div>
           </div>
@@ -1474,7 +1479,7 @@ Limited to 3 clients per month for exceptional results.
           {/* IBM Logo */}
           <div className="footer-ibm-logo">
             <img src="/ibm-logo.png" alt="IBM Logo" />
-            <a href="/contact" className="footer-cta-button">Talk to Us</a>
+            <a href="/en/contact" className="footer-cta-button">Let's Talk</a>
           </div>
         </div>
       </footer>

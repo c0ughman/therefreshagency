@@ -1,12 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import ZoomParallax from '../../components/ZoomParallax/index'
+import ZoomParallax from '../../components/ZoomParallaxES/index'
 import WordAnimation from '../../components/WordAnimation/index'
 import WordByWordAnimation from '../../components/WordByWordAnimation/index'
 import TiltEffect from '../../components/TiltEffect/index'
 import HamburgerMenu from '../../components/HamburgerMenu/index'
-import LanguageSwitcher from '../../components/LanguageSwitcher/index'
 import Lenis from 'lenis'
 
 export default function Home() {
@@ -30,13 +29,13 @@ export default function Home() {
       setShowChatbotPopup(true)
     }, 4000)
 
-    // Lenis smooth scrolling with enhanced configuration
+    // Lenis smooth scrolling with standard configuration
     window.lenis = new Lenis({
-      duration: 2.4,  // Longer duration for extra smooth scrolling
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+      duration: 1.2,  // Standard duration for normal scrolling
+      easing: (t) => 1 - Math.pow(1 - t, 3), // Standard easing function
       orientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.7, // Reduced multiplier for smoother wheel scrolling
+      wheelMultiplier: 1.0, // Standard multiplier for normal wheel scrolling
       smooth: true,
     })
    
@@ -56,8 +55,8 @@ export default function Home() {
         if (targetElement) {
           window.lenis.scrollTo(targetElement, {
             offset: -100, // Offset to account for header height
-            duration: 3,  // Even slower for navigation clicks
-            easing: (t) => 1 - Math.pow(1 - t, 5) // Smooth easing for nav
+            duration: 1.5,  // Standard duration for navigation clicks
+            easing: (t) => 1 - Math.pow(1 - t, 3) // Standard easing for nav
           }).then(() => {
             // Handle service highlights
             if (serviceType) {
@@ -845,8 +844,7 @@ export default function Home() {
           <a href="#mission">Misión</a>
           <a href="/es/contact">Hablemos</a>
         </nav>
-        <LanguageSwitcher />
-        <HamburgerMenu className="mobile-nav hero" />
+        <HamburgerMenu className="mobile-nav hero" contactLink="/es/contact" />
       </header>
 
       {/* Sticky header that appears on scroll */}
@@ -861,18 +859,17 @@ export default function Home() {
           <a href="#mission">Misión</a>
           <a href="/es/contact">Hablemos</a>
         </nav>
-        <LanguageSwitcher />
-        <HamburgerMenu className="mobile-nav" />
+        <HamburgerMenu className="mobile-nav" contactLink="/es/contact" />
       </header>
 
       <div className="main">
         <div className="hero-container">
           <WordByWordAnimation className="title-header">
-            Más Allá de Sitios Web, Experiencias Refrescantes Que Convierten
+            Más Allá de Sitios Web, Experiencias Refrescantes Que Venden
           </WordByWordAnimation>
           <div className="hero-content">
             <div className="hero-left">
-              <p>Eleva tu marca con un sitio web cautivador y luego construye una máquina generadora de clientes detrás de él. Todo mientras dependes de nosotros para el trabajo pesado.</p>
+              <p>Eleva tu marca con un sitio web excepcional y luego construye una máquina generadora de clientes detrás. Todo mientras dependes de nosotros para el trabajo pesado.</p>
               <a href="/es/contact" ref={buttonRef} className="button">Hablemos</a>
             </div>
             <div className="hero-right">
@@ -948,9 +945,9 @@ export default function Home() {
                 zIndex: scrollProgress > 0 ? 9999 : 'auto'
               }}
             >
-              <h3> Olvida las Cosas Técnicas</h3>
+              <h3> Olvida Todo lo Técnico</h3>
               <p>
-              <strong>✘</strong> Constructores de sitios defectuosos<br />
+              <strong>✘</strong> Creadores de sitios defectuosos<br />
               <strong>✘</strong> Dolores de cabeza con WordPress<br />
               <strong>✘</strong> Abrumado y confundido<br />
               <strong>✘</strong> Sin soporte
@@ -1005,7 +1002,7 @@ export default function Home() {
       <section className="pain-point-section">
         <div className="pain-point-container">
           <WordAnimation className="pain-point-text">
-          Deja de perder tiempo con constructores de sitios defectuosos. Deja de ejecutar anuncios de Google improvisados. Déjanos manejar todo el lado de internet de tu negocio, desde el sitio web hasta la venta.
+          Deja de perder tiempo con creadores de sitios defectuosos. Deja de lanzar anuncios de Google improvisados. Permítenos manejar el lado de internet de tu negocio, desde el sitio web hasta la venta.
           </WordAnimation>
         </div>
       </section>
@@ -1033,7 +1030,7 @@ export default function Home() {
                   <span>Diseño Digno de Premios</span>
                 </div>
               </div>
-              <a href="#" className="interested-link">
+              <a href="/es/contact" className="interested-link">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -1047,7 +1044,7 @@ export default function Home() {
             <div className="complex-right">
               <TiltEffect intensity={17} perspective={1000} className="complex-top-right">
                 <div className="bento-content">
-                  <h3>Estrategia de Marketing y Embudos</h3>
+                  <h3>Estrategia de Marketing y Embudos de Ventas</h3>
                   <p>Socio estratégico para el crecimiento. Hacemos páginas de aterrizaje que multiplican tus ventas y conversiones.</p>
                   <img src="/funnels.png" alt="Marketing Funnels & SEO" className="funnels-image" />
                   <div className="bento-features">
@@ -1055,7 +1052,7 @@ export default function Home() {
                     <span>Rankings en Motores de Búsqueda</span>
                   </div>
                 </div>
-                <a href="#" className="interested-link">
+                <a href="/es/contact" className="interested-link">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -1070,7 +1067,7 @@ export default function Home() {
                 <div className="complex-left-of-8">
                   <div className="complex-above-5">
                     <TiltEffect intensity={30} perspective={800} className="complex-square-3">
-                      <a href="/contact" className="button">Talk to Us</a>
+                      <a href="/es/contact" className="button">Hablemos</a>
                     </TiltEffect>
                   </div>
                   <TiltEffect intensity={30} perspective={900} className="complex-square-5">
@@ -1105,7 +1102,7 @@ export default function Home() {
                 <TiltEffect intensity={17} perspective={1000} className="complex-square-8">
                   <div className="bento-content">
                     <h3>Lanza tu MVP</h3>
-                    <p>Envía tu MVP de aplicación web en días, no meses.</p>
+                    <p>Lanza tu aplicación web en días, no meses.</p>
                     <div className="bento-features">
 
 
@@ -1113,7 +1110,7 @@ export default function Home() {
                       <span>Listo para el Mercado</span>
                     </div>
                   </div>
-                  <a href="#" className="interested-link">
+                  <a href="/es/contact" className="interested-link">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
@@ -1139,7 +1136,7 @@ export default function Home() {
       <section className="cta-section">
         <div className="matrix" id="matrix"></div>
         <div className="cta-container">
-          <h2 className="cta-title">Distínguete<br />
+          <h2 className="cta-title">Destaca Online<br />
           Obtén un Refresh Hoy</h2>
           <p className="cta-subtitle">Transforma tu sitio web en una máquina generadora de clientes.<br /><br />
 
@@ -1147,7 +1144,7 @@ export default function Home() {
 ✓ Atrae leads consistentes y de alta calidad<br />
 ✓ Convierte visitantes en clientes que pagan<br /><br />
 
-Limitado a 3 clientes por mes para resultados excepcionales.
+Limitado a 3 cupos por mes para resultados excepcionales.
 </p>
           <div className="cta-button-wrapper">
             <a href="/es/contact" className="cta-button">Hablemos</a>
@@ -1167,8 +1164,8 @@ Limitado a 3 clientes por mes para resultados excepcionales.
       <section className="pain-point-section">
         <div className="pain-point-container">
           <WordAnimation className="pain-point-text">
-          Una página de aterrizaje bien diseñada puede multiplicar por 4 tus ventas y ganancias en línea. Las construimos para ti. Luego te mostramos exactamente cómo usarlas. 
-          ¿Qué tal eso para el ROI?
+          Una página landing bien diseñada puede multiplicar x4 tus ventas en línea. Las construimos para ti. Luego te mostramos exactamente cómo usarlas. 
+          ¿Qué te parece ese retorno de inversión?
           </WordAnimation>
         </div>
       </section>
@@ -1188,7 +1185,7 @@ Limitado a 3 clientes por mes para resultados excepcionales.
                 <span>SaaS</span>
               </div>
               <div className="project-column service">
-                <span>Frontend,<br />Identity</span>
+                <span>Frontend,<br />Identidad</span>
               </div>
               <div className="project-column project-name">
                 <h2>Briefed</h2>
@@ -1203,12 +1200,14 @@ Limitado a 3 clientes por mes para resultados excepcionales.
                 />
               </div>
               <div className="project-column project-description">
-                <p><strong>How We Helped:</strong><br />We built out their whole front-end and brand identity, worked on a <u>beautiful central dashboard</u> which is the cornerstone of their product.</p>
+                <p><strong>Cómo Ayudamos:</strong><br />Construimos todo su front-end e identidad de marca, trabajamos en un <u>hermoso panel central</u> como parte esencial de su producto.</p>
               </div>
               <div className="project-column arrow">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <a href="https://trybriefed.com" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -1220,10 +1219,10 @@ Limitado a 3 clientes por mes para resultados excepcionales.
             <div className="matrix" id="matrix-rg"></div>
             <div className="project-columns">
               <div className="project-column client-type">
-                <span>LAW FIRM</span>
+                <span>BUFETE DE ABOGADOS</span>
               </div>
               <div className="project-column service">
-                <span>Website,<br />SEO</span>
+                <span>Sitio Web,<br />SEO</span>
               </div>
               <div className="project-column project-name">
                 <h2>RG B&P<br />Law Firm</h2>
@@ -1238,12 +1237,14 @@ Limitado a 3 clientes por mes para resultados excepcionales.
                 />
               </div>
               <div className="project-column project-description">
-                <p><strong>How We Helped:</strong><br />Built out a multi-language SEO centric website to <u>rank page #1 within weeks</u> on some local and international queries.</p>
+                <p><strong>Cómo Ayudamos:</strong><br />Construimos un sitio web multi-idioma centrado en SEO para <u>posicionarse en la página #1 en pocas semanas</u> en algunas consultas locales e internacionales.</p>
               </div>
               <div className="project-column arrow">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <a href="https://rglawfirmpa.com" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -1255,10 +1256,10 @@ Limitado a 3 clientes por mes para resultados excepcionales.
             <div className="matrix" id="matrix-edecoration"></div>
             <div className="project-columns">
               <div className="project-column client-type">
-                <span>HOME DECOR</span>
+                <span>HOGAR</span>
               </div>
               <div className="project-column service">
-                <span>Website,<br />PAID ADS</span>
+                <span>Sitio Web,<br />ANUNCIOS PAGADOS</span>
               </div>
               <div className="project-column project-name">
                 <h2>Edecoration</h2>
@@ -1273,12 +1274,14 @@ Limitado a 3 clientes por mes para resultados excepcionales.
                 />
               </div>
               <div className="project-column project-description">
-                <p><strong>How We Helped:</strong><br />Built a <u>digital showroom</u> showcasing many of their top projects, most important clients, and various products. Elegance and prestige.</p>
+                <p><strong>Cómo Ayudamos:</strong><br />Construimos un <u>showroom digital</u> que muestra muchos de sus mejores proyectos, clientes más importantes y varios productos. Elegancia y prestigio.</p>
               </div>
               <div className="project-column arrow">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <a href="https://edecorationsa.com" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -1290,10 +1293,10 @@ Limitado a 3 clientes por mes para resultados excepcionales.
             <div className="matrix" id="matrix-gather"></div>
             <div className="project-columns">
               <div className="project-column client-type">
-                <span>AI AGENTS PLATFORM</span>
+                <span>PLATAFORMA DE AGENTES IA</span>
               </div>
               <div className="project-column service">
-                <span>UI/UX DESIGN</span>
+                <span>DISEÑO UI/UX</span>
               </div>
               <div className="project-column project-name">
                 <h2>Gather</h2>
@@ -1308,12 +1311,14 @@ Limitado a 3 clientes por mes para resultados excepcionales.
                 />
               </div>
               <div className="project-column project-description">
-                <p><strong>How We Helped:</strong><br />On the journey of developing a design language for this groundbreaking AI multi-agent platform. <u>We are cooking up something truly special.</u> </p>
+                <p><strong>Cómo Ayudamos:</strong><br />En el proceso de desarrollar un lenguaje de diseño para esta plataforma de múltiples agentes de IA revolucionaria. <u>Estamos creando algo verdaderamente especial.</u> </p>
               </div>
               <div className="project-column arrow">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <a href="https://wegather.pro" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -1328,7 +1333,7 @@ Limitado a 3 clientes por mes para resultados excepcionales.
                 <span>ECOMMERCE</span>
               </div>
               <div className="project-column service">
-                <span>WEBSITE,<br />CRO</span>
+                <span>SITIO WEB,<br />CRO</span>
               </div>
               <div className="project-column project-name">
                 <h2>Huella Real</h2>
@@ -1341,7 +1346,7 @@ Limitado a 3 clientes por mes para resultados excepcionales.
                 />
               </div>
               <div className="project-column project-description">
-                <p><strong>How We Helped:</strong><br />This Spain-based Ecommerce store was carefully developed with the end user in mind, implementing <u>powerful CRO measures</u> from the start.</p>
+                <p><strong>Cómo Ayudamos:</strong><br />Esta tienda de Ecommerce con base en España fue cuidadosamente desarrollada pensando en el usuario final, implementando <u>medidas CRO poderosas</u> desde el inicio.</p>
               </div>
               <div className="project-column arrow">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1358,10 +1363,10 @@ Limitado a 3 clientes por mes para resultados excepcionales.
             <div className="matrix" id="matrix-designer"></div>
             <div className="project-columns">
               <div className="project-column client-type">
-                <span>Fashion, ECOMMERCE</span>
+                <span>Moda, ECOMMERCE</span>
               </div>
               <div className="project-column service">
-                <span>Website</span>
+                <span>Sitio Web</span>
               </div>
               <div className="project-column project-name">
                 <h2>Designer Knit</h2>
@@ -1374,7 +1379,7 @@ Limitado a 3 clientes por mes para resultados excepcionales.
                 />
               </div>
               <div className="project-column project-description">
-                <p><strong>How We Helped:</strong><br />Designed a <u>bold, elegant, and attractive</u> brand identity and website. Which resonated deeply with the target audience and brought exciting results.</p>
+                <p><strong>Cómo Ayudamos:</strong><br />Diseñamos una identidad de marca y sitio web <u>audaz, elegante y atractivo</u>. Que resonó profundamente con la audiencia objetivo y trajo resultados emocionantes.</p>
               </div>
               <div className="project-column arrow">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1429,7 +1434,7 @@ Limitado a 3 clientes por mes para resultados excepcionales.
                 <img src="/wheel.png" alt="The Refresh Agency" className="footer-wheel" />
               </div>
               <h3>The Refresh Agency.</h3>
-              <p>Transformando experiencias digitales con diseño innovador y tecnología de vanguardia.</p>
+              <p>Transformando experiencias digitales con diseño innovador y tecnología avanzada.</p>
               <div className="footer-social">
                 <a href="#" className="social-link">Twitter</a>
                 <a href="#" className="social-link">LinkedIn</a>

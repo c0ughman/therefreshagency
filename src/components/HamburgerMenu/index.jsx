@@ -10,7 +10,7 @@ let sharedMenuState = {
   listeners: new Set()
 }
 
-const HamburgerMenu = ({ className = '' }) => {
+const HamburgerMenu = ({ className = '', contactLink = '/contact' }) => {
   const [isOpen, setIsOpen] = useState(sharedMenuState.isOpen)
 
   useEffect(() => {
@@ -80,7 +80,7 @@ const HamburgerMenu = ({ className = '' }) => {
               <a href="#reviews" onClick={closeMenu}>Reviews</a>
               <a href="#bento" onClick={closeMenu}>Products</a>
               <a href="#mission" onClick={closeMenu}>Mission</a>
-              <a href="/contact" onClick={closeMenu}>Talk to Us</a>
+              <a href={contactLink} onClick={closeMenu}>Let's Talk</a>
             </div>
           </nav>
           
