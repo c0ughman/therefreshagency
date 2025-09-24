@@ -69,28 +69,28 @@ export default function Contact() {
         {/* Stars pill over title */}
         <div className="stars-pill">
           <span className="stars">★★★★★</span>
-          <span className="stars-text">Creamos resultados concretos.</span>
+          <span className="stars-text">We create concrete results.</span>
         </div>
 
         {/* Main title */}
-        <h1 className="contact-title">Más Alla de<br />Diseño Web</h1>
+        <h1 className="contact-title">Beyond<br />Web Design</h1>
 
         {/* Subtitle */}
-        <p className="contact-subtitle">Eleva tu marca con una experiencia web excepcional, con <u><strong>una maquina de generar clientes</strong></u> por detrás. Déjanos encargarnos de todo.</p>
+        <p className="contact-subtitle">Elevate your brand with an exceptional web experience, with <u><strong>a customer-generating machine</strong></u> behind it. Let us handle everything.</p>
 
         {/* CTA Button */}
         <button className="contact-button">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
           </svg>
-          Hablemos por WhatsApp
+          Let's Talk on WhatsApp
         </button>
 
         {/* Pills under button */}
         <div className="contact-pills">
-          <div className="contact-pill">Diseño Único</div>
-          <div className="contact-pill">4x Más Clientes</div>
-          <div className="contact-pill">Apoyo</div>
+          <div className="contact-pill">Unique Design</div>
+          <div className="contact-pill">4x More Clients</div>
+          <div className="contact-pill">Support</div>
         </div>
       </main>
 
@@ -107,64 +107,64 @@ export default function Contact() {
             {/* Briefed Project Screenshots */}
             {/* Scrambled images for visual variety */}
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_00percent.webp" alt="Briefed Project - Start" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/briefed/briefed_00percent.webp" alt="Briefed Project - Start" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_1.webp" alt="Designer Knit Screenshot 1" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/designer-knit/designer-knit_1.webp" alt="Designer Knit Screenshot 1" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_2.webp" alt="Edecoration Screenshot 2" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_2.webp" alt="Edecoration Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_3.webp" alt="Briefed Project Screenshot 3" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/briefed/briefed_3.webp" alt="Briefed Project Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_2.webp" alt="Designer Knit Screenshot 2" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/designer-knit/designer-knit_2.webp" alt="Designer Knit Screenshot 2" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_1.webp" alt="Edecoration Screenshot 1" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_1.webp" alt="Edecoration Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_1.webp" alt="Briefed Project Screenshot 1" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/briefed/briefed_1.webp" alt="Briefed Project Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_3.webp" alt="Edecoration Screenshot 3" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_3.webp" alt="Edecoration Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_3.webp" alt="Designer Knit Screenshot 3" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/designer-knit/designer-knit_3.webp" alt="Designer Knit Screenshot 3" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_2.webp" alt="Briefed Project Screenshot 2" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/briefed/briefed_2.webp" alt="Briefed Project Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_4.webp" alt="Briefed Project Screenshot 4" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/briefed/briefed_4.webp" alt="Briefed Project Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_5.webp" alt="Briefed Project Screenshot 5" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/briefed/briefed_5.webp" alt="Briefed Project Screenshot 5" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
           </div>
           
@@ -172,61 +172,61 @@ export default function Contact() {
           <div className={styles.slideshowRow}>
             {/* Scrambled images for visual variety - Row 2 */}
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_00percent.webp" alt="Gather Project - Start" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_00percent.webp" alt="Gather Project - Start" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_10percent.webp" alt="Huella Real - Early" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/huella-real/huella-real_10percent.webp" alt="Huella Real - Early" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.webp" alt="RG Law Firm - Start" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.webp" alt="RG Law Firm - Start" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_4.webp" alt="Gather Screenshot 4" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_4.webp" alt="Gather Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_80percent.webp" alt="Huella Real - Late" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/huella-real/huella-real_80percent.webp" alt="Huella Real - Late" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
           </div>
         </div>
@@ -236,7 +236,7 @@ export default function Contact() {
       <section className={styles.contactCombinedSection}>
         <div className={styles.combinedContainer}>
           {/* Main title */}
-          <h2 className={styles.combinedTitle}>Nuestros Resultados Hablan Por Sí Solos</h2>
+          <h2 className={styles.combinedTitle}>Our Results Speak for Themselves</h2>
 
           {/* Three numbers in smaller format */}
           <div className={styles.combinedNumbers}>
@@ -250,22 +250,22 @@ export default function Contact() {
             
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>$3,000+</span>
-              <span className={styles.combinedNumberLabel}>dinero extra, generado por uno de nuestros clientes en el primer mes</span>
+              <span className={styles.combinedNumberLabel}>extra profit generated by one of our clients in the first month</span>
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>4x</span>
-              <span className={styles.combinedNumberLabel}>multiplica tus ventas y ganancias con nuestros servicios, sin trabajo adicional</span>
+              <span className={styles.combinedNumberLabel}>multiply your sales and profits without additional work</span>
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>22.8%</span>
-              <span className={styles.combinedNumberLabel}>tasa de conversión de uno de nuestros clientes (promedio mundial: 2-3%)</span>
+              <span className={styles.combinedNumberLabel}>conversion rate of one of our clients (world average: 2-3%)</span>
             </div>
           </div>
 
           {/* Block of text */}
           <div className={styles.combinedDescription}>
             <p>
-              Tras trabajar con nosotros, recibirás un <u><strong>sitio web digno de premios de diseño</strong></u>, una consulta de mercadeo estratégico y páginas funnel para multiplicar tu potencial de ventas. Manejamos todo el proceso para que no tengas que preocuparte por nada.
+              After working with us, you'll receive an <u><strong>award-worthy website design</strong></u>, strategic marketing consultation and funnel pages to multiply your sales potential. We handle the entire process so you don't have to worry about anything.
             </p>
           </div>
 
@@ -275,7 +275,7 @@ export default function Contact() {
               <div className={styles.combinedTestimonialItem}>
                 <div className={styles.combinedTestimonialStars}>★★★★★</div>
                 <p className={styles.combinedTestimonialText}>
-                  "El sitio web tiene un diseño <strong>elegante, llamativo y lleno de fotos y videos</strong>. Como un showroom digital que va más allá de cualquier otra cosa en el mercado. Gran trabajo... ¡Sigan así!"
+                  "The website is an <strong>elegant, media-packed, beautiful</strong> piece of design. Like a digital showroom that goes beyond anything else in the market. Great job... Keep it up!"
                 </p>
                 <div className={styles.combinedTestimonialAuthor}>
                   <strong>Edecoration</strong>
@@ -289,7 +289,7 @@ export default function Contact() {
               <div className={`${styles.combinedTestimonialItem} ${styles.designerknitItem}`}>
                 <div className={styles.combinedTestimonialStars}>★★★★★</div>
                 <p className={styles.combinedTestimonialText}>
-                  "El diseño de la tienda e-commerce que The Refresh Agency creó para nosotros es <strong>diferente a cualquier cosa que hayamos visto en el mercado</strong>. Es hermoso, llamativo e innegablemente atractivo."
+                  "The e-commerce store design that the refresh agency built out for us is <strong>different from anything we've ever seen in the market</strong>. It's beautiful, striking, and undeniably attractive."
                 </p>
                 <div className={styles.combinedTestimonialAuthor}>
                   <strong>DesignerKnit</strong>
@@ -303,7 +303,7 @@ export default function Contact() {
               <div className={styles.combinedTestimonialItem}>
                 <div className={styles.combinedTestimonialStars}>★★★★★</div>
                 <p className={styles.combinedTestimonialText}>
-                  "Sin que tengamos que microgestionar todo, la agencia <strong>trabaja de forma independiente</strong>, trayendo resultados reales a nuestro negocio y construyendo cosas increíbles muy rápido. Un verdadero socio estratégico."
+                  "Without us having to micromanage everything, the research agency <strong>works independently</strong>, bringing real results to our business and building out amazing things really fast. A real strategic partner."
                 </p>
                 <div className={styles.combinedTestimonialAuthor}>
                   <strong>RG Business & Property Law Firm</strong>
@@ -317,7 +317,7 @@ export default function Contact() {
               <div className={`${styles.combinedTestimonialItem} ${styles.briefedItem}`}>
                 <div className={styles.combinedTestimonialStars}>★★★★★</div>
                 <p className={styles.combinedTestimonialText}>
-                  "The Refresh Agency realmente nos ayudó a crear una identidad de marca única y aplicarla perfectamente a nuestro <strong>sitio web y producto</strong>. El resultado es una interfaz hermosa y bien pensada para nuestros futuros clientes."
+                  "The Refresh Agency really helped us in coming up with a unique brand identity and applying it seamlessly to our <strong>website and product</strong>. The result is a beautiful, well-thought-out interface for our future customers to enjoy."
                 </p>
                 <div className={styles.combinedTestimonialAuthor}>
                   <strong>Briefed</strong>
@@ -334,12 +334,12 @@ export default function Contact() {
 
           {/* Benefits list after reviews */}
           <ul className={styles.combinedBenefits}>
-            <li>Sitio web digno de premios de diseño</li>
-            <li>Páginas funnel para multiplicar tus ventas</li>
-            <li>Consulta de mercadeo estratégico incluida</li>
-            <li>Versión optimizada para móvil responsiva</li>
-            <li>SEO básico y performance optimizado</li>
-            <li>Apoyo técnico directo y mantenimiento</li>
+            <li>Award-worthy design website</li>
+            <li>Funnel pages to multiply your sales</li>
+            <li>Strategic marketing consultation included</li>
+            <li>Mobile optimized, fully responsive</li>
+            <li>Performance optimization and Basic SEO</li>
+            <li>Direct technical support and maintenance</li>
           </ul>
         </div>
       </section>
@@ -358,26 +358,26 @@ export default function Contact() {
           {/* Stars pill over title */}
           <div className="stars-pill" style={{maxWidth: '280px', margin: '0 auto 15px auto'}}>
             <span className="stars">★★★★★</span>
-            <span className="stars-text">Creamos resultados concretos.</span>
+            <span className="stars-text">We create concrete results.</span>
           </div>
 
-          <h2 className={styles.contactCtaTitle} style={{marginTop: '0px'}}>No Esperes Más,<br />Asesoría y Cotización<br />Hoy Mismo</h2>
+          <h2 className={styles.contactCtaTitle} style={{marginTop: '0px'}}>Don't Wait Any Longer,<br />Consultation and Quote<br />Today</h2>
           <p className={styles.contactCtaSubtitle}>
-          Sólo trabajamos con <strong><u>tres cupos por mes</u></strong> para asegurar la mejor atención y calidad de resultados, no te quedes sin tu lugar. 
+          We only work with <strong><u>three spots per month</u></strong> to ensure the best attention and quality of results, don't miss your chance. 
           </p>
 
           <button className="contact-button">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
             </svg>
-            Hablemos por WhatsApp
+            Let's Talk on WhatsApp
           </button>
           
           {/* Trust Pills */}
           <div className={styles.contactCtaPills}>
-            <div className={styles.contactCtaPill}>✓ Respuesta en minutos</div>
-            <div className={styles.contactCtaPill}>✓ Sin compromiso</div>
-            <div className={styles.contactCtaPill}>✓ Consulta gratuita</div>
+            <div className={styles.contactCtaPill}>✓ Response in minutes</div>
+            <div className={styles.contactCtaPill}>✓ No commitment</div>
+            <div className={styles.contactCtaPill}>✓ Free consultation</div>
           </div>
         </div>
       </section>
@@ -400,13 +400,13 @@ export default function Contact() {
           <div className={styles.contactComparisonGradient7}></div>
           <div className={styles.contactComparisonGradient8}></div>
           
-          <h2 className={styles.contactComparisonTitle}>Nuestra Diferencia</h2>
+          <h2 className={styles.contactComparisonTitle}>Our Difference</h2>
           
           {/* Desktop Table View */}
           <div className={styles.contactComparisonTable}>
             <div className={styles.contactComparisonTableHeader}>
               <div className={styles.contactComparisonTableHeaderCell}>
-                <h3>Otras Agencias</h3>
+                <h3>Other Agencies</h3>
               </div>
               <div className={styles.contactComparisonTableHeaderCell}>
                 <h3>The Refresh Agency</h3>
@@ -422,7 +422,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Cobran $5,000+ por servicios sencillos con costos escondidos.</span>
+                  <span className={styles.contactComparisonText}>Charge $5,000+ for simple services with hidden costs.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -432,7 +432,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Precios <strong>justos y transparentes</strong>, sin sorpresas ocultas.</span>
+                  <span className={styles.contactComparisonText}><strong>Fair and transparent</strong> prices, with no hidden surprises.</span>
                 </div>
               </div>
             </div>
@@ -446,7 +446,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Entregan leads basura y resultados que no sirven.</span>
+                  <span className={styles.contactComparisonText}>Deliver junk leads and useless results.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -456,7 +456,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Estrategias que generan <strong>clientes reales</strong> y <strong>resultados medibles</strong>.</span>
+                  <span className={styles.contactComparisonText}>Strategies that generate <strong>real clients</strong> and <strong>measurable results</strong>.</span>
                 </div>
               </div>
             </div>
@@ -470,7 +470,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Diseños genéricos basados en plantillas sin personalidad.</span>
+                  <span className={styles.contactComparisonText}>Generic designs based on templates without personality.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -480,7 +480,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Diseños <strong>únicos</strong> que reflejan la <strong>esencia de tu marca</strong>.</span>
+                  <span className={styles.contactComparisonText}><strong>Unique</strong> designs that reflect the <strong>essence of your brand</strong>.</span>
                 </div>
               </div>
             </div>
@@ -494,7 +494,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Abandonan proyectos sin aviso y desaparecen tras la entrega.</span>
+                  <span className={styles.contactComparisonText}>Abandon projects without notice and disappear after delivery.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -504,7 +504,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Acompañamos tu proyecto <strong>de principio a fin</strong>, <strong>sin abandonos</strong>.</span>
+                  <span className={styles.contactComparisonText}>We accompany your project <strong>from start to finish</strong>, <strong>no abandonment</strong>.</span>
                 </div>
               </div>
             </div>
@@ -518,7 +518,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Comunicación lenta, confusa y poco profesional.</span>
+                  <span className={styles.contactComparisonText}>Slow, confusing and unprofessional communication.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -528,7 +528,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Comunicación <strong>cercana, rápida</strong> y <strong>clara</strong> en todo momento.</span>
+                  <span className={styles.contactComparisonText}><strong>Close, fast</strong> and <strong>clear</strong> communication at all times.</span>
                 </div>
               </div>
             </div>
@@ -542,7 +542,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Retrasos constantes y deshonestidad con los plazos.</span>
+                  <span className={styles.contactComparisonText}>Constant delays and dishonesty with deadlines.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -552,7 +552,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Cumplimos plazos con <strong>procesos claros</strong> y <strong>responsables</strong>.</span>
+                  <span className={styles.contactComparisonText}>We meet deadlines with <strong>clear</strong> and <strong>responsible</strong> processes.</span>
                 </div>
               </div>
             </div>
@@ -566,7 +566,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Usan tecnología anticuada que desperdicia tiempo y dinero.</span>
+                  <span className={styles.contactComparisonText}>They use outdated technology that wastes time and money.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -576,7 +576,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Tecnología <strong>moderna y eficiente</strong> que <strong>potencia tu negocio</strong>.</span>
+                  <span className={styles.contactComparisonText}><strong>Modern and efficient</strong> technology that <strong>empowers your business</strong>.</span>
                 </div>
               </div>
             </div>
@@ -590,7 +590,7 @@ export default function Contact() {
                   <polyline points="20,6 9,17 4,12"></polyline>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Precios <strong>justos y transparentes</strong>, sin sorpresas ocultas.</span>
+              <span className={styles.contactComparisonText}><strong>Fair and transparent</strong> prices, with no hidden surprises.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
@@ -599,7 +599,7 @@ export default function Contact() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Cobran $5,000+ por servicios sencillos con costos escondidos.</span>
+              <span className={styles.contactComparisonText}>Charge $5,000+ for simple services with hidden costs.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
@@ -607,7 +607,7 @@ export default function Contact() {
                   <polyline points="20,6 9,17 4,12"></polyline>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Estrategias que generan <strong>clientes reales</strong> y <strong>resultados medibles</strong>.</span>
+              <span className={styles.contactComparisonText}>Strategies that generate <strong>real clients</strong> and <strong>measurable results</strong>.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
@@ -616,7 +616,7 @@ export default function Contact() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Entregan leads basura y resultados que no sirven.</span>
+              <span className={styles.contactComparisonText}>Deliver junk leads and useless results.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
@@ -624,7 +624,7 @@ export default function Contact() {
                   <polyline points="20,6 9,17 4,12"></polyline>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Diseños <strong>únicos</strong> que reflejan la <strong>esencia de tu marca</strong>.</span>
+              <span className={styles.contactComparisonText}><strong>Unique</strong> designs that reflect the <strong>essence of your brand</strong>.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
@@ -633,7 +633,7 @@ export default function Contact() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Diseños genéricos basados en plantillas sin personalidad.</span>
+              <span className={styles.contactComparisonText}>Generic designs based on templates without personality.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
@@ -641,7 +641,7 @@ export default function Contact() {
                   <polyline points="20,6 9,17 4,12"></polyline>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Comunicación <strong>cercana, rápida</strong> y <strong>clara</strong> en todo momento.</span>
+              <span className={styles.contactComparisonText}><strong>Close, fast</strong> and <strong>clear</strong> communication at all times.</span>
             </div>
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
@@ -650,7 +650,7 @@ export default function Contact() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </span>
-              <span className={styles.contactComparisonText}>Comunicación lenta, confusa y poco profesional.</span>
+              <span className={styles.contactComparisonText}>Slow, confusing and unprofessional communication.</span>
             </div>
           </div>
         </div>
@@ -659,57 +659,78 @@ export default function Contact() {
       {/* How It Works Section */}
       <section className={styles.contactHowItWorksSection}>
         <div className={styles.contactHowItWorksContainer}>
-          <h2 className={styles.contactHowItWorksTitle}>Te Damos El <br />Paquete Completo<br /><span className={styles.blueUnderline}>y Más Allá</span></h2>
+          <h2 className={styles.contactHowItWorksTitle}>Offer:<br />Only For The Next<br /><span className={styles.blueUnderline}>Three Clients</span></h2>
           <p className={styles.contactHowItWorksSubtitle}>
-            No sólo tu sitio web excepcional, sino también <strong>el primer paso</strong> para multiplicar tus ventas.
+            Our base package for website design <u>less than half the normal price.</u><br />While others hide their costs, we show exactly what we offer and how much it would cost you. <br /><strong>This opportunity will not be repeated.</strong>
           </p>
           
           {/* Funnel Pricing Section */}
-          <div className={styles.contactFooterCtaFunnel}>            
+          <div className={styles.contactFooterCtaFunnel}>
+            <div className={styles.contactFooterCtaFunnelTitle}>What your package includes:</div>
+            
             <div className={styles.contactFooterCtaFunnelServices}>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}><span style={{color: '#0000ff', fontWeight: 'bold'}}>1. </span>Sitio Web 100% Personalizado</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Único, creativo y adaptado para móvil (hasta de 5 páginas incluídas)</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>100% Custom Website</span>
+                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Unique, creative and mobile responsive (up to 5 pages included)</span>
                 </div>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$700</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}><span style={{color: '#0000ff', fontWeight: 'bold'}}>2. </span>Página Funnel para Ventas</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Optimizada para multiplicar tus ventas, desde ads o otros canales.</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Sales Funnel Page</span>
+                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Optimized to multiply your sales, from ads or other channels.</span>
                 </div>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$300</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}><span style={{color: '#0000ff', fontWeight: 'bold'}}>3. </span>Consultoría Estratégica en Marketing</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Una sesión personalizada para ayudar a tu negocio y situacion específica.</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Strategic Marketing Consulting</span>
+                  <span className={styles.contactFooterCtaFunnelServiceDescription}>A personalized session to help your business grow, tailored to your specific situation.</span>
                 </div>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$120</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}><span style={{color: '#0000ff', fontWeight: 'bold'}}>4. </span>15 Artículos de Blogs Detallados</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>15 artículos ultra específicos para marketing de contenido y SEO.</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>15 Detailed Blog Articles</span>
+                  <span className={styles.contactFooterCtaFunnelServiceDescription}>15 ultra specific articles for content marketing and SEO.</span>
                 </div>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$300</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}><span style={{color: '#0000ff', fontWeight: 'bold'}}>5. </span>SEO Básico, Rendimiento y Velocidad</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Optimizamos tu sitio para que sea rápido y fácil de encontrar en Google.</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Performance, Speed and Basic SEO</span>
+                  <span className={styles.contactFooterCtaFunnelServiceDescription}>We optimize your site to be fast and easy to find on Google.</span>
                 </div>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$150</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}><span style={{color: '#0000ff', fontWeight: 'bold'}}>6. </span>Gestión de Hosting y Dominio</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Gestion completa de hosting, dominio y todo el proceso técnico inicial.</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Hosting and Domain Management</span>
+                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Complete hosting, domain and all the technical stuff handled.</span>
                 </div>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$150</span>
+              </div>
+            </div>
+            
+            <div className={styles.contactFooterCtaFunnelTotal}>
+              <div className={styles.contactFooterCtaFunnelTotalRow}>
+                <span className={styles.contactFooterCtaFunnelTotalLabel}>Total value:</span>
+                <span className={styles.contactFooterCtaFunnelTotalPrice}>$1,720</span>
+              </div>
+              <div className={styles.contactFooterCtaFunnelDiscountRow}>
+                <span className={styles.contactFooterCtaFunnelDiscountLabel}>Your special price:</span>
+                <span className={styles.contactFooterCtaFunnelDiscountPrice}>$850</span>
+              </div>
+              <div className={styles.contactFooterCtaFunnelSavingsRow}>
+                <span className={styles.contactFooterCtaFunnelSavingsPrice}>more than 50% discount</span>
               </div>
             </div>
             
             <div className={styles.contactFooterCtaFunnelBasePriceNote}>
-              <p style={{fontSize: '1.1rem', color: '#777', lineHeight: '1.6', margin: '20px 0 10px 0', textAlign: 'left'}}>
-                Si necesitas características adicionales como e-commerce, páginas funnel extra, pagos integrados, traduccion, backend: <br />
-                <a href="#" style={{textDecoration: 'underline', fontWeight: '600', fontStyle: 'normal', color: '#777'}}>Contáctanos para una cotización personalizada {">"}</a>
-              </p>
+              <span className={styles.contactFooterCtaFunnelBasePriceText}>
+                This is the base price. For projects that include ecommerce, complete blog, translation, extra funnel pages, etc. <a href="#" style={{textDecoration: 'underline', fontWeight: 'bold', fontStyle: 'normal', color: 'black'}}>Contact us for a personalized quote.</a>
+              </span>
             </div>
           </div>
         </div>
@@ -735,11 +756,11 @@ export default function Contact() {
             {/* Stars pill over title */}
             <div className="stars-pill" style={{maxWidth: '280px', margin: '30px auto 5px auto'}}>
               <span className="stars">★★★★★</span>
-              <span className="stars-text">Creamos resultados concretos.</span>
+              <span className="stars-text">We create concrete results.</span>
             </div>
-            <h2 className={styles.contactFooterCtaTitle}>¿Listo Para un Cambio Refrescante?</h2>
+            <h2 className={styles.contactFooterCtaTitle}>Ready For a Refreshing Change?</h2>
             <p className={styles.contactFooterCtaSubtitle}>
-            Un <strong><u>sitio web personalizado</u></strong> que también funciona como <strong><u>máquina de generar ventas</u></strong>. ¿Qué estás esperando? Trae un cambio refrescante a tu marca y multiplica sus posibilidades. Déjalo en nuestras manos.
+            A <strong><u>custom website</u></strong> that also works as a <strong><u>sales generating machine</u></strong>. What are you waiting for? Bring a refreshing change to your brand and multiply its possibilities. Leave it in our hands.
             </p>
             
             <div className={styles.contactFooterCtaButtons}>
@@ -747,15 +768,15 @@ export default function Contact() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
                 </svg>
-                Hablemos por WhatsApp
+                Let's Talk on WhatsApp
               </button>
             </div>
             
             {/* Trust Pills */}
             <div className={styles.contactFooterCtaPills}>
-              <div className={styles.contactFooterCtaPill}>✓ Cupos limitados</div>
-              <div className={styles.contactFooterCtaPill}>✓ Sin compromiso</div>
-              <div className={styles.contactFooterCtaPill}>✓ Consulta gratuita</div>
+              <div className={styles.contactFooterCtaPill}>✓ Limited spots</div>
+              <div className={styles.contactFooterCtaPill}>✓ No commitment</div>
+              <div className={styles.contactFooterCtaPill}>✓ Free consultation</div>
             </div>
           </div>
         </div>
@@ -771,3 +792,4 @@ export default function Contact() {
     </div>
   )
 }
+

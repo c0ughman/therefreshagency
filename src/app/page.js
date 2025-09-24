@@ -13,13 +13,9 @@ export default function RootPage() {
 
   return (
     <div style={{ 
-      display: 'flex', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
       height: '100vh',
-      fontFamily: 'Arial, sans-serif'
+      backgroundColor: 'white'
     }}>
-      <p>Redirecting to English version...</p>
     </div>
   )
 }

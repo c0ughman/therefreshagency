@@ -107,64 +107,64 @@ export default function Contact() {
             {/* Briefed Project Screenshots */}
             {/* Scrambled images for visual variety */}
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_00percent.webp" alt="Briefed Project - Start" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/briefed/briefed_00percent.webp" alt="Briefed Project - Start" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_1.webp" alt="Designer Knit Screenshot 1" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/designer-knit/designer-knit_1.webp" alt="Designer Knit Screenshot 1" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_2.webp" alt="Edecoration Screenshot 2" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_2.webp" alt="Edecoration Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_3.webp" alt="Briefed Project Screenshot 3" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/briefed/briefed_3.webp" alt="Briefed Project Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_2.webp" alt="Designer Knit Screenshot 2" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/designer-knit/designer-knit_2.webp" alt="Designer Knit Screenshot 2" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_1.webp" alt="Edecoration Screenshot 1" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_1.webp" alt="Edecoration Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_1.webp" alt="Briefed Project Screenshot 1" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/briefed/briefed_1.webp" alt="Briefed Project Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_3.webp" alt="Edecoration Screenshot 3" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_3.webp" alt="Edecoration Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_3.webp" alt="Designer Knit Screenshot 3" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/designer-knit/designer-knit_3.webp" alt="Designer Knit Screenshot 3" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_2.webp" alt="Briefed Project Screenshot 2" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/briefed/briefed_2.webp" alt="Briefed Project Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_4.webp" alt="Briefed Project Screenshot 4" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/briefed/briefed_4.webp" alt="Briefed Project Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_5.webp" alt="Briefed Project Screenshot 5" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/briefed/briefed_5.webp" alt="Briefed Project Screenshot 5" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
           </div>
           
@@ -172,61 +172,61 @@ export default function Contact() {
           <div className={styles.slideshowRow}>
             {/* Scrambled images for visual variety - Row 2 */}
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_00percent.webp" alt="Gather Project - Start" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_00percent.webp" alt="Gather Project - Start" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_10percent.webp" alt="Huella Real - Early" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/huella-real/huella-real_10percent.webp" alt="Huella Real - Early" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.webp" alt="RG Law Firm - Start" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.webp" alt="RG Law Firm - Start" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_4.webp" alt="Gather Screenshot 4" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_4.webp" alt="Gather Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_80percent.webp" alt="Huella Real - Late" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/huella-real/huella-real_80percent.webp" alt="Huella Real - Late" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" className={styles.portraitImage} loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" loading="lazy" width="300" height="200" />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
           </div>
         </div>
@@ -659,57 +659,78 @@ export default function Contact() {
       {/* How It Works Section */}
       <section className={styles.contactHowItWorksSection}>
         <div className={styles.contactHowItWorksContainer}>
-          <h2 className={styles.contactHowItWorksTitle}>Te Damos El <br />Paquete Completo<br /><span className={styles.blueUnderline}>y Más Allá</span></h2>
+          <h2 className={styles.contactHowItWorksTitle}>Oferta:<br />Sólo Para los Próximos<br /><span className={styles.blueUnderline}>Tres Clientes</span></h2>
           <p className={styles.contactHowItWorksSubtitle}>
-            No sólo tu sitio web excepcional, sino también <strong>el primer paso</strong> para multiplicar tus ventas.
+            Nuestro paquete base de diseño web por <u>menos de la mitad del precio normal.</u><br />Mientras otros ocultan sus costos, nosotros mostramos exactamente que ofrecemos y cuánto te costaría. <br /><strong>Esta oportunidad no volverá a repetirse.</strong>
           </p>
           
           {/* Funnel Pricing Section */}
-          <div className={styles.contactFooterCtaFunnel}>            
+          <div className={styles.contactFooterCtaFunnel}>
+            <div className={styles.contactFooterCtaFunnelTitle}>Lo que incluye tu paquete:</div>
+            
             <div className={styles.contactFooterCtaFunnelServices}>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}><span style={{color: '#0000ff', fontWeight: 'bold'}}>1. </span>Sitio Web 100% Personalizado</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Sitio Web 100% Personalizado</span>
                   <span className={styles.contactFooterCtaFunnelServiceDescription}>Único, creativo y adaptado para móvil (hasta de 5 páginas incluídas)</span>
                 </div>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$700</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}><span style={{color: '#0000ff', fontWeight: 'bold'}}>2. </span>Página Funnel para Ventas</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Página Funnel para Ventas</span>
                   <span className={styles.contactFooterCtaFunnelServiceDescription}>Optimizada para multiplicar tus ventas, desde ads o otros canales.</span>
                 </div>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$300</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}><span style={{color: '#0000ff', fontWeight: 'bold'}}>3. </span>Consultoría Estratégica en Marketing</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Consultoría Estratégica en Marketing</span>
                   <span className={styles.contactFooterCtaFunnelServiceDescription}>Una sesión personalizada para ayudar a tu negocio y situacion específica.</span>
                 </div>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$120</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}><span style={{color: '#0000ff', fontWeight: 'bold'}}>4. </span>15 Artículos de Blogs Detallados</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>15 Artículos de Blogs Detallados</span>
                   <span className={styles.contactFooterCtaFunnelServiceDescription}>15 artículos ultra específicos para marketing de contenido y SEO.</span>
                 </div>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$300</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}><span style={{color: '#0000ff', fontWeight: 'bold'}}>5. </span>SEO Básico, Rendimiento y Velocidad</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>SEO Básico, Rendimiento y Velocidad</span>
                   <span className={styles.contactFooterCtaFunnelServiceDescription}>Optimizamos tu sitio para que sea rápido y fácil de encontrar en Google.</span>
                 </div>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$150</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}><span style={{color: '#0000ff', fontWeight: 'bold'}}>6. </span>Gestión de Hosting y Dominio</span>
+                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Gestión de Hosting y Dominio</span>
                   <span className={styles.contactFooterCtaFunnelServiceDescription}>Gestion completa de hosting, dominio y todo el proceso técnico inicial.</span>
                 </div>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$150</span>
+              </div>
+            </div>
+            
+            <div className={styles.contactFooterCtaFunnelTotal}>
+              <div className={styles.contactFooterCtaFunnelTotalRow}>
+                <span className={styles.contactFooterCtaFunnelTotalLabel}>Valor total:</span>
+                <span className={styles.contactFooterCtaFunnelTotalPrice}>$1,720</span>
+              </div>
+              <div className={styles.contactFooterCtaFunnelDiscountRow}>
+                <span className={styles.contactFooterCtaFunnelDiscountLabel}>Tu precio especial:</span>
+                <span className={styles.contactFooterCtaFunnelDiscountPrice}>$850</span>
+              </div>
+              <div className={styles.contactFooterCtaFunnelSavingsRow}>
+                <span className={styles.contactFooterCtaFunnelSavingsPrice}>más del 50% de descuento</span>
               </div>
             </div>
             
             <div className={styles.contactFooterCtaFunnelBasePriceNote}>
-              <p style={{fontSize: '1.1rem', color: '#777', lineHeight: '1.6', margin: '20px 0 10px 0', textAlign: 'left'}}>
-                Si necesitas características adicionales como e-commerce, páginas funnel extra, pagos integrados, traduccion, backend: <br />
-                <a href="#" style={{textDecoration: 'underline', fontWeight: '600', fontStyle: 'normal', color: '#777'}}>Contáctanos para una cotización personalizada {">"}</a>
-              </p>
+              <span className={styles.contactFooterCtaFunnelBasePriceText}>
+                Este es el precio base. Para proyectos que incluyan ecommerce, blog completo, traduccion, páginas funnel extra, etc. <a href="#" style={{textDecoration: 'underline', fontWeight: 'bold', fontStyle: 'normal', color: 'black'}}>Contáctanos para una cotización personalizada.</a>
+              </span>
             </div>
           </div>
         </div>

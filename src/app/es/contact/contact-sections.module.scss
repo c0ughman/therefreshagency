@@ -49,6 +49,8 @@
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
+  aspect-ratio: 3/2;
+  background-color: #f8f9fa;
 }
 
 .portraitImage {
@@ -1002,8 +1004,8 @@
 
 .contactHowItWorksSubtitle {
   font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 50px;
+  color: #777;
+  margin-bottom: 0px;
   line-height: 1.6;
   max-width: 600px;
   margin-left: auto;
@@ -1299,6 +1301,7 @@
 
 .contactFooterCtaFunnelServices {
   margin-bottom: 30px;
+  margin-left: 20px;
 }
 
 .contactFooterCtaFunnelService {
