@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import Image from 'next/image'
 import styles from './contact-sections.module.scss'
 
 export default function Contact() {
@@ -60,7 +59,7 @@ export default function Contact() {
       {/* Header with logo and title */}
       <header className="contact-header">
         <div className="contact-logo">
-          <Image src="/wheel.webp" alt="The Refresh Agency" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+          <img src="/wheel.png" alt="The Refresh Agency" className="contact-wheel" ref={wheelRef} />
         </div>
         <div className="contact-header-title">The Refresh Agency.</div>
       </header>
@@ -80,7 +79,7 @@ export default function Contact() {
         <p className="contact-subtitle">Eleva tu marca con una experiencia web excepcional, con <u><strong>una maquina de generar clientes</strong></u> por detrás. Déjanos encargarnos de todo.</p>
 
         {/* CTA Button */}
-        <a href="https://wa.me/19784045049?text=Hola 👋🏻 Quiero una web excepcional que me traiga clientes. ¿Qué sigue?" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/19784045049?text=Hola%20👋🏻%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20¿Qué%20sigue?" target="_blank" rel="noopener noreferrer">
           <button className="contact-button">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -99,7 +98,7 @@ export default function Contact() {
 
       {/* Waves divider */}
       <div className="waves-divider">
-        <Image src="/waves.svg" alt="Waves" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+        <img src="/waves.svg" alt="Waves" />
       </div>
 
       {/* Auto-rotating Image Slideshow */}
@@ -110,64 +109,64 @@ export default function Contact() {
             {/* Briefed Project Screenshots */}
             {/* Scrambled images for visual variety */}
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/briefed/briefed_00percent.webp" alt="Briefed Project - Start" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/briefed/briefed_00percent.webp" alt="Briefed Project - Start" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/designer-knit/designer-knit_1.webp" alt="Designer Knit Screenshot 1" loading="lazy" width={300} height={200} className={styles.portraitImage} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/designer-knit/designer-knit_1.webp" alt="Designer Knit Screenshot 1" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/edecoration/edecoration_2.webp" alt="Edecoration Screenshot 2" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/edecoration/edecoration_2.webp" alt="Edecoration Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/briefed/briefed_3.webp" alt="Briefed Project Screenshot 3" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/briefed/briefed_3.webp" alt="Briefed Project Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/designer-knit/designer-knit_2.webp" alt="Designer Knit Screenshot 2" loading="lazy" width={300} height={200} className={styles.portraitImage} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/designer-knit/designer-knit_2.webp" alt="Designer Knit Screenshot 2" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/edecoration/edecoration_1.webp" alt="Edecoration Screenshot 1" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/edecoration/edecoration_1.webp" alt="Edecoration Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" loading="lazy" width={300} height={200} className={styles.portraitImage} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/briefed/briefed_1.webp" alt="Briefed Project Screenshot 1" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/briefed/briefed_1.webp" alt="Briefed Project Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/edecoration/edecoration_3.webp" alt="Edecoration Screenshot 3" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/edecoration/edecoration_3.webp" alt="Edecoration Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/designer-knit/designer-knit_3.webp" alt="Designer Knit Screenshot 3" loading="lazy" width={300} height={200} className={styles.portraitImage} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/designer-knit/designer-knit_3.webp" alt="Designer Knit Screenshot 3" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/briefed/briefed_2.webp" alt="Briefed Project Screenshot 2" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/briefed/briefed_2.webp" alt="Briefed Project Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/briefed/briefed_4.webp" alt="Briefed Project Screenshot 4" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/briefed/briefed_4.webp" alt="Briefed Project Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" loading="lazy" width={300} height={200} className={styles.portraitImage} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/briefed/briefed_5.webp" alt="Briefed Project Screenshot 5" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/briefed/briefed_5.webp" alt="Briefed Project Screenshot 5" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
           </div>
           
@@ -175,61 +174,61 @@ export default function Contact() {
           <div className={styles.slideshowRow}>
             {/* Scrambled images for visual variety - Row 2 */}
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/gather/gather_00percent.webp" alt="Gather Project - Start" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/gather/gather_00percent.webp" alt="Gather Project - Start" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/huella-real/huella-real_10percent.webp" alt="Huella Real - Early" loading="lazy" width={300} height={200} className={styles.portraitImage} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/huella-real/huella-real_10percent.webp" alt="Huella Real - Early" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.webp" alt="RG Law Firm - Start" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.webp" alt="RG Law Firm - Start" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/gather/gather_4.webp" alt="Gather Screenshot 4" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/gather/gather_4.webp" alt="Gather Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/huella-real/huella-real_80percent.webp" alt="Huella Real - Late" loading="lazy" width={300} height={200} className={styles.portraitImage} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/huella-real/huella-real_80percent.webp" alt="Huella Real - Late" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" loading="lazy" width={300} height={200} className={styles.portraitImage} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" loading="lazy" width={300} height={200} className={styles.portraitImage} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" className={styles.portraitImage} width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <Image src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
           </div>
         </div>
@@ -285,7 +284,7 @@ export default function Contact() {
                   <span>Website</span>
                 </div>
                 <div className={styles.combinedTestimonialImage}>
-                  <Image src="/review-images/edecoration-website.webp" alt="Edecoration website review" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+                  <img src="/review-images/edecoration-website.png" alt="Edecoration website review" />
                 </div>
               </div>
 
@@ -299,7 +298,7 @@ export default function Contact() {
                   <span>Ecommerce Design</span>
                 </div>
                 <div className={styles.combinedTestimonialImage}>
-                  <Image src="/review-images/designerknit-sales.webp" alt="DesignerKnit e-commerce review" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+                  <img src="/review-images/designerknit-sales.png" alt="DesignerKnit e-commerce review" />
                 </div>
               </div>
 
@@ -313,7 +312,7 @@ export default function Contact() {
                   <span>Website + Marketing</span>
                 </div>
                 <div className={styles.combinedTestimonialImage}>
-                  <Image src="/review-images/rglawfirm-seo.webp" alt="R.G. Law Firm website and marketing review" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+                  <img src="/review-images/rglawfirm-seo.png" alt="R.G. Law Firm website and marketing review" />
                 </div>
               </div>
 
@@ -327,9 +326,9 @@ export default function Contact() {
                   <span>Website and product</span>
                 </div>
                 <div className={styles.combinedTestimonialImage}>
-                  <Image src="/review-images/briefed-product-1.webp" alt="Briefed product review 1" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
-                  <Image src="/review-images/briefed-product-2.webp" alt="Briefed product review 2" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
-                  <Image src="/review-images/briefed-product-3.webp" alt="Briefed product review 3" loading="lazy" width={300} height={200} style={{objectFit: 'contain'}} />
+                  <img src="/review-images/briefed-product-1.webp" alt="Briefed product review 1" />
+                  <img src="/review-images/briefed-product-2.png" alt="Briefed product review 2" />
+                  <img src="/review-images/briefed-product-3.png" alt="Briefed product review 3" />
                 </div>
               </div>
             </div>
@@ -369,7 +368,7 @@ export default function Contact() {
           Sólo trabajamos con <strong><u>tres cupos por mes</u></strong> para asegurar la mejor atención y calidad de resultados, no te quedes sin tu lugar. 
           </p>
 
-          <a href="https://wa.me/19784045049?text=Hola 👋🏻 Quiero una web excepcional que me traiga clientes.. ¿Qué sigue?" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/19784045049?text=Hola%20👋🏻%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes..%20¿Qué%20sigue?" target="_blank" rel="noopener noreferrer">
             <button className="contact-button">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -734,7 +733,7 @@ export default function Contact() {
             
             <div className={styles.contactFooterCtaFunnelBasePriceNote}>
               <span className={styles.contactFooterCtaFunnelBasePriceText}>
-                Este es el precio base. Para proyectos que incluyan ecommerce, blog completo, traduccion, páginas funnel extra, etc. <a href="https://wa.me/19784045049?text=Hola 👋🏻 Quiero una web excepcional que me traiga clientes... ¿Qué sigue?" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'underline', fontWeight: 'bold', fontStyle: 'normal', color: 'black'}}>Contáctanos para una cotización personalizada.</a>
+                Este es el precio base. Para proyectos que incluyan ecommerce, blog completo, traduccion, páginas funnel extra, etc. <a href="https://wa.me/19784045049?text=Hola%20👋🏻%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes...%20¿Qué%20sigue?" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'underline', fontWeight: 'bold', fontStyle: 'normal', color: 'black'}}>Contáctanos para una cotización personalizada.</a>
               </span>
             </div>
           </div>
@@ -748,7 +747,7 @@ export default function Contact() {
           {/* Brand Section */}
           <div className={styles.contactFooterCtaBrand}>
             <div className={styles.contactFooterCtaLogo}>
-              <Image src="/wheel.webp" alt="The Refresh Agency" loading="lazy" width={300} height={200} className={styles.contactFooterCtaWheel} style={{objectFit: 'contain'}} />
+              <img src="/wheel.png" alt="The Refresh Agency" className={styles.contactFooterCtaWheel} />
             </div>
             <h3>The Refresh Agency.</h3>
             <p className={styles.contactFooterCtaBrandText}>
@@ -769,7 +768,7 @@ export default function Contact() {
             </p>
             
             <div className={styles.contactFooterCtaButtons}>
-              <a href="https://wa.me/19784045049?text=Hola 👋🏻 Quiero una web excepcional que me traiga clientes.... ¿Qué sigue?" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/19784045049?text=Hola%20👋🏻%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes....%20¿Qué%20sigue?" target="_blank" rel="noopener noreferrer">
                 <button className={`${styles.contactFooterCtaButton} ${styles.primary}`}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
