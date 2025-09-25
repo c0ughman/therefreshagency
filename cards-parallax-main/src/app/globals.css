@@ -1,18 +1,11 @@
-@font-face {
-  font-family: 'Title';
-  src: url('../../public/fonts/Neglige.otf');
-}
-@font-face {
-  font-family: 'Body';
-  src: url('../../public/fonts/NeueMontreal_Medium.otf');
-}
+/* Neglige replaced with Satoshi, Neue Montreal replaced with Inter */
 
 body{
   margin: 0px;
-  font-family: 'Body';
+  font-family: 'Inter', sans-serif;
   margin-bottom: 100vh;
 }
 
 h2{
-  font-family: 'Title';
+  font-family: 'Satoshi', sans-serif;
 }

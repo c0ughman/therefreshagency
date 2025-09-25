@@ -2,11 +2,7 @@
 
 
 
-@font-face {
-  font-family: 'Arial Black';
-  src: local('Arial Black');
-  font-weight: 900;
-}
+/* Arial Black replaced with Satoshi */
 
 body {
   margin: 0;
@@ -46,6 +42,7 @@ header {
   font-size: 14px;
   position: relative;
   z-index: 2;
+  transform: scaleY(1.2);
 }
 
 .logo {
@@ -1183,7 +1180,7 @@ body.mobile-menu-open .sticky-header .mobile-nav {
 }
 
 .main .title-header {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   font-size: 52px;
   font-weight: 800;
   color: white;
@@ -1510,6 +1507,7 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   margin-top: 0;
   line-height: 1.3;
   letter-spacing: -0.01em;
+  transform: scaleY(1.2);
 }
 
 .value-column p {
@@ -1809,9 +1807,10 @@ body {
 }
 
 .column h3 {
-  font-family: 'Merriweather', serif;
+  font-family: 'Georgia', serif;
   font-size: 22px;
   margin-bottom: 15px;
+  transform: scaleY(1.2);
 }
 
 .column p {
@@ -3049,6 +3048,7 @@ a[href="#"][data-service="contact"],
   letter-spacing: -0.02em;
   text-transform: uppercase;
   z-index: 9999999;
+  transform: scaleY(1.2);
 }
 
 @keyframes glow {
@@ -3131,6 +3131,7 @@ a[href="#"][data-service="contact"],
   font-weight: bold;
   margin: 0;
   letter-spacing: -0.02em;
+  transform: scaleY(1.2);
 }
 
 .footer-brand p {
@@ -3697,6 +3698,7 @@ a[href="#"][data-service="contact"],
   font-size: 14px;
   position: relative;
   z-index: 2;
+  transform: scaleY(1.2);
 }
 
 .contact-logo {
@@ -3718,6 +3720,7 @@ a[href="#"][data-service="contact"],
   font-weight: bold;
   color: white;
   margin-left: 40px;
+  transform: scaleY(1.2);
 }
 
 .contact-main {
@@ -3765,7 +3768,7 @@ a[href="#"][data-service="contact"],
 }
 
 .contact-title {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   font-size: 64px;
   font-weight: 800;
   color: white;
