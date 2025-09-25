@@ -130,7 +130,7 @@ export default function Contact() {
             {/* Scrambled images for visual variety */}
             <div className={styles.slideshowImage}>
               <Image 
-                <Image src="/video-screenshots/briefed/briefed_00percent.webp" 
+                src="/video-screenshots/briefed/briefed_00percent.webp" 
                 alt="Briefed Project - Start" 
                 priority 
                 width={300} 
