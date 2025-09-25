@@ -73,10 +73,10 @@ export default function Contact() {
         </div>
 
         {/* Main title */}
-        <h1 className="contact-title">Más Alla de<br />Diseño Web</h1>
+        <h1 className="contact-title">Más Allá de<br />Diseño Web</h1>
 
         {/* Subtitle */}
-        <p className="contact-subtitle">Eleva tu marca con una experiencia web excepcional, con <u><strong>una maquina de generar clientes</strong></u> por detrás. Déjanos encargarnos de todo.</p>
+        <p className="contact-subtitle">Eleva tu marca con una experiencia web excepcional, con <u><strong>una máquina de generar clientes</strong></u> por detrás. Déjanos encargarnos de todo.</p>
 
         {/* CTA Button */}
         <a href="https://wa.me/19784045049?text=Hola!%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20¿Qué%20sigue?" target="_blank" rel="noopener noreferrer">
