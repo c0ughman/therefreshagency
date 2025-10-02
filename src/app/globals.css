@@ -22,10 +22,10 @@
   --color-gray-border: #e0e0e0;       /* Border gray */
   
   /* Accent Colors */
-  --color-gold: #ffd700;              /* Gold accent */
-  --color-orange: #ff8000;            /* Orange accent */
-  --color-red: #ff0000;               /* Red accent */
-  --color-red-light: #e74c3c;         /* Light red */
+  --color-gold: #f0ab16;              /* Gold accent */
+  --color-orange: #ff6600;            /* Orange accent */
+  --color-red: #e60f0f;               /* Red accent */
+  --color-red-light: #e63838;         /* Light red */
   
   /* Background Colors */
   --color-bg-primary: #0000ff;        /* Primary background */
@@ -105,7 +105,6 @@ header {
   font-size: 14px;
   position: relative;
   z-index: 2;
-  transform: scaleY(1.2);
 }
 
 .logo {
@@ -3761,7 +3760,6 @@ a[href="#"][data-service="contact"],
   font-size: 14px;
   position: relative;
   z-index: 2;
-  transform: scaleY(1.2);
 }
 
 .contact-logo {
