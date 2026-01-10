@@ -118,134 +118,32 @@ export default function Contact() {
         <img src="/waves.svg" alt="Waves" />
       </div>
 
-      {/* Auto-rotating Image Slideshow */}
-      <section className={styles.imageSlideshow}>
-        <div className={styles.slideshowContainer}>
-          {/* Row 1: All new screenshots with infinite scroll */}
-          <div className={styles.slideshowRow}>
-            {/* Briefed Project Screenshots */}
-            {/* Scrambled images for visual variety */}
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_00percent.webp" alt="Briefed Project - Start" width="300" height="200" loading="lazy" />
+      {/* Static Image Grid */}
+      <section className={styles.imageGrid}>
+        <div className={styles.gridContainer}>
+          {/* Row 1 */}
+          <div className={styles.gridRow}>
+            <div className={styles.gridImageLarge}>
+              <img src="/video-screenshots/briefed/briefed_00percent.webp" alt="Briefed Project" />
             </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_1.webp" alt="Designer Knit Screenshot 1" className={styles.portraitImage} width="300" height="200" loading="lazy" />
+            <div className={styles.gridImageSmall}>
+              <img src="/video-screenshots/designer-knit/designer-knit_1.webp" alt="Designer Knit" className={styles.portraitImage} />
             </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_2.webp" alt="Edecoration Screenshot 2" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_3.webp" alt="Briefed Project Screenshot 3" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_2.webp" alt="Designer Knit Screenshot 2" className={styles.portraitImage} width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_1.webp" alt="Edecoration Screenshot 1" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" className={styles.portraitImage} width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_1.webp" alt="Briefed Project Screenshot 1" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_3.webp" alt="Edecoration Screenshot 3" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/designer-knit/designer-knit_3.webp" alt="Designer Knit Screenshot 3" className={styles.portraitImage} width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_2.webp" alt="Briefed Project Screenshot 2" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_4.webp" alt="Briefed Project Screenshot 4" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" className={styles.portraitImage} width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_5.webp" alt="Briefed Project Screenshot 5" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" width="300" height="200" loading="lazy" />
+            <div className={styles.gridImageLarge}>
+              <img src="/video-screenshots/edecoration/edecoration_2.webp" alt="Edecoration Project" />
             </div>
           </div>
-          
-          {/* Row 2: Remaining screenshots with infinite scroll */}
-          <div className={styles.slideshowRow}>
-            {/* Scrambled images for visual variety - Row 2 */}
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_00percent.webp" alt="Gather Project - Start" width="300" height="200" loading="lazy" />
+
+          {/* Row 2 */}
+          <div className={styles.gridRow}>
+            <div className={styles.gridImageLarge}>
+              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Project" />
             </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" width="300" height="200" loading="lazy" />
+            <div className={styles.gridImageSmall}>
+              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Project" className={styles.portraitImage} />
             </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_10percent.webp" alt="Huella Real - Early" className={styles.portraitImage} width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_00percent.webp" alt="RG Law Firm - Start" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_4.webp" alt="Gather Screenshot 4" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_80percent.webp" alt="Huella Real - Late" className={styles.portraitImage} width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Screenshot 1" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Screenshot 1" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Screenshot 1" className={styles.portraitImage} width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_5.webp" alt="Edecoration Screenshot 5" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_2.webp" alt="RG Law Firm Screenshot 2" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/huella-real/huella-real_2.webp" alt="Huella Real Screenshot 2" className={styles.portraitImage} width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_3.webp" alt="Gather Screenshot 3" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/edecoration/edecoration_6.webp" alt="Edecoration Screenshot 6" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_3.webp" alt="RG Law Firm Screenshot 3" width="300" height="200" loading="lazy" />
+            <div className={styles.gridImageLarge}>
+              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Project" />
             </div>
           </div>
         </div>

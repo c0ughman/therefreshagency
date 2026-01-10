@@ -1,84 +1,73 @@
 /* Contact Page Additional Sections */
 
-/* Auto-rotating Image Slideshow */
-.imageSlideshow {
+/* Static Image Grid */
+.imageGrid {
   background: white;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.gridContainer {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.gridRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  gap: 0;
+  margin: 0;
+}
+
+.gridImageLarge {
+  width: 100%;
+  height: 600px;
   overflow: hidden;
   position: relative;
 }
 
-/* Desktop-specific adjustments */
-@media (min-width: 769px) {
-  .imageSlideshow {
-    padding: -10px 0; /* 30px base - 40px additional = -10px total */
-  }
-}
-
-.slideshowContainer {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.slideshowRow {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 30px;
-  animation: slideLeft 60s linear infinite;
-  width: 200%; /* Double width to accommodate duplicated content */
-}
-
-.slideshowRow:nth-child(2) {
-  animation: slideRight 60s linear infinite;
-  animation-delay: -30s;
-}
-
-.slideshowImage {
-  flex-shrink: 0;
-  height: 200px;
-  width: auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-
-.slideshowImage img {
+.gridImageLarge img {
+  width: 100%;
   height: 100%;
-  width: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.gridImageSmall {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  background: var(--color-bg-secondary);
+}
+
+.gridImageSmall img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  transition: transform 0.3s ease;
-  aspect-ratio: 3/2;
-  background-color: var(--color-bg-secondary);
+  display: block;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .portraitImage {
   background: var(--color-bg-secondary);
-  padding: 10px;
-  box-sizing: border-box;
 }
 
-
-@keyframes slideLeft {
-  0% {
-    transform: translateX(0);
+/* Responsive adjustments */
+@media (max-width: 968px) {
+  .gridRow {
+    grid-template-columns: 1fr;
   }
-  100% {
-    transform: translateX(-50%);
+
+  .gridImageLarge,
+  .gridImageSmall {
+    height: 400px;
   }
 }
-
-@keyframes slideRight {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-/* Pause animation on hover */
 
 /* Combined Numbers & Reviews Section */
 .contactCombinedSection {
