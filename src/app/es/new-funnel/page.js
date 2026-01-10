@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react'
 import styles from './contact-sections.module.scss'
-import ZoomParallax from '../../../components/ZoomParallaxEN/index'
 
 export default function Contact() {
   const wheelRef = useRef(null)
@@ -119,10 +118,226 @@ export default function Contact() {
         <img src="/waves.svg" alt="Waves" />
       </div>
 
-      {/* Zoom Parallax Projects Section */}
-      <div className="zoom-parallax-wrapper">
-        <ZoomParallax />
-      </div>
+      {/* Projects Section */}
+      <section id="projects" className="projects-section">
+        <div className="projects-container">
+          <div className="projects-header">
+            <h2>Our Projects</h2>
+            <p>Showcasing our latest work and creative solutions</p>
+          </div>
+          {/* Project 1 - Briefed */}
+          <div className="project-row">
+            <div className="matrix" id="matrix-briefed"></div>
+            <div className="project-columns">
+              <div className="project-column client-type">
+                <span>SaaS</span>
+              </div>
+              <div className="project-column service">
+                <span>Frontend,<br />Identity</span>
+              </div>
+              <div className="project-column project-name">
+                <h2>Briefed</h2>
+                <video
+                  src="/briefed.mp4"
+                  alt="Briefed Project"
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/briefed.png"
+                />
+              </div>
+              <div className="project-column project-description">
+                <p><strong>How We Helped:</strong><br />We built out their whole front-end and brand identity, worked on a <u>beautiful central dashboard</u> which is the cornerstone of their product.</p>
+              </div>
+              <div className="project-column arrow">
+                <a href="https://trybriefed.com" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-divider"></div>
+
+          {/* Project 2 - RG Law Firm */}
+          <div className="project-row">
+            <div className="matrix" id="matrix-rg"></div>
+            <div className="project-columns">
+              <div className="project-column client-type">
+                <span>LAW FIRM</span>
+              </div>
+              <div className="project-column service">
+                <span>Website,<br />SEO</span>
+              </div>
+              <div className="project-column project-name">
+                <h2>RG B&P<br />Law Firm</h2>
+                <video
+                  src="/rg-law-firm.mp4"
+                  alt="RG Law Firm Project"
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/rg.png"
+                />
+              </div>
+              <div className="project-column project-description">
+                <p><strong>How We Helped:</strong><br />Built out a multi-language SEO centric website to <u>rank page #1 within weeks</u> on some local and international queries.</p>
+              </div>
+              <div className="project-column arrow">
+                <a href="https://rglawfirmpa.com" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-divider"></div>
+
+          {/* Project 3 - Edecoration */}
+          <div className="project-row">
+            <div className="matrix" id="matrix-edecoration"></div>
+            <div className="project-columns">
+              <div className="project-column client-type">
+                <span>HOME DECOR</span>
+              </div>
+              <div className="project-column service">
+                <span>Website,<br />PAID ADS</span>
+              </div>
+              <div className="project-column project-name">
+                <h2>Edecoration</h2>
+                <video
+                  src="/edecoration.mp4"
+                  alt="Edecoration Project"
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/edecoration.png"
+                />
+              </div>
+              <div className="project-column project-description">
+                <p><strong>How We Helped:</strong><br />Built a <u>digital showroom</u> showcasing many of their top projects, most important clients, and various products. Elegance and prestige.</p>
+              </div>
+              <div className="project-column arrow">
+                <a href="https://edecorationsa.com" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-divider"></div>
+
+          {/* Project 4 - Gather */}
+          <div className="project-row">
+            <div className="matrix" id="matrix-gather"></div>
+            <div className="project-columns">
+              <div className="project-column client-type">
+                <span>AI AGENTS PLATFORM</span>
+              </div>
+              <div className="project-column service">
+                <span>UI/UX DESIGN</span>
+              </div>
+              <div className="project-column project-name">
+                <h2>Gather</h2>
+                <video
+                  src="/gather.mp4"
+                  alt="Gather Project"
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/gather.png"
+                />
+              </div>
+              <div className="project-column project-description">
+                <p><strong>How We Helped:</strong><br />On the journey of developing a design language for this groundbreaking AI multi-agent platform. <u>We are cooking up something truly special.</u> </p>
+              </div>
+              <div className="project-column arrow">
+                <a href="https://wegather.pro" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-divider"></div>
+
+          {/* Project 5 - Huella Real */}
+          <div className="project-row">
+            <div className="matrix" id="matrix-huella"></div>
+            <div className="project-columns">
+              <div className="project-column client-type">
+                <span>ECOMMERCE</span>
+              </div>
+              <div className="project-column service">
+                <span>WEBSITE,<br />CRO</span>
+              </div>
+              <div className="project-column project-name">
+                <h2>Huella Real</h2>
+                <video
+                  src="/huella-real.mp4"
+                  alt="Huella Real Project"
+                  muted
+                  loop
+                  playsInline
+                />
+              </div>
+              <div className="project-column project-description">
+                <p><strong>How We Helped:</strong><br />This Spain-based Ecommerce store was carefully developed with the end user in mind, implementing <u>powerful CRO measures</u> from the start.</p>
+              </div>
+              <div className="project-column arrow">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-divider"></div>
+
+          {/* Project 6 - Designer Knit */}
+          <div className="project-row">
+            <div className="matrix" id="matrix-designer"></div>
+            <div className="project-columns">
+              <div className="project-column client-type">
+                <span>Fashion, ECOMMERCE</span>
+              </div>
+              <div className="project-column service">
+                <span>Website</span>
+              </div>
+              <div className="project-column project-name">
+                <h2>Designer Knit</h2>
+                <video
+                  src="/designer-knit.mp4"
+                  alt="Designer Knit Project"
+                  muted
+                  loop
+                  playsInline
+                />
+              </div>
+              <div className="project-column project-description">
+                <p><strong>How We Helped:</strong><br />Designed a <u>bold, elegant, and attractive</u> brand identity and website. Which resonated deeply with the target audience and brought exciting results.</p>
+              </div>
+              <div className="project-column arrow">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Combined Numbers & Reviews Section */}
       <section className={styles.contactCombinedSection}>
