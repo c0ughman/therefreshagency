@@ -65,8 +65,166 @@ export default function Contact() {
 
     document.addEventListener('mousemove', handleButtonMouseMove)
 
+    // Scroll-based video and project effects (mobile)
+    const briefedVideo = document.querySelector('video[alt*="Briefed"]')
+    const rgVideo = document.querySelector('video[alt*="RG Law Firm"]')
+    const edecorationVideo = document.querySelector('video[alt*="Edecoration"]')
+    const gatherVideo = document.querySelector('video[alt*="Gather"]')
+    const huellaVideo = document.querySelector('video[alt*="Huella Real"]')
+    const designerVideo = document.querySelector('video[alt*="Designer Knit"]')
+
+    const briefedRow = document.querySelector('#matrix-briefed')?.closest('.project-row')
+    const rgRow = document.querySelector('#matrix-rg')?.closest('.project-row')
+    const edecorationRow = document.querySelector('#matrix-edecoration')?.closest('.project-row')
+    const gatherRow = document.querySelector('#matrix-gather')?.closest('.project-row')
+    const huellaRow = document.querySelector('#matrix-huella')?.closest('.project-row')
+    const designerRow = document.querySelector('#matrix-designer')?.closest('.project-row')
+
+    // Project rows and their corresponding videos
+    const projectData = [
+      { row: briefedRow, video: briefedVideo },
+      { row: rgRow, video: rgVideo },
+      { row: edecorationRow, video: edecorationVideo },
+      { row: gatherRow, video: gatherVideo },
+      { row: huellaRow, video: huellaVideo },
+      { row: designerRow, video: designerVideo }
+    ]
+
+    // Detect if device is mobile/touch
+    const isMobile = () => {
+      return window.innerWidth <= 1024 || 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    }
+
+    // Function to activate project (play video and add active class)
+    const activateProject = (row, video) => {
+      if (!row) return
+
+      // Add scroll-active class for styling
+      row.classList.add('scroll-active')
+
+      // Play video if it exists
+      if (video) {
+        video.play().catch(e => console.log('Video play failed:', e))
+      }
+    }
+
+    // Function to deactivate project (pause video and remove active class)
+    const deactivateProject = (row, video) => {
+      if (!row) return
+
+      // Remove scroll-active class
+      row.classList.remove('scroll-active')
+
+      // Pause and reset video if it exists
+      if (video) {
+        video.pause()
+        video.currentTime = 0
+      }
+    }
+
+    // Function to check if project center aligns with viewport center (mobile only)
+    const checkProjectAlignment = () => {
+      if (!isMobile()) return // Skip on desktop
+
+      const viewportCenter = window.innerHeight / 2
+
+      projectData.forEach(({ row, video }) => {
+        if (!row) return
+
+        const rect = row.getBoundingClientRect()
+        const projectCenter = rect.top + (rect.height / 2)
+
+        // Check if project center is close to viewport center (within 100px tolerance)
+        const isAligned = Math.abs(projectCenter - viewportCenter) < 100
+
+        if (isAligned) {
+          activateProject(row, video)
+        } else {
+          deactivateProject(row, video)
+        }
+      })
+    }
+
+    // Desktop hover handlers
+    const setupDesktopHover = () => {
+      if (isMobile()) return // Skip on mobile
+
+      projectData.forEach(({ row, video }) => {
+        if (!row) return
+
+        // Mouse enter handler
+        const handleMouseEnter = () => {
+          activateProject(row, video)
+        }
+
+        // Mouse leave handler
+        const handleMouseLeave = () => {
+          deactivateProject(row, video)
+        }
+
+        // Add event listeners
+        row.addEventListener('mouseenter', handleMouseEnter)
+        row.addEventListener('mouseleave', handleMouseLeave)
+
+        // Store handlers for cleanup
+        row._hoverHandlers = { handleMouseEnter, handleMouseLeave }
+      })
+    }
+
+    // Throttled scroll handler for performance (mobile only)
+    let scrollTimeout
+    const handleProjectScroll = () => {
+      if (!isMobile()) return // Skip on desktop
+
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout)
+      }
+      scrollTimeout = setTimeout(checkProjectAlignment, 10)
+    }
+
+    // Handle window resize to switch between desktop and mobile behavior
+    const handleResize = () => {
+      // Clean up existing hover handlers
+      projectData.forEach(({ row }) => {
+        if (row && row._hoverHandlers) {
+          row.removeEventListener('mouseenter', row._hoverHandlers.handleMouseEnter)
+          row.removeEventListener('mouseleave', row._hoverHandlers.handleMouseLeave)
+          delete row._hoverHandlers
+        }
+      })
+
+      // Reset all projects
+      projectData.forEach(({ row, video }) => {
+        deactivateProject(row, video)
+      })
+
+      // Setup appropriate behavior
+      if (isMobile()) {
+        checkProjectAlignment() // Initial check for mobile
+      } else {
+        setupDesktopHover() // Setup hover for desktop
+      }
+    }
+
+    // Initial setup
+    handleResize()
+
+    // Listen for scroll events (mobile) and resize events
+    window.addEventListener('scroll', handleProjectScroll)
+    window.addEventListener('resize', handleResize)
+
     return () => {
       document.removeEventListener('mousemove', handleButtonMouseMove)
+      window.removeEventListener('scroll', handleProjectScroll)
+      window.removeEventListener('resize', handleResize)
+
+      // Clean up hover handlers
+      projectData.forEach(({ row }) => {
+        if (row && row._hoverHandlers) {
+          row.removeEventListener('mouseenter', row._hoverHandlers.handleMouseEnter)
+          row.removeEventListener('mouseleave', row._hoverHandlers.handleMouseLeave)
+        }
+      })
     }
   }, [])
 
