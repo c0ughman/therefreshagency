@@ -814,6 +814,17 @@ export default function Contact() {
           </p>
         </div>
       </section>
+
+      {/* Sticky Contact Button */}
+      <a
+        href="https://wa.me/19784045049?text=Buenas,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20%C2%BFQu%C3%A9%20sigue?"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="sticky-contact-button"
+        onClick={() => gtag_report_conversion()}
+      >
+        Hablemos
+      </a>
     </div>
   )
 }
