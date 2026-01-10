@@ -1,46 +1,51 @@
 /* Contact Page Additional Sections */
 
-/* Auto-rotating Image Slideshow */
+/* Auto-rotating Image Slideshow - Cinema Experience */
 .imageSlideshow {
-  background: white;
+  background: #000000;
   overflow: hidden;
   position: relative;
+  padding: 120px 0;
+  transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Desktop-specific adjustments */
 @media (min-width: 769px) {
   .imageSlideshow {
-    padding: -10px 0; /* 30px base - 40px additional = -10px total */
+    padding: 150px 0;
   }
 }
 
 .slideshowContainer {
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 60px;
 }
 
 .slideshowRow {
   display: flex;
-  gap: 30px;
-  margin-bottom: 30px;
-  animation: slideLeft 60s linear infinite;
+  gap: 50px;
+  margin-bottom: 50px;
+  animation: slideLeft 80s linear infinite;
   width: 200%; /* Double width to accommodate duplicated content */
 }
 
 .slideshowRow:nth-child(2) {
-  animation: slideRight 60s linear infinite;
-  animation-delay: -30s;
+  animation: slideRight 80s linear infinite;
+  animation-delay: -40s;
 }
 
 .slideshowImage {
   flex-shrink: 0;
-  height: 200px;
+  height: 450px;
   width: auto;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(255, 100, 0, 0.15);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 
@@ -48,9 +53,9 @@
   height: 100%;
   width: auto;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   aspect-ratio: 3/2;
-  background-color: var(--color-bg-secondary);
+  background-color: #0a0a0a;
 }
 
 .portraitImage {
