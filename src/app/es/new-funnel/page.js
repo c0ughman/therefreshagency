@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import styles from './contact-sections.module.scss'
+import ZoomParallax from '../../../components/ZoomParallaxEN/index'
 
 export default function Contact() {
   const wheelRef = useRef(null)
@@ -118,36 +119,10 @@ export default function Contact() {
         <img src="/waves.svg" alt="Waves" />
       </div>
 
-      {/* Static Image Grid */}
-      <section className={styles.imageGrid}>
-        <div className={styles.gridContainer}>
-          {/* Row 1 */}
-          <div className={styles.gridRow}>
-            <div className={styles.gridImageLarge}>
-              <img src="/video-screenshots/briefed/briefed_00percent.webp" alt="Briefed Project" />
-            </div>
-            <div className={styles.gridImageSmall}>
-              <img src="/video-screenshots/designer-knit/designer-knit_1.webp" alt="Designer Knit" className={styles.portraitImage} />
-            </div>
-            <div className={styles.gridImageLarge}>
-              <img src="/video-screenshots/edecoration/edecoration_2.webp" alt="Edecoration Project" />
-            </div>
-          </div>
-
-          {/* Row 2 */}
-          <div className={styles.gridRow}>
-            <div className={styles.gridImageLarge}>
-              <img src="/video-screenshots/gather/gather_1.webp" alt="Gather Project" />
-            </div>
-            <div className={styles.gridImageSmall}>
-              <img src="/video-screenshots/huella-real/huella-real_1.webp" alt="Huella Real Project" className={styles.portraitImage} />
-            </div>
-            <div className={styles.gridImageLarge}>
-              <img src="/video-screenshots/rg-law-firm/rg-law-firm_1.webp" alt="RG Law Firm Project" />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Zoom Parallax Projects Section */}
+      <div className="zoom-parallax-wrapper">
+        <ZoomParallax />
+      </div>
 
       {/* Combined Numbers & Reviews Section */}
       <section className={styles.contactCombinedSection}>
