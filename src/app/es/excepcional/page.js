@@ -243,17 +243,17 @@ export default function Contact() {
         {/* Stars pill over title */}
         <div className="stars-pill">
           <span className="stars">★★★★★</span>
-          <span className="stars-text">Creamos resultados concretos.</span>
+          <span className="stars-text">Diseñamos sitios excepcionales.</span>
         </div>
 
         {/* Main title */}
         <h1 className="contact-title">Más Alla de<br />Diseño Web</h1>
 
         {/* Subtitle */}
-        <p className="contact-subtitle">Eleva tu marca con una experiencia web excepcional, con <u><strong>una maquina de generar clientes</strong></u> por detrás. Déjanos encargarnos de todo.</p>
+        <p className="contact-subtitle">Eleva tu marca con <u><strong>diseño de alto nivel.</strong></u><br />Nos encargamos de todo, contigo en cada paso.</p>
 
         {/* CTA Button */}
-        <a href="https://wa.me/19784045049?text=Buenas,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
+        <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional.%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
 
           <button className="contact-button">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
@@ -263,11 +263,11 @@ export default function Contact() {
           </button>
         </a>
 
-        {/* Pills under button */}
-        <div className="contact-pills">
-          <div className="contact-pill">Diseño Único</div>
-          <div className="contact-pill">4x Más Clientes</div>
-          <div className="contact-pill">Apoyo</div>
+        {/* Info under button */}
+        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '12px', marginTop: '4px'}}>
+          <span style={{color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.75rem'}}>Cupos limitados</span>
+          <div style={{width: '1px', height: '12px', backgroundColor: 'rgba(255, 255, 255, 0.6)'}}></div>
+          <span style={{color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.75rem'}}>Desde $2,500</span>
         </div>
       </main>
 
@@ -281,89 +281,9 @@ export default function Contact() {
         <div className="projects-container">
           <div className="projects-header">
             <h2>Nuestros Resultados Hablan Por Sí Solos</h2>
-            <p>Diseños únicos y personalizados que reflejan la identidad de cada marca</p>
+            <p>Cada proyecto es una pieza única. Siente lo que una buena dirección creativa puede hacer para tu presencia web.</p>
           </div>
-          {/* Project 1 - Briefed */}
-          <div className="project-row">
-            <div className="matrix" id="matrix-briefed"></div>
-            <div className="project-columns">
-              <div className="project-column stars">
-                <span>★★★★★</span>
-              </div>
-              <div className="project-column service">
-                <span>Frontend,<br />Identity</span>
-              </div>
-              <div className="project-column project-name">
-                <h2>Briefed</h2>
-                <video
-                  src="/briefed.mp4"
-                  alt="Briefed Project"
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  poster="/briefed.png"
-                />
-              </div>
-              <div className="project-column project-description">
-                <p>"The Refresh Agency realmente nos ayudó a crear una identidad de marca única y aplicarla perfectamente a nuestro <strong>sitio web y producto</strong>. El resultado es una interfaz hermosa y bien pensada para nuestros futuros clientes."</p>
-              </div>
-              <div className="project-column client-type">
-                <span>SaaS</span>
-              </div>
-              <div className="project-column arrow">
-                <a href="https://trybriefed.com" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="project-divider"></div>
-
-          {/* Project 2 - RG Law Firm */}
-          <div className="project-row">
-            <div className="matrix" id="matrix-rg"></div>
-            <div className="project-columns">
-              <div className="project-column stars">
-                <span>★★★★★</span>
-              </div>
-              <div className="project-column service">
-                <span>Website,<br />SEO</span>
-              </div>
-              <div className="project-column project-name">
-                <h2>RG B&P<br />Law Firm</h2>
-                <video
-                  src="/rg-law-firm.mp4"
-                  alt="RG Law Firm Project"
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  poster="/rg.png"
-                />
-              </div>
-              <div className="project-column project-description">
-                <p>"Sin que tengamos que microgestionar todo, la agencia <strong>trabaja de forma independiente</strong>, trayendo resultados reales a nuestro negocio y construyendo cosas increíbles muy rápido. Un verdadero socio estratégico."</p>
-              </div>
-              <div className="project-column client-type">
-                <span>LAW FIRM</span>
-              </div>
-              <div className="project-column arrow">
-                <a href="https://rglawfirmpa.com" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="project-divider"></div>
-
-          {/* Project 3 - Edecoration */}
+          {/* Project 1 - Edecoration */}
           <div className="project-row">
             <div className="matrix" id="matrix-edecoration"></div>
             <div className="project-columns">
@@ -392,7 +312,7 @@ export default function Contact() {
                 <span>HOME DECOR</span>
               </div>
               <div className="project-column arrow">
-                <a href="https://edecorationsa.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional!%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -403,83 +323,7 @@ export default function Contact() {
 
           <div className="project-divider"></div>
 
-          {/* Project 4 - Gather */}
-          <div className="project-row">
-            <div className="matrix" id="matrix-gather"></div>
-            <div className="project-columns">
-              <div className="project-column stars">
-                <span>★★★★★</span>
-              </div>
-              <div className="project-column service">
-                <span>UI/UX DESIGN</span>
-              </div>
-              <div className="project-column project-name">
-                <h2>Gather</h2>
-                <video
-                  src="/gather.mp4"
-                  alt="Gather Project"
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  poster="/gather.png"
-                />
-              </div>
-              <div className="project-column project-description">
-                <p>"Working with The Refresh Agency is a <strong>true collaborative process</strong>. Exploring the visual language of our product and how it materializes in every aspect of the user interface has been an extraordinary experience."</p>
-              </div>
-              <div className="project-column client-type">
-                <span>AI AGENTS PLATFORM</span>
-              </div>
-              <div className="project-column arrow">
-                <a href="https://wegather.pro" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="project-divider"></div>
-
-          {/* Project 5 - Huella Real */}
-          <div className="project-row">
-            <div className="matrix" id="matrix-huella"></div>
-            <div className="project-columns">
-              <div className="project-column stars">
-                <span>★★★★★</span>
-              </div>
-              <div className="project-column service">
-                <span>WEBSITE,<br />CRO</span>
-              </div>
-              <div className="project-column project-name">
-                <h2>Huella Real</h2>
-                <video
-                  src="/huella-real.mp4"
-                  alt="Huella Real Project"
-                  muted
-                  loop
-                  playsInline
-                />
-              </div>
-              <div className="project-column project-description">
-                <p>"Nuestra conversión se disparó al <strong>20% en solo días</strong>. Combinado con las docenas de nuevos leads cada semana, esto se ha convertido en un pilar importante de nuestro negocio."</p>
-              </div>
-              <div className="project-column client-type">
-                <span>ECOMMERCE</span>
-              </div>
-              <div className="project-column arrow">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <div className="project-divider"></div>
-
-          {/* Project 6 - Designer Knit */}
+          {/* Project 2 - Designer Knit */}
           <div className="project-row">
             <div className="matrix" id="matrix-designer"></div>
             <div className="project-columns">
@@ -506,9 +350,169 @@ export default function Contact() {
                 <span>Fashion, ECOMMERCE</span>
               </div>
               <div className="project-column arrow">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional!%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-divider"></div>
+
+          {/* Project 3 - RG Law Firm */}
+          <div className="project-row">
+            <div className="matrix" id="matrix-rg"></div>
+            <div className="project-columns">
+              <div className="project-column stars">
+                <span>★★★★★</span>
+              </div>
+              <div className="project-column service">
+                <span>Website,<br />SEO</span>
+              </div>
+              <div className="project-column project-name">
+                <h2>RG B&P<br />Law Firm</h2>
+                <video
+                  src="/rg-law-firm.mp4"
+                  alt="RG Law Firm Project"
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/rg.png"
+                />
+              </div>
+              <div className="project-column project-description">
+                <p>"Sin que tengamos que microgestionar todo, la agencia <strong>trabaja de forma independiente</strong>, trayendo resultados reales a nuestro negocio y construyendo cosas increíbles muy rápido. Un verdadero socio estratégico."</p>
+              </div>
+              <div className="project-column client-type">
+                <span>LAW FIRM</span>
+              </div>
+              <div className="project-column arrow">
+                <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional!%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-divider"></div>
+
+          {/* Project 4 - Briefed */}
+          <div className="project-row">
+            <div className="matrix" id="matrix-briefed"></div>
+            <div className="project-columns">
+              <div className="project-column stars">
+                <span>★★★★★</span>
+              </div>
+              <div className="project-column service">
+                <span>Frontend,<br />Identity</span>
+              </div>
+              <div className="project-column project-name">
+                <h2>Briefed</h2>
+                <video
+                  src="/briefed.mp4"
+                  alt="Briefed Project"
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/briefed.png"
+                />
+              </div>
+              <div className="project-column project-description">
+                <p>"The Refresh Agency realmente nos ayudó a crear una <strong>identidad de marca única</strong> y aplicarla perfectamente a nuestro sitio web y producto. El resultado es una interfaz hermosa y bien pensada para nuestros futuros clientes."</p>
+              </div>
+              <div className="project-column client-type">
+                <span>SaaS</span>
+              </div>
+              <div className="project-column arrow">
+                <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional!%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-divider"></div>
+
+          {/* Project 5 - Gather */}
+          <div className="project-row">
+            <div className="matrix" id="matrix-gather"></div>
+            <div className="project-columns">
+              <div className="project-column stars">
+                <span>★★★★★</span>
+              </div>
+              <div className="project-column service">
+                <span>UI/UX DESIGN</span>
+              </div>
+              <div className="project-column project-name">
+                <h2>Gather</h2>
+                <video
+                  src="/gather.mp4"
+                  alt="Gather Project"
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/gather.png"
+                />
+              </div>
+              <div className="project-column project-description">
+                <p>"Trabajar con The Refresh Agency es un <strong>verdadero proceso de colaboración</strong>. Explorar el lenguaje visual de nuestro producto y la forma en que se materializa en cada aspecto de la interfaz ha sido una experiencia extraordinaria."</p>
+              </div>
+              <div className="project-column client-type">
+                <span>AI AGENTS PLATFORM</span>
+              </div>
+              <div className="project-column arrow">
+                <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional!%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-divider"></div>
+
+          {/* Project 6 - Huella Real */}
+          <div className="project-row">
+            <div className="matrix" id="matrix-huella"></div>
+            <div className="project-columns">
+              <div className="project-column stars">
+                <span>★★★★★</span>
+              </div>
+              <div className="project-column service">
+                <span>Google Ads,<br />CRO</span>
+              </div>
+              <div className="project-column project-name">
+                <h2>Huella Real</h2>
+                <video
+                  src="/huella-real.mp4"
+                  alt="Huella Real Project"
+                  muted
+                  loop
+                  playsInline
+                />
+              </div>
+              <div className="project-column project-description">
+                <p>"La tienda online que desarrollaron para nosotros está <strong>optimizada para conversión desde el primer día</strong>. El diseño es limpio, profesional, y los clientes encuentran exactamente lo que buscan."</p>
+              </div>
+              <div className="project-column client-type">
+                <span>ECOMMERCE</span>
+              </div>
+              <div className="project-column arrow">
+                <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional!%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -521,18 +525,16 @@ export default function Contact() {
           {/* Block of text */}
           <div className={styles.combinedDescription}>
             <p>
-              Tras trabajar con nosotros, recibirás un <u><strong>sitio web digno de premios de diseño</strong></u>, una consulta de mercadeo estratégico y páginas funnel para multiplicar tu potencial de ventas. Manejamos todo el proceso para que no tengas que preocuparte por nada.
+              <em>No hacemos "páginas bonitas".</em> <br />Creamos un sitio web <strong>congruente con tu marca</strong>, con atención al detalle y dirección creativa de alto nivel.
             </p>
           </div>
 
           {/* Benefits list */}
           <ul className={styles.combinedBenefits}>
-            <li>Sitio web digno de premios de diseño</li>
-            <li>Páginas funnel para multiplicar tus ventas</li>
-            <li>Consulta de mercadeo estratégico incluida</li>
-            <li>Versión optimizada para móvil responsiva</li>
-            <li>SEO básico y performance optimizado</li>
-            <li>Apoyo técnico directo y mantenimiento</li>
+            <li>Diseño único e original, sin plantillas</li>
+            <li>Dirección creativa y atención en cada pixel</li>
+            <li>Colaboración verdadera (tú ves avances y decides con nosotros)</li>
+            <li>Comunicación rápida y ordenada, el mejor servicio</li>
           </ul>
         </div>
       </section>
@@ -551,15 +553,15 @@ export default function Contact() {
           {/* Stars pill over title */}
           <div className="stars-pill" style={{maxWidth: '280px', margin: '0 auto 15px auto'}}>
             <span className="stars">★★★★★</span>
-            <span className="stars-text">Creamos resultados concretos.</span>
+            <span className="stars-text">Diseñamos sitios excepcionales.</span>
           </div>
 
-          <h2 className={styles.contactCtaTitle} style={{marginTop: '0px'}}>No Esperes Más,<br />Asesoría y Cotización<br />Hoy Mismo</h2>
+          <h2 className={styles.contactCtaTitle} style={{marginTop: '0px'}}>Tu Marca Merece<br />Diseño De Verdad</h2>
           <p className={styles.contactCtaSubtitle}>
-          Sólo trabajamos con <strong><u>tres cupos por mes</u></strong> para asegurar la mejor atención y calidad de resultados, no te quedes sin tu lugar. 
+          <u>Tomamos pocos proyectos al mes</u> para dar la mejor atención. Escríbenos para empezar el proceso hoy.
           </p>
 
-          <a href="https://wa.me/19784045049?text=Buenas,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes..%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
+          <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional..%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
 
             <button className="contact-button">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
@@ -569,11 +571,11 @@ export default function Contact() {
             </button>
           </a>
           
-          {/* Trust Pills */}
-          <div className={styles.contactCtaPills}>
-            <div className={styles.contactCtaPill}>✓ Respuesta en minutos</div>
-            <div className={styles.contactCtaPill}>✓ Sin compromiso</div>
-            <div className={styles.contactCtaPill}>✓ Consulta gratuita</div>
+          {/* Info under button */}
+          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '12px', marginTop: '10px'}}>
+            <span style={{color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.75rem'}}>Cupos limitados</span>
+            <div style={{width: '1px', height: '12px', backgroundColor: 'rgba(255, 255, 255, 0.6)'}}></div>
+            <span style={{color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.75rem'}}>Desde $2,500</span>
           </div>
         </div>
       </section>
@@ -596,8 +598,14 @@ export default function Contact() {
           <div className={styles.contactComparisonGradient7}></div>
           <div className={styles.contactComparisonGradient8}></div>
           
-          <h2 className={styles.contactComparisonTitle}>Nuestra Diferencia</h2>
-          
+          <h2 className={styles.contactComparisonTitle}>
+            Lo Que <span style={{fontFamily: "'Georgia', serif", fontSize: '0.88em', fontWeight: '900', transform: 'scaleY(1.2) translateY(-2px)', display: 'inline-block', verticalAlign: 'baseline'}}>The Refresh Agency</span>
+            <br />Hace Mejor
+          </h2>
+          <p className={styles.contactComparisonSubtitle}>
+            <strong>En el mercado hispano,</strong> la mayoría entrega lo de siempre: plantillas aburridas, silencio (no responden) y excusas baratas.<br /><br />Nosotros diseñamos desde cero contigo. Te escuchamos, te mostramos avances, y atendemos cada detalle con diseño excepcional.
+          </p>
+
           {/* Desktop Table View */}
           <div className={styles.contactComparisonTable}>
             <div className={styles.contactComparisonTableHeader}>
@@ -608,55 +616,8 @@ export default function Contact() {
                 <h3>The Refresh Agency</h3>
               </div>
             </div>
-            
-            <div className={styles.contactComparisonTableRow}>
-              <div className={`${styles.contactComparisonTableCell} ${styles.left}`}>
-                <div className={styles.contactComparisonItem}>
-                  <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="18" y1="6" x2="6" y2="18"></line>
-                      <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                  </span>
-                  <span className={styles.contactComparisonText}>Cobran $5,000+ por servicios sencillos con costos escondidos.</span>
-                </div>
-              </div>
-              <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
-                <div className={styles.contactComparisonItem}>
-                  <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20,6 9,17 4,12"></polyline>
-                    </svg>
-                  </span>
-                  <span className={styles.contactComparisonText}>Precios <strong>justos y transparentes</strong>, sin sorpresas ocultas.</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className={styles.contactComparisonTableRow}>
-              <div className={`${styles.contactComparisonTableCell} ${styles.left}`}>
-                <div className={styles.contactComparisonItem}>
-                  <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="18" y1="6" x2="6" y2="18"></line>
-                      <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                  </span>
-                  <span className={styles.contactComparisonText}>Entregan leads basura y resultados que no sirven.</span>
-                </div>
-              </div>
-              <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
-                <div className={styles.contactComparisonItem}>
-                  <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20,6 9,17 4,12"></polyline>
-                    </svg>
-                  </span>
-                  <span className={styles.contactComparisonText}>Estrategias que generan <strong>clientes reales</strong> y <strong>resultados medibles</strong>.</span>
-                </div>
-              </div>
-            </div>
-            
+
+            {/* Row 1: Unique Designs */}
             <div className={styles.contactComparisonTableRow}>
               <div className={`${styles.contactComparisonTableCell} ${styles.left}`}>
                 <div className={styles.contactComparisonItem}>
@@ -680,31 +641,8 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-            
-            <div className={styles.contactComparisonTableRow}>
-              <div className={`${styles.contactComparisonTableCell} ${styles.left}`}>
-                <div className={styles.contactComparisonItem}>
-                  <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="18" y1="6" x2="6" y2="18"></line>
-                      <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                  </span>
-                  <span className={styles.contactComparisonText}>Abandonan proyectos sin aviso y desaparecen tras la entrega.</span>
-                </div>
-              </div>
-              <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
-                <div className={styles.contactComparisonItem}>
-                  <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20,6 9,17 4,12"></polyline>
-                    </svg>
-                  </span>
-                  <span className={styles.contactComparisonText}>Acompañamos tu proyecto <strong>de principio a fin</strong>, <strong>sin abandonos</strong>.</span>
-                </div>
-              </div>
-            </div>
-            
+
+            {/* Row 2: Communication */}
             <div className={styles.contactComparisonTableRow}>
               <div className={`${styles.contactComparisonTableCell} ${styles.left}`}>
                 <div className={styles.contactComparisonItem}>
@@ -728,7 +666,8 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-            
+
+            {/* Row 3: Pricing */}
             <div className={styles.contactComparisonTableRow}>
               <div className={`${styles.contactComparisonTableCell} ${styles.left}`}>
                 <div className={styles.contactComparisonItem}>
@@ -738,7 +677,7 @@ export default function Contact() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Retrasos constantes y deshonestidad con los plazos.</span>
+                  <span className={styles.contactComparisonText}>Cobran $5,000+ por servicios sencillos con costos escondidos.</span>
                 </div>
               </div>
               <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
@@ -748,31 +687,7 @@ export default function Contact() {
                       <polyline points="20,6 9,17 4,12"></polyline>
                     </svg>
                   </span>
-                  <span className={styles.contactComparisonText}>Cumplimos plazos con <strong>procesos claros</strong> y <strong>responsables</strong>.</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className={styles.contactComparisonTableRow}>
-              <div className={`${styles.contactComparisonTableCell} ${styles.left}`}>
-                <div className={styles.contactComparisonItem}>
-                  <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="18" y1="6" x2="6" y2="18"></line>
-                      <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                  </span>
-                  <span className={styles.contactComparisonText}>Usan tecnología anticuada que desperdicia tiempo y dinero.</span>
-                </div>
-              </div>
-              <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
-                <div className={styles.contactComparisonItem}>
-                  <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20,6 9,17 4,12"></polyline>
-                    </svg>
-                  </span>
-                  <span className={styles.contactComparisonText}>Tecnología <strong>moderna y eficiente</strong> que <strong>potencia tu negocio</strong>.</span>
+                  <span className={styles.contactComparisonText}>Precios <strong>justos y transparentes</strong>, sin sorpresas ocultas.</span>
                 </div>
               </div>
             </div>
@@ -780,40 +695,7 @@ export default function Contact() {
           
           {/* Mobile Alternating Comparison List */}
           <div className={styles.contactComparisonMobile}>
-            <div className={styles.contactComparisonMobileItem}>
-              <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20,6 9,17 4,12"></polyline>
-                </svg>
-              </span>
-              <span className={styles.contactComparisonText}>Precios <strong>justos y transparentes</strong>, sin sorpresas ocultas.</span>
-            </div>
-            <div className={styles.contactComparisonMobileItem}>
-              <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </span>
-              <span className={styles.contactComparisonText}>Cobran $5,000+ por servicios sencillos con costos escondidos.</span>
-            </div>
-            <div className={styles.contactComparisonMobileItem}>
-              <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20,6 9,17 4,12"></polyline>
-                </svg>
-              </span>
-              <span className={styles.contactComparisonText}>Estrategias que generan <strong>clientes reales</strong> y <strong>resultados medibles</strong>.</span>
-            </div>
-            <div className={styles.contactComparisonMobileItem}>
-              <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </span>
-              <span className={styles.contactComparisonText}>Entregan leads basura y resultados que no sirven.</span>
-            </div>
+            {/* Unique Designs - Positive */}
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -822,6 +704,7 @@ export default function Contact() {
               </span>
               <span className={styles.contactComparisonText}>Diseños <strong>únicos</strong> que reflejan la <strong>esencia de tu marca</strong>.</span>
             </div>
+            {/* Unique Designs - Negative */}
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -831,6 +714,7 @@ export default function Contact() {
               </span>
               <span className={styles.contactComparisonText}>Diseños genéricos basados en plantillas sin personalidad.</span>
             </div>
+            {/* Communication - Positive */}
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -839,6 +723,7 @@ export default function Contact() {
               </span>
               <span className={styles.contactComparisonText}>Comunicación <strong>cercana, rápida</strong> y <strong>clara</strong> en todo momento.</span>
             </div>
+            {/* Communication - Negative */}
             <div className={styles.contactComparisonMobileItem}>
               <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -848,85 +733,24 @@ export default function Contact() {
               </span>
               <span className={styles.contactComparisonText}>Comunicación lenta, confusa y poco profesional.</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className={styles.contactHowItWorksSection}>
-        <div className={styles.contactHowItWorksContainer}>
-          <h2 className={styles.contactHowItWorksTitle}>Oferta:<br />Sólo Para los Próximos<br /><span className={styles.blueUnderline}>Tres Clientes</span></h2>
-          <p className={styles.contactHowItWorksSubtitle}>
-            Nuestro paquete base de diseño web por <u>menos de la mitad del precio normal.</u><br />Mientras otros ocultan sus costos, nosotros mostramos exactamente que ofrecemos y cuánto te costaría. <br /><strong>Esta oportunidad no volverá a repetirse.</strong>
-          </p>
-          
-          {/* Funnel Pricing Section */}
-          <div className={styles.contactFooterCtaFunnel}>
-            <div className={styles.contactFooterCtaFunnelTitle}>Lo que incluye tu paquete:</div>
-            
-            <div className={styles.contactFooterCtaFunnelServices}>
-              <div className={styles.contactFooterCtaFunnelService}>
-                <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Sitio Web 100% Personalizado</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Único, creativo y adaptado para móvil (hasta de 5 páginas incluídas)</span>
-                </div>
-                <span className={styles.contactFooterCtaFunnelServicePrice}>$700</span>
-              </div>
-              <div className={styles.contactFooterCtaFunnelService}>
-                <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Página Funnel para Ventas</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Optimizada para multiplicar tus ventas, desde ads o otros canales.</span>
-                </div>
-                <span className={styles.contactFooterCtaFunnelServicePrice}>$300</span>
-              </div>
-              <div className={styles.contactFooterCtaFunnelService}>
-                <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Consultoría Estratégica en Marketing</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Una sesión personalizada para ayudar a tu negocio y situacion específica.</span>
-                </div>
-                <span className={styles.contactFooterCtaFunnelServicePrice}>$120</span>
-              </div>
-              <div className={styles.contactFooterCtaFunnelService}>
-                <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}>15 Artículos de Blogs Detallados</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>15 artículos ultra específicos para marketing de contenido y SEO.</span>
-                </div>
-                <span className={styles.contactFooterCtaFunnelServicePrice}>$300</span>
-              </div>
-              <div className={styles.contactFooterCtaFunnelService}>
-                <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}>SEO Básico, Rendimiento y Velocidad</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Optimizamos tu sitio para que sea rápido y fácil de encontrar en Google.</span>
-                </div>
-                <span className={styles.contactFooterCtaFunnelServicePrice}>$150</span>
-              </div>
-              <div className={styles.contactFooterCtaFunnelService}>
-                <div className={styles.contactFooterCtaFunnelServiceContent}>
-                  <span className={styles.contactFooterCtaFunnelServiceTitle}>Gestión de Hosting y Dominio</span>
-                  <span className={styles.contactFooterCtaFunnelServiceDescription}>Gestion completa de hosting, dominio y todo el proceso técnico inicial.</span>
-                </div>
-                <span className={styles.contactFooterCtaFunnelServicePrice}>$150</span>
-              </div>
-            </div>
-            
-            <div className={styles.contactFooterCtaFunnelTotal}>
-              <div className={styles.contactFooterCtaFunnelTotalRow}>
-                <span className={styles.contactFooterCtaFunnelTotalLabel}>Valor total:</span>
-                <span className={styles.contactFooterCtaFunnelTotalPrice}>$1,720</span>
-              </div>
-              <div className={styles.contactFooterCtaFunnelDiscountRow}>
-                <span className={styles.contactFooterCtaFunnelDiscountLabel}>Tu precio especial:</span>
-                <span className={styles.contactFooterCtaFunnelDiscountPrice}>$850</span>
-              </div>
-              <div className={styles.contactFooterCtaFunnelSavingsRow}>
-                <span className={styles.contactFooterCtaFunnelSavingsPrice}>más del 50% de descuento</span>
-              </div>
-            </div>
-            
-            <div className={styles.contactFooterCtaFunnelBasePriceNote}>
-              <span className={styles.contactFooterCtaFunnelBasePriceText}>
-                Este es el precio base. Para proyectos que incluyan ecommerce, blog completo, traduccion, páginas funnel extra, etc. <a href="https://wa.me/19784045049?text=Buenas,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes...%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'underline', fontWeight: 'bold', fontStyle: 'normal', color: 'black'}} onClick={() => gtag_report_conversion()}>Contáctanos para una cotización personalizada.</a>
+            {/* Pricing - Positive */}
+            <div className={styles.contactComparisonMobileItem}>
+              <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20,6 9,17 4,12"></polyline>
+                </svg>
               </span>
+              <span className={styles.contactComparisonText}>Precios <strong>justos y transparentes</strong>, sin sorpresas ocultas.</span>
+            </div>
+            {/* Pricing - Negative */}
+            <div className={styles.contactComparisonMobileItem}>
+              <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </span>
+              <span className={styles.contactComparisonText}>Cobran $5,000+ por servicios sencillos con costos escondidos.</span>
             </div>
           </div>
         </div>
@@ -952,15 +776,15 @@ export default function Contact() {
             {/* Stars pill over title */}
             <div className="stars-pill" style={{maxWidth: '280px', margin: '30px auto 5px auto'}}>
               <span className="stars">★★★★★</span>
-              <span className="stars-text">Creamos resultados concretos.</span>
+              <span className="stars-text">Diseñamos sitios excepcionales.</span>
             </div>
-            <h2 className={styles.contactFooterCtaTitle}>¿Listo Para un Cambio Refrescante?</h2>
+            <h2 className={styles.contactFooterCtaTitle}>Diseño De Alto Nivel.<br />Servicio A La Altura.</h2>
             <p className={styles.contactFooterCtaSubtitle}>
-            Un <strong><u>sitio web personalizado</u></strong> que también funciona como <strong><u>máquina de generar ventas</u></strong>. ¿Qué estás esperando? Trae un cambio refrescante a tu marca y multiplica sus posibilidades. Déjalo en nuestras manos.
+            Diseño <strong><u>hecho a medida</u></strong> con atención en cada detalle. Colaboración real, comunicación directa, ejecución impecable.<br /><br />Si tu marca merece lo mejor, hablemos.
             </p>
             
             <div className={styles.contactFooterCtaButtons}>
-              <a href="https://wa.me/19784045049?text=Buenas,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes....%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
+              <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional...%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
 
                 <button className={`${styles.contactFooterCtaButton} ${styles.primary}`}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
@@ -971,11 +795,11 @@ export default function Contact() {
               </a>
             </div>
             
-            {/* Trust Pills */}
-            <div className={styles.contactFooterCtaPills}>
-              <div className={styles.contactFooterCtaPill}>✓ Cupos limitados</div>
-              <div className={styles.contactFooterCtaPill}>✓ Sin compromiso</div>
-              <div className={styles.contactFooterCtaPill}>✓ Consulta gratuita</div>
+            {/* Info under button */}
+            <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '12px', marginTop: '0px'}}>
+              <span style={{color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.75rem'}}>Cupos limitados</span>
+              <div style={{width: '1px', height: '12px', backgroundColor: 'rgba(255, 255, 255, 0.6)'}}></div>
+              <span style={{color: 'rgba(255, 255, 255, 0.6)', fontSize: '0.75rem'}}>Desde $2,500</span>
             </div>
           </div>
         </div>

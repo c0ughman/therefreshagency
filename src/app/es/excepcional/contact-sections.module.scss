@@ -262,11 +262,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 15px;
+  text-align: left;
 }
 
 .combinedBenefits li {
   position: relative;
-  padding-left: 25px;
+  padding-left: 50px;
   margin-bottom: 15px;
   font-size: 1rem;
   color: var(--color-text-medium);
@@ -277,7 +278,7 @@
 .combinedBenefits li::before {
   content: '✓';
   position: absolute;
-  left: 0;
+  left: 25px;
   color: var(--color-primary);
   font-size: 1.2rem;
   font-weight: bold;
@@ -876,14 +877,29 @@
 }
 
 .contactComparisonTitle {
-  font-size: 2.2rem;
+  font-size: 3.08rem;
   font-weight: 700;
   color: #1d1d1f;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.03em;
   line-height: 1.1;
+  position: relative;
+  z-index: 1;
+}
+
+.contactComparisonSubtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #424245;
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   z-index: 1;
 }
@@ -1259,20 +1275,20 @@
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
   justify-content: flex-end;
 }
 
 .contactFooterCtaButton {
   display: inline-block;
-  padding: 16px 42px;
+  padding: 14px 36px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 32px;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--color-text-primary);
   border: none;
   cursor: pointer;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), inset 0 0 40px rgba(255, 165, 0, 0.6), 0 0 30px rgba(255, 200, 0, 0.4);
