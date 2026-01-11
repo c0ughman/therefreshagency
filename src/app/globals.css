@@ -359,8 +359,19 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   letter-spacing: 0.5px;
 }
 
-.project-column.client-type {
+.project-column.stars span {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #ffd700;
+  letter-spacing: 2px;
+}
+
+.project-column.stars {
   margin-left: 20px;
+}
+
+.project-column.client-type {
+  margin-right: 20px;
 }
 
 .project-column.project-name {
@@ -474,7 +485,8 @@ body.mobile-menu-open .sticky-header .mobile-nav {
 }
 
 .project-row.scroll-active .project-column.client-type span,
-.project-row.scroll-active .project-column.service span {
+.project-row.scroll-active .project-column.service span,
+.project-row.scroll-active .project-column.stars span {
   color: var(--color-text-primary);
 }
 
@@ -568,15 +580,32 @@ body.mobile-menu-open .sticky-header .mobile-nav {
     justify-content: center;
   }
   
-  /* Position company type in top left corner */
-  .project-column.client-type {
+  /* Position stars in top left corner */
+  .project-column.stars {
     position: absolute;
     top: 20px;
     left: 20px;
     text-align: left;
     z-index: 3;
+    margin-left: 0;
   }
-  
+
+  .project-column.stars span {
+    font-size: 16px;
+    color: #ffd700;
+    letter-spacing: 1px;
+  }
+
+  /* Position company type in top right corner */
+  .project-column.client-type {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+    z-index: 3;
+    margin-right: 0;
+  }
+
   .project-column.client-type span {
     font-size: 12px;
     font-weight: 600;
@@ -585,21 +614,9 @@ body.mobile-menu-open .sticky-header .mobile-nav {
     letter-spacing: 0.5px;
   }
   
-  /* Position work type in top right corner */
+  /* Hide service column on mobile to avoid clutter */
   .project-column.service {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    text-align: right;
-    z-index: 3;
-  }
-  
-  .project-column.service span {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--color-text-light);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    display: none;
   }
   
   .project-column.project-name {
@@ -671,16 +688,16 @@ body.mobile-menu-open .sticky-header .mobile-nav {
     min-height: 280px;
   }
   
-  .project-column.client-type,
-  .project-column.service {
+  .project-column.stars,
+  .project-column.client-type {
     top: 15px;
   }
-  
-  .project-column.client-type {
+
+  .project-column.stars {
     left: 15px;
   }
-  
-  .project-column.service {
+
+  .project-column.client-type {
     right: 15px;
   }
   
