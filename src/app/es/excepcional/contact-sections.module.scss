@@ -904,6 +904,54 @@
   z-index: 1;
 }
 
+/* Desktop-only max-width containers */
+.desktopTextContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.desktopTextContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .desktopTextContainer,
+  .desktopTextContent {
+    max-width: 100%;
+  }
+  
+  .desktopOnly {
+    display: none;
+  }
+}
+
+/* Desktop-only rows */
+@media (min-width: 769px) {
+  .desktopOnly {
+    display: grid;
+  }
+}
+
+/* Desktop-only project name changes */
+.desktopProjectName {
+  display: block;
+}
+
+.mobileProjectName {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktopProjectName {
+    display: none;
+  }
+  
+  .mobileProjectName {
+    display: block;
+  }
+}
+
 /* Table Structure */
 .contactComparisonTable {
   background: white;
@@ -1276,7 +1324,7 @@
   gap: 24px;
   flex-wrap: wrap;
   margin-bottom: 8px;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .contactFooterCtaButton {

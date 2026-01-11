@@ -280,8 +280,12 @@ export default function Contact() {
       <section id="projects" className="projects-section">
         <div className="projects-container">
           <div className="projects-header">
-            <h2>Nuestros Resultados Hablan Por Sí Solos</h2>
-            <p>Cada proyecto es una pieza única. Siente lo que una buena dirección creativa puede hacer para tu presencia web.</p>
+            <div className={styles.desktopTextContainer}>
+              <div className={styles.desktopTextContent}>
+                <h2>Nuestros Resultados Hablan Por Sí Solos</h2>
+                <p>Cada proyecto es una pieza única. Siente lo que una buena dirección creativa puede hacer para tu presencia web.</p>
+              </div>
+            </div>
           </div>
           {/* Project 1 - Edecoration */}
           <div className="project-row">
@@ -294,7 +298,8 @@ export default function Contact() {
                 <span>Website,<br />PAID ADS</span>
               </div>
               <div className="project-column project-name">
-                <h2>Edecoration</h2>
+                <h2 className={styles.desktopProjectName}>Edeco</h2>
+                <h2 className={styles.mobileProjectName}>Edecoration</h2>
                 <video
                   src="/edecoration.mp4"
                   alt="Edecoration Project"
@@ -522,20 +527,24 @@ export default function Contact() {
       {/* Combined Numbers & Reviews Section */}
       <section className={styles.contactCombinedSection}>
         <div className={styles.combinedContainer}>
-          {/* Block of text */}
-          <div className={styles.combinedDescription}>
-            <p>
-              <em>No hacemos "páginas bonitas".</em> <br />Creamos un sitio web <strong>congruente con tu marca</strong>, con atención al detalle y dirección creativa de alto nivel.
-            </p>
-          </div>
+          <div className={styles.desktopTextContainer}>
+            <div className={styles.desktopTextContent}>
+              {/* Block of text */}
+              <div className={styles.combinedDescription}>
+                <p>
+                  <em>No hacemos "páginas bonitas".</em> <br />Creamos un sitio web <strong>congruente con tu marca</strong>, con atención al detalle y dirección creativa de alto nivel.
+                </p>
+              </div>
 
-          {/* Benefits list */}
-          <ul className={styles.combinedBenefits}>
-            <li>Diseño único e original, sin plantillas</li>
-            <li>Dirección creativa y atención en cada pixel</li>
-            <li>Colaboración verdadera (tú ves avances y decides con nosotros)</li>
-            <li>Comunicación rápida y ordenada, el mejor servicio</li>
-          </ul>
+              {/* Benefits list */}
+              <ul className={styles.combinedBenefits}>
+                <li>Diseño único e original, sin plantillas</li>
+                <li>Dirección creativa y atención en cada pixel</li>
+                <li>Colaboración verdadera (tú ves avances y decides con nosotros)</li>
+                <li>Comunicación rápida y ordenada, el mejor servicio</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -598,13 +607,17 @@ export default function Contact() {
           <div className={styles.contactComparisonGradient7}></div>
           <div className={styles.contactComparisonGradient8}></div>
           
-          <h2 className={styles.contactComparisonTitle}>
-            Lo Que <span style={{fontFamily: "'Georgia', serif", fontSize: '0.88em', fontWeight: '900', transform: 'scaleY(1.2) translateY(-2px)', display: 'inline-block', verticalAlign: 'baseline'}}>The Refresh Agency</span>
-            <br />Hace Mejor
-          </h2>
-          <p className={styles.contactComparisonSubtitle}>
-            <strong>En el mercado hispano,</strong> la mayoría entrega lo de siempre: plantillas aburridas, silencio (no responden) y excusas baratas.<br /><br />Nosotros diseñamos desde cero contigo. Te escuchamos, te mostramos avances, y atendemos cada detalle con diseño excepcional.
-          </p>
+          <div className={styles.desktopTextContainer}>
+            <div className={styles.desktopTextContent}>
+              <h2 className={styles.contactComparisonTitle}>
+                Lo Que <span style={{fontFamily: "'Georgia', serif", fontSize: '0.88em', fontWeight: '900', transform: 'scaleY(1.2) translateY(-2px)', display: 'inline-block', verticalAlign: 'baseline'}}>The Refresh Agency</span>
+                <br />Hace Mejor
+              </h2>
+              <p className={styles.contactComparisonSubtitle}>
+                <strong>En el mercado hispano,</strong> la mayoría entrega lo de siempre: plantillas aburridas, silencio (no responden) y excusas baratas.<br /><br />Nosotros diseñamos desde cero contigo. Te escuchamos, te mostramos avances, y atendemos cada detalle con diseño excepcional.
+              </p>
+            </div>
+          </div>
 
           {/* Desktop Table View */}
           <div className={styles.contactComparisonTable}>
@@ -688,6 +701,31 @@ export default function Contact() {
                     </svg>
                   </span>
                   <span className={styles.contactComparisonText}>Precios <strong>justos y transparentes</strong>, sin sorpresas ocultas.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 4: Abandonment - Desktop Only */}
+            <div className={`${styles.contactComparisonTableRow} ${styles.desktopOnly}`}>
+              <div className={`${styles.contactComparisonTableCell} ${styles.left}`}>
+                <div className={styles.contactComparisonItem}>
+                  <span className={`${styles.contactComparisonIcon} ${styles.left}`}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </span>
+                  <span className={styles.contactComparisonText}>Abandonan proyectos sin aviso y desaparecen tras la entrega.</span>
+                </div>
+              </div>
+              <div className={`${styles.contactComparisonTableCell} ${styles.right}`}>
+                <div className={styles.contactComparisonItem}>
+                  <span className={`${styles.contactComparisonIcon} ${styles.right}`}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                  </span>
+                  <span className={styles.contactComparisonText}>Acompañamos tu proyecto <strong>de principio a fin</strong>, <strong>sin abandonos</strong>.</span>
                 </div>
               </div>
             </div>

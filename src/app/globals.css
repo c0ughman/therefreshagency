@@ -455,6 +455,13 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   align-items: center;
 }
 
+/* Hide arrow icons on desktop */
+@media (min-width: 769px) {
+  .project-column.arrow {
+    display: none;
+  }
+}
+
 .project-column.arrow svg {
   width: 32px;
   height: 32px;
