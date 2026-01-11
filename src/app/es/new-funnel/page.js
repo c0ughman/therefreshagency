@@ -306,7 +306,7 @@ export default function Contact() {
                 />
               </div>
               <div className="project-column project-description">
-                <p><strong>How We Helped:</strong><br />We built out their whole front-end and brand identity, worked on a <u>beautiful central dashboard</u> which is the cornerstone of their product.</p>
+                <p>"The Refresh Agency realmente nos ayudó a crear una identidad de marca única y aplicarla perfectamente a nuestro <strong>sitio web y producto</strong>. El resultado es una interfaz hermosa y bien pensada para nuestros futuros clientes."</p>
               </div>
               <div className="project-column client-type">
                 <span>SaaS</span>
@@ -346,7 +346,7 @@ export default function Contact() {
                 />
               </div>
               <div className="project-column project-description">
-                <p><strong>How We Helped:</strong><br />Built out a multi-language SEO centric website to <u>rank page #1 within weeks</u> on some local and international queries.</p>
+                <p>"Sin que tengamos que microgestionar todo, la agencia <strong>trabaja de forma independiente</strong>, trayendo resultados reales a nuestro negocio y construyendo cosas increíbles muy rápido. Un verdadero socio estratégico."</p>
               </div>
               <div className="project-column client-type">
                 <span>LAW FIRM</span>
@@ -386,7 +386,7 @@ export default function Contact() {
                 />
               </div>
               <div className="project-column project-description">
-                <p><strong>How We Helped:</strong><br />Built a <u>digital showroom</u> showcasing many of their top projects, most important clients, and various products. Elegance and prestige.</p>
+                <p>"El sitio web tiene un diseño <strong>elegante, llamativo y lleno de fotos y videos</strong>. Como un showroom digital que va más allá de cualquier otra cosa en el mercado. Gran trabajo... ¡Sigan así!"</p>
               </div>
               <div className="project-column client-type">
                 <span>HOME DECOR</span>
@@ -426,7 +426,7 @@ export default function Contact() {
                 />
               </div>
               <div className="project-column project-description">
-                <p><strong>How We Helped:</strong><br />On the journey of developing a design language for this groundbreaking AI multi-agent platform. <u>We are cooking up something truly special.</u> </p>
+                <p>"Working with The Refresh Agency is a <strong>true collaborative process</strong>. Exploring the visual language of our product and how it materializes in every aspect of the user interface has been an extraordinary experience."</p>
               </div>
               <div className="project-column client-type">
                 <span>AI AGENTS PLATFORM</span>
@@ -464,7 +464,7 @@ export default function Contact() {
                 />
               </div>
               <div className="project-column project-description">
-                <p><strong>How We Helped:</strong><br />This Spain-based Ecommerce store was carefully developed with the end user in mind, implementing <u>powerful CRO measures</u> from the start.</p>
+                <p>"Nuestra conversión se disparó al <strong>20% en solo días</strong>. Combinado con las docenas de nuevos leads cada semana, esto se ha convertido en un pilar importante de nuestro negocio."</p>
               </div>
               <div className="project-column client-type">
                 <span>ECOMMERCE</span>
@@ -500,7 +500,7 @@ export default function Contact() {
                 />
               </div>
               <div className="project-column project-description">
-                <p><strong>How We Helped:</strong><br />Designed a <u>bold, elegant, and attractive</u> brand identity and website. Which resonated deeply with the target audience and brought exciting results.</p>
+                <p>"El diseño de la tienda e-commerce que The Refresh Agency creó para nosotros es <strong>diferente a cualquier cosa que hayamos visto en el mercado</strong>. Es hermoso, llamativo e innegablemente atractivo."</p>
               </div>
               <div className="project-column client-type">
                 <span>Fashion, ECOMMERCE</span>
@@ -518,33 +518,6 @@ export default function Contact() {
       {/* Combined Numbers & Reviews Section */}
       <section className={styles.contactCombinedSection}>
         <div className={styles.combinedContainer}>
-          {/* Main title */}
-          <h2 className={styles.combinedTitle}>Nuestros Resultados Hablan Por Sí Solos</h2>
-
-          {/* Three numbers in smaller format */}
-          <div className={styles.combinedNumbers}>
-            {/* Gradient elements behind cards */}
-            <div className={styles.combinedNumbersGradient1}></div>
-            <div className={styles.combinedNumbersGradient2}></div>
-            <div className={styles.combinedNumbersGradient3}></div>
-            <div className={styles.combinedNumbersGradient4}></div>
-            <div className={styles.combinedNumbersGradient5}></div>
-            <div className={styles.combinedNumbersGradient6}></div>
-            
-            <div className={styles.combinedNumber}>
-              <span className={styles.combinedNumberValue}>$3,000+</span>
-              <span className={styles.combinedNumberLabel}>dinero extra, generado por uno de nuestros clientes en el primer mes</span>
-            </div>
-            <div className={styles.combinedNumber}>
-              <span className={styles.combinedNumberValue}>4x</span>
-              <span className={styles.combinedNumberLabel}>multiplica tus ventas y ganancias con nuestros servicios, sin trabajo adicional</span>
-            </div>
-            <div className={styles.combinedNumber}>
-              <span className={styles.combinedNumberValue}>22.8%</span>
-              <span className={styles.combinedNumberLabel}>tasa de conversión de uno de nuestros clientes (promedio mundial: 2-3%)</span>
-            </div>
-          </div>
-
           {/* Block of text */}
           <div className={styles.combinedDescription}>
             <p>
@@ -552,70 +525,7 @@ export default function Contact() {
             </p>
           </div>
 
-          {/* Reviews section */}
-          <div className={styles.combinedReviews}>
-            <div className={styles.combinedTestimonialsGrid}>
-              <div className={styles.combinedTestimonialItem}>
-                <div className={styles.combinedTestimonialStars}>★★★★★</div>
-                <p className={styles.combinedTestimonialText}>
-                  "El sitio web tiene un diseño <strong>elegante, llamativo y lleno de fotos y videos</strong>. Como un showroom digital que va más allá de cualquier otra cosa en el mercado. Gran trabajo... ¡Sigan así!"
-                </p>
-                <div className={styles.combinedTestimonialAuthor}>
-                  <strong>Edecoration</strong>
-                  <span>Website</span>
-                </div>
-                <div className={styles.combinedTestimonialImage}>
-                  <img src="/review-images/edecoration-website.png" alt="Edecoration website review" />
-                </div>
-              </div>
-
-              <div className={`${styles.combinedTestimonialItem} ${styles.designerknitItem}`}>
-                <div className={styles.combinedTestimonialStars}>★★★★★</div>
-                <p className={styles.combinedTestimonialText}>
-                  "El diseño de la tienda e-commerce que The Refresh Agency creó para nosotros es <strong>diferente a cualquier cosa que hayamos visto en el mercado</strong>. Es hermoso, llamativo e innegablemente atractivo."
-                </p>
-                <div className={styles.combinedTestimonialAuthor}>
-                  <strong>DesignerKnit</strong>
-                  <span>Ecommerce Design</span>
-                </div>
-                <div className={styles.combinedTestimonialImage}>
-                  <img src="/review-images/designerknit-sales.png" alt="DesignerKnit e-commerce review" />
-                </div>
-              </div>
-
-              <div className={styles.combinedTestimonialItem}>
-                <div className={styles.combinedTestimonialStars}>★★★★★</div>
-                <p className={styles.combinedTestimonialText}>
-                  "Sin que tengamos que microgestionar todo, la agencia <strong>trabaja de forma independiente</strong>, trayendo resultados reales a nuestro negocio y construyendo cosas increíbles muy rápido. Un verdadero socio estratégico."
-                </p>
-                <div className={styles.combinedTestimonialAuthor}>
-                  <strong>RG Business & Property Law Firm</strong>
-                  <span>Website + Marketing</span>
-                </div>
-                <div className={styles.combinedTestimonialImage}>
-                  <img src="/review-images/rglawfirm-seo.png" alt="R.G. Law Firm website and marketing review" />
-                </div>
-              </div>
-
-              <div className={`${styles.combinedTestimonialItem} ${styles.briefedItem}`}>
-                <div className={styles.combinedTestimonialStars}>★★★★★</div>
-                <p className={styles.combinedTestimonialText}>
-                  "The Refresh Agency realmente nos ayudó a crear una identidad de marca única y aplicarla perfectamente a nuestro <strong>sitio web y producto</strong>. El resultado es una interfaz hermosa y bien pensada para nuestros futuros clientes."
-                </p>
-                <div className={styles.combinedTestimonialAuthor}>
-                  <strong>Briefed</strong>
-                  <span>Website and product</span>
-                </div>
-                <div className={styles.combinedTestimonialImage}>
-                  <img src="/review-images/briefed-product-1.webp" alt="Briefed product review 1" />
-                  <img src="/review-images/briefed-product-2.png" alt="Briefed product review 2" />
-                  <img src="/review-images/briefed-product-3.png" alt="Briefed product review 3" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Benefits list after reviews */}
+          {/* Benefits list */}
           <ul className={styles.combinedBenefits}>
             <li>Sitio web digno de premios de diseño</li>
             <li>Páginas funnel para multiplicar tus ventas</li>

@@ -485,9 +485,12 @@ body.mobile-menu-open .sticky-header .mobile-nav {
 }
 
 .project-row.scroll-active .project-column.client-type span,
-.project-row.scroll-active .project-column.service span,
-.project-row.scroll-active .project-column.stars span {
+.project-row.scroll-active .project-column.service span {
   color: var(--color-text-primary);
+}
+
+.project-row.scroll-active .project-column.stars span {
+  color: #ffd700;
 }
 
 .project-row.scroll-active .project-column.project-name h2 {
