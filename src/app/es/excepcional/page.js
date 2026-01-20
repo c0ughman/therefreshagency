@@ -537,7 +537,7 @@ export default function Contact() {
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>
-                <WordAnimation>★★★★★</WordAnimation>
+                <WordAnimation>5★</WordAnimation>
               </span>
               <span className={styles.combinedNumberLabel}>
                 <WordAnimation>Todos nuestros clientes están satisfechos con nuestro trabajo. Diseño que supera expectativas y genera resultados reales.</WordAnimation>
@@ -828,9 +828,15 @@ export default function Contact() {
       {/* Rich Text Section with Scroll Animation */}
       <section className="pain-point-section">
         <div className="pain-point-container">
-          <WordAnimation className="pain-point-text">
-            No más sitios web genéricos que se ven iguales. Tu negocio no es genérico. Tu web tampoco debería serlo. Creamos experiencias digitales desde cero, con diseño innegablemente atractivo.
-          </WordAnimation>
+          <div className="pain-point-text">
+            <WordAnimation>No más sitios web genéricos que se ven iguales.</WordAnimation>
+            <br /><br />
+            <WordAnimation>Tu negocio no es genérico.</WordAnimation>
+            <br /><br />
+            <WordAnimation>Tu web tampoco debería serlo.</WordAnimation>
+            <br /><br />
+            <WordAnimation>Creamos experiencias digitales desde cero, con diseño innegablemente atractivo.</WordAnimation>
+          </div>
         </div>
       </section>
 
