@@ -234,9 +234,11 @@
 }
 
 .combinedNumberLabel {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #999;
-  line-height: 1.5;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  font-family: 'Georgia', serif;
   position: relative;
   z-index: 1;
 }

@@ -520,19 +520,25 @@ export default function Contact() {
           {/* Three numbers in smaller format */}
           <div className={styles.combinedNumbers}>
             <div className={styles.combinedNumber}>
-              <span className={styles.combinedNumberValue}>100%</span>
+              <span className={styles.combinedNumberValue}>
+                <WordAnimation>100%</WordAnimation>
+              </span>
               <span className={styles.combinedNumberLabel}>
                 <WordAnimation>Diseño personalizado desde cero, sin plantillas ni genéricos. Cada línea pensada para tu marca.</WordAnimation>
               </span>
             </div>
             <div className={styles.combinedNumber}>
-              <span className={styles.combinedNumberValue}>500+</span>
+              <span className={styles.combinedNumberValue}>
+                <WordAnimation>500+</WordAnimation>
+              </span>
               <span className={styles.combinedNumberLabel}>
                 <WordAnimation>Horas dedicadas a pulir cada detalle visual y funcional. Dirección creativa que marca la diferencia.</WordAnimation>
               </span>
             </div>
             <div className={styles.combinedNumber}>
-              <span className={styles.combinedNumberValue}>∞</span>
+              <span className={styles.combinedNumberValue}>
+                <WordAnimation>∞</WordAnimation>
+              </span>
               <span className={styles.combinedNumberLabel}>
                 <WordAnimation>Iteraciones hasta lograr el diseño perfecto que refleja tu marca. Sin límites hasta que esté impecable.</WordAnimation>
               </span>
