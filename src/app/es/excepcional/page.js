@@ -537,10 +537,10 @@ export default function Contact() {
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>
-                <WordAnimation>500+</WordAnimation>
+                <WordAnimation>★★★★★</WordAnimation>
               </span>
               <span className={styles.combinedNumberLabel}>
-                <WordAnimation>Horas dedicadas a pulir cada detalle visual y funcional. Dirección creativa que marca la diferencia.</WordAnimation>
+                <WordAnimation>Todos nuestros clientes están satisfechos con nuestro trabajo. Diseño que supera expectativas y genera resultados reales.</WordAnimation>
               </span>
             </div>
             <div className={styles.combinedNumber}>
