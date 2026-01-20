@@ -537,11 +537,7 @@ export default function Contact() {
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>
-                <WordAnimation>
-                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{display: 'inline-block', verticalAlign: 'middle'}}>
-                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </WordAnimation>
+                <WordAnimation>✰</WordAnimation>
               </span>
               <span className={styles.combinedNumberLabel}>
                 <WordAnimation>Todos nuestros clientes están satisfechos con nuestro trabajo. Diseño que supera expectativas y genera resultados reales.</WordAnimation>
