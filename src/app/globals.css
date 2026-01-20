@@ -679,15 +679,10 @@ body.mobile-menu-open .sticky-header .mobile-nav {
     order: unset;
   }
   
-  .project-column.arrow {
-    width: 64px;
-    height: 64px;
-  }
-  
   .project-column.arrow svg,
   .project-column.arrow img {
-    width: 56px;
-    height: 56px;
+    width: 28px;
+    height: 28px;
   }
   
   /* Disable video hover effects on mobile */

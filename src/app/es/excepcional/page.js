@@ -318,7 +318,7 @@ export default function Contact() {
                 <span>HOME DECOR</span>
               </div>
               <div className="project-column arrow">
-                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '32px', height: '32px'}} />
+                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '64px', height: '64px'}} />
               </div>
             </div>
           </div>
@@ -352,7 +352,7 @@ export default function Contact() {
                 <span>Fashion, ECOMMERCE</span>
               </div>
               <div className="project-column arrow">
-                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '32px', height: '32px'}} />
+                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '64px', height: '64px'}} />
               </div>
             </div>
           </div>
@@ -388,7 +388,7 @@ export default function Contact() {
                 <span>LAW FIRM</span>
               </div>
               <div className="project-column arrow">
-                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '32px', height: '32px'}} />
+                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '64px', height: '64px'}} />
               </div>
             </div>
           </div>
@@ -424,7 +424,7 @@ export default function Contact() {
                 <span>SaaS</span>
               </div>
               <div className="project-column arrow">
-                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '32px', height: '32px'}} />
+                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '64px', height: '64px'}} />
               </div>
             </div>
           </div>
@@ -460,7 +460,7 @@ export default function Contact() {
                 <span>AI AGENTS PLATFORM</span>
               </div>
               <div className="project-column arrow">
-                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '32px', height: '32px'}} />
+                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '64px', height: '64px'}} />
               </div>
             </div>
           </div>
@@ -494,7 +494,7 @@ export default function Contact() {
                 <span>ECOMMERCE</span>
               </div>
               <div className="project-column arrow">
-                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '32px', height: '32px'}} />
+                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '64px', height: '64px'}} />
               </div>
             </div>
           </div>
@@ -511,8 +511,8 @@ export default function Contact() {
               <span className={styles.combinedNumberLabel}><strong>Diseño personalizado desde cero</strong>, sin plantillas ni genéricos. Cada línea pensada para tu marca.</span>
             </div>
             <div className={styles.combinedNumber}>
-              <span className={styles.combinedNumberValue}>100%</span>
-              <span className={styles.combinedNumberLabel}><strong>Dirección creativa de alto nivel</strong> en cada decisión de diseño. <strong>Resultados que impresionan.</strong></span>
+              <span className={styles.combinedNumberValue}>500+</span>
+              <span className={styles.combinedNumberLabel}><strong>Horas dedicadas a pulir cada detalle</strong> visual y funcional. <strong>Dirección creativa que marca la diferencia.</strong></span>
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>∞</span>

@@ -235,7 +235,7 @@
 
 .combinedNumberLabel {
   font-size: 1.2rem;
-  color: #666;
+  color: #999;
   line-height: 1.5;
   position: relative;
   z-index: 1;
@@ -249,7 +249,7 @@
 
 .combinedDescription p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--color-text-medium);
   margin-bottom: 30px;
   line-height: 1.6;
   text-align: center;
