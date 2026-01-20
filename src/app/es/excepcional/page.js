@@ -520,7 +520,7 @@ export default function Contact() {
           <div className={styles.desktopTextContainer}>
             <div className={styles.desktopTextContent}>
               {/* Rich Text Section */}
-              <section className="pain-point-section" style={{background: 'transparent', padding: '0'}}>
+              <section className="pain-point-section" style={{background: 'transparent', padding: '0', marginTop: '60px', marginBottom: '60px'}}>
                 <div className="pain-point-container" style={{maxWidth: '100%', padding: '0'}}>
                   <WordAnimation className="pain-point-text">
                     No hacemos "páginas bonitas". Creamos un sitio web congruente con tu marca, con atención al detalle y dirección creativa de alto nivel.
