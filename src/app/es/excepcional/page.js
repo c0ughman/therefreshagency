@@ -251,7 +251,7 @@ export default function Contact() {
         <h1 className="contact-title">Más Alla de<br />Diseño Web</h1>
 
         {/* Subtitle */}
-        <p className="contact-subtitle">Eleva tu marca con <u><strong>diseño de alto nivel.</strong></u><br />Nos encargamos de todo, contigo en cada paso.</p>
+        <p className="contact-subtitle">Eleva tu marca con <u><strong>diseño de alto nivel.</strong></u><br />Nos encargamos de todo, contigo en cada paso.<br /><br />Si tu sitio no se siente premium, tu marca paga el precio. Hagámoslo bien desde el primer día.</p>
 
         {/* CTA Button */}
         <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional.%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
@@ -284,7 +284,7 @@ export default function Contact() {
             <div className={styles.desktopTextContainer}>
               <div className={styles.desktopTextContent}>
                 <h2>Nuestros Resultados Hablan Por Sí Solos</h2>
-                <p>Cada proyecto es una pieza única. Siente lo que una buena dirección creativa puede hacer para tu presencia web.</p>
+                <p>Cada proyecto es una pieza única. Siente lo que una buena dirección creativa puede hacer para tu presencia web. Cuando el diseño se siente intencional, la confianza sube—y también las conversiones.</p>
               </div>
             </div>
           </div>
@@ -541,7 +541,7 @@ export default function Contact() {
               {/* Block of text */}
               <div className={styles.combinedDescription}>
                 <p>
-                  <em>No hacemos "páginas bonitas".</em> <br />Creamos un sitio web <strong>congruente con tu marca</strong>, con atención al detalle y dirección creativa de alto nivel.
+                  <em>No hacemos "páginas bonitas".</em> <br />Creamos un sitio web <strong>congruente con tu marca</strong>, con atención al detalle y dirección creativa de alto nivel. Si tu marca compite en un mercado saturado, tu web tiene que verse (y sentirse) como la opción obvia.
                 </p>
               </div>
 
@@ -576,7 +576,7 @@ export default function Contact() {
 
           <h2 className={styles.contactCtaTitle} style={{marginTop: '0px'}}>Tu Marca Merece<br />Diseño De Verdad</h2>
           <p className={styles.contactCtaSubtitle}>
-          <u>Tomamos pocos proyectos al mes</u> para dar la mejor atención. Escríbenos para empezar el proceso hoy.
+          <u>Tomamos pocos proyectos al mes</u> para dar la mejor atención. Escríbenos para empezar el proceso hoy. Te diremos con claridad si encajamos y qué haríamos para que tu presencia se vea impecable.
           </p>
 
           <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional..%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
@@ -623,7 +623,7 @@ export default function Contact() {
                 <br />Hace Mejor
               </h2>
               <p className={styles.contactComparisonSubtitle}>
-                <strong>En el mercado hispano,</strong> la mayoría entrega lo de siempre: plantillas aburridas, silencio (no responden) y excusas baratas.<br /><br />Nosotros diseñamos desde cero contigo. Te escuchamos, te mostramos avances, y atendemos cada detalle con diseño excepcional.
+                <strong>En el mercado hispano,</strong> la mayoría entrega lo de siempre: plantillas aburridas, silencio (no responden) y excusas baratas.<br /><br />Nosotros diseñamos desde cero contigo. Te escuchamos, te mostramos avances, y atendemos cada detalle con diseño excepcional.<br /><br />Si quieres un sitio que represente tu nivel y te dé tranquilidad, este es el tipo de proceso que se siente diferente.
               </p>
             </div>
           </div>
@@ -807,7 +807,7 @@ export default function Contact() {
       <section className="pain-point-section">
         <div className="pain-point-container">
           <WordAnimation className="pain-point-text">
-            No más sitios web genéricos que se ven iguales. No más plantillas que no reflejan tu marca. Creamos diseño excepcional desde cero, con atención en cada detalle y dirección creativa que realmente destaca tu negocio.
+            No más sitios web genéricos que se ven iguales. No más plantillas que no reflejan tu marca. Creamos diseño excepcional desde cero, con atención en cada detalle y dirección creativa que realmente destaca tu negocio. Si te importa cómo te perciben, tu web no puede ser “una más”.
           </WordAnimation>
         </div>
       </section>
@@ -823,7 +823,7 @@ export default function Contact() {
             </div>
             <h3>The Refresh Agency.</h3>
             <p className={styles.contactFooterCtaBrandText}>
-              Transforming digital experiences with innovative design and cutting-edge technology.
+              Transforming digital experiences with innovative design and cutting-edge technology. Diseño primero, ejecución impecable—para que tu marca se vea seria y confiable.
             </p>
           </div>
           
