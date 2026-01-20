@@ -3821,7 +3821,7 @@ a[href="#"][data-service="contact"],
   padding: 20px 10px 30px;
   text-align: center;
   min-height: 500px;
-  gap: 10px;
+  gap: 5px;
   max-width: 780px;
   margin: 0 auto;
   padding-top: 0px;
@@ -3834,7 +3834,8 @@ a[href="#"][data-service="contact"],
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 5px;
+  margin-bottom: 2.5px;
+  margin-top: 0px;
   display: flex;
   align-items: baseline;
   justify-content: center;
