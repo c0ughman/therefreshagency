@@ -511,8 +511,8 @@ export default function Contact() {
               <span className={styles.combinedNumberLabel}><strong>Diseño personalizado desde cero</strong>, sin plantillas ni genéricos. Cada línea pensada para tu marca.</span>
             </div>
             <div className={styles.combinedNumber}>
-              <span className={styles.combinedNumberValue}>500+</span>
-              <span className={styles.combinedNumberLabel}><strong>Horas de dirección creativa</strong> y atención al detalle en cada proyecto. <strong>Calidad que se nota.</strong></span>
+              <span className={styles.combinedNumberValue}>100%</span>
+              <span className={styles.combinedNumberLabel}><strong>Dirección creativa de alto nivel</strong> en cada decisión de diseño. <strong>Resultados que impresionan.</strong></span>
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>∞</span>
