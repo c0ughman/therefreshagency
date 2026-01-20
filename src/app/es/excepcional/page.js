@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './contact-sections.module.scss'
 import WordAnimation from '../../../components/WordAnimation/index'
 
@@ -34,6 +34,19 @@ export default function Contact() {
       }
       animateWheel()
     }
+
+    // Spinning arrow wheel animations (same speed as hero wheel)
+    const animateArrowWheels = () => {
+      const arrowWheels = document.querySelectorAll('.project-column.arrow img')
+      arrowWheels.forEach((arrowWheel) => {
+        if (arrowWheel) {
+          const currentRotation = parseFloat(arrowWheel.style.transform.replace(/[^\d.]/g, '')) || 0
+          arrowWheel.style.transform = `rotate(${currentRotation + 0.5}deg)`
+        }
+      })
+      requestAnimationFrame(animateArrowWheels)
+    }
+    animateArrowWheels()
 
     // Button gradient cursor following effect
     const handleButtonMouseMove = (e) => {
@@ -508,15 +521,27 @@ export default function Contact() {
           <div className={styles.combinedNumbers}>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>100%</span>
-              <span className={styles.combinedNumberLabel}><strong>Diseño personalizado desde cero</strong>, sin plantillas ni genéricos. Cada línea pensada para tu marca.</span>
+              <span className={styles.combinedNumberLabel}>
+                <WordAnimation>
+                  <strong>Diseño personalizado desde cero</strong>, sin plantillas ni genéricos. Cada línea pensada para tu marca.
+                </WordAnimation>
+              </span>
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>500+</span>
-              <span className={styles.combinedNumberLabel}><strong>Horas dedicadas a pulir cada detalle</strong> visual y funcional. <strong>Dirección creativa que marca la diferencia.</strong></span>
+              <span className={styles.combinedNumberLabel}>
+                <WordAnimation>
+                  <strong>Horas dedicadas a pulir cada detalle</strong> visual y funcional. <strong>Dirección creativa que marca la diferencia.</strong>
+                </WordAnimation>
+              </span>
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>∞</span>
-              <span className={styles.combinedNumberLabel}><strong>Iteraciones hasta lograr el diseño perfecto</strong> que refleja tu marca. <strong>Sin límites hasta que esté impecable.</strong></span>
+              <span className={styles.combinedNumberLabel}>
+                <WordAnimation>
+                  <strong>Iteraciones hasta lograr el diseño perfecto</strong> que refleja tu marca. <strong>Sin límites hasta que esté impecable.</strong>
+                </WordAnimation>
+              </span>
             </div>
           </div>
         </div>
