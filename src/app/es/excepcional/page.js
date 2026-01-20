@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import styles from './contact-sections.module.scss'
+import WordAnimation from '../../../components/WordAnimation/index'
 
 export default function Contact() {
   const wheelRef = useRef(null)
@@ -317,11 +318,7 @@ export default function Contact() {
                 <span>HOME DECOR</span>
               </div>
               <div className="project-column arrow">
-                <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional!%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
+                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '32px', height: '32px'}} />
               </div>
             </div>
           </div>
@@ -355,11 +352,7 @@ export default function Contact() {
                 <span>Fashion, ECOMMERCE</span>
               </div>
               <div className="project-column arrow">
-                <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional!%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
+                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '32px', height: '32px'}} />
               </div>
             </div>
           </div>
@@ -395,11 +388,7 @@ export default function Contact() {
                 <span>LAW FIRM</span>
               </div>
               <div className="project-column arrow">
-                <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional!%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
+                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '32px', height: '32px'}} />
               </div>
             </div>
           </div>
@@ -435,11 +424,7 @@ export default function Contact() {
                 <span>SaaS</span>
               </div>
               <div className="project-column arrow">
-                <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional!%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
+                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '32px', height: '32px'}} />
               </div>
             </div>
           </div>
@@ -475,11 +460,7 @@ export default function Contact() {
                 <span>AI AGENTS PLATFORM</span>
               </div>
               <div className="project-column arrow">
-                <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional!%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
+                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '32px', height: '32px'}} />
               </div>
             </div>
           </div>
@@ -513,11 +494,7 @@ export default function Contact() {
                 <span>ECOMMERCE</span>
               </div>
               <div className="project-column arrow">
-                <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional!%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
+                <img src="/wheel.png" alt="The Refresh Agency" style={{width: '32px', height: '32px'}} />
               </div>
             </div>
           </div>
@@ -791,6 +768,15 @@ export default function Contact() {
               <span className={styles.contactComparisonText}>Cobran $5,000+ por servicios sencillos con costos escondidos.</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Rich Text Section with Scroll Animation */}
+      <section className="pain-point-section">
+        <div className="pain-point-container">
+          <WordAnimation className="pain-point-text">
+            No más sitios web genéricos que se ven iguales. No más plantillas que no reflejan tu marca. Creamos diseño excepcional desde cero, con atención en cada detalle y dirección creativa que realmente destaca tu negocio.
+          </WordAnimation>
         </div>
       </section>
 

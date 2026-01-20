@@ -462,7 +462,8 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   }
 }
 
-.project-column.arrow svg {
+.project-column.arrow svg,
+.project-column.arrow img {
   width: 32px;
   height: 32px;
   transition: transform 0.3s ease;
@@ -678,7 +679,8 @@ body.mobile-menu-open .sticky-header .mobile-nav {
     order: unset;
   }
   
-  .project-column.arrow svg {
+  .project-column.arrow svg,
+  .project-column.arrow img {
     width: 28px;
     height: 28px;
   }
