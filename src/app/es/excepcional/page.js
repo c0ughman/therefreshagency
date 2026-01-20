@@ -501,6 +501,38 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Three Column Numbers Section */}
+      <section className={styles.contactCombinedSection}>
+        <div className={styles.combinedContainer}>
+          {/* Main title */}
+          <h2 className={styles.combinedTitle}>Diseño Que Habla Por Sí Solo</h2>
+
+          {/* Three numbers in smaller format */}
+          <div className={styles.combinedNumbers}>
+            {/* Gradient elements behind cards */}
+            <div className={styles.combinedNumbersGradient1}></div>
+            <div className={styles.combinedNumbersGradient2}></div>
+            <div className={styles.combinedNumbersGradient3}></div>
+            <div className={styles.combinedNumbersGradient4}></div>
+            <div className={styles.combinedNumbersGradient5}></div>
+            <div className={styles.combinedNumbersGradient6}></div>
+            
+            <div className={styles.combinedNumber}>
+              <span className={styles.combinedNumberValue}>100%</span>
+              <span className={styles.combinedNumberLabel}>diseño personalizado desde cero, sin plantillas ni genéricos</span>
+            </div>
+            <div className={styles.combinedNumber}>
+              <span className={styles.combinedNumberValue}>500+</span>
+              <span className={styles.combinedNumberLabel}>horas de dirección creativa y atención al detalle en cada proyecto</span>
+            </div>
+            <div className={styles.combinedNumber}>
+              <span className={styles.combinedNumberValue}>∞</span>
+              <span className={styles.combinedNumberLabel}>iteraciones hasta lograr el diseño perfecto que refleja tu marca</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Combined Numbers & Reviews Section */}
       <section className={styles.contactCombinedSection}>
         <div className={styles.combinedContainer}>
