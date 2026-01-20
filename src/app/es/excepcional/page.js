@@ -508,15 +508,15 @@ export default function Contact() {
           <div className={styles.combinedNumbers}>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>100%</span>
-              <span className={styles.combinedNumberLabel}>hecho a medida, cada línea de código pensada para tu marca</span>
+              <span className={styles.combinedNumberLabel}><strong>Diseño personalizado desde cero</strong>, sin plantillas ni genéricos. Cada línea pensada para tu marca.</span>
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>500+</span>
-              <span className={styles.combinedNumberLabel}>horas dedicadas a pulir cada detalle visual y funcional</span>
+              <span className={styles.combinedNumberLabel}><strong>Horas de dirección creativa</strong> y atención al detalle en cada proyecto. <strong>Calidad que se nota.</strong></span>
             </div>
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>∞</span>
-              <span className={styles.combinedNumberLabel}>refinamiento hasta que cada elemento transmita exactamente lo que quieres comunicar</span>
+              <span className={styles.combinedNumberLabel}><strong>Iteraciones hasta lograr el diseño perfecto</strong> que refleja tu marca. <strong>Sin límites hasta que esté impecable.</strong></span>
             </div>
           </div>
         </div>
