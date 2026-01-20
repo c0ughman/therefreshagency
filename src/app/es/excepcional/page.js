@@ -514,58 +514,19 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Three Column Numbers Section */}
-      <section className={styles.contactCombinedSection}>
-        <div className={styles.combinedContainer}>
-          {/* Three numbers in smaller format */}
-          <div className={styles.combinedNumbers}>
-            {/* Gradient elements behind cards */}
-            <div className={styles.combinedNumbersGradient1}></div>
-            <div className={styles.combinedNumbersGradient2}></div>
-            <div className={styles.combinedNumbersGradient3}></div>
-            <div className={styles.combinedNumbersGradient4}></div>
-            <div className={styles.combinedNumbersGradient5}></div>
-            <div className={styles.combinedNumbersGradient6}></div>
-            
-            <div className={styles.combinedNumber}>
-              <span className={styles.combinedNumberValue}>
-                <WordAnimation>100%</WordAnimation>
-              </span>
-              <span className={styles.combinedNumberLabel}>
-                <WordAnimation>Diseño personalizado desde cero, sin plantillas ni genéricos. Cada línea pensada para tu marca.</WordAnimation>
-              </span>
-            </div>
-            <div className={styles.combinedNumber}>
-              <span className={styles.combinedNumberValue}>
-                <WordAnimation>✰</WordAnimation>
-              </span>
-              <span className={styles.combinedNumberLabel}>
-                <WordAnimation>Todos nuestros clientes están satisfechos con nuestro trabajo. Diseño que supera expectativas y genera resultados reales.</WordAnimation>
-              </span>
-            </div>
-            <div className={styles.combinedNumber}>
-              <span className={styles.combinedNumberValue}>
-                <WordAnimation>∞</WordAnimation>
-              </span>
-              <span className={styles.combinedNumberLabel}>
-                <WordAnimation>Iteraciones hasta lograr el diseño perfecto que refleja tu marca. Sin límites hasta que esté impecable.</WordAnimation>
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Combined Numbers & Reviews Section */}
       <section className={styles.contactCombinedSection}>
         <div className={styles.combinedContainer}>
           <div className={styles.desktopTextContainer}>
             <div className={styles.desktopTextContent}>
-              {/* Block of text */}
-              <div className={styles.combinedDescription}>
-                <p>
-                  <em>No hacemos "páginas bonitas".</em> <br />Creamos un sitio web <strong>congruente con tu marca</strong>, con atención al detalle y dirección creativa de alto nivel. Tu web tiene que verse (y sentirse) como la opción obvia, especialmente si tu marca compite en un espacio de lujo.
-                </p>
-              </div>
+              {/* Rich Text Section */}
+              <section className="pain-point-section" style={{background: 'transparent', padding: '0'}}>
+                <div className="pain-point-container" style={{maxWidth: '100%', padding: '0'}}>
+                  <WordAnimation className="pain-point-text">
+                    No hacemos "páginas bonitas". Creamos un sitio web congruente con tu marca, con atención al detalle y dirección creativa de alto nivel.
+                  </WordAnimation>
+                </div>
+              </section>
 
               {/* Benefits list */}
               <ul className={styles.combinedBenefits}>
