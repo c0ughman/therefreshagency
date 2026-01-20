@@ -519,6 +519,14 @@ export default function Contact() {
         <div className={styles.combinedContainer}>
           {/* Three numbers in smaller format */}
           <div className={styles.combinedNumbers}>
+            {/* Gradient elements behind cards */}
+            <div className={styles.combinedNumbersGradient1}></div>
+            <div className={styles.combinedNumbersGradient2}></div>
+            <div className={styles.combinedNumbersGradient3}></div>
+            <div className={styles.combinedNumbersGradient4}></div>
+            <div className={styles.combinedNumbersGradient5}></div>
+            <div className={styles.combinedNumbersGradient6}></div>
+            
             <div className={styles.combinedNumber}>
               <span className={styles.combinedNumberValue}>
                 <WordAnimation>100%</WordAnimation>
