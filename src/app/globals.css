@@ -3784,7 +3784,7 @@ a[href="#"][data-service="contact"],
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 11px 60px;
+  padding: 5px 60px;
   font-family: 'Georgia', serif;
   font-size: 14px;
   position: relative;
@@ -4262,7 +4262,7 @@ a[href="#"][data-service="contact"],
 /* Responsive Contact Page */
 @media (max-width: 768px) {
   .contact-header {
-    padding: 11px 30px;
+    padding: 5px 30px;
   }
   
   .contact-main {
