@@ -829,7 +829,7 @@ export default function Contact() {
       <section className="pain-point-section">
         <div className="pain-point-container">
           <WordAnimation className="pain-point-text">
-            No más sitios web genéricos que se ven iguales. Tu negocio no es genérico. Tu web tampoco debería serlo. No más plantillas que no reflejan tu marca. Creamos experiencias digitales desde cero, con diseño innegablemente atractivo.
+            No más sitios web genéricos que se ven iguales. Tu negocio no es genérico. Tu web tampoco debería serlo. Creamos experiencias digitales desde cero, con diseño innegablemente atractivo.
           </WordAnimation>
         </div>
       </section>
