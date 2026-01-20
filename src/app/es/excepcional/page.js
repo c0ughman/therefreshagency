@@ -534,6 +534,8 @@ export default function Contact() {
                 <li>Dirección creativa y atención en cada pixel</li>
                 <li>Colaboración verdadera (tú ves avances y decides con nosotros)</li>
                 <li>Comunicación rápida y ordenada, el mejor servicio</li>
+                <li>Versión optimizada para móvil responsiva</li>
+                <li>SEO básico y performance optimizado</li>
               </ul>
             </div>
           </div>
