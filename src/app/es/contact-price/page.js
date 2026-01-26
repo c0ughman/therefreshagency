@@ -92,7 +92,7 @@ export default function Contact() {
         <h1 className="contact-title">Más Alla de<br />Diseño Web</h1>
 
         {/* Subtitle */}
-        <p className="contact-subtitle">Eleva tu marca con una experiencia web excepcional, con <u><strong>una maquina de generar clientes</strong></u> por detrás. Déjanos encargarnos de todo.</p>
+        <p className="contact-subtitle"><span style={{color: 'rgba(255, 255, 255, 0.75)'}}>Una Agencia que:</span><br />Eleva tu marca con una experiencia web excepcional, con <u><strong>una maquina de generar clientes</strong></u> por detrás. Déjanos encargarnos de todo.</p>
 
         {/* CTA Button */}
         <a href="https://wa.me/19784045049?text=Buenas,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
@@ -288,6 +288,18 @@ export default function Contact() {
             </p>
           </div>
 
+          {/* CTA Button after description */}
+          <div style={{display: 'flex', justifyContent: 'center', marginTop: '30px', marginBottom: '60px'}}>
+            <a href="https://wa.me/19784045049?text=Buenas,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
+              <button className="contact-button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                </svg>
+                Hablemos por WhatsApp
+              </button>
+            </a>
+          </div>
+
           {/* Reviews section */}
           <div className={styles.combinedReviews}>
             <div className={styles.combinedTestimonialsGrid}>
@@ -360,6 +372,18 @@ export default function Contact() {
             <li>SEO básico y performance optimizado</li>
             <li>Apoyo técnico directo y mantenimiento</li>
           </ul>
+
+          {/* CTA Button after benefits */}
+          <div style={{display: 'flex', justifyContent: 'center', marginTop: '40px'}}>
+            <a href="https://wa.me/19784045049?text=Buenas,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
+              <button className="contact-button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                </svg>
+                Hablemos por WhatsApp
+              </button>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -422,7 +446,10 @@ export default function Contact() {
           <div className={styles.contactComparisonGradient7}></div>
           <div className={styles.contactComparisonGradient8}></div>
           
-          <h2 className={styles.contactComparisonTitle}>Nuestra Diferencia</h2>
+          <h2 className={styles.contactComparisonTitle}>
+            Lo Que <span style={{fontFamily: "'Georgia', serif", fontSize: '0.88em', fontWeight: '900', transform: 'scaleY(1.2) translateY(-2px)', display: 'inline-block', verticalAlign: 'baseline'}}>The Refresh Agency</span>
+            <br />Hace Mejor
+          </h2>
           
           {/* Desktop Table View */}
           <div className={styles.contactComparisonTable}>
@@ -675,6 +702,18 @@ export default function Contact() {
               <span className={styles.contactComparisonText}>Comunicación lenta, confusa y poco profesional.</span>
             </div>
           </div>
+
+          {/* CTA Button after comparison table */}
+          <div style={{display: 'flex', justifyContent: 'center', marginTop: '60px'}}>
+            <a href="https://wa.me/19784045049?text=Buenas,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
+              <button className="contact-button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                </svg>
+                Hablemos por WhatsApp
+              </button>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -696,21 +735,21 @@ export default function Contact() {
                   <span className={styles.contactFooterCtaFunnelServiceTitle}>Sitio Web 100% Personalizado</span>
                   <span className={styles.contactFooterCtaFunnelServiceDescription}>Único, creativo y adaptado para móvil (hasta de 5 páginas incluídas)</span>
                 </div>
-                <span className={styles.contactFooterCtaFunnelServicePrice}>$700</span>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$1400</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
                   <span className={styles.contactFooterCtaFunnelServiceTitle}>Página Funnel para Ventas</span>
                   <span className={styles.contactFooterCtaFunnelServiceDescription}>Optimizada para multiplicar tus ventas, desde ads o otros canales.</span>
                 </div>
-                <span className={styles.contactFooterCtaFunnelServicePrice}>$300</span>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$800</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
                   <span className={styles.contactFooterCtaFunnelServiceTitle}>Consultoría Estratégica en Marketing</span>
                   <span className={styles.contactFooterCtaFunnelServiceDescription}>Una sesión personalizada para ayudar a tu negocio y situacion específica.</span>
                 </div>
-                <span className={styles.contactFooterCtaFunnelServicePrice}>$120</span>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$300</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
@@ -724,28 +763,28 @@ export default function Contact() {
                   <span className={styles.contactFooterCtaFunnelServiceTitle}>SEO Básico, Rendimiento y Velocidad</span>
                   <span className={styles.contactFooterCtaFunnelServiceDescription}>Optimizamos tu sitio para que sea rápido y fácil de encontrar en Google.</span>
                 </div>
-                <span className={styles.contactFooterCtaFunnelServicePrice}>$150</span>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$400</span>
               </div>
               <div className={styles.contactFooterCtaFunnelService}>
                 <div className={styles.contactFooterCtaFunnelServiceContent}>
                   <span className={styles.contactFooterCtaFunnelServiceTitle}>Gestión de Hosting y Dominio</span>
                   <span className={styles.contactFooterCtaFunnelServiceDescription}>Gestion completa de hosting, dominio y todo el proceso técnico inicial.</span>
                 </div>
-                <span className={styles.contactFooterCtaFunnelServicePrice}>$150</span>
+                <span className={styles.contactFooterCtaFunnelServicePrice}>$300</span>
               </div>
             </div>
             
             <div className={styles.contactFooterCtaFunnelTotal}>
               <div className={styles.contactFooterCtaFunnelTotalRow}>
                 <span className={styles.contactFooterCtaFunnelTotalLabel}>Valor total:</span>
-                <span className={styles.contactFooterCtaFunnelTotalPrice}>$1,720</span>
+                <span className={styles.contactFooterCtaFunnelTotalPrice}>$3,500</span>
               </div>
               <div className={styles.contactFooterCtaFunnelDiscountRow}>
                 <span className={styles.contactFooterCtaFunnelDiscountLabel}>Tu precio especial:</span>
-                <span className={styles.contactFooterCtaFunnelDiscountPrice}>$850</span>
+                <span className={styles.contactFooterCtaFunnelDiscountPrice}>$1,750</span>
               </div>
               <div className={styles.contactFooterCtaFunnelSavingsRow}>
-                <span className={styles.contactFooterCtaFunnelSavingsPrice}>más del 50% de descuento</span>
+                <span className={styles.contactFooterCtaFunnelSavingsPrice}>más del 50% de descuento - sólo para los primeros 2 clientes cada mes</span>
               </div>
             </div>
             
