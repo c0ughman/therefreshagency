@@ -130,9 +130,6 @@ export default function Contact() {
               <img src="/video-screenshots/briefed/briefed_3.webp" alt="Briefed Project Screenshot 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
               <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.50.11-PM.webp" alt="New Example 6" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
@@ -153,9 +150,6 @@ export default function Contact() {
             </div>
             <div className={styles.slideshowImage}>
               <img src="/video-screenshots/briefed/briefed_3.webp" alt="Briefed Project Screenshot 3" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/gather/gather_2.webp" alt="Gather Screenshot 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
               <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.50.11-PM.webp" alt="New Example 6" width="300" height="200" loading="lazy" />
@@ -245,9 +239,6 @@ export default function Contact() {
               <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_4.webp" alt="Briefed Project Screenshot 4" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
               <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.49.35-PM.webp" alt="New Example 5" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
@@ -268,9 +259,6 @@ export default function Contact() {
             </div>
             <div className={styles.slideshowImage}>
               <img src="/video-screenshots/edecoration/edecoration_4.webp" alt="Edecoration Screenshot 4" width="300" height="200" loading="lazy" />
-            </div>
-            <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/briefed/briefed_4.webp" alt="Briefed Project Screenshot 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
               <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.49.35-PM.webp" alt="New Example 5" width="300" height="200" loading="lazy" />
