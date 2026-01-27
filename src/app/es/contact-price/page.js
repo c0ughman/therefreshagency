@@ -239,50 +239,50 @@ export default function Contact() {
               <img src="/video-screenshots/new-examples/rglaw.webp" alt="RG Law Firm New" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.43.09 PM.webp" alt="New Example 1" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.43.09-PM.webp" alt="New Example 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.44.23 PM.webp" alt="New Example 2" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.44.23-PM.webp" alt="New Example 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.45.08 PM.webp" alt="New Example 3" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.45.08-PM.webp" alt="New Example 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.46.29 PM.webp" alt="New Example 4" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.46.29-PM.webp" alt="New Example 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.49.35 PM.webp" alt="New Example 5" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.49.35-PM.webp" alt="New Example 5" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.50.11 PM.webp" alt="New Example 6" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.50.11-PM.webp" alt="New Example 6" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.52.41 PM.webp" alt="New Example 7" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.52.41-PM.webp" alt="New Example 7" width="300" height="200" loading="lazy" />
             </div>
             {/* Duplicate for infinite scroll */}
             <div className={styles.slideshowImage}>
               <img src="/video-screenshots/new-examples/rglaw.webp" alt="RG Law Firm New" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.43.09 PM.webp" alt="New Example 1" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.43.09-PM.webp" alt="New Example 1" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.44.23 PM.webp" alt="New Example 2" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.44.23-PM.webp" alt="New Example 2" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.45.08 PM.webp" alt="New Example 3" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.45.08-PM.webp" alt="New Example 3" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.46.29 PM.webp" alt="New Example 4" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.46.29-PM.webp" alt="New Example 4" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.49.35 PM.webp" alt="New Example 5" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.49.35-PM.webp" alt="New Example 5" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.50.11 PM.webp" alt="New Example 6" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.50.11-PM.webp" alt="New Example 6" width="300" height="200" loading="lazy" />
             </div>
             <div className={styles.slideshowImage}>
-              <img src="/video-screenshots/new-examples/Screenshot 2026-01-26 at 7.52.41 PM.webp" alt="New Example 7" width="300" height="200" loading="lazy" />
+              <img src="/video-screenshots/new-examples/Screenshot-2026-01-26-at-7.52.41-PM.webp" alt="New Example 7" width="300" height="200" loading="lazy" />
             </div>
           </div>
         </div>
