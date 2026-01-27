@@ -1200,15 +1200,13 @@
 }
 
 .contactFooterCtaPills {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
   margin-bottom: 40px;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
+  justify-content: flex-end;
+  max-width: 400px;
   margin-left: auto;
-  margin-right: auto;
 }
 
 .contactFooterCtaPill {
@@ -1237,12 +1235,10 @@
 
 .contactFooterCtaButtons {
   display: flex;
-  flex-direction: column;
   gap: 24px;
   flex-wrap: wrap;
   margin-bottom: 30px;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
 }
 
 .contactFooterCtaButton {
@@ -1760,11 +1756,28 @@
   }
   
   .contactFooterCtaPills {
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  
+  .contactFooterCtaPill {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
   }
   
   .contactFooterCtaButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 12px;
   }
   
   .contactFooterCtaButton {
@@ -1909,24 +1922,39 @@
   }
   
   .contactFooterCtaPills {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 12px;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 20px;
-  }
-  
-  .contactFooterCtaPillFullWidth {
-    width: 100%;
   }
   
   .contactFooterCtaPill {
     width: 100%;
     max-width: 300px;
-    justify-self: center;
+    text-align: center;
+  }
+  
+  .contactFooterCtaPillFullWidth {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .contactFooterCtaButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .contactFooterCtaButton {
+    width: 100%;
+    max-width: 300px;
   }
   
   .contactFooterCtaPill {
