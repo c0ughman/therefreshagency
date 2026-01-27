@@ -92,7 +92,7 @@ export default function Contact() {
         <h1 className="contact-title">Más Alla de<br />Diseño Web</h1>
 
         {/* Subtitle */}
-        <p className="contact-subtitle"><span style={{color: 'rgba(255, 255, 255, 0.75)'}}>Una Agencia que:</span><br />Eleva tu marca con una experiencia web excepcional, con <u><strong>una maquina de generar clientes</strong></u> por detrás. Déjanos encargarnos de todo.</p>
+        <p className="contact-subtitle"><span style={{color: 'rgba(255, 255, 255, 0.5)', opacity: 0.7}}>Una Agencia que:</span><br />Eleva tu marca con una experiencia web excepcional, con <u><strong>una maquina de generar clientes</strong></u> por detrás. Déjanos encargarnos de todo.</p>
 
         {/* CTA Button */}
         <a href="https://wa.me/19784045049?text=Buenas,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
@@ -105,11 +105,31 @@ export default function Contact() {
           </button>
         </a>
 
-        {/* Pills under button */}
-        <div className="contact-pills">
-          <div className="contact-pill">Diseño Único</div>
-          <div className="contact-pill">4x Más Clientes</div>
-          <div className="contact-pill">Apoyo</div>
+        {/* Trust Pills */}
+        <div className={styles.contactCtaPills} style={{marginTop: '10px', justifyContent: 'center'}}>
+          <div className={styles.contactCtaPill}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12,6 12,12 16,14"></polyline>
+            </svg>
+            Respuesta en minutos
+          </div>
+          <div className={styles.contactCtaPill}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22,4 12,14.01 9,11.01"></polyline>
+            </svg>
+            Sin compromiso
+          </div>
+          <div className={styles.contactCtaPill}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            Consulta gratuita
+          </div>
         </div>
       </main>
 
@@ -298,6 +318,33 @@ export default function Contact() {
                 Hablemos por WhatsApp
               </button>
             </a>
+            
+            {/* Trust Pills */}
+            <div className={styles.contactCtaPills} style={{marginTop: '10px', justifyContent: 'center'}}>
+              <div className={styles.contactCtaPill} style={{background: 'rgba(0, 0, 0, 0.05)', color: 'var(--color-text-dark)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12,6 12,12 16,14"></polyline>
+                </svg>
+                Respuesta en minutos
+              </div>
+              <div className={styles.contactCtaPill} style={{background: 'rgba(0, 0, 0, 0.05)', color: 'var(--color-text-dark)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                </svg>
+                Sin compromiso
+              </div>
+              <div className={styles.contactCtaPill} style={{background: 'rgba(0, 0, 0, 0.05)', color: 'var(--color-text-dark)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Consulta gratuita
+              </div>
+            </div>
           </div>
 
           {/* Reviews section */}
@@ -383,6 +430,33 @@ export default function Contact() {
                 Hablemos por WhatsApp
               </button>
             </a>
+            
+            {/* Trust Pills */}
+            <div className={styles.contactCtaPills} style={{marginTop: '10px', justifyContent: 'center'}}>
+              <div className={styles.contactCtaPill} style={{background: 'rgba(0, 0, 0, 0.05)', color: 'var(--color-text-dark)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12,6 12,12 16,14"></polyline>
+                </svg>
+                Respuesta en minutos
+              </div>
+              <div className={styles.contactCtaPill} style={{background: 'rgba(0, 0, 0, 0.05)', color: 'var(--color-text-dark)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                </svg>
+                Sin compromiso
+              </div>
+              <div className={styles.contactCtaPill} style={{background: 'rgba(0, 0, 0, 0.05)', color: 'var(--color-text-dark)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Consulta gratuita
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -421,9 +495,29 @@ export default function Contact() {
           
           {/* Trust Pills */}
           <div className={styles.contactCtaPills}>
-            <div className={styles.contactCtaPill}>✓ Respuesta en minutos</div>
-            <div className={styles.contactCtaPill}>✓ Sin compromiso</div>
-            <div className={styles.contactCtaPill}>✓ Consulta gratuita</div>
+            <div className={styles.contactCtaPill}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12,6 12,12 16,14"></polyline>
+              </svg>
+              Respuesta en minutos
+            </div>
+            <div className={styles.contactCtaPill}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22,4 12,14.01 9,11.01"></polyline>
+              </svg>
+              Sin compromiso
+            </div>
+            <div className={styles.contactCtaPill}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Consulta gratuita
+            </div>
           </div>
         </div>
       </section>
@@ -713,6 +807,33 @@ export default function Contact() {
                 Hablemos por WhatsApp
               </button>
             </a>
+            
+            {/* Trust Pills */}
+            <div className={styles.contactCtaPills} style={{marginTop: '10px', justifyContent: 'center'}}>
+              <div className={styles.contactCtaPill} style={{background: 'rgba(0, 0, 0, 0.05)', color: 'var(--color-text-dark)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12,6 12,12 16,14"></polyline>
+                </svg>
+                Respuesta en minutos
+              </div>
+              <div className={styles.contactCtaPill} style={{background: 'rgba(0, 0, 0, 0.05)', color: 'var(--color-text-dark)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                </svg>
+                Sin compromiso
+              </div>
+              <div className={styles.contactCtaPill} style={{background: 'rgba(0, 0, 0, 0.05)', color: 'var(--color-text-dark)', border: '1px solid rgba(0, 0, 0, 0.1)'}}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Consulta gratuita
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -784,7 +905,34 @@ export default function Contact() {
                 <span className={styles.contactFooterCtaFunnelDiscountPrice}>$1,750</span>
               </div>
               <div className={styles.contactFooterCtaFunnelSavingsRow}>
-                <span className={styles.contactFooterCtaFunnelSavingsPrice}>más del 50% de descuento - sólo para los primeros 2 clientes cada mes</span>
+                <span className={styles.contactFooterCtaFunnelSavingsPrice}>más del 50% de descuento</span>
+              </div>
+            </div>
+            
+            {/* Trust Pills */}
+            <div className={styles.contactCtaPills} style={{marginTop: '20px', justifyContent: 'center'}}>
+              <div className={styles.contactCtaPill}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12,6 12,12 16,14"></polyline>
+                </svg>
+                Respuesta en minutos
+              </div>
+              <div className={styles.contactCtaPill}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                </svg>
+                Sin compromiso
+              </div>
+              <div className={styles.contactCtaPill}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Consulta gratuita
               </div>
             </div>
             
@@ -837,10 +985,30 @@ export default function Contact() {
             </div>
             
             {/* Trust Pills */}
-            <div className={styles.contactFooterCtaPills}>
-              <div className={styles.contactFooterCtaPill}>✓ Cupos limitados</div>
-              <div className={styles.contactFooterCtaPill}>✓ Sin compromiso</div>
-              <div className={styles.contactFooterCtaPill}>✓ Consulta gratuita</div>
+            <div className={styles.contactCtaPills} style={{marginTop: '10px', justifyContent: 'center'}}>
+              <div className={styles.contactCtaPill}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12,6 12,12 16,14"></polyline>
+                </svg>
+                Respuesta en minutos
+              </div>
+              <div className={styles.contactCtaPill}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                </svg>
+                Sin compromiso
+              </div>
+              <div className={styles.contactCtaPill}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px'}}>
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Consulta gratuita
+              </div>
             </div>
           </div>
         </div>
