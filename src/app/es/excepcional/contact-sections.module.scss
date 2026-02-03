@@ -2044,3 +2044,287 @@
     max-width: 100%;
   }
 }
+
+/* Desktop/Mobile Visibility Classes */
+.desktopOnly {
+  display: inline-flex !important;
+}
+
+.mobileOnly {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .desktopOnly {
+    display: none !important;
+  }
+
+  .mobileOnly {
+    display: inline-flex !important;
+  }
+}
+
+/* Email Contact Modal Styles */
+.emailModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.emailModalContent {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  overflow: visible;
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 60%, #fffdf8 100%); /* STYLISH: pure white longer, then subtle warm yellow tint */
+  border-radius: 32px;
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset,
+    0 0 60px rgba(0, 0, 255, 0.08);
+  padding: 0;
+}
+
+.emailModalBlueHeader {
+  background: #0000ff;
+  padding: 24px 56px 45px;
+  text-align: center;
+  position: relative;
+  border-radius: 32px 32px 0 0;
+}
+
+.emailModalLogo {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: spinModal 8s linear infinite;
+    filter: brightness(1.3);
+  }
+}
+
+.emailModalWave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  overflow: hidden;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+@keyframes spinModal {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.emailModalTitleSection {
+  padding: 24px 56px 20px;
+  text-align: left;
+  background: #ffffff; /* Pure white to match SVG wave */
+}
+
+.emailModalTitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #1d1d1f;
+  margin: 0 0 48px;
+  font-family: 'Georgia', serif;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  transform: scaleY(1.5);
+  transform-origin: top left;
+}
+
+.emailModalSubtitle {
+  font-size: 1.05rem;
+  color: rgba(102, 102, 102, 0.7);
+  line-height: 1.6;
+  margin: 0;
+
+  strong {
+    color: rgba(29, 29, 31, 0.6);
+    font-weight: 700;
+  }
+}
+
+.emailModalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0 56px 48px;
+}
+
+.emailModalRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.emailModalField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+    letter-spacing: 0.02em;
+
+    .optionalLabel {
+      font-weight: 400;
+      color: #aaa;
+      font-size: 0.8rem;
+    }
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 1rem;
+    border: 1px solid rgba(0, 0, 255, 0.04); /* STYLISH: very subtle blue border */
+    border-radius: 14px;
+    background: white;
+    color: #333;
+    transition: all 0.25s ease;
+    font-family: inherit;
+    box-shadow:
+      0 2px 8px rgba(0, 0, 255, 0.015), /* STYLISH: very subtle blue shadow */
+      inset 0 1px 2px rgba(0, 0, 0, 0.01);
+
+    &::placeholder {
+      color: #bbb;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: rgba(0, 0, 255, 0.25); /* STYLISH: blue border on focus */
+      background: white;
+      box-shadow:
+        0 4px 12px rgba(0, 0, 255, 0.06),
+        0 0 0 4px rgba(0, 0, 255, 0.08);
+    }
+
+    &:hover:not(:focus) {
+      border-color: rgba(0, 0, 255, 0.12); /* STYLISH: subtle blue on hover */
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 255, 0.04);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 90px;
+    line-height: 1.5;
+  }
+}
+
+.emailModalTrust {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.emailModalTrustItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--color-text-medium);
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04); /* STYLISH: subtle shadow */
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); /* STYLISH: lift on hover */
+    transform: translateY(-1px); /* STYLISH: subtle lift */
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+    color: #444;
+  }
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 700px) {
+  .emailModalContent {
+    border-radius: 24px;
+    max-width: 100%;
+  }
+
+  .emailModalBlueHeader {
+    padding: 20px 28px 40px;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .emailModalLogo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .emailModalWave {
+    height: 35px;
+  }
+
+  .emailModalTitleSection {
+    padding: 20px 28px 16px;
+  }
+
+  .emailModalForm {
+    padding: 0 28px 36px;
+  }
+
+  .emailModalRow {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .emailModalTitle {
+    font-size: 1.75rem;
+  }
+
+  .emailModalSubtitle {
+    font-size: 0.95rem;
+  }
+
+  .emailModalField {
+    input, textarea {
+      padding: 14px 16px;
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+  }
+
+  .emailModalTrust {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}

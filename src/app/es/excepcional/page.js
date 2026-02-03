@@ -1,10 +1,226 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import styles from './contact-sections.module.scss'
+
+// Email Contact Modal Component - Using Netlify Forms
+function EmailContactModal({ isOpen, onClose, gtag_report_conversion }) {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null) // null, 'success', 'error'
+
+  // Handle Netlify form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    const form = e.target
+    const formData = new FormData(form)
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        // Fire conversion tracking
+        gtag_report_conversion()
+        // Redirect to thank-you page after short delay
+        setTimeout(() => {
+          window.location.href = '/es/gracias'
+        }, 1500)
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  // Reset state when modal closes
+  useEffect(() => {
+    if (!isOpen) {
+      setSubmitStatus(null)
+    }
+  }, [isOpen])
+
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className={styles.emailModalOverlay}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            className={styles.emailModalContent}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+          >
+            {/* Blue Header with Spinner Only */}
+            <div className={styles.emailModalBlueHeader}>
+              <div className={styles.emailModalLogo}>
+                <img src="/wheel.png" alt="The Refresh Agency" />
+              </div>
+              {/* Wavy divider */}
+              <div className={styles.emailModalWave}>
+                <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+                  <path d="M0,0 Q300,50 600,25 T1200,30 L1200,60 L0,60 Z" fill="white"/>
+                </svg>
+              </div>
+            </div>
+
+            {/* Title Section - Below wave, on white */}
+            <div className={styles.emailModalTitleSection}>
+              <h2 className={styles.emailModalTitle}>Empezemos con Tu Proyecto</h2>
+              <p className={styles.emailModalSubtitle}>
+                Cuéntanos qué quieres implementar y te responderemos con una propuesta clara y accionable. <strong>Este es el primer paso.</strong>
+              </p>
+            </div>
+
+            {/* Form - Powered by Netlify Forms */}
+            <form
+              name="excepcional-contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+              className={styles.emailModalForm}
+            >
+              {/* Hidden fields for Netlify */}
+              <input type="hidden" name="form-name" value="excepcional-contact" />
+              <p hidden>
+                <label>
+                  Don't fill this out: <input name="bot-field" />
+                </label>
+              </p>
+
+              {/* Row with Name and Email */}
+              <div className={styles.emailModalRow}>
+                <div className={styles.emailModalField}>
+                  <label htmlFor="name">Nombre</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="¿Cómo te llamas?"
+                    required
+                  />
+                </div>
+
+                <div className={styles.emailModalField}>
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="tu@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* WhatsApp Field (Optional) */}
+              <div className={styles.emailModalField}>
+                <label htmlFor="whatsapp">WhatsApp <span className={styles.optionalLabel}>(opcional)</span></label>
+                <input
+                  type="tel"
+                  id="whatsapp"
+                  name="whatsapp"
+                  placeholder="+1 234 567 8900 (incluye código de país)"
+                />
+              </div>
+
+              {/* Description Field */}
+              <div className={styles.emailModalField}>
+                <label htmlFor="description">¿Qué tienes en mente?</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  placeholder="Cuéntanos sobre tu negocio, tus metas, y cómo podemos ayudarte a crecer..."
+                  rows="3"
+                  required
+                />
+              </div>
+
+              {/* Submit Button - styled like CTA */}
+              <button
+                type="submit"
+                className="contact-button"
+                style={{width: '100%', marginTop: '8px', padding: '20px 24px', background: '#ff0000'}}
+                disabled={isSubmitting || submitStatus === 'success'}
+              >
+                {isSubmitting ? (
+                  <span>Enviando...</span>
+                ) : submitStatus === 'success' ? (
+                  <span>¡Mensaje enviado! Redirigiendo...</span>
+                ) : (
+                  <>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                    </svg>
+                    Enviar y recibir respuesta rápida
+                  </>
+                )}
+              </button>
+
+              {/* Trust indicators */}
+              <div className={styles.emailModalTrust}>
+                <div className={styles.emailModalTrustItem}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12,6 12,12 16,14"></polyline>
+                  </svg>
+                  Respuesta en minutos
+                </div>
+                <div className={styles.emailModalTrustItem}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                  </svg>
+                  Sin compromiso
+                </div>
+                <div className={styles.emailModalTrustItem}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  Consulta gratuita
+                </div>
+              </div>
+            </form>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+}
 
 export default function Contact() {
   const wheelRef = useRef(null)
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
 
   // Google Ads conversion tracking function
   const gtag_report_conversion = (url) => {
@@ -107,14 +323,25 @@ export default function Contact() {
         </div>
 
         {/* Main title */}
-        <h1 className="contact-title">Más Alla de<br />Diseño Web</h1>
+        <h1 className="contact-title">Más Allá de<br />Diseño Web</h1>
 
         {/* Subtitle */}
         <p className="contact-subtitle"><span style={{color: 'rgba(255, 255, 255, 0.5)', opacity: 0.7}}>Una Agencia que:</span><br />Eleva tu marca con una experiencia web excepcional, con <u><strong>una maquina de generar clientes</strong></u> por detrás. Déjanos encargarnos de todo.</p>
 
-        {/* CTA Button */}
-        <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
-
+        {/* CTA Button - Desktop: Email, Mobile: WhatsApp */}
+        {/* Desktop Email Button */}
+        <button
+          className={`contact-button ${styles.desktopOnly}`}
+          onClick={() => setIsEmailModalOpen(true)}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Hablemos por email
+        </button>
+        {/* Mobile WhatsApp Button */}
+        <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()} className={styles.mobileOnly}>
           <button className="contact-button">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -331,9 +558,22 @@ export default function Contact() {
             </p>
           </div>
 
-          {/* CTA Button after description */}
+          {/* CTA Button after description - Desktop: Email, Mobile: WhatsApp */}
           <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '30px', marginBottom: '60px'}}>
-            <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes..%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
+            {/* Desktop Email Button */}
+            <button
+              className={`contact-button ${styles.desktopOnly}`}
+              style={{background: '#ff6b35', color: 'white'}}
+              onClick={() => setIsEmailModalOpen(true)}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Hablemos por email
+            </button>
+            {/* Mobile WhatsApp Button */}
+            <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes..%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()} className={styles.mobileOnly}>
               <button className="contact-button" style={{background: '#ff6b35', color: 'white'}}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -443,9 +683,22 @@ export default function Contact() {
             <li>Apoyo técnico directo y mantenimiento</li>
           </ul>
 
-          {/* CTA Button after benefits */}
+          {/* CTA Button after benefits - Desktop: Email, Mobile: WhatsApp */}
           <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '40px'}}>
-            <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes...%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
+            {/* Desktop Email Button */}
+            <button
+              className={`contact-button ${styles.desktopOnly}`}
+              style={{background: '#ff6b35', color: 'white'}}
+              onClick={() => setIsEmailModalOpen(true)}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Hablemos por email
+            </button>
+            {/* Mobile WhatsApp Button */}
+            <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes...%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()} className={styles.mobileOnly}>
               <button className="contact-button" style={{background: '#ff6b35', color: 'white'}}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -506,8 +759,19 @@ export default function Contact() {
           Sólo trabajamos con <strong><u>tres cupos por mes</u></strong> para asegurar la mejor atención y calidad de resultados, no te quedes sin tu lugar. 
           </p>
 
-          <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes....%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
-
+          {/* Desktop Email Button */}
+          <button
+            className={`contact-button ${styles.desktopOnly}`}
+            onClick={() => setIsEmailModalOpen(true)}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            Hablemos por email
+          </button>
+          {/* Mobile WhatsApp Button */}
+          <a href="https://wa.me/19784045049?text=Hola,%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes....%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()} className={styles.mobileOnly}>
             <button className="contact-button">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -515,7 +779,7 @@ export default function Contact() {
               Hablemos por WhatsApp
             </button>
           </a>
-          
+
           {/* Trust Pills */}
           <div className={styles.contactCtaPills}>
             <div className={styles.contactCtaPill}>
@@ -820,9 +1084,22 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* CTA Button after comparison table */}
+          {/* CTA Button after comparison table - Desktop: Email, Mobile: WhatsApp */}
           <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '60px'}}>
-            <a href="https://wa.me/19784045049?text=Hola%21%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
+            {/* Desktop Email Button */}
+            <button
+              className={`contact-button ${styles.desktopOnly}`}
+              style={{background: '#ff6b35', color: 'white'}}
+              onClick={() => setIsEmailModalOpen(true)}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Hablemos por email
+            </button>
+            {/* Mobile WhatsApp Button */}
+            <a href="https://wa.me/19784045049?text=Hola%21%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes.%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()} className={styles.mobileOnly}>
               <button className="contact-button" style={{background: '#ff6b35', color: 'white'}}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -934,7 +1211,7 @@ export default function Contact() {
             
             <div className={styles.contactFooterCtaFunnelBasePriceNote}>
               <span className={styles.contactFooterCtaFunnelBasePriceText}>
-                Este es el precio base. Para proyectos que incluyan ecommerce, blog completo, traduccion, páginas funnel extra, etc. <a href="https://wa.me/19784045049?text=Hola%21%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes..%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'underline', fontWeight: 'bold', fontStyle: 'normal', color: 'black'}} onClick={() => gtag_report_conversion()}>Contáctanos para una cotización personalizada.</a>
+                Este es el precio base. Para proyectos que incluyan ecommerce, blog completo, traduccion, páginas funnel extra, etc. <a href="#" style={{textDecoration: 'underline', fontWeight: 'bold', fontStyle: 'normal', color: 'black', cursor: 'pointer'}} onClick={(e) => { e.preventDefault(); setIsEmailModalOpen(true); }}>Contáctanos para una cotización personalizada.</a>
               </span>
             </div>
           </div>
@@ -969,8 +1246,19 @@ export default function Contact() {
             </p>
             
             <div className={styles.contactFooterCtaButtons}>
-              <a href="https://wa.me/19784045049?text=Hola%21%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes...%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()}>
-
+              {/* Desktop Email Button */}
+              <button
+                className={`${styles.contactFooterCtaButton} ${styles.primary} ${styles.desktopOnly}`}
+                onClick={() => setIsEmailModalOpen(true)}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '8px'}}>
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Hablemos por email
+              </button>
+              {/* Mobile WhatsApp Button */}
+              <a href="https://wa.me/19784045049?text=Hola%21%20Quiero%20una%20web%20excepcional%20que%20me%20traiga%20clientes...%20%C2%BFQu%C3%A9%20sigue?" target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()} className={styles.mobileOnly}>
                 <button className={`${styles.contactFooterCtaButton} ${styles.primary}`}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{marginRight: '8px'}}>
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
@@ -997,6 +1285,13 @@ export default function Contact() {
           </p>
         </div>
       </section>
+
+      {/* Email Contact Modal */}
+      <EmailContactModal
+        isOpen={isEmailModalOpen}
+        onClose={() => setIsEmailModalOpen(false)}
+        gtag_report_conversion={gtag_report_conversion}
+      />
     </div>
   )
 }
