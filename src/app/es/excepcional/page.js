@@ -4,25 +4,28 @@ import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import styles from './contact-sections.module.scss'
 
-// Email Contact Modal Component - Using Netlify Forms
+// Email Contact Modal Component - Using Formspree
 function EmailContactModal({ isOpen, onClose, gtag_report_conversion }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null) // null, 'success', 'error'
 
-  // Handle Netlify form submission - using FormData pattern from Netlify docs
-  const handleSubmit = (e) => {
+  // Handle Formspree form submission
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    const myForm = e.target
-    const formData = new FormData(myForm)
+    const formData = new FormData(e.target)
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => {
+    try {
+      const response = await fetch("https://formspree.io/f/xwvqgrvn", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+
+      if (response.ok) {
         setSubmitStatus('success')
         // Fire conversion tracking
         gtag_report_conversion()
@@ -30,14 +33,15 @@ function EmailContactModal({ isOpen, onClose, gtag_report_conversion }) {
         setTimeout(() => {
           window.location.href = '/es/gracias'
         }, 1500)
-      })
-      .catch((error) => {
-        console.error('Form submission error:', error)
+      } else {
         setSubmitStatus('error')
-      })
-      .finally(() => {
-        setIsSubmitting(false)
-      })
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   // Reset state when modal closes
@@ -94,23 +98,11 @@ function EmailContactModal({ isOpen, onClose, gtag_report_conversion }) {
               </p>
             </div>
 
-            {/* Form - Powered by Netlify Forms */}
+            {/* Form - Powered by Formspree */}
             <form
-              name="excepcional-contact"
-              method="POST"
-              action="/"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className={styles.emailModalForm}
             >
-              {/* Hidden fields for Netlify */}
-              <input type="hidden" name="form-name" value="excepcional-contact" />
-              <p hidden>
-                <label>
-                  Don't fill this out: <input name="bot-field" />
-                </label>
-              </p>
 
               {/* Row with Name and Email */}
               <div className={styles.emailModalRow}>
