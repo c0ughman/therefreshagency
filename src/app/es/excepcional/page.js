@@ -15,18 +15,34 @@ function EmailContactModal({ isOpen, onClose, gtag_report_conversion }) {
     setIsSubmitting(true)
 
     const form = e.target
-    const formData = new FormData(form)
 
-    // Explicitly ensure form-name is included (required for Netlify)
-    const body = new URLSearchParams(formData)
-    body.set('form-name', 'excepcional-contact')
+    // Build form data manually to ensure correct encoding
+    const formDataObj = {
+      'form-name': 'excepcional-contact',
+      'name': form.elements.name.value,
+      'email': form.elements.email.value,
+      'whatsapp': form.elements.whatsapp.value || '',
+      'description': form.elements.description.value
+    }
+
+    // Encode as URL params
+    const encodedBody = Object.keys(formDataObj)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(formDataObj[key]))
+      .join('&')
+
+    console.log('Submitting form with body:', encodedBody)
 
     try {
       const response = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString()
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: encodedBody
       })
+
+      console.log('Response status:', response.status)
+      console.log('Response ok:', response.ok)
 
       if (response.ok) {
         setSubmitStatus('success')
@@ -37,6 +53,7 @@ function EmailContactModal({ isOpen, onClose, gtag_report_conversion }) {
           window.location.href = '/es/gracias'
         }, 1500)
       } else {
+        console.error('Form submission failed with status:', response.status)
         setSubmitStatus('error')
       }
     } catch (error) {
@@ -105,6 +122,7 @@ function EmailContactModal({ isOpen, onClose, gtag_report_conversion }) {
             <form
               name="excepcional-contact"
               method="POST"
+              action="/"
               data-netlify="true"
               netlify-honeypot="bot-field"
               onSubmit={handleSubmit}

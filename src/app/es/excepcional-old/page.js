@@ -261,7 +261,7 @@ export default function Contact() {
         </div>
 
         {/* Main title */}
-        <h1 className="contact-title"><span style={{fontSize: '0.5em'}}>Más Alla de Una</span><br />Agencia de<br />Diseño Web</h1>
+        <h1 className="contact-title"><span style={{fontSize: '0.5em'}}>Más Allá de Una</span><br />Agencia de<br />Diseño Web</h1>
 
         {/* Subtitle */}
         <p className="contact-subtitle">Eleva tu marca con <u><strong>diseño de alto nivel.</strong></u><br />Nos encargamos de todo, contigo en cada paso.</p>
