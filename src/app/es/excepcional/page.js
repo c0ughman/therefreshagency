@@ -9,42 +9,20 @@ function EmailContactModal({ isOpen, onClose, gtag_report_conversion }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null) // null, 'success', 'error'
 
-  // Handle Netlify form submission
-  const handleSubmit = async (e) => {
+  // Handle Netlify form submission - using FormData pattern from Netlify docs
+  const handleSubmit = (e) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    const form = e.target
+    const myForm = e.target
+    const formData = new FormData(myForm)
 
-    // Build form data manually to ensure correct encoding
-    const formDataObj = {
-      'form-name': 'excepcional-contact',
-      'name': form.elements.name.value,
-      'email': form.elements.email.value,
-      'whatsapp': form.elements.whatsapp.value || '',
-      'description': form.elements.description.value
-    }
-
-    // Encode as URL params
-    const encodedBody = Object.keys(formDataObj)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(formDataObj[key]))
-      .join('&')
-
-    console.log('Submitting form with body:', encodedBody)
-
-    try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: encodedBody
-      })
-
-      console.log('Response status:', response.status)
-      console.log('Response ok:', response.ok)
-
-      if (response.ok) {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
         setSubmitStatus('success')
         // Fire conversion tracking
         gtag_report_conversion()
@@ -52,16 +30,14 @@ function EmailContactModal({ isOpen, onClose, gtag_report_conversion }) {
         setTimeout(() => {
           window.location.href = '/es/gracias'
         }, 1500)
-      } else {
-        console.error('Form submission failed with status:', response.status)
+      })
+      .catch((error) => {
+        console.error('Form submission error:', error)
         setSubmitStatus('error')
-      }
-    } catch (error) {
-      console.error('Form submission error:', error)
-      setSubmitStatus('error')
-    } finally {
-      setIsSubmitting(false)
-    }
+      })
+      .finally(() => {
+        setIsSubmitting(false)
+      })
   }
 
   // Reset state when modal closes
