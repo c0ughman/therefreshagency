@@ -17,11 +17,15 @@ function EmailContactModal({ isOpen, onClose, gtag_report_conversion }) {
     const form = e.target
     const formData = new FormData(form)
 
+    // Explicitly ensure form-name is included (required for Netlify)
+    const body = new URLSearchParams(formData)
+    body.set('form-name', 'excepcional-contact')
+
     try {
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        body: body.toString()
       })
 
       if (response.ok) {

@@ -3,7 +3,8 @@
   Netlify scans static HTML during build to detect forms.
   This form mirrors the React form in /es/excepcional.
 -->
-<form name="excepcional-contact" netlify netlify-honeypot="bot-field" hidden>
+<form name="excepcional-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="excepcional-contact" />
   <input type="text" name="name" />
   <input type="email" name="email" />
   <input type="tel" name="whatsapp" />
