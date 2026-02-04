@@ -2052,6 +2052,7 @@
 
 .mobileOnly {
   display: none !important;
+  text-decoration: none !important;
 }
 
 @media (max-width: 768px) {
@@ -2061,6 +2062,7 @@
 
   .mobileOnly {
     display: inline-flex !important;
+    text-decoration: none !important;
   }
 }
 
