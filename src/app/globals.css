@@ -172,6 +172,10 @@ nav a {
     margin: 0 5px;
     width: calc(100% - 10px);
     padding: 8px 15px;
+    /* Reduce blur on mobile for GPU performance */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -1631,6 +1635,9 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   height: 100vh;
   pointer-events: none;
   z-index: 99999996;
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .ocean-canvas.loaded {
@@ -1681,6 +1688,9 @@ body {
   opacity: 1;
   transform: translateY(220px);
   transition: transform 1.0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .value-props-grid.text-fade-in {
@@ -4565,9 +4575,65 @@ a[href="#"][data-service="contact"],
   .language-switcher {
     margin-left: 10px;
   }
-  
+
   .lang-link {
     font-size: 12px;
     padding: 2px 6px;
+  }
+}
+
+/* ========================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   Reduces GPU load on mobile devices by
+   minimizing expensive effects and promoting
+   animated elements to compositor layers.
+   ======================================== */
+@media (max-width: 768px) {
+  /* Force GPU compositing on animated elements */
+  .ocean-canvas,
+  .value-props-grid,
+  .value-props-background,
+  .zoom-parallax-wrapper {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Reduce expensive backdrop-filter blur values on mobile */
+  .bento-content,
+  .complex-left .bento-content,
+  .complex-top-right .bento-content,
+  .complex-square-5 .bento-content,
+  .complex-square-8 .bento-content {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  /* Disable CSS keyframe animations that run continuously (wave pulse effects) */
+  .circular-wave-1,
+  .circular-wave-2,
+  .circular-wave-3 {
+    animation: none;
+  }
+
+  .wave-1,
+  .wave-2,
+  .wave-3 {
+    animation: none;
+  }
+
+  /* Reduce box-shadow complexity on mobile */
+  .sticky-header {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Optimize transitions - use shorter durations on mobile */
+  .project-row {
+    transition: all 0.2s ease;
+  }
+
+  .project-columns {
+    transition: transform 0.2s ease;
   }
 }

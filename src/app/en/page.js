@@ -24,20 +24,25 @@ export default function Home() {
 
 
   useEffect(() => {
+    // Mobile detection - used throughout to skip expensive desktop-only effects
+    const isMobileDevice = window.innerWidth <= 768 || ('ontouchstart' in window && window.innerWidth <= 1024)
+
     // Show chatbot popup after 4 seconds
     const popupTimer = setTimeout(() => {
       setShowChatbotPopup(true)
     }, 4000)
 
-    // Lenis smooth scrolling with standard configuration
-    window.lenis = new Lenis({
-      duration: 1.2,  // Standard duration for normal scrolling
-      easing: (t) => 1 - Math.pow(1 - t, 3), // Standard easing function
-      orientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1.0, // Standard multiplier for normal wheel scrolling
-      smooth: true,
-    })
+    // Lenis smooth scrolling - DISABLED on mobile (fights native scroll optimization)
+    if (!isMobileDevice) {
+      window.lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+        orientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1.0,
+        smooth: true,
+      })
+    }
    
     // Handle smooth scrolling for navigation links
     const handleNavClick = (e) => {
@@ -53,19 +58,13 @@ export default function Home() {
         const projectType = link.getAttribute('data-project')
         
         if (targetElement) {
-          window.lenis.scrollTo(targetElement, {
-            offset: -100, // Offset to account for header height
-            duration: 1.5,  // Standard duration for navigation clicks
-            easing: (t) => 1 - Math.pow(1 - t, 3) // Standard easing for nav
-          }).then(() => {
+          const afterScroll = () => {
             // Handle service highlights
             if (serviceType) {
-              // Remove any existing highlights
               document.querySelectorAll('.bento-highlight').forEach(el => {
                 el.classList.remove('bento-highlight')
               })
 
-              // Add highlight to the selected service
               let targetCard
               switch(serviceType) {
                 case 'web-design':
@@ -84,7 +83,6 @@ export default function Home() {
 
               if (targetCard) {
                 targetCard.classList.add('bento-highlight')
-                // Remove highlight after animation
                 setTimeout(() => {
                   targetCard.classList.remove('bento-highlight')
                 }, 2000)
@@ -93,26 +91,35 @@ export default function Home() {
 
             // Handle project highlights
             if (projectType) {
-              // Remove any existing highlights
               document.querySelectorAll('.project-highlight').forEach(el => {
                 el.classList.remove('project-highlight')
               })
 
-              // Add highlight to the selected project
               const targetProject = document.querySelector(`#matrix-${projectType}`)?.closest('.project-row')
               if (targetProject) {
                 targetProject.classList.add('project-highlight')
-                // Ensure the project is in view
                 setTimeout(() => {
                   targetProject.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                  // Remove highlight after animation
                   setTimeout(() => {
                     targetProject.classList.remove('project-highlight')
                   }, 2000)
-                }, 1000) // Wait for initial scroll to complete
+                }, 1000)
               }
             }
-          })
+          }
+
+          // Use Lenis on desktop, native scroll on mobile
+          if (window.lenis) {
+            window.lenis.scrollTo(targetElement, {
+              offset: -100,
+              duration: 1.5,
+              easing: (t) => 1 - Math.pow(1 - t, 3)
+            }).then(afterScroll)
+          } else {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            // Delay highlights to allow native scroll to finish
+            setTimeout(afterScroll, 800)
+          }
         }
       }
     }
@@ -124,64 +131,67 @@ export default function Home() {
     if (mainNav) mainNav.addEventListener('click', handleNavClick)
     if (stickyNav) stickyNav.addEventListener('click', handleNavClick)
 
-    function raf(time) {
-      window.lenis.raf(time)
+    if (window.lenis) {
+      function raf(time) {
+        window.lenis.raf(time)
+        requestAnimationFrame(raf)
+      }
       requestAnimationFrame(raf)
     }
 
-    requestAnimationFrame(raf)
-
-    // Hero wheel rotation
-    const wheel = wheelRef.current
-    let lastY = 0
-    let velocity = 0
-    let rotation = 0
-
-    const handleMouseMove = (e) => {
-      const deltaY = e.clientY - lastY
-      velocity += deltaY * 0.05
-      lastY = e.clientY
-    }
-
-    function animateWheel() {
-      rotation += velocity
-      velocity *= 0.9
-      if (wheel) {
-        wheel.style.transform = `rotate(${rotation}deg)`
-      }
-      requestAnimationFrame(animateWheel)
-    }
-
-    document.addEventListener('mousemove', handleMouseMove)
-    animateWheel()
-
-
-    // Blue cursor movement
-    const blueCursor = blueCursorRef.current
-    const handleCursorMove = (e) => {
-      if (blueCursor) {
-        blueCursor.style.left = `${e.clientX}px`
-        blueCursor.style.top = `${e.clientY}px`
-      }
-    }
-
-    document.addEventListener('mousemove', handleCursorMove)
-
-    // Web design showcase mask effect
+    // --- Desktop-only mouse effects (skip entirely on mobile) ---
+    let handleMouseMove, handleCursorMove, handleWebDesignMouseMove
     const webDesignSection = webDesignRef.current
-    const handleWebDesignMouseMove = (e) => {
-      const showcaseImg = webDesignSection?.querySelector('.showcase-image')
-      if (showcaseImg) {
-        const rect = showcaseImg.getBoundingClientRect()
-        const x = ((e.clientX - rect.left) / rect.width) * 100
-        const y = ((e.clientY - rect.top) / rect.height) * 100
-        showcaseImg.style.setProperty('--mouse-x', `${x}%`)
-        showcaseImg.style.setProperty('--mouse-y', `${y}%`)
-      }
-    }
 
-    if (webDesignSection) {
-      webDesignSection.addEventListener('mousemove', handleWebDesignMouseMove)
+    if (!isMobileDevice) {
+      // Hero wheel rotation
+      const wheel = wheelRef.current
+      let lastY = 0
+      let velocity = 0
+      let rotation = 0
+
+      handleMouseMove = (e) => {
+        const deltaY = e.clientY - lastY
+        velocity += deltaY * 0.05
+        lastY = e.clientY
+      }
+
+      function animateWheel() {
+        rotation += velocity
+        velocity *= 0.9
+        if (wheel) {
+          wheel.style.transform = `rotate(${rotation}deg)`
+        }
+        requestAnimationFrame(animateWheel)
+      }
+
+      document.addEventListener('mousemove', handleMouseMove)
+      animateWheel()
+
+      // Blue cursor movement
+      const blueCursor = blueCursorRef.current
+      handleCursorMove = (e) => {
+        if (blueCursor) {
+          blueCursor.style.left = `${e.clientX}px`
+          blueCursor.style.top = `${e.clientY}px`
+        }
+      }
+      document.addEventListener('mousemove', handleCursorMove)
+
+      // Web design showcase mask effect
+      handleWebDesignMouseMove = (e) => {
+        const showcaseImg = webDesignSection?.querySelector('.showcase-image')
+        if (showcaseImg) {
+          const rect = showcaseImg.getBoundingClientRect()
+          const x = ((e.clientX - rect.left) / rect.width) * 100
+          const y = ((e.clientY - rect.top) / rect.height) * 100
+          showcaseImg.style.setProperty('--mouse-x', `${x}%`)
+          showcaseImg.style.setProperty('--mouse-y', `${y}%`)
+        }
+      }
+      if (webDesignSection) {
+        webDesignSection.addEventListener('mousemove', handleWebDesignMouseMove)
+      }
     }
 
     // Sticky header scroll control
@@ -207,63 +217,61 @@ export default function Home() {
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
 
-    // Sticky wheel rotation
-    const stickyWheel = stickyWheelRef.current
-    let stickyWheelLastY = 0
-    let stickyWheelVelocity = 0
-    let stickyWheelRotation = 0
+    // --- Desktop-only: sticky wheel + button gradient effects ---
+    let handleStickyWheelMouseMove, handleButtonMouseMove
 
-    const handleStickyWheelMouseMove = (e) => {
-      const deltaY = e.clientY - stickyWheelLastY
-      stickyWheelVelocity += deltaY * 0.05
-      stickyWheelLastY = e.clientY
-    }
+    if (!isMobileDevice) {
+      const stickyWheel = stickyWheelRef.current
+      let stickyWheelLastY = 0
+      let stickyWheelVelocity = 0
+      let stickyWheelRotation = 0
 
-    function animateStickyWheel() {
-      stickyWheelRotation += stickyWheelVelocity
-      stickyWheelVelocity *= 0.9
-      if (stickyWheel) {
-        stickyWheel.style.transform = `rotate(${stickyWheelRotation}deg)`
+      handleStickyWheelMouseMove = (e) => {
+        const deltaY = e.clientY - stickyWheelLastY
+        stickyWheelVelocity += deltaY * 0.05
+        stickyWheelLastY = e.clientY
       }
-      requestAnimationFrame(animateStickyWheel)
-    }
 
-    document.addEventListener('mousemove', handleStickyWheelMouseMove)
-    animateStickyWheel()
-
-    // Button gradient cursor following effect
-    const handleButtonMouseMove = (e) => {
-      const button = e.target.closest('.button, .footer-button, .footer-cta-button, .cta-button')
-      if (button) {
-        const rect = button.getBoundingClientRect()
-        const x = ((e.clientX - rect.left) / rect.width) * 100
-        const y = ((e.clientY - rect.top) / rect.height) * 100
-        
-        // Calculate distance from center (50%, 50%)
-        const centerX = 50
-        const centerY = 50
-        const distanceFromCenter = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2))
-        
-        // Calculate glow intensity based on distance from center
-        // Closer to edge = higher intensity (max distance from center is ~35%)
-        const maxDistance = 35
-        const intensity = Math.min(distanceFromCenter / maxDistance, 1)
-        
-        // Calculate offset for outer glow (cursor position relative to center)
-        const glowOffsetX = (x - 50) * 0.1 // Reduced offset for tighter effect
-        const glowOffsetY = (y - 50) * 0.1
-        
-        button.style.setProperty('--gradient-x', `${x}%`)
-        button.style.setProperty('--gradient-y', `${y}%`)
-        button.style.setProperty('--glow-offset-x', `${glowOffsetX}px`)
-        button.style.setProperty('--glow-offset-y', `${glowOffsetY}px`)
-        button.style.setProperty('--glow-intensity', intensity)
+      function animateStickyWheel() {
+        stickyWheelRotation += stickyWheelVelocity
+        stickyWheelVelocity *= 0.9
+        if (stickyWheel) {
+          stickyWheel.style.transform = `rotate(${stickyWheelRotation}deg)`
+        }
+        requestAnimationFrame(animateStickyWheel)
       }
-    }
 
-    document.addEventListener('mousemove', handleButtonMouseMove)
+      document.addEventListener('mousemove', handleStickyWheelMouseMove)
+      animateStickyWheel()
+
+      // Button gradient cursor following effect
+      handleButtonMouseMove = (e) => {
+        const button = e.target.closest('.button, .footer-button, .footer-cta-button, .cta-button')
+        if (button) {
+          const rect = button.getBoundingClientRect()
+          const x = ((e.clientX - rect.left) / rect.width) * 100
+          const y = ((e.clientY - rect.top) / rect.height) * 100
+
+          const centerX = 50
+          const centerY = 50
+          const distanceFromCenter = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2))
+          const maxDistance = 35
+          const intensity = Math.min(distanceFromCenter / maxDistance, 1)
+          const glowOffsetX = (x - 50) * 0.1
+          const glowOffsetY = (y - 50) * 0.1
+
+          button.style.setProperty('--gradient-x', `${x}%`)
+          button.style.setProperty('--gradient-y', `${y}%`)
+          button.style.setProperty('--glow-offset-x', `${glowOffsetX}px`)
+          button.style.setProperty('--glow-offset-y', `${glowOffsetY}px`)
+          button.style.setProperty('--glow-intensity', intensity)
+        }
+      }
+
+      document.addEventListener('mousemove', handleButtonMouseMove)
+    }
 
     // Scroll-based video and project effects
     const briefedVideo = document.querySelector('video[alt*="Briefed"]')
@@ -413,125 +421,109 @@ export default function Home() {
     window.addEventListener('scroll', handleProjectScroll)
     window.addEventListener('resize', handleResize)
 
-    // SVG Divider scroll effect
-    let lastScrollY = window.scrollY
-    let lastScrollTime = Date.now()
-    let currentBend = 0
-    let targetBend = 0
+    // SVG Divider scroll effect - desktop only (continuous rAF is too expensive on mobile)
     let animationFrameId
-
-    const updateDividers = () => {
-      const currentScrollY = window.scrollY
-      const currentTime = Date.now()
-      const deltaTime = currentTime - lastScrollTime
-      const deltaY = currentScrollY - lastScrollY
-      
-      // Calculate instantaneous scroll velocity
-      const instantVelocity = deltaTime > 0 ? deltaY / deltaTime * 16 : 0 // 16ms = 60fps
-      
-      // Set target bend based on scroll velocity
-      // Positive velocity (scrolling down) = curve up, negative velocity (scrolling up) = curve down
-      targetBend = instantVelocity * 2
-      
-      // Apply natural decay when not scrolling
-      if (Math.abs(instantVelocity) < 1) {
-        targetBend = 0 // Force target to center when not scrolling
-        currentBend *= 0.98 // Much slower decay
-      }
-      
-      // Smoothly animate current bend towards target
-      currentBend += (targetBend - currentBend) * 0.15
-      
-      // Clamp bend amount
-      const maxBend = 80
-      currentBend = Math.max(-maxBend, Math.min(maxBend, currentBend))
-      
-      // Update divider paths
-      const topPath = document.getElementById('top-path')
-      const bottomPath = document.getElementById('bottom-path')
-      
-      if (topPath && bottomPath) {
-        // Center is at 150, bend amount creates the curve
-        const centerY = 150 + currentBend
-        
-        // Calculate curve intensity based on scroll velocity
-        const curveIntensity = Math.abs(instantVelocity) * 2
-        
-        // Create curved divider shapes with dynamic curve intensity
-        const topPathData = `M0,0 L1200,0 L1200,${centerY} Q600,${centerY + curveIntensity} 0,${centerY} Z`
-        const bottomPathData = `M0,${centerY} Q600,${centerY - curveIntensity} 1200,${centerY} L1200,300 L0,300 Z`
-        
-        topPath.setAttribute('d', topPathData)
-        bottomPath.setAttribute('d', bottomPathData)
-        
-        // Debug: log values to console
-        console.log('Scroll velocity:', instantVelocity, 'Current bend:', currentBend, 'Target bend:', targetBend, 'Curve intensity:', curveIntensity)
-      } else {
-        console.log('SVG paths not found')
-      }
-      
-      lastScrollY = currentScrollY
-      lastScrollTime = currentTime
-      animationFrameId = requestAnimationFrame(updateDividers)
-    }
-    
-    // Start the animation after a short delay to ensure DOM is ready
-    setTimeout(() => {
-      updateDividers()
-    }, 100)
-
-    // Matrix effect for CTA section
     let handleMatrixMouseMove
-    setTimeout(() => {
-      const matrix = document.getElementById('matrix')
-      if (matrix) {
-        const cellWidth = 15
-        const cellHeight = 20
-        const cols = Math.floor(window.innerWidth / cellWidth)
-        const rows = Math.floor(window.innerHeight / cellHeight)
 
-        // Build grid + 2D array
-        const grid = []
-        for (let r = 0; r < rows; r++) {
-          const row = []
-          for (let c = 0; c < cols; c++) {
-            const span = document.createElement('span')
-            span.textContent = Math.random() > 0.5 ? '1' : '0'
-            matrix.appendChild(span)
-            row.push(span)
-          }
-          grid.push(row)
+    if (!isMobileDevice) {
+      let lastScrollY = window.scrollY
+      let lastScrollTime = Date.now()
+      let currentBend = 0
+      let targetBend = 0
+
+      const updateDividers = () => {
+        const currentScrollY = window.scrollY
+        const currentTime = Date.now()
+        const deltaTime = currentTime - lastScrollTime
+        const deltaY = currentScrollY - lastScrollY
+
+        const instantVelocity = deltaTime > 0 ? deltaY / deltaTime * 16 : 0
+
+        targetBend = instantVelocity * 2
+
+        if (Math.abs(instantVelocity) < 1) {
+          targetBend = 0
+          currentBend *= 0.98
         }
 
-        handleMatrixMouseMove = (e) => {
-          const radius = 80 // circular brush radius in px
+        currentBend += (targetBend - currentBend) * 0.15
 
-          // brush bounds in grid coordinates
-          const rowStart = Math.max(0, Math.floor((e.clientY - radius) / cellHeight))
-          const rowEnd = Math.min(rows - 1, Math.floor((e.clientY + radius) / cellHeight))
-          const colStart = Math.max(0, Math.floor((e.clientX - radius) / cellWidth))
-          const colEnd = Math.min(cols - 1, Math.floor((e.clientX + radius) / cellWidth))
+        const maxBend = 80
+        currentBend = Math.max(-maxBend, Math.min(maxBend, currentBend))
 
-          for (let r = rowStart; r <= rowEnd; r++) {
-            for (let c = colStart; c <= colEnd; c++) {
-              const span = grid[r][c]
-              const x = c * cellWidth + cellWidth / 2
-              const y = r * cellHeight + cellHeight / 2
+        const topPath = document.getElementById('top-path')
+        const bottomPath = document.getElementById('bottom-path')
 
-              const dist = Math.hypot(e.clientX - x, e.clientY - y)
+        if (topPath && bottomPath) {
+          const centerY = 150 + currentBend
+          const curveIntensity = Math.abs(instantVelocity) * 2
 
-              if (dist <= radius) {
-                span.classList.add('visible')
-              } else {
-                span.classList.remove('visible')
+          const topPathData = `M0,0 L1200,0 L1200,${centerY} Q600,${centerY + curveIntensity} 0,${centerY} Z`
+          const bottomPathData = `M0,${centerY} Q600,${centerY - curveIntensity} 1200,${centerY} L1200,300 L0,300 Z`
+
+          topPath.setAttribute('d', topPathData)
+          bottomPath.setAttribute('d', bottomPathData)
+        }
+
+        lastScrollY = currentScrollY
+        lastScrollTime = currentTime
+        animationFrameId = requestAnimationFrame(updateDividers)
+      }
+
+      setTimeout(() => {
+        updateDividers()
+      }, 100)
+
+      // Matrix effect for CTA section - desktop only (mouse-driven)
+      setTimeout(() => {
+        const matrix = document.getElementById('matrix')
+        if (matrix) {
+          const cellWidth = 15
+          const cellHeight = 20
+          const cols = Math.floor(window.innerWidth / cellWidth)
+          const rows = Math.floor(window.innerHeight / cellHeight)
+
+          const grid = []
+          for (let r = 0; r < rows; r++) {
+            const row = []
+            for (let c = 0; c < cols; c++) {
+              const span = document.createElement('span')
+              span.textContent = Math.random() > 0.5 ? '1' : '0'
+              matrix.appendChild(span)
+              row.push(span)
+            }
+            grid.push(row)
+          }
+
+          handleMatrixMouseMove = (e) => {
+            const radius = 80
+
+            const rowStart = Math.max(0, Math.floor((e.clientY - radius) / cellHeight))
+            const rowEnd = Math.min(rows - 1, Math.floor((e.clientY + radius) / cellHeight))
+            const colStart = Math.max(0, Math.floor((e.clientX - radius) / cellWidth))
+            const colEnd = Math.min(cols - 1, Math.floor((e.clientX + radius) / cellWidth))
+
+            for (let r = rowStart; r <= rowEnd; r++) {
+              for (let c = colStart; c <= colEnd; c++) {
+                const span = grid[r][c]
+                const x = c * cellWidth + cellWidth / 2
+                const y = r * cellHeight + cellHeight / 2
+
+                const dist = Math.hypot(e.clientX - x, e.clientY - y)
+
+                if (dist <= radius) {
+                  span.classList.add('visible')
+                } else {
+                  span.classList.remove('visible')
+                }
               }
             }
           }
-        }
 
-        document.addEventListener('mousemove', handleMatrixMouseMove)
-      }
-    }, 100)
+          document.addEventListener('mousemove', handleMatrixMouseMove)
+        }
+      }, 100)
+    }
 
     // Initialize matrix effects for project rows
     // Toggle for binary effect - set to false to disable
@@ -613,29 +605,32 @@ export default function Home() {
       clearTimeout(popupTimer)
       if (mainNav) mainNav.removeEventListener('click', handleNavClick)
       if (stickyNav) stickyNav.removeEventListener('click', handleNavClick)
-      document.removeEventListener('mousemove', handleMouseMove)
-      document.removeEventListener('mousemove', handleCursorMove)
-      document.removeEventListener('mousemove', handleStickyWheelMouseMove)
-      document.removeEventListener('mousemove', handleButtonMouseMove)
-      if (handleMatrixMouseMove) {
-        document.removeEventListener('mousemove', handleMatrixMouseMove)
-      }
-      if (webDesignSection) {
+      if (handleMouseMove) document.removeEventListener('mousemove', handleMouseMove)
+      if (handleCursorMove) document.removeEventListener('mousemove', handleCursorMove)
+      if (handleStickyWheelMouseMove) document.removeEventListener('mousemove', handleStickyWheelMouseMove)
+      if (handleButtonMouseMove) document.removeEventListener('mousemove', handleButtonMouseMove)
+      if (handleMatrixMouseMove) document.removeEventListener('mousemove', handleMatrixMouseMove)
+      if (webDesignSection && handleWebDesignMouseMove) {
         webDesignSection.removeEventListener('mousemove', handleWebDesignMouseMove)
       }
       window.removeEventListener('scroll', handleScroll)
-      
+
       // Cleanup scroll-based project effects
       window.removeEventListener('scroll', handleProjectScroll)
       if (scrollTimeout) {
         clearTimeout(scrollTimeout)
       }
-      
+
       // Cancel animation frame
       if (animationFrameId) {
         cancelAnimationFrame(animationFrameId)
       }
 
+      // Destroy Lenis
+      if (window.lenis) {
+        window.lenis.destroy()
+        window.lenis = null
+      }
     }
   }, [])
 
@@ -702,7 +697,7 @@ export default function Home() {
       setScrollProgress(progress)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -712,41 +707,41 @@ export default function Home() {
     const button = buttonRef.current
     if (!canvas || !button) return
 
-    const ctx = canvas.getContext('2d')
-    let width, height
+    const ctx = canvas.getContext('2d', { alpha: true })
     let animationId
-    
+
     // Mobile detection
     const isMobile = window.innerWidth <= 768
     let animationCompleted = false
     let finalCanvasPosition = null
 
+    // On mobile, render at lower resolution for performance
+    const pixelRatio = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2)
+    // On mobile, step through wave points instead of every pixel
+    const waveStep = isMobile ? 4 : 1
+
     function updateCanvasPosition() {
-      // On mobile, only update position once after animation completes
-      if (isMobile && animationCompleted) {
-        return
-      }
-      
+      if (isMobile && animationCompleted) return
+
       const buttonRect = button.getBoundingClientRect()
       const buttonBottom = buttonRect.bottom
       const desiredOffset = -window.innerHeight + buttonBottom + 270
       canvas.style.transform = `translateY(${desiredOffset}px)`
-      
-      // Store final position for mobile after animation
-      if (isMobile && animationCompleted) {
-        finalCanvasPosition = desiredOffset
-      }
     }
 
     function resizeCanvas() {
-      width = canvas.width = window.innerWidth
-      height = canvas.height = window.innerHeight
-      
-      // On mobile, maintain the final position after animation
+      const cssWidth = window.innerWidth
+      const cssHeight = window.innerHeight
+      canvas.style.width = cssWidth + 'px'
+      canvas.style.height = cssHeight + 'px'
+      canvas.width = cssWidth * pixelRatio
+      canvas.height = cssHeight * pixelRatio
+      ctx.scale(pixelRatio, pixelRatio)
+
       if (isMobile && animationCompleted && finalCanvasPosition !== null) {
         canvas.style.transform = `translateY(${finalCanvasPosition}px)`
       } else {
-        updateCanvasPosition() // Update position on resize
+        updateCanvasPosition()
       }
     }
     resizeCanvas()
@@ -755,63 +750,71 @@ export default function Home() {
     let waveOffset = 0
     let mouseForce = 0
     let smoothedForce = 0
-    
-    // Animation variables for smooth wave movement
-    let targetWaveY = height * 0.2 // Start at top
-    let currentWaveY = height * 0.2
-    let animationStartTime = null
-    const animationDuration = 1200 // 1.2 seconds
 
-    const handleCanvasMouseMove = (e) => {
+    // Use CSS dimensions (not canvas pixel dimensions) for wave positioning
+    const cssHeight = window.innerHeight
+    const cssWidth = window.innerWidth
+    let targetWaveY = cssHeight * 0.2
+    let currentWaveY = cssHeight * 0.2
+    let animationStartTime = null
+    const animationDuration = 1200
+
+    // Mouse wave effect - desktop only
+    const handleCanvasMouseMove = !isMobile ? (e) => {
       const force = Math.abs(e.movementX) + Math.abs(e.movementY)
       mouseForce = Math.min(100, force)
-    }
+    } : null
 
     function drawOcean() {
-      ctx.clearRect(0, 0, width, height)
+      const w = cssWidth
+      const h = cssHeight
+      ctx.clearRect(0, 0, w, h)
       waveOffset += 0.03 + (smoothedForce / 500)
       smoothedForce += (mouseForce - smoothedForce) * 0.05
 
-      // Smooth animation of wave position
       if (isPageLoaded && animationStartTime === null) {
         animationStartTime = Date.now()
-        targetWaveY = height * 0.65 // Move to bottom
+        targetWaveY = h * 0.65
       }
 
       if (animationStartTime) {
         const elapsed = Date.now() - animationStartTime
         const progress = Math.min(elapsed / animationDuration, 1)
-        
-        // Smooth easing function
+
         const easeProgress = 1 - Math.pow(1 - progress, 3)
-        currentWaveY = height * 0.2 + (targetWaveY - height * 0.2) * easeProgress
-        
-        // Mark animation as completed and set final position on mobile
+        currentWaveY = h * 0.2 + (targetWaveY - h * 0.2) * easeProgress
+
         if (progress >= 1 && !animationCompleted) {
           animationCompleted = true
           if (isMobile) {
-            // Set the final canvas position based on button location
             const buttonRect = button.getBoundingClientRect()
             const buttonBottom = buttonRect.bottom
             finalCanvasPosition = -window.innerHeight + buttonBottom + 270
             canvas.style.transform = `translateY(${finalCanvasPosition}px)`
+            // On mobile: draw one final frame and stop the loop entirely
+            drawFinalFrame(w, h)
+            return // Stop the rAF loop
           }
         }
       }
 
       // Draw the wave shape
       ctx.beginPath()
-      ctx.moveTo(0, height)
-      
-      // Draw the wave curve
-      for (let x = 0; x <= width; x++) {
+      ctx.moveTo(0, h)
+
+      for (let x = 0; x <= w; x += waveStep) {
         let y = currentWaveY + Math.sin((x + waveOffset * 100) * 0.008) * (20 + smoothedForce * 1.8) +
                 Math.sin((x + waveOffset * 150) * 0.012) * (10 + smoothedForce * 0.6)
         ctx.lineTo(x, y)
       }
-      
-      // Complete the shape by going to bottom right corner
-      ctx.lineTo(width, height)
+      // Ensure we reach the right edge
+      if (waveStep > 1) {
+        let y = currentWaveY + Math.sin((w + waveOffset * 100) * 0.008) * (20 + smoothedForce * 1.8) +
+                Math.sin((w + waveOffset * 150) * 0.012) * (10 + smoothedForce * 0.6)
+        ctx.lineTo(w, y)
+      }
+
+      ctx.lineTo(w, h)
       ctx.closePath()
       ctx.fillStyle = 'white'
       ctx.fill()
@@ -820,11 +823,31 @@ export default function Home() {
       animationId = requestAnimationFrame(drawOcean)
     }
 
-    document.addEventListener('mousemove', handleCanvasMouseMove)
+    // Draw a static final frame for mobile (no more rAF after this)
+    function drawFinalFrame(w, h) {
+      ctx.clearRect(0, 0, w, h)
+      ctx.beginPath()
+      ctx.moveTo(0, h)
+
+      // Draw a clean straight line at the final wave position (no wave oscillation)
+      const finalY = h * 0.65
+      ctx.lineTo(0, finalY)
+      ctx.lineTo(w, finalY)
+      ctx.lineTo(w, h)
+      ctx.closePath()
+      ctx.fillStyle = 'white'
+      ctx.fill()
+    }
+
+    if (handleCanvasMouseMove) {
+      document.addEventListener('mousemove', handleCanvasMouseMove)
+    }
     drawOcean()
 
     return () => {
-      document.removeEventListener('mousemove', handleCanvasMouseMove)
+      if (handleCanvasMouseMove) {
+        document.removeEventListener('mousemove', handleCanvasMouseMove)
+      }
       window.removeEventListener('resize', resizeCanvas)
       if (animationId) {
         cancelAnimationFrame(animationId)
