@@ -1,9 +1,82 @@
+'use client'
+
 import styles from '../ZoomParallax/styles.module.scss';
 import { useScroll, useTransform, motion} from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
+
+// Shared review card renderer (used by both desktop and mobile)
+function ReviewCard({text, author, position, image, images, orientation, styles: s}) {
+    return (
+        <div className={s.reviewContainer}>
+            {orientation === "landscape" ? (
+                <>
+                    <div className={s.reviewImage + " " + s.landscape}>
+                        <img src={image} alt={`${author} review`} />
+                    </div>
+                    <div className={s.reviewContent}>
+                        <div className={s.stars}>★★★★★</div>
+                        <p className={s.reviewText} dangerouslySetInnerHTML={{ __html: text }}></p>
+                        <div className={s.reviewer}>
+                            <strong>{author}</strong>
+                            <span>{position}</span>
+                        </div>
+                    </div>
+                </>
+            ) : orientation === "landscape-bottom" ? (
+                <>
+                    <div className={s.reviewContent}>
+                        <div className={s.stars}>★★★★★</div>
+                        <p className={s.reviewText} dangerouslySetInnerHTML={{ __html: text }}></p>
+                        <div className={s.reviewer}>
+                            <strong>{author}</strong>
+                            <span>{position}</span>
+                        </div>
+                    </div>
+                    <div className={s.reviewImage + " " + s.landscape}>
+                        <img src={image} alt={`${author} review`} />
+                    </div>
+                </>
+            ) : orientation === "portrait" ? (
+                <>
+                    <div className={s.reviewContent}>
+                        <div className={s.stars}>★★★★★</div>
+                        <p className={s.reviewText} dangerouslySetInnerHTML={{ __html: text }}></p>
+                        <div className={s.reviewer}>
+                            <strong>{author}</strong>
+                            <span>{position}</span>
+                        </div>
+                    </div>
+                    <div className={s.reviewImage + " " + s.portrait + (images ? " " + s["multiple-images"] : "")}>
+                        {images ? (
+                            images.map((imgSrc, imgIndex) => (
+                                <img key={imgIndex} src={imgSrc} alt={`${author} review ${imgIndex + 1}`} />
+                            ))
+                        ) : (
+                            <img src={image} alt={`${author} review`} />
+                        )}
+                    </div>
+                </>
+            ) : (
+                <div className={s.reviewContent}>
+                    <div className={s.stars}>★★★★★</div>
+                    <p className={s.reviewText} dangerouslySetInnerHTML={{ __html: text }}></p>
+                    <div className={s.reviewer}>
+                        <strong>{author}</strong>
+                        <span>{position}</span>
+                    </div>
+                </div>
+            )}
+        </div>
+    )
+}
 
 export default function Index() {
-    
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth <= 768);
+    }, []);
+
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
         target: container,
@@ -79,80 +152,51 @@ export default function Index() {
         },
     ]
 
+    // Mobile: simple scrollable card list, no Framer Motion, no scale transforms
+    if (isMobile) {
+        return (
+            <div className={styles.mobileContainer}>
+                {reviews.map(({text, author, position, image, images, orientation}, index) => (
+                    <div key={index} className={styles.mobileCard}>
+                        <ReviewCard
+                            text={text}
+                            author={author}
+                            position={position}
+                            image={image}
+                            images={images}
+                            orientation={orientation}
+                            styles={styles}
+                        />
+                    </div>
+                ))}
+            </div>
+        )
+    }
+
+    // Desktop: original Framer Motion parallax zoom
     return (
         <div ref={container} className={styles.container}>
             <div className={styles.sticky}>
                 {
                     reviews.map( ({text, author, position, scale, image, images, orientation}, index) => {
                         const isHuellaReal = author === "Huella Real";
-                        return <motion.div 
-                            key={index} 
+                        return <motion.div
+                            key={index}
                             style={{
                                 scale,
                                 zIndex: isHuellaReal ? 1 : 10
-                            }} 
+                            }}
                             className={styles.el}
                         >
-                            <div className={styles.reviewContainer}>
-                                {orientation === "landscape" ? (
-                                    <>
-                                        <div className={styles.reviewImage + " " + styles.landscape}>
-                                            <img src={image} alt={`${author} review`} />
-                                        </div>
-                                        <div className={styles.reviewContent}>
-                                            <div className={styles.stars}>★★★★★</div>
-                                            <p className={styles.reviewText} dangerouslySetInnerHTML={{ __html: text }}></p>
-                                            <div className={styles.reviewer}>
-                                                <strong>{author}</strong>
-                                                <span>{position}</span>
-                                            </div>
-                                        </div>
-                                    </>
-                                ) : orientation === "landscape-bottom" ? (
-                                    <>
-                                        <div className={styles.reviewContent}>
-                                            <div className={styles.stars}>★★★★★</div>
-                                            <p className={styles.reviewText} dangerouslySetInnerHTML={{ __html: text }}></p>
-                                            <div className={styles.reviewer}>
-                                                <strong>{author}</strong>
-                                                <span>{position}</span>
-                                            </div>
-                                        </div>
-                                        <div className={styles.reviewImage + " " + styles.landscape}>
-                                            <img src={image} alt={`${author} review`} />
-                                        </div>
-                                    </>
-                                ) : orientation === "portrait" ? (
-                                    <>
-                                        <div className={styles.reviewContent}>
-                                            <div className={styles.stars}>★★★★★</div>
-                                            <p className={styles.reviewText} dangerouslySetInnerHTML={{ __html: text }}></p>
-                                            <div className={styles.reviewer}>
-                                                <strong>{author}</strong>
-                                                <span>{position}</span>
-                                            </div>
-                                        </div>
-                                        <div className={styles.reviewImage + " " + styles.portrait + (images ? " " + styles["multiple-images"] : "")}>
-                                            {images ? (
-                                                images.map((imgSrc, imgIndex) => (
-                                                    <img key={imgIndex} src={imgSrc} alt={`${author} review ${imgIndex + 1}`} />
-                                                ))
-                                            ) : (
-                                                <img src={image} alt={`${author} review`} />
-                                            )}
-                                        </div>
-                                    </>
-                                ) : (
-                                    <div className={styles.reviewContent}>
-                                        <div className={styles.stars}>★★★★★</div>
-                                        <p className={styles.reviewText} dangerouslySetInnerHTML={{ __html: text }}></p>
-                                        <div className={styles.reviewer}>
-                                            <strong>{author}</strong>
-                                            <span>{position}</span>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
+                            <ReviewCard
+                                text={text}
+                                author={author}
+                                position={position}
+                                image={image}
+                                images={images}
+                                orientation={orientation}
+                                styles={styles}
+                            />
                         </motion.div>
                     })
                 }

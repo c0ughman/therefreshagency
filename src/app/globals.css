@@ -1645,6 +1645,45 @@ body.mobile-menu-open .sticky-header .mobile-nav {
   bottom: 0;
 }
 
+/* Mobile: hide canvas entirely, use CSS overlay instead */
+@media (max-width: 768px) {
+  .ocean-canvas,
+  #ocean-canvas {
+    display: none !important;
+  }
+}
+
+/* Mobile-only CSS ocean overlay - replaces canvas with pure CSS transition */
+.mobile-ocean-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-ocean-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 99999996;
+    pointer-events: none;
+    /* Start covering 80% of screen (top portion visible = blue hero) */
+    transform: translateY(20vh);
+    transition: none;
+  }
+
+  .mobile-ocean-overlay.loaded {
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    /* Slide down to reveal more hero - pure GPU compositor animation */
+    transform: translateY(35vh);
+    transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
 /* Ensure page content is visible during animation */
 body {
   overflow-x: hidden;

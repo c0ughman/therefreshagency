@@ -701,28 +701,21 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Ocean canvas effect that depends on isPageLoaded state
+  // Ocean canvas effect - DESKTOP ONLY (canvas is hidden on mobile via CSS)
   useEffect(() => {
+    // Skip canvas entirely on mobile - CSS handles the animation instead
+    if (window.innerWidth <= 768) return
+
     const canvas = canvasRef.current
     const button = buttonRef.current
     if (!canvas || !button) return
 
-    const ctx = canvas.getContext('2d', { alpha: true })
+    const ctx = canvas.getContext('2d')
     let animationId
 
-    // Mobile detection
-    const isMobile = window.innerWidth <= 768
-    let animationCompleted = false
-    let finalCanvasPosition = null
-
-    // On mobile, render at lower resolution for performance
-    const pixelRatio = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2)
-    // On mobile, step through wave points instead of every pixel
-    const waveStep = isMobile ? 4 : 1
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2)
 
     function updateCanvasPosition() {
-      if (isMobile && animationCompleted) return
-
       const buttonRect = button.getBoundingClientRect()
       const buttonBottom = buttonRect.bottom
       const desiredOffset = -window.innerHeight + buttonBottom + 270
@@ -737,12 +730,7 @@ export default function Home() {
       canvas.width = cssWidth * pixelRatio
       canvas.height = cssHeight * pixelRatio
       ctx.scale(pixelRatio, pixelRatio)
-
-      if (isMobile && animationCompleted && finalCanvasPosition !== null) {
-        canvas.style.transform = `translateY(${finalCanvasPosition}px)`
-      } else {
-        updateCanvasPosition()
-      }
+      updateCanvasPosition()
     }
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
@@ -751,7 +739,6 @@ export default function Home() {
     let mouseForce = 0
     let smoothedForce = 0
 
-    // Use CSS dimensions (not canvas pixel dimensions) for wave positioning
     const cssHeight = window.innerHeight
     const cssWidth = window.innerWidth
     let targetWaveY = cssHeight * 0.2
@@ -759,11 +746,10 @@ export default function Home() {
     let animationStartTime = null
     const animationDuration = 1200
 
-    // Mouse wave effect - desktop only
-    const handleCanvasMouseMove = !isMobile ? (e) => {
+    const handleCanvasMouseMove = (e) => {
       const force = Math.abs(e.movementX) + Math.abs(e.movementY)
       mouseForce = Math.min(100, force)
-    } : null
+    }
 
     function drawOcean() {
       const w = cssWidth
@@ -780,40 +766,17 @@ export default function Home() {
       if (animationStartTime) {
         const elapsed = Date.now() - animationStartTime
         const progress = Math.min(elapsed / animationDuration, 1)
-
         const easeProgress = 1 - Math.pow(1 - progress, 3)
         currentWaveY = h * 0.2 + (targetWaveY - h * 0.2) * easeProgress
-
-        if (progress >= 1 && !animationCompleted) {
-          animationCompleted = true
-          if (isMobile) {
-            const buttonRect = button.getBoundingClientRect()
-            const buttonBottom = buttonRect.bottom
-            finalCanvasPosition = -window.innerHeight + buttonBottom + 270
-            canvas.style.transform = `translateY(${finalCanvasPosition}px)`
-            // On mobile: draw one final frame and stop the loop entirely
-            drawFinalFrame(w, h)
-            return // Stop the rAF loop
-          }
-        }
       }
 
-      // Draw the wave shape
       ctx.beginPath()
       ctx.moveTo(0, h)
-
-      for (let x = 0; x <= w; x += waveStep) {
+      for (let x = 0; x <= w; x++) {
         let y = currentWaveY + Math.sin((x + waveOffset * 100) * 0.008) * (20 + smoothedForce * 1.8) +
                 Math.sin((x + waveOffset * 150) * 0.012) * (10 + smoothedForce * 0.6)
         ctx.lineTo(x, y)
       }
-      // Ensure we reach the right edge
-      if (waveStep > 1) {
-        let y = currentWaveY + Math.sin((w + waveOffset * 100) * 0.008) * (20 + smoothedForce * 1.8) +
-                Math.sin((w + waveOffset * 150) * 0.012) * (10 + smoothedForce * 0.6)
-        ctx.lineTo(w, y)
-      }
-
       ctx.lineTo(w, h)
       ctx.closePath()
       ctx.fillStyle = 'white'
@@ -823,35 +786,13 @@ export default function Home() {
       animationId = requestAnimationFrame(drawOcean)
     }
 
-    // Draw a static final frame for mobile (no more rAF after this)
-    function drawFinalFrame(w, h) {
-      ctx.clearRect(0, 0, w, h)
-      ctx.beginPath()
-      ctx.moveTo(0, h)
-
-      // Draw a clean straight line at the final wave position (no wave oscillation)
-      const finalY = h * 0.65
-      ctx.lineTo(0, finalY)
-      ctx.lineTo(w, finalY)
-      ctx.lineTo(w, h)
-      ctx.closePath()
-      ctx.fillStyle = 'white'
-      ctx.fill()
-    }
-
-    if (handleCanvasMouseMove) {
-      document.addEventListener('mousemove', handleCanvasMouseMove)
-    }
+    document.addEventListener('mousemove', handleCanvasMouseMove)
     drawOcean()
 
     return () => {
-      if (handleCanvasMouseMove) {
-        document.removeEventListener('mousemove', handleCanvasMouseMove)
-      }
+      document.removeEventListener('mousemove', handleCanvasMouseMove)
       window.removeEventListener('resize', resizeCanvas)
-      if (animationId) {
-        cancelAnimationFrame(animationId)
-      }
+      if (animationId) cancelAnimationFrame(animationId)
     }
   }, [isPageLoaded])
 
@@ -1439,11 +1380,14 @@ Limited to 3 clients per month for exceptional results.
         </div>
       </section>
 
-      <canvas 
-        id="ocean-canvas" 
+      <canvas
+        id="ocean-canvas"
         ref={canvasRef}
         className={`ocean-canvas ${isPageLoaded ? 'loaded' : ''}`}
       ></canvas>
+
+      {/* Mobile-only: pure CSS white overlay that slides down (replaces canvas) */}
+      <div className={`mobile-ocean-overlay ${isPageLoaded ? 'loaded' : ''}`}></div>
 
 
       
