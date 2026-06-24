@@ -14,3 +14,10 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
+
+# Client offer/checkout pages embed a same-origin preview iframe of the site
+# (checkout thumbnail). Allow same-origin framing for these paths only.
+[[headers]]
+  for = "/sites/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
