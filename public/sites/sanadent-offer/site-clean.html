@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<!-- Sanadent design system — Primary #0E7C7B (teal salud, derivado del verde clínico de su entrada), Accent CTA #FF6B2C (naranja vivo de la fachada/equipos), Neutros #0C1B25, #F4F7F7, #FFFFFF. Display: Fraunces (calidez humana); Body: Mulish (limpia, médica). Marca dental cercana y profesional. -->
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sanadent Odontólogos | La Mejor Clínica Dental en Laureles, Medellín</title>
+<meta content="Clínica dental en Laureles, Medellín con 4.9★ y 497 reseñas. Ortodoncia, blanqueamiento e implantes con calidad humana y tecnología. Agenda tu cita: +57 310 4104856." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Mulish:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --teal:#0E7C7B;--teal-dark:#0A5C5B;--accent:#FF6B2C;--accent-dark:#E4541A;
+  --ink:#0C1B25;--mist:#F4F7F7;--white:#fff;--grey:#5d6b70;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Mulish',sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+h1,h2,h3,h4{font-family:'Fraunces',serif;line-height:1.1;font-weight:600}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:800;color:var(--teal)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;font-size:1rem;border-radius:50px;padding:.95rem 1.7rem;transition:.25s;cursor:pointer;border:none}
+.btn-cta{background:var(--accent);color:#fff;box-shadow:0 8px 22px rgba(255,107,44,.35)}
+.btn-cta:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,107,44,.45)}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
+.btn-ghost:hover{background:rgba(255,255,255,.15);border-color:#fff}
+.btn-out{background:#fff;color:var(--teal);border:2px solid var(--teal)}
+.btn-out:hover{background:var(--teal);color:#fff}
+
+/* Header */
+header{background:var(--white);border-bottom:1px solid #e6ecec}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;max-width:1180px;margin:0 auto}
+.logo{display:flex;align-items:baseline;gap:.35rem;font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--teal)}
+.logo span{color:var(--ink);font-size:.85rem;font-weight:500;font-family:'Mulish'}
+.nav-links{display:flex;align-items:center;gap:1.9rem}
+.nav-links a{font-weight:600;font-size:.95rem;color:var(--ink);transition:.2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{display:flex;align-items:center;gap:.8rem}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+.burger span{width:26px;height:3px;background:var(--ink);border-radius:2px}
+
+/* Hero */
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;
+  background:linear-gradient(105deg,rgba(10,92,91,.92) 0%,rgba(14,124,123,.78) 45%,rgba(12,27,37,.35) 100%),
+  url('https://lh3.googleusercontent.com/gps-cs-s/APNQkAFwmY7sTkpqFpy5t3vNPBroWIO6WsRpdc1fKTKctZPlDVul2nFL0_c4Ddlit_1d3tg6LbM3MwU8G2X0-Vi8XekV8HYMCrunATmnROcKlMjZSpCtgEKgUHNLiaRp1C1pKRwzbzXVIw=w1920-h1080-k-no');
+  background-size:cover;background-position:center}
+.hero-inner{color:#fff;max-width:680px;padding:70px 0}
+.hero h1{font-size:clamp(2.3rem,5.5vw,4rem);font-weight:700;margin:.6rem 0 1rem}
+.hero h1 em{font-style:italic;color:#ffd9c4}
+.hero p{font-size:1.18rem;max-width:540px;margin-bottom:1.8rem;color:#eaf5f4}
+.hero-btns{display:flex;flex-wrap:wrap;gap:1rem}
+.hero-rating{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.15);padding:.5rem 1rem;border-radius:50px;margin-bottom:1rem;font-weight:700;backdrop-filter:blur(4px)}
+.stars{color:#FFC542;letter-spacing:1px}
+
+/* Trust strip */
+.trust{background:var(--ink);color:#fff}
+.trust .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;padding:26px 22px;text-align:center}
+.trust div{flex:1;min-width:140px}
+.trust b{display:block;font-family:'Fraunces';font-size:1.7rem;color:#ffd9c4}
+.trust small{font-size:.85rem;color:#b9c6c7;text-transform:uppercase;letter-spacing:.05em}
+
+/* Section */
+section{padding:84px 0}
+.sec-head{max-width:680px;margin:0 auto 50px;text-align:center}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:.5rem 0}
+.sec-head p{color:var(--grey);font-size:1.08rem}
+
+/* Services */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.svc{background:var(--mist);border-radius:20px;padding:34px 28px;transition:.3s;border:1px solid transparent}
+.svc:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(12,27,37,.1);border-color:#d7e3e3;background:#fff}
+.svc .ic{width:56px;height:56px;border-radius:14px;background:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.svc .ic svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:2}
+.svc h3{font-size:1.3rem;margin-bottom:.5rem}
+.svc p{color:var(--grey);font-size:.97rem}
+
+/* Why - split */
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:50px;align-items:center}
+.split.rev{direction:rtl}.split.rev>*{direction:ltr}
+.split img{border-radius:22px;width:100%;height:480px;object-fit:cover;box-shadow:0 22px 50px rgba(12,27,37,.18)}
+.split h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:.6rem 0 1.2rem}
+.feat{display:flex;gap:1rem;margin-bottom:1.3rem}
+.feat .dot{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:#e6f2f1;display:flex;align-items:center;justify-content:center}
+.feat .dot svg{width:22px;height:22px;stroke:var(--teal);fill:none;stroke-width:2}
+.feat h4{font-size:1.12rem;margin-bottom:.2rem}
+.feat p{color:var(--grey);font-size:.95rem;margin:0}
+
+/* Testimonials */
+.testi{background:var(--teal);color:#fff}
+.testi .sec-head h2{color:#fff}
+.testi .sec-head .eyebrow{color:#ffd9c4}
+.t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
+.t-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:30px;backdrop-filter:blur(3px)}
+.t-card .stars{font-size:1.1rem;margin-bottom:1rem}
+.t-card p{font-style:italic;font-size:1.05rem;margin-bottom:1.2rem;color:#f3fbfa}
+.t-card .who{display:flex;align-items:center;gap:.7rem;font-weight:700}
+.t-card .av{width:40px;height:40px;border-radius:50%;background:#ffd9c4;color:var(--teal-dark);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Fraunces'}
+.t-card .who small{display:block;font-weight:500;font-size:.78rem;color:#cfe5e4}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+.gallery a{overflow:hidden;border-radius:16px}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.gallery a:hover img{transform:scale(1.07)}
+.g1{grid-column:span 2;grid-row:span 2}
+.g4{grid-column:span 2}
+
+/* About */
+.about{background:var(--mist)}
+
+/* Location */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+.loc-card{background:#fff;border-radius:20px;padding:36px;box-shadow:0 14px 36px rgba(12,27,37,.08)}
+.hours{list-style:none;margin:1rem 0}
+.hours li{display:flex;justify-content:space-between;padding:.55rem 0;border-bottom:1px dashed #dde6e6;font-size:.97rem}
+.hours li span:last-child{font-weight:700}
+.hours li.closed span:last-child{color:#c0392b}
+.hours li.today{color:var(--teal);font-weight:800}
+.loc-info p{margin-bottom:.6rem;color:var(--grey)}
+.loc-info b{color:var(--ink)}
+.map-emb{border-radius:20px;overflow:hidden;height:100%;min-height:380px}
+.map-emb iframe{width:100%;height:100%;border:0;display:block}
+
+/* Closing */
+.closing{background:linear-gradient(105deg,var(--ink),var(--teal-dark));color:#fff;text-align:center}
+.closing h2{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:1rem}
+.closing p{max-width:560px;margin:0 auto 2rem;color:#dcebea;font-size:1.1rem}
+.closing .hero-btns{justify-content:center}
+
+/* Footer */
+footer{background:#081319;color:#9fb0b1;padding:54px 0 28px;font-size:.92rem}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;margin-bottom:34px}
+.foot-top h3{color:#fff;font-size:1.5rem;margin-bottom:.5rem}
+.foot-col h4{color:#fff;font-size:1rem;margin-bottom:.9rem;font-family:'Mulish';font-weight:800}
+.foot-col a{display:block;margin-bottom:.5rem;transition:.2s}
+.foot-col a:hover{color:#ffd9c4}
+.foot-bottom{border-top:1px solid #1d2c33;padding-top:22px;text-align:center;font-size:.85rem}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:.7s ease-out}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .split,.loc-grid{grid-template-columns:1fr}
+  .split.rev{direction:ltr}
+  .split img{height:340px;order:-1}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
+  .g1{grid-column:span 2}
+}
+@media(max-width:760px){
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;gap:1rem;box-shadow:0 12px 30px rgba(0,0,0,.12);z-index:50}
+  .nav-links.open{display:flex}
+  .nav-cta .btn{padding:.7rem 1.1rem;font-size:.9rem}
+  .burger{display:flex}
+  .nav-cta a:not(.btn){display:none}
+}
+@media(max-width:480px){
+  .gallery{grid-template-columns:1fr;grid-auto-rows:200px}
+  .g1,.g4{grid-column:span 1}
+  section{padding:60px 0}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="nav">
+<a class="logo" href="#inicio">sanadent<span>odontólogos</span></a>
+<nav class="nav-links" id="menu">
+<a href="#servicios">Servicios</a>
+<a href="#porque">Por qué Sanadent</a>
+<a href="#opiniones">Opiniones</a>
+<a href="#galeria">Galería</a>
+<a href="#ubicacion">Ubicación</a>
+</nav>
+<div class="nav-cta">
+<a href="tel:+573104104856">📞 310 410 4856</a>
+<a class="btn btn-cta" href="https://wa.me/573104104856">Agenda tu cita</a>
+<button aria-label="Menú" class="burger" id="burger"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+<!-- HERO -->
+<section class="hero" id="inicio">
+<div class="wrap">
+<div class="hero-inner">
+<div class="hero-rating"><span class="stars">★★★★★</span> 4.9 · 497 reseñas en Google</div>
+<span class="eyebrow" style="color:#ffd9c4">Clínica dental en Laureles, Medellín</span>
+<h1>Sonríe sin miedo, <em>sin dolor</em> y con calidad humana</h1>
+<p>Ortodoncia, blanqueamiento e implantes con tecnología de punta y un trato que te hace sentir en casa. Lo que otros odontólogos te asustaron diciendo, aquí tiene solución.</p>
+<div class="hero-btns">
+<a class="btn btn-cta" href="https://wa.me/573104104856">Reserva por WhatsApp</a>
+<a class="btn btn-ghost" href="tel:+573104104856">Llamar ahora</a>
+</div>
+</div>
+</div>
+</section>
+<!-- TRUST -->
+<div class="trust">
+<div class="wrap">
+<div><b>4.9★</b><small>497 reseñas Google</small></div>
+<div><b>+32 mil</b><small>seguidores en Instagram</small></div>
+<div><b>100%</b><small>trato humano y cercano</small></div>
+<div><b>Laureles</b><small>Av. 33 · fácil acceso</small></div>
+</div>
+</div>
+<!-- SERVICES -->
+<section id="servicios">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="eyebrow">Nuestros tratamientos</span>
+<h2>Cuidado dental completo, en un solo lugar</h2>
+<p>Trabajo de calidad realizado por profesionales que escuchan tu caso y te explican cada paso con paciencia.</p>
+</div>
+<div class="svc-grid">
+<div class="svc reveal">
+<div class="ic"><svg viewbox="0 0 24 24"><path d="M12 2C8 2 6 5 6 9c0 6 2 13 4 13 1.5 0 1.5-4 2-4s.5 4 2 4c2 0 4-7 4-13 0-4-2-7-6-7z"></path></svg></div>
+<h3>Ortodoncia</h3>
+<p>Brackets y alineadores para corregir tu mordida y alinear tu sonrisa con un plan claro y a tu ritmo.</p>
+</div>
+<div class="svc reveal">
+<div class="ic"><svg viewbox="0 0 24 24"><path d="M5 13l4 4L19 7"></path><circle cx="12" cy="12" r="10"></circle></svg></div>
+<h3>Blanqueamiento</h3>
+<p>Recupera el brillo de tus dientes con un blanqueamiento profesional, seguro y de resultados visibles.</p>
+</div>
+<div class="svc reveal">
+<div class="ic"><svg viewbox="0 0 24 24"><path d="M12 3v18M5 8l7-5 7 5"></path></svg></div>
+<h3>Implantes dentales</h3>
+<p>Devuelve función y estética a tu boca con implantes duraderos que se ven y se sienten naturales.</p>
+</div>
+<div class="svc reveal">
+<div class="ic"><svg viewbox="0 0 24 24"><rect height="16" rx="3" width="16" x="4" y="4"></rect><path d="M9 9h6v6H9z"></path></svg></div>
+<h3>Estética dental</h3>
+<p>Diseño de sonrisa, carillas y resinas para una sonrisa armónica que refleje quién eres.</p>
+</div>
+<div class="svc reveal">
+<div class="ic"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"></path></svg></div>
+<h3>Odontopediatría</h3>
+<p>Atención amable para los más pequeños: una primera experiencia dental positiva y sin miedos.</p>
+</div>
+<div class="svc reveal">
+<div class="ic"><svg viewbox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"></path></svg></div>
+<h3>Rehabilitación oral</h3>
+<p>Solucionamos casos complejos paso a paso, devolviendo salud, función y confianza a tu boca.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- WHY (split 1) -->
+<section id="porque" style="background:var(--mist)">
+<div class="wrap">
+<div class="split reveal">
+<div>
+<span class="eyebrow">Por qué eligen Sanadent</span>
+<h2>Una atención que te hace sentir en casa</h2>
+<div class="feat">
+<div class="dot"><svg viewbox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"></path></svg></div>
+<div><h4>Calidad humana, no solo técnica</h4><p>Nuestros pacientes destacan el trato comprensivo, amable y cercano de nuestros doctores.</p></div>
+</div>
+<div class="feat">
+<div class="dot"><svg viewbox="0 0 24 24"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="9"></circle></svg></div>
+<div><h4>Diagnóstico honesto</h4><p>Te explicamos tu caso con claridad. Muchas situaciones que parecían graves, aquí tienen solución sencilla.</p></div>
+</div>
+<div class="feat">
+<div class="dot"><svg viewbox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 10h18"></path></svg></div>
+<div><h4>Pagos cómodos y flexibles</h4><p>Tarjetas de crédito, débito y pagos móviles NFC. Estacionamiento disponible en la zona.</p></div>
+</div>
+<a class="btn btn-cta" href="https://wa.me/573104104856" style="margin-top:.6rem">Quiero mi cita</a>
+</div>
+<img alt="Doctor de Sanadent explicando con calidez el tratamiento a un paciente en consulta" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAF0pm6X5c6efpIARgzXlnQtT4rr7UdXXLQVI5D0B3cjTiYjLzlIKhY6lIytgswfOGvULzu66fyUq70uM6TBjMtvJ3WKsJCVE2lQe_VExC773l1wPuojdN5z9_sIk80v_rFAhIiG=w1920-h1080-k-no"/>
+</div>
+</div>
+</section>
+<!-- WHY (split 2) -->
+<section>
+<div class="wrap">
+<div class="split rev reveal">
+<div>
+<span class="eyebrow">Tecnología y espacio</span>
+<h2>Consultorios modernos, seguros e impecables</h2>
+<div class="feat">
+<div class="dot"><svg viewbox="0 0 24 24"><path d="M4 4h16v12H4z"></path><path d="M2 20h20"></path></svg></div>
+<div><h4>Equipos de última generación</h4><p>Unidades dentales modernas y ambientes amplios y luminosos para tu comodidad.</p></div>
+</div>
+<div class="feat">
+<div class="dot"><svg viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></div>
+<div><h4>Espacio seguro para todos</h4><p>Entrada accesible para sillas de ruedas, amigable con la comunidad LGBTQ+ y espacio seguro para personas trans.</p></div>
+</div>
+<div class="feat">
+<div class="dot"><svg viewbox="0 0 24 24"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="9"></circle></svg></div>
+<div><h4>Atención con cita previa</h4><p>Agenda y te recibimos sin esperas largas, con la atención que mereces en cada visita.</p></div>
+</div>
+</div>
+<img alt="Recepción moderna de Sanadent Odontólogos con detalles en madera y mármol" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFwmY7sTkpqFpy5t3vNPBroWIO6WsRpdc1fKTKctZPlDVul2nFL0_c4Ddlit_1d3tg6LbM3MwU8G2X0-Vi8XekV8HYMCrunATmnROcKlMjZSpCtgEKgUHNLiaRp1C1pKRwzbzXVIw=w1920-h1080-k-no"/>
+</div>
+</div>
+</section>
+<!-- TESTIMONIALS -->
+<section class="testi" id="opiniones">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="eyebrow">Lo que dicen nuestros pacientes</span>
+<h2>4.9★ con 497 reseñas reales en Google</h2>
+</div>
+<div class="t-grid">
+<div class="t-card reveal">
+<div class="stars">★★★★★</div>
+<p>"Llegué al consultorio preocupada y angustiada por lo que me habían dicho otros odontólogos, el doctor Sebastián fue comprensivo, amable y sobre todo me fijó que no tenía que preocuparme porque mi situación era muy solucionable, salí feliz, mil gracias."</p>
+<div class="who"><div class="av">P</div><div>Paciente Sanadent<small>Reseña de Google · ★★★★★</small></div></div>
+</div>
+<div class="t-card reveal">
+<div class="stars">★★★★★</div>
+<p>"Excelentes profesionales y servicio excelente y profesionales de gran calidad humana."</p>
+<div class="who"><div class="av">J</div><div>Paciente Sanadent<small>Reseña de Google · ★★★★★</small></div></div>
+</div>
+<div class="t-card reveal">
+<div class="stars">★★★★★</div>
+<p>"Trabajo de gran calidad y un trato muy humano. Salí feliz con mi tratamiento de ortodoncia. Mil bendiciones para todo el equipo, generan mucha confianza."</p>
+<div class="who"><div class="av">M</div><div>Paciente Sanadent<small>Reseña de Google · ★★★★★</small></div></div>
+</div>
+</div>
+<div class="reveal" style="text-align:center;margin-top:36px">
+<a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Sanadent%20Odont%C3%B3logos%20-%20La%20Mejor%20Cl%C3%ADnica%20Dental%20en%20Medell%C3%ADn&amp;query_place_id=ChIJ74gmrZApRI4RGZi-4NFEmYo" rel="noopener" target="_blank">Ver todas las reseñas</a>
+</div>
+</div>
+</section>
+<!-- GALLERY -->
+<section id="galeria">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="eyebrow">Conoce la clínica</span>
+<h2>Un espacio pensado para tu sonrisa</h2>
+</div>
+<div class="gallery reveal">
+<a class="g1" href="#"><img alt="Consultorio dental de Sanadent con amplios ventanales y vista a Medellín" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEe5s4Kpc6luX0RnW-Vj84hBkfY6jXZdhhTude2Ma13aRweuV06RrJmyc6i35LUK9gbo-Zy6cJXqDkSzkruNSELQBiLciSWchWstRpA8aVYS2B-bF8xZxK8YCo_tvWzNP9gxm_6=w1920-h1080-k-no"/></a>
+<a href="#"><img alt="Niña recibiendo tratamiento dental con luz de blanqueamiento en Sanadent" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFuKRNQMPiTKfNDfZpR9Q7MODaycf1H2E0fV33wz9EQde5GInpNlc7VzlnjKqQLqHQFXxhqHOb21dppvoqQzv9bkk2UjnIn_o9K_lufCL5-BtyydTdfUMTGWFZCJ-yX8sXSBH3g=w1920-h1080-k-no"/></a>
+<a href="#"><img alt="Logo iluminado de Sanadent en la recepción de la clínica" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFA5at6qFPV9ynD_8JKd0bX2Zpj99Td54RN3zHEfNcWaPOoB0CY3UlLCJfrILvnJ2jrMJN_oiCOepnOutv0BYV7fxxwrChmbgJ98yMEFmtbXdGALjisY4c5qTK6aBkCibpG-pfPW2TfOTxt=w1920-h1080-k-no"/></a>
+<a class="g4" href="#"><img alt="Fachada de la clínica Sanadent Odontólogos en la Av. 33, Laureles, Medellín" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGhRD7NjBXfI7YURGDIk7Aeh8EkhSuE8ttqMR3fO4ALpXHA_r0Ar1B4AeslQhbFgM5NzsZeuq-7J_8HzIP5Z71HfuxM2N9_qKKoEHzEcndC491wG_y-b_L_qfLNnhlxxB2gwzE=w1920-h1080-k-no"/></a>
+</div>
+</div>
+</section>
+<!-- ABOUT -->
+<section class="about">
+<div class="wrap">
+<div class="split reveal">
+<img alt="Edificio de Sanadent Odontólogos con su logotipo y sonrisa característica" src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGhRD7NjBXfI7YURGDIk7Aeh8EkhSuE8ttqMR3fO4ALpXHA_r0Ar1B4AeslQhbFgM5NzsZeuq-7J_8HzIP5Z71HfuxM2N9_qKKoEHzEcndC491wG_y-b_L_qfLNnhlxxB2gwzE=w1920-h1080-k-no"/>
+<div>
+<span class="eyebrow">Sobre nosotros</span>
+<h2>Sanadent Odontólogos, la mejor clínica dental de Medellín</h2>
+<p style="color:var(--grey);margin-bottom:1.1rem">En el corazón de Laureles-Estadio, sobre la Av. 33, somos una clínica donde la odontología se vive con cercanía. Nuestros pacientes nos eligen por la <b>calidad de nuestro trabajo</b> y, sobre todo, por la <b>calidad humana</b> de cada profesional del equipo.</p>
+<p style="color:var(--grey);margin-bottom:1.6rem">Aquí no llegas a una consulta fría: llegas a un lugar que se siente como casa, donde te escuchamos, te explicamos y te acompañamos para que salgas feliz con tu sonrisa. Por eso tantos pacientes nos confían su salud bucal y la de su familia.</p>
+<a class="btn btn-out" href="#ubicacion">Cómo llegar</a>
+</div>
+</div>
+</div>
+</section>
+<!-- LOCATION -->
+<section id="ubicacion">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="eyebrow">Visítanos</span>
+<h2>Ubicación y horarios</h2>
+</div>
+<div class="loc-grid reveal">
+<div class="loc-card">
+<div class="loc-info">
+<h3 style="font-size:1.4rem;margin-bottom:.8rem">Sanadent Odontólogos</h3>
+<p><b>📍 Dirección:</b> Av. 33 #81-17, Laureles-Estadio, Medellín, Antioquia</p>
+<p><b>📞 Teléfono:</b> <a href="tel:+573104104856" style="color:var(--teal);font-weight:700">+57 310 410 4856</a></p>
+<p><b>✉️ Correo:</b> <a href="mailto:mercadeo@sanadentodontologos.com.co" style="color:var(--teal);font-weight:700">mercadeo@sanadentodontologos.com.co</a></p>
+</div>
+<ul class="hours">
+<li><span>Lunes</span><span>8 AM – 7 PM</span></li>
+<li><span>Martes</span><span>8 AM – 7 PM</span></li>
+<li><span>Miércoles</span><span>8 AM – 7 PM</span></li>
+<li><span>Jueves</span><span>8 AM – 7 PM</span></li>
+<li><span>Viernes</span><span>8 AM – 6 PM</span></li>
+<li><span>Sábado</span><span>8 AM – 2 PM</span></li>
+<li class="closed"><span>Domingo</span><span>Cerrado</span></li>
+</ul>
+<a class="btn btn-cta" href="https://www.google.com/maps/search/?api=1&amp;query=Sanadent%20Odont%C3%B3logos%20-%20La%20Mejor%20Cl%C3%ADnica%20Dental%20en%20Medell%C3%ADn&amp;query_place_id=ChIJ74gmrZApRI4RGZi-4NFEmYo" rel="noopener" style="width:100%;justify-content:center;margin-top:.6rem" target="_blank">Cómo llegar en Google Maps</a>
+</div>
+<div class="map-emb">
+<iframe allowfullscreen="" loading="lazy" src="https://www.google.com/maps?q=Sanadent%20Odont%C3%B3logos%20Av%2033%2081-17%20Laureles%20Medell%C3%ADn&amp;output=embed" title="Mapa de Sanadent Odontólogos"></iframe>
+</div>
+</div>
+</div>
+</section>
+<!-- CLOSING -->
+<section class="closing">
+<div class="wrap">
+<span class="eyebrow" style="color:#ffd9c4">Tu sonrisa te está esperando</span>
+<h2>Agenda tu cita hoy y sonríe con confianza</h2>
+<p>Cuéntanos tu caso sin compromiso. Te recibimos con un trato humano y la mejor odontología de Laureles.</p>
+<div class="hero-btns">
+<a class="btn btn-cta" href="https://wa.me/573104104856">Escríbenos por WhatsApp</a>
+<a class="btn btn-ghost" href="tel:+573104104856">Llamar al 310 410 4856</a>
+</div>
+</div>
+</section>
+<footer>
+<div class="wrap">
+<div class="foot-top">
+<div style="max-width:300px">
+<h3 style="font-family:'Fraunces';color:#fff">sanadent <span style="font-size:.9rem;color:#9fb0b1">odontólogos</span></h3>
+<p>La mejor clínica dental en Medellín. Calidad, confianza y un trato que se siente como en casa.</p>
+</div>
+<div class="foot-col">
+<h4>Navegación</h4>
+<a href="#servicios">Servicios</a>
+<a href="#porque">Por qué Sanadent</a>
+<a href="#opiniones">Opiniones</a>
+<a href="#galeria">Galería</a>
+<a href="#ubicacion">Ubicación</a>
+</div>
+<div class="foot-col">
+<h4>Contacto</h4>
+<a href="tel:+573104104856">+57 310 410 4856</a>
+<a href="mailto:mercadeo@sanadentodontologos.com.co">mercadeo@sanadentodontologos.com.co</a>
+<a href="https://wa.me/573104104856">WhatsApp</a>
+<a href="https://www.instagram.com/sanadentodontologos" rel="noopener" target="_blank">Instagram @sanadentodontologos</a>
+</div>
+<div class="foot-col">
+<h4>Dirección</h4>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=Sanadent%20Odont%C3%B3logos%20-%20La%20Mejor%20Cl%C3%ADnica%20Dental%20en%20Medell%C3%ADn&amp;query_place_id=ChIJ74gmrZApRI4RGZi-4NFEmYo" rel="noopener" target="_blank">Av. 33 #81-17<br/>Laureles-Estadio<br/>Medellín, Antioquia</a>
+</div>
+</div>
+<div class="foot-bottom">© <span id="y"></span> Sanadent Odontólogos · Todos los derechos reservados · Laureles, Medellín</div>
+</div>
+</footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>menu.classList.toggle('open'));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
